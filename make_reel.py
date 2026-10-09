@@ -81,7 +81,29 @@ def ease_out(t):
     return 1 - (1 - min(max(t, 0), 1)) ** 3
 
 
-def bg_blur_fill(frames, letterbox):
+def layout_at(keys, t, tr):
+    """Interpola (cx, cy, larghezza, opacita', punch) tra i keyframe di layout."""
+    prev = keys[0][1]
+    cur, t0 = prev, keys[0][0]
+    for kt, lay in keys:
+        if kt > t:
+            break
+        prev, cur, t0 = cur, lay, kt
+    u = min(max((t - t0) / tr, 0), 1) if cur is not prev else 1.0
+    if cur.get("hidden"):
+        e = u ** 2  # esce accelerando verso il basso
+        cx, cy, wid = prev["cx"], prev["cy"] + (H * 0.75) * e, prev["w"] * (1 - 0.3 * e)
+        return cx, cy, wid, 1 - e, 1.0
+    if prev.get("hidden"):
+        prev = dict(cur, cy=cur["cy"] + H * 0.6)
+    e = ease_out(u)
+    lerp = lambda x, y: x + (y - x) * e
+    # piccolo "punch" (overshoot) quando entra un layout grande
+    pk = 1 + cur.get("punch", 0) * np.sin(np.pi * u) if u < 1 else 1.0
+    return lerp(prev["cx"], cur["cx"]), lerp(prev["cy"], cur["cy"]), lerp(prev["w"], cur["w"]), 1.0, pk
+
+
+def bg_blur_fill(frames, letterbox, strip_y=None):
     """Per uno sfondo con bande nere: striscia nitida al centro + copia sfocata a tutto schermo."""
     y0, y1 = letterbox
     out = []
@@ -94,7 +116,7 @@ def bg_blur_fill(frames, letterbox):
         big = cv2.resize(strip, (int(W * 1.15), int(sh * 1.15)))  # un po' di zoom sulla striscia
         x = (big.shape[1] - W) // 2
         big = big[:, x:x + W]
-        yy = (H - big.shape[0]) // 2 - 120
+        yy = (H - big.shape[0]) // 2 - 120 if strip_y is None else int(strip_y)
         blur[yy:yy + big.shape[0]] = big
         out.append(blur)
     return out
@@ -156,8 +178,8 @@ def main(cfg_path):
     os.makedirs(tmp, exist_ok=True)
     matter = Matter(P(cfg["matting_model"]))
     bust = cfg["bust"]
-    bw = bust["width"]
-    bh = int(round(bw * 16 / 9))
+    layouts = cfg["layouts"]
+    keys = []
 
     pages_all, audio_parts, t_out = [], [], 0.0
     enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}",
@@ -172,8 +194,8 @@ def main(cfg_path):
         dur = nfr / FPS
         print(f"[{si + 1}/{len(cfg['segments'])}] {os.path.basename(src)} {dur:.2f}s", flush=True)
 
-        # busto
-        sp = read_frames(src, a, dur, bw, bh, speed, fit="cover")
+        # busto a piena risoluzione, poi posizionato con keyframe di layout
+        sp = read_frames(src, a, dur, W, H, speed, fit="cover")
         alphas = matter.run(sp)
 
         # sfondo: lista di (file, start, dur_out) in sequenza
@@ -182,30 +204,35 @@ def main(cfg_path):
             n = int(round(part["dur"] * FPS)) if "dur" in part else nfr - len(bg)
             fr = list(read_frames(P(part["file"]), part["start"], n / FPS + 0.05, W, H, part.get("speed", 1.0)))[:n]
             if "letterbox" in part:
-                fr = bg_blur_fill(fr, part["letterbox"])
+                fr = bg_blur_fill(fr, part["letterbox"], part.get("strip_y"))
             bg += fr
         bg = (bg + [bg[-1]] * nfr)[:nfr]
 
-        # movimento del busto: entrata con pop, leggero dondolio e zoom lento
-        side = seg.get("bust_x", bust["x"])
+        # keyframe: [[t_sorgente, layout], ...] -> tempi in uscita
+        lay = seg["layout"] if isinstance(seg["layout"], list) else [[a, seg["layout"]]]
+        for ts, name in lay:
+            keys.append((t_out + max(ts - a, 0) / speed, layouts[name]))
+
         for k in range(nfr):
-            t = k / FPS
-            pop = 0.9 + 0.1 * ease_out(t / 0.18)
-            sc = pop * (1.0 + 0.035 * t / max(dur, 1e-3))
-            sway = bust.get("sway", 10) * np.sin(2 * np.pi * (t + si * 0.37) / 2.6)
-            bob = bust.get("bob", 6) * np.sin(2 * np.pi * (t + si * 0.21) / 1.9)
-            M = cv2.getRotationMatrix2D((bw / 2, bh), np.sin(2 * np.pi * t / 3.1) * bust.get("tilt", 1.2), sc)
-            M[0, 2] += side + sway
-            M[1, 2] += H - bh + bust.get("y_offset", 0) + bob
-            fg = cv2.warpAffine(sp[k], M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
-            al = cv2.warpAffine(alphas[k], M, (W, H), flags=cv2.INTER_LINEAR, borderValue=0)[..., None]
-            frame = bg[k].astype(np.float32)
-            # ombra morbida dietro il busto per staccarlo dallo sfondo
-            sh = cv2.GaussianBlur(al, (0, 0), 18)
-            if sh.ndim == 2:
-                sh = sh[..., None]
-            frame *= 1 - 0.35 * sh
-            frame = frame * (1 - al) + fg.astype(np.float32) * al
+            t = t_out + k / FPS
+            cx, cy, wid, op, pk = layout_at(keys, t, cfg.get("transition", 0.22))
+            if op <= 0.01:
+                frame = bg[k].astype(np.float32)
+            else:
+                sway = bust.get("sway", 8) * np.sin(2 * np.pi * t / 2.6)
+                bob = bust.get("bob", 5) * np.sin(2 * np.pi * t / 1.9)
+                sc = wid / W * (1 + bust.get("zoom", 0.03) * (k / max(nfr, 1)))
+                ax, ay = W * bust["anchor"][0], H * bust["anchor"][1]
+                M = cv2.getRotationMatrix2D((ax, ay), np.sin(2 * np.pi * t / 3.1) * bust.get("tilt", 1.0), sc * pk)
+                M[0, 2] += cx + sway - ax
+                M[1, 2] += cy + bob - ay
+                fg = cv2.warpAffine(sp[k], M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
+                al = cv2.warpAffine(alphas[k], M, (W, H), flags=cv2.INTER_LINEAR, borderValue=0) * op
+                frame = bg[k].astype(np.float32)
+                sh = cv2.GaussianBlur(al, (0, 0), 18)[..., None]  # ombra morbida dietro il busto
+                al = al[..., None]
+                frame *= 1 - 0.35 * sh
+                frame = frame * (1 - al) + fg.astype(np.float32) * al
             enc.stdin.write(np.clip(frame, 0, 255).astype(np.uint8).tobytes())
 
         # audio del segmento

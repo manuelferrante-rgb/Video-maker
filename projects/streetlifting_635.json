@@ -1,32 +1,328 @@
 {
-  "output": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/out/reel_635.mp4",
-  "matting_model": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/models/u2net_human_seg.onnx",
-  "speed": 1.1,
-  "bust": {"width": 440, "x": -45, "y_offset": 115, "sway": 8, "bob": 5, "tilt": 1.0},
-  "subs": {
-    "font": "Anton", "font_file": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/models/Anton-Regular.ttf",
-    "size": 64, "outline": 5, "shadow": 4, "spacing": 1, "highlight": "5CE1F6",
-    "margin_v": 590, "max_words": 3, "max_chars": 16
+ "output": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/out/reel_635.mp4",
+ "matting_model": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/models/u2net_human_seg.onnx",
+ "speed": 1.1,
+ "subs": {
+  "font": "Anton",
+  "font_file": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/models/Anton-Regular.ttf",
+  "size": 74,
+  "outline": 5,
+  "shadow": 4,
+  "spacing": 1,
+  "highlight": "5CE1F6",
+  "margin_v": 520,
+  "max_words": 3,
+  "max_chars": 16
+ },
+ "segments": [
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/68b298dd-IMG_7942.mov",
+   "cut": [
+    0.36,
+    3.1
+   ],
+   "words": [
+    [
+     "635",
+     0.4
+    ],
+    [
+     "KG",
+     1.98
+    ],
+    [
+     "DI",
+     2.45
+    ],
+    [
+     "TOTALE",
+     2.62
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f48f1d4a-33a0d430332a43fdadf48262e9a1eea3.mov",
+     "start": 0.25,
+     "letterbox": [
+      0.228,
+      0.772
+     ],
+     "strip_y": 180
+    }
+   ],
+   "layout": [
+    [
+     0.36,
+     "big"
+    ],
+    [
+     1.95,
+     "mid_r"
+    ]
+   ]
   },
-  "segments": [
-    {"clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/68b298dd-IMG_7942.mov", "cut": [0.30, 3.12],
-     "words": [["635", 0.32], ["KG", 1.92], ["DI", 2.40], ["TOTALE", 2.56]],
-     "background": [{"file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f48f1d4a-33a0d430332a43fdadf48262e9a1eea3.mov", "start": 0.2, "letterbox": [0.228, 0.772]}]},
-    {"clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/1979f3ab-IMG_7949.mov", "cut": [0.05, 1.95],
-     "words": [["37", 0.08], ["KG", 0.64], ["E", 0.88], ["MEZZO", 0.96], ["DI", 1.20], ["MUSCLE", 1.28], ["UP", 1.55]],
-     "background": [{"file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f48f1d4a-33a0d430332a43fdadf48262e9a1eea3.mov", "start": 5.2}]},
-    {"clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/ecc141c0-IMG_7952.mov", "cut": [0.42, 2.02],
-     "words": [["120", 0.48], ["KG", 0.96], ["DI", 1.28], ["TRAZIONI", 1.44]],
-     "background": [{"file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f48f1d4a-33a0d430332a43fdadf48262e9a1eea3.mov", "start": 8.2}]},
-    {"clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/b22f47b5-IMG_7954.mov", "cut": [0.45, 3.13],
-     "words": [["190", 0.48], ["DI", 1.28], ["DIP", 1.44], ["E", 1.84], ["287", 1.92], ["DI", 2.64], ["SQUAT", 2.72]],
-     "background": [{"file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f48f1d4a-33a0d430332a43fdadf48262e9a1eea3.mov", "start": 10.4, "dur": 1.27},
-                    {"file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d5e6e93c-33a0d430332a43fdadf48262e9a1eea3.mov", "start": 4.4}]},
-    {"clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/265cf0a6-IMG_7956.mov", "cut": [0.25, 2.40],
-     "words": [["IL", 0.32], ["LIVELLO", 0.64], ["SI", 1.04], ["STA", 1.20], ["ALZANDO", 1.40], ["TANTISSIMO", 1.84]],
-     "background": [{"file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d5e6e93c-33a0d430332a43fdadf48262e9a1eea3.mov", "start": 5.58}]},
-    {"clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/c3cbb96f-IMG_7957.mov", "cut": [0.15, 2.05],
-     "words": [["CONTINUIAMO", 0.24], ["A", 0.96], ["FAR", 1.04], ["CRESCERE", 1.20], ["QUESTO", 1.60], ["SPORT", 1.84]],
-     "background": [{"file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d5e6e93c-33a0d430332a43fdadf48262e9a1eea3.mov", "start": 7.53}]}
-  ]
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/1979f3ab-IMG_7949.mov",
+   "cut": [
+    0.2,
+    1.88
+   ],
+   "words": [
+    [
+     "37",
+     0.22
+    ],
+    [
+     "KG",
+     0.73
+    ],
+    [
+     "E",
+     0.95
+    ],
+    [
+     "MEZZO",
+     1.02
+    ],
+    [
+     "DI",
+     1.24
+    ],
+    [
+     "MUSCLE",
+     1.31
+    ],
+    [
+     "UP",
+     1.6
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f48f1d4a-33a0d430332a43fdadf48262e9a1eea3.mov",
+     "start": 5.2
+    }
+   ],
+   "layout": "hidden"
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/ecc141c0-IMG_7952.mov",
+   "cut": [
+    0.58,
+    2.0
+   ],
+   "words": [
+    [
+     "120",
+     0.6
+    ],
+    [
+     "KG",
+     1.08
+    ],
+    [
+     "DI",
+     1.42
+    ],
+    [
+     "TRAZIONI",
+     1.56
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f48f1d4a-33a0d430332a43fdadf48262e9a1eea3.mov",
+     "start": 8.2
+    }
+   ],
+   "layout": "mid_l"
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/b22f47b5-IMG_7954.mov",
+   "cut": [
+    0.78,
+    3.13
+   ],
+   "words": [
+    [
+     "190",
+     0.8
+    ],
+    [
+     "DI",
+     1.74
+    ],
+    [
+     "DIP",
+     1.84
+    ],
+    [
+     "E",
+     2.0
+    ],
+    [
+     "287",
+     2.06
+    ],
+    [
+     "DI",
+     2.8
+    ],
+    [
+     "SQUAT",
+     2.88
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f48f1d4a-33a0d430332a43fdadf48262e9a1eea3.mov",
+     "start": 10.4,
+     "dur": 1.09
+    },
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d5e6e93c-33a0d430332a43fdadf48262e9a1eea3.mov",
+     "start": 4.0
+    }
+   ],
+   "layout": [
+    [
+     0.78,
+     "mid_r"
+    ],
+    [
+     2.04,
+     "big"
+    ]
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/265cf0a6-IMG_7956.mov",
+   "cut": [
+    0.78,
+    2.28
+   ],
+   "words": [
+    [
+     "IL",
+     0.8
+    ],
+    [
+     "LIVELLO",
+     0.92
+    ],
+    [
+     "SI",
+     1.22
+    ],
+    [
+     "STA",
+     1.3
+    ],
+    [
+     "ALZANDO",
+     1.42
+    ],
+    [
+     "TANTISSIMO",
+     1.78
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d5e6e93c-33a0d430332a43fdadf48262e9a1eea3.mov",
+     "start": 5.2
+    }
+   ],
+   "layout": "mid_c"
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/c3cbb96f-IMG_7957.mov",
+   "cut": [
+    0.63,
+    2.0
+   ],
+   "words": [
+    [
+     "CONTINUIAMO",
+     0.65
+    ],
+    [
+     "A",
+     1.22
+    ],
+    [
+     "FAR",
+     1.27
+    ],
+    [
+     "CRESCERE",
+     1.35
+    ],
+    [
+     "QUESTO",
+     1.6
+    ],
+    [
+     "SPORT",
+     1.75
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d5e6e93c-33a0d430332a43fdadf48262e9a1eea3.mov",
+     "start": 6.6
+    }
+   ],
+   "layout": [
+    [
+     0.63,
+     "mid_l"
+    ],
+    [
+     1.58,
+     "big"
+    ]
+   ]
+  }
+ ],
+ "bust": {
+  "anchor": [
+   0.5,
+   0.48
+  ],
+  "sway": 7,
+  "bob": 5,
+  "tilt": 1.0,
+  "zoom": 0.04
+ },
+ "transition": 0.22,
+ "layouts": {
+  "big": {
+   "cx": 540,
+   "cy": 1020,
+   "w": 1250,
+   "punch": 0.06
+  },
+  "mid_c": {
+   "cx": 540,
+   "cy": 1440,
+   "w": 860
+  },
+  "mid_l": {
+   "cx": 330,
+   "cy": 1440,
+   "w": 800
+  },
+  "mid_r": {
+   "cx": 750,
+   "cy": 1440,
+   "w": 800
+  },
+  "hidden": {
+   "cx": 540,
+   "cy": 1440,
+   "w": 800,
+   "hidden": true
+  }
+ }
 }
