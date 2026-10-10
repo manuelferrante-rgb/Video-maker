@@ -349,12 +349,13 @@
    "tilt": 0
   },
   "title": [
-   "*635 KG",
-   "DI *TOTALE"
+   "IL *TOTALE",
+   "PIÙ *ALTO",
+   "DEL *MONDO"
   ],
-  "title_y": 1050,
-  "line_gap": 170,
-  "size": 150,
+  "title_y": 930,
+  "line_gap": 160,
+  "size": 140,
   "outline": 8,
   "shadow": 7
  }
