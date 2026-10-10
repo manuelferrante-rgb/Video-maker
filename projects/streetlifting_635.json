@@ -326,5 +326,36 @@
    "w": 800,
    "hidden": true
   }
+ },
+ "cover": {
+  "output": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/out/cover_635.jpg",
+  "background": {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d5e6e93c-33a0d430332a43fdadf48262e9a1eea3.mov",
+   "time": 4.0,
+   "crop": [
+    90,
+    20,
+    630,
+    980
+   ],
+   "dim": 0.92
+  },
+  "face": {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/68b298dd-IMG_7942.mov",
+   "time": 1.4,
+   "cx": 360,
+   "cy": 1400,
+   "w": 1000,
+   "tilt": 0
+  },
+  "title": [
+   "*635 KG",
+   "DI *TOTALE"
+  ],
+  "title_y": 1050,
+  "line_gap": 170,
+  "size": 150,
+  "outline": 8,
+  "shadow": 7
  }
 }
