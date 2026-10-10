@@ -83,15 +83,15 @@
      "big"
     ],
     [
-     0.78,
+     0.33,
      "hidden"
     ]
    ],
    "background": [
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/21006c84-1877969338413501617.mov",
-     "start": 2.0,
-     "dur": 0.34
+     "start": 1.6,
+     "dur": 0.68
     },
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/c9c23390-4346718648281383400.mov",
@@ -174,8 +174,8 @@
      "mid_l"
     ],
     [
-     1.85,
-     "big"
+     1.12,
+     "hidden"
     ]
    ],
    "background": [
@@ -186,7 +186,7 @@
     },
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/26b3000f-9096536221802523301.mov",
-     "start": 1.6
+     "start": 2.3
     }
    ]
   }
@@ -195,7 +195,7 @@
   "output": "../out/cover_cavetti.jpg",
   "background": {
    "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/26b3000f-9096536221802523301.mov",
-   "time": 2.9,
+   "time": 3.6,
    "src_size": [
     1080,
     1920
