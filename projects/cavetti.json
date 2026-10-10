@@ -168,16 +168,7 @@
      1.87
     ]
    ],
-   "layout": [
-    [
-     0.33,
-     "mid_l"
-    ],
-    [
-     1.12,
-     "hidden"
-    ]
-   ],
+   "layout": "mid_l",
    "background": [
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/3800ea5f-2548316163183986212.mov",
@@ -186,7 +177,7 @@
     },
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/26b3000f-9096536221802523301.mov",
-     "start": 2.3
+     "start": 2.62
     }
    ]
   }
@@ -195,7 +186,7 @@
   "output": "../out/cover_cavetti.jpg",
   "background": {
    "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/26b3000f-9096536221802523301.mov",
-   "time": 3.6,
+   "time": 4.5,
    "src_size": [
     1080,
     1920
