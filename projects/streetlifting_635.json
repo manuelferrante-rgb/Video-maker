@@ -343,9 +343,9 @@
   "face": {
    "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/68b298dd-IMG_7942.mov",
    "time": 1.4,
-   "cx": 360,
-   "cy": 1400,
-   "w": 1000,
+   "cx": 330,
+   "cy": 1225,
+   "w": 770,
    "tilt": 0
   },
   "title": [
@@ -353,9 +353,9 @@
    "PIÙ *ALTO",
    "DEL *MONDO"
   ],
-  "title_y": 930,
-  "line_gap": 160,
-  "size": 140,
+  "title_y": 790,
+  "line_gap": 140,
+  "size": 125,
   "outline": 8,
   "shadow": 7
  }
