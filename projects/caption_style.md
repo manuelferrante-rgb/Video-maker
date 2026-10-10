@@ -13,7 +13,7 @@ Esempio pubblicato per il reel "Il totale più alto del mondo":
     Se ti interessano questi contenuti, seguimi.
 
 Regole ricavate:
-- Apertura: il numero secco + una frase sul livello dello sport, 1 emoji al massimo.
+- Apertura: il numero secco + una frase sul livello dello sport, 1 emoji al massimo, da variare in base al tema (non sempre 👀).
 - Corpo breve (3 paragrafi), discorsivo, sul significato per lo sport più che sull'elenco delle alzate.
 - Nessun elenco puntato di numeri, nessun hashtag.
 - Una sola CTA finale: "Se ti interessano questi contenuti, seguimi."

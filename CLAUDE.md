@@ -56,7 +56,7 @@ HuggingFace è bloccato dalla rete: i modelli si scaricano da GitHub (già fatto
 
 ## Caption (stile approvato, vedi `projects/caption_style.md`)
 
-- Apertura: il fatto/numero secco + una frase sul livello dello sport, max 1 emoji.
+- Apertura: il fatto/numero secco + una frase sul livello dello sport, max 1 emoji, da variare in base al tema (non sempre 👀).
 - 3 paragrafi brevi e discorsivi sul significato per lo streetlifting, niente elenchi di numeri.
 - **Nessun hashtag.** Niente em dash (—). Tono diretto, niente frasi da guru.
 - Una sola CTA finale: "Se ti interessano questi contenuti, seguimi."
