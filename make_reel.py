@@ -21,7 +21,7 @@ HDR_TO_SDR = ("zscale=t=linear:npl=400,format=gbrpf32le,zscale=p=bt709,"
 def probe_hdr(path):
     out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
                           "stream=color_transfer", "-of", "csv=p=0", path], capture_output=True, text=True).stdout
-    return out.strip() in ("arib-std-b67", "smpte2084")
+    return out.strip().strip(",") in ("arib-std-b67", "smpte2084")
 
 
 def read_frames(path, start, dur, w, h, speed=1.0, fit="cover"):
