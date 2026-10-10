@@ -11,9 +11,9 @@ W, H = m.W, m.H
 
 
 def main(cfg_path):
-    cfg = json.load(open(cfg_path))
+    cfg = m.load_cfg(cfg_path)
     c = cfg["cover"]
-    out = c["output"]
+    out = os.path.join(os.path.dirname(os.path.abspath(cfg_path)), c["output"])
     tmp = out + ".work"
     os.makedirs(tmp, exist_ok=True)
 

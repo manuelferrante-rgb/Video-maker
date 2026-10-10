@@ -170,8 +170,17 @@ def paginate(words, max_words, max_chars):
     return pages
 
 
-def main(cfg_path):
+def load_cfg(cfg_path):
+    """Legge il progetto e completa i percorsi di default (modelli e font in models/)."""
     cfg = json.load(open(cfg_path))
+    cfg.setdefault("matting_model", os.path.join(HERE, "models", "u2net_human_seg.onnx"))
+    cfg["subs"].setdefault("font_file", os.path.join(HERE, "models", "Anton-Regular.ttf"))
+    cfg["subs"].setdefault("font", "Anton")
+    return cfg
+
+
+def main(cfg_path):
+    cfg = load_cfg(cfg_path)
     base = os.path.dirname(os.path.abspath(cfg_path))
     P = lambda p: p if os.path.isabs(p) else os.path.join(base, p)
     speed = cfg.get("speed", 1.0)

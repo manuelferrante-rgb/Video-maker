@@ -1,10 +1,8 @@
 {
- "output": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/out/reel_635.mp4",
- "matting_model": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/models/u2net_human_seg.onnx",
+ "output": "../out/reel_635.mp4",
  "speed": 1.15,
  "subs": {
   "font": "Anton",
-  "font_file": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/models/Anton-Regular.ttf",
   "size": 74,
   "outline": 5,
   "shadow": 4,
@@ -328,7 +326,7 @@
   }
  },
  "cover": {
-  "output": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/out/cover_635.jpg",
+  "output": "../out/cover_635.jpg",
   "background": {
    "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d5e6e93c-33a0d430332a43fdadf48262e9a1eea3.mov",
    "time": 4.0,
