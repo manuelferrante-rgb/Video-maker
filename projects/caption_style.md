@@ -18,3 +18,17 @@ Regole ricavate:
 - Nessun elenco puntato di numeri, nessun hashtag.
 - Una sola CTA finale: "Se ti interessano questi contenuti, seguimi."
 - Atleta e pagina della gara solo taggati, non nominati nel testo.
+
+Secondo esempio approvato (reel "Basta cavi e cavetti"):
+
+    Gli esercizi ai cavi possono avere il loro spazio, ma se diventano la base del tuo allenamento stai lasciando per strada la parte più bella: vedere i carichi salire 🏋️‍♀️
+
+    Stacco, squat e esercizi con il bilanciere ti danno obiettivi concreti, numeri da battere e la soddisfazione di sollevare qualcosa che fino a qualche mese prima sembrava impossibile.
+
+    Ed è proprio lì che l'allenamento smette di essere un obbligo e diventa una sfida, e i risultati estetici arrivano di conseguenza.
+
+    Se ti interessano questi contenuti, seguimi.
+
+Regole aggiunte:
+- La prima frase NON deve ripetere la frase del reel (né il titolo della copertina): parte già dal ragionamento.
+- L'emoji può stare a fine della prima frase, non per forza in apertura.
