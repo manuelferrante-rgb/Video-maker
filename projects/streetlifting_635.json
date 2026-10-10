@@ -1,7 +1,7 @@
 {
  "output": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/out/reel_635.mp4",
  "matting_model": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/models/u2net_human_seg.onnx",
- "speed": 1.1,
+ "speed": 1.15,
  "subs": {
   "font": "Anton",
   "font_file": "/tmp/claude-0/-home-user-Video-maker/ab7ff892-0872-5a6b-831d-a43713ffdb7a/scratchpad/models/Anton-Regular.ttf",
@@ -177,7 +177,7 @@
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f48f1d4a-33a0d430332a43fdadf48262e9a1eea3.mov",
      "start": 10.4,
-     "dur": 1.09
+     "dur": 1.04
     },
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d5e6e93c-33a0d430332a43fdadf48262e9a1eea3.mov",

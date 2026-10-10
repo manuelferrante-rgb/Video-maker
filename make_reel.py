@@ -12,8 +12,10 @@ import numpy as np, cv2, onnxruntime as ort
 W, H, FPS = 1080, 1920, 30
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-HDR_TO_SDR = ("zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,"
-              "tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p")
+# HLG iPhone -> SDR mantenendo il colore della pelle (hable lo rendeva pallido)
+HDR_TO_SDR = ("zscale=t=linear:npl=150,format=gbrpf32le,zscale=p=bt709,"
+              "tonemap=mobius:param=0.3:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p,"
+              "eq=saturation=1.15:contrast=1.05")
 
 
 def probe_hdr(path):
