@@ -13,9 +13,9 @@ W, H, FPS = 1080, 1920, 30
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # HLG iPhone -> SDR mantenendo il colore della pelle (hable lo rendeva pallido)
-HDR_TO_SDR = ("zscale=t=linear:npl=150,format=gbrpf32le,zscale=p=bt709,"
+HDR_TO_SDR = ("zscale=t=linear:npl=400,format=gbrpf32le,zscale=p=bt709,"
               "tonemap=mobius:param=0.3:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p,"
-              "eq=saturation=1.15:contrast=1.05")
+              "eq=saturation=1.4:contrast=1.1,colorbalance=rm=0.05:bm=-0.05:rs=0.02:bs=-0.02")
 
 
 def probe_hdr(path):
@@ -221,11 +221,13 @@ def main(cfg_path):
             if op <= 0.01:
                 frame = bg[k].astype(np.float32)
             else:
-                sway = bust.get("sway", 8) * np.sin(2 * np.pi * t / 2.6)
-                bob = bust.get("bob", 5) * np.sin(2 * np.pi * t / 1.9)
-                sc = wid / W * (1 + bust.get("zoom", 0.03) * (k / max(nfr, 1)))
+                # "still_until": busto fermo (niente dondolio/zoom) fino a quel tempo sorgente
+                still = 0.0 if a + k / FPS * speed < seg.get("still_until", -1) else 1.0
+                sway = still * bust.get("sway", 8) * np.sin(2 * np.pi * t / 2.6)
+                bob = still * bust.get("bob", 5) * np.sin(2 * np.pi * t / 1.9)
+                sc = wid / W * (1 + still * bust.get("zoom", 0.03) * (k / max(nfr, 1)))
                 ax, ay = W * bust["anchor"][0], H * bust["anchor"][1]
-                M = cv2.getRotationMatrix2D((ax, ay), np.sin(2 * np.pi * t / 3.1) * bust.get("tilt", 1.0), sc * pk)
+                M = cv2.getRotationMatrix2D((ax, ay), still * np.sin(2 * np.pi * t / 3.1) * bust.get("tilt", 1.0), sc * pk)
                 M[0, 2] += cx + sway - ax
                 M[1, 2] += cy + bob - ay
                 fg = cv2.warpAffine(sp[k], M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)

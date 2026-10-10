@@ -135,7 +135,8 @@
      "start": 8.2
     }
    ],
-   "layout": "mid_l"
+   "layout": "mid_l",
+   "still_until": 99
   },
   {
    "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/b22f47b5-IMG_7954.mov",
@@ -187,13 +188,14 @@
    "layout": [
     [
      0.78,
-     "mid_r"
+     "mid_l"
     ],
     [
      2.04,
      "big"
     ]
-   ]
+   ],
+   "still_until": 2.04
   },
   {
    "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/265cf0a6-IMG_7956.mov",
