@@ -19,7 +19,8 @@ def main(cfg_path):
 
     # sfondo: ritaglio della parte alta del frame (via le scritte in basso) scalato a pieno schermo
     b = c["background"]
-    src = m.read_frames(b["file"], b["time"], 1 / 30, 720, 1280, fit="cover")[0]
+    sw, sh_ = b.get("src_size", [720, 1280])  # risoluzione a cui si leggono le coordinate di "crop"
+    src = m.read_frames(b["file"], b["time"], 1 / 30, sw, sh_, fit="cover")[0]
     x0, y0, x1, y1 = b["crop"]
     bg = cv2.resize(src[y0:y1, x0:x1], (W, H), interpolation=cv2.INTER_CUBIC).astype(np.float32)
     bg *= b.get("dim", 0.9)

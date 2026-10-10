@@ -1,0 +1,229 @@
+{
+ "output": "../out/reel_cavetti.mp4",
+ "speed": 1.1,
+ "bust": {
+  "anchor": [
+   0.5,
+   0.48
+  ],
+  "sway": 7,
+  "bob": 5,
+  "tilt": 1.0,
+  "zoom": 0.04
+ },
+ "transition": 0.22,
+ "layouts": {
+  "big": {
+   "cx": 540,
+   "cy": 1020,
+   "w": 1250,
+   "punch": 0.06
+  },
+  "mid_c": {
+   "cx": 540,
+   "cy": 1440,
+   "w": 860
+  },
+  "mid_l": {
+   "cx": 330,
+   "cy": 1440,
+   "w": 800
+  },
+  "mid_r": {
+   "cx": 750,
+   "cy": 1440,
+   "w": 800
+  },
+  "hidden": {
+   "cx": 540,
+   "cy": 1440,
+   "w": 800,
+   "hidden": true
+  }
+ },
+ "subs": {
+  "font": "Anton",
+  "size": 74,
+  "outline": 5,
+  "shadow": 4,
+  "spacing": 1,
+  "highlight": "5CE1F6",
+  "margin_v": 520,
+  "max_words": 3,
+  "max_chars": 18
+ },
+ "segments": [
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/a9a4962a-IMG_7958.mov",
+   "cut": [
+    0.03,
+    1.27
+   ],
+   "words": [
+    [
+     "BASTA",
+     0.05
+    ],
+    [
+     "CAVI",
+     0.4
+    ],
+    [
+     "|E",
+     0.78
+    ],
+    [
+     "CAVETTI",
+     0.85
+    ]
+   ],
+   "layout": [
+    [
+     0.03,
+     "big"
+    ],
+    [
+     0.78,
+     "hidden"
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/21006c84-1877969338413501617.mov",
+     "start": 2.0,
+     "dur": 0.34
+    },
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/c9c23390-4346718648281383400.mov",
+     "start": 0.4
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/04a0731f-IMG_7959.mov",
+   "cut": [
+    0.0,
+    0.98
+   ],
+   "words": [
+    [
+     "DIVENTA",
+     0.0
+    ],
+    [
+     "PIÙ",
+     0.53
+    ],
+    [
+     "FORTE",
+     0.62
+    ]
+   ],
+   "layout": "mid_r",
+   "still_until": 99,
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/50f4948a-1166110232715680458.mov",
+     "start": 0.7
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/10614418-IMG_7960.mov",
+   "cut": [
+    0.33,
+    2.43
+   ],
+   "words": [
+    [
+     "TI",
+     0.33
+    ],
+    [
+     "DIVERTIRAI",
+     0.58
+    ],
+    [
+     "|DI",
+     1.01
+    ],
+    [
+     "PIÙ",
+     1.07
+    ],
+    [
+     "|E",
+     1.19
+    ],
+    [
+     "OTTERRAI",
+     1.32
+    ],
+    [
+     "|PIÙ",
+     1.69
+    ],
+    [
+     "RISULTATI",
+     1.87
+    ]
+   ],
+   "layout": [
+    [
+     0.33,
+     "mid_l"
+    ],
+    [
+     1.85,
+     "big"
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/3800ea5f-2548316163183986212.mov",
+     "start": 0.05,
+     "dur": 0.78
+    },
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/26b3000f-9096536221802523301.mov",
+     "start": 1.6
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "output": "../out/cover_cavetti.jpg",
+  "background": {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/26b3000f-9096536221802523301.mov",
+   "time": 2.9,
+   "src_size": [
+    1080,
+    1920
+   ],
+   "crop": [
+    180,
+    250,
+    810,
+    1370
+   ],
+   "dim": 0.92
+  },
+  "face": {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/a9a4962a-IMG_7958.mov",
+   "time": 0.6,
+   "cx": 330,
+   "cy": 1225,
+   "w": 770,
+   "tilt": 0
+  },
+  "title": [
+   "BASTA *CAVI",
+   "E *CAVETTI"
+  ],
+  "title_y": 860,
+  "line_gap": 150,
+  "size": 140,
+  "outline": 8,
+  "shadow": 7
+ }
+}

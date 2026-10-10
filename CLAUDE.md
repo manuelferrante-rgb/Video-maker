@@ -41,7 +41,7 @@ HuggingFace è bloccato dalla rete: i modelli si scaricano da GitHub (già fatto
   - Non esagerare con i movimenti: `still_until` tiene il busto fermo (niente dondolio) in un tratto.
     Nel reel approvato: grande sull'hook → scivola via → sparisce → rientra e resta fermo → zoom grande sul
     numero forte → normale fino alla fine.
-- **Sottotitoli**: font Anton, MAIUSCOLO, bianco con bordo nero + ombra, parola pronunciata in azzurro `5CE1F6`.
+- **Sottotitoli**: pagine per frase di senso ("|PAROLA" nel JSON forza una nuova pagina); font Anton, MAIUSCOLO, bianco con bordo nero + ombra, parola pronunciata in azzurro `5CE1F6`.
   Dimensione 74, max 3 parole per volta, centrati orizzontalmente, a ~72% dell'altezza (margin_v 520).
   Scrivere le parole come dette ("37 KG E MEZZO DI MUSCLE UP"), numeri in cifre.
 

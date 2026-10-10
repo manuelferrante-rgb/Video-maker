@@ -159,9 +159,12 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 
 def paginate(words, max_words, max_chars):
+    """Pagine di sottotitolo; una parola che inizia con "|" forza l'inizio di una nuova pagina."""
     pages, cur = [], []
     for w in words:
-        if cur and (len(cur) >= max_words or len(" ".join(x for x, _ in cur + [w])) > max_chars):
+        brk = w[0].startswith("|")
+        w = (w[0].lstrip("|"), w[1])
+        if cur and (brk or len(cur) >= max_words or len(" ".join(x for x, _ in cur + [w])) > max_chars):
             pages.append(cur)
             cur = []
         cur.append(w)
