@@ -127,7 +127,10 @@ class BiRefMatter:
     def __init__(self, model, stride=3):
         if not os.path.exists(model):  # ~1 GB: scaricato solo quando serve
             subprocess.run(["curl", "-fsSL", "--retry", "3", "-o", model, self.URL], check=True)
-        self.sess = ort.InferenceSession(model, providers=["CPUExecutionProvider"])
+        so = ort.SessionOptions()
+        so.enable_cpu_mem_arena = False  # senza, la RAM cresce a ogni frame fino all'OOM
+        so.enable_mem_pattern = False
+        self.sess = ort.InferenceSession(model, so, providers=["CPUExecutionProvider"])
         self.inp = self.sess.get_inputs()[0].name
         self.stride = stride
 
