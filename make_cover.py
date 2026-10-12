@@ -19,27 +19,32 @@ def main(cfg_path):
 
     # sfondo: ritaglio della parte alta del frame (via le scritte in basso) scalato a pieno schermo
     b = c["background"]
-    sw, sh_ = b.get("src_size", [720, 1280])  # risoluzione a cui si leggono le coordinate di "crop"
-    src = m.read_frames(b["file"], b["time"], 1 / 30, sw, sh_, fit="cover")[0]
-    x0, y0, x1, y1 = b["crop"]
-    bg = cv2.resize(src[y0:y1, x0:x1], (W, H), interpolation=cv2.INTER_CUBIC).astype(np.float32)
+    if "image" in b:  # foto: ritaglio 9:16 attorno a "rect" ([x0, y0, x1, y1] in frazioni)
+        bg = m.ken_burns(b["image"], 1, b.get("rect", [0, 0, 1, 1]), b.get("rect", [0, 0, 1, 1]))[0].astype(np.float32)
+    else:
+        sw, sh_ = b.get("src_size", [720, 1280])  # risoluzione a cui si leggono le coordinate di "crop"
+        src = m.read_frames(b["file"], b["time"], 1 / 30, sw, sh_, fit="cover")[0]
+        x0, y0, x1, y1 = b["crop"]
+        bg = cv2.resize(src[y0:y1, x0:x1], (W, H), interpolation=cv2.INTER_CUBIC).astype(np.float32)
     bg *= b.get("dim", 0.9)
 
-    # busto
-    f = c["face"]
-    fr = m.read_frames(f["file"], f["time"], 1 / 30, W, H, fit="cover")
-    alpha = m.Matter(cfg["matting_model"]).run(fr)[0]
-    fr = fr[0]
-    ax, ay = W * cfg["bust"]["anchor"][0], H * cfg["bust"]["anchor"][1]
-    M = cv2.getRotationMatrix2D((ax, ay), f.get("tilt", 0), f["w"] / W)
-    M[0, 2] += f["cx"] - ax
-    M[1, 2] += f["cy"] - ay
-    fg = cv2.warpAffine(fr, M, (W, H), flags=cv2.INTER_CUBIC).astype(np.float32)
-    al = cv2.warpAffine(alpha, M, (W, H), flags=cv2.INTER_LINEAR, borderValue=0)
-    sh = cv2.GaussianBlur(al, (0, 0), 22)[..., None]
-    al = al[..., None]
-    img = bg * (1 - 0.4 * sh)
-    img = img * (1 - al) + fg * al
+    # busto (opzionale: "face": null per usare solo lo sfondo, es. una foto in cui Manuel c'è già)
+    f = c.get("face")
+    img = bg
+    if f:
+        fr = m.read_frames(f["file"], f["time"], 1 / 30, W, H, fit="cover")
+        alpha = m.Matter(cfg["matting_model"]).run(fr)[0]
+        fr = fr[0]
+        ax, ay = W * cfg["bust"]["anchor"][0], H * cfg["bust"]["anchor"][1]
+        M = cv2.getRotationMatrix2D((ax, ay), f.get("tilt", 0), f["w"] / W)
+        M[0, 2] += f["cx"] - ax
+        M[1, 2] += f["cy"] - ay
+        fg = cv2.warpAffine(fr, M, (W, H), flags=cv2.INTER_CUBIC).astype(np.float32)
+        al = cv2.warpAffine(alpha, M, (W, H), flags=cv2.INTER_LINEAR, borderValue=0)
+        sh = cv2.GaussianBlur(al, (0, 0), 22)[..., None]
+        al = al[..., None]
+        img = bg * (1 - 0.4 * sh)
+        img = img * (1 - al) + fg * al
     cv2.imwrite(f"{tmp}/base.png", np.clip(img, 0, 255).astype(np.uint8))
 
     # titolo: righe di parole, quelle con * in azzurro
