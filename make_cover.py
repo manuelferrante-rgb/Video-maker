@@ -33,8 +33,9 @@ def main(cfg_path):
     img = bg
     if f:
         fr = m.read_frames(f["file"], f["time"], 1 / 30, W, H, fit="cover")
-        alpha = m.Matter(cfg["matting_model"]).run(fr)[0]
-        fr = fr[0]
+        mt = m.Matter(cfg["matting_model"])
+        alpha = mt.run(fr)[0]
+        fr = mt.clean[0]
         ax, ay = W * cfg["bust"]["anchor"][0], H * cfg["bust"]["anchor"][1]
         M = cv2.getRotationMatrix2D((ax, ay), f.get("tilt", 0), f["w"] / W)
         M[0, 2] += f["cx"] - ax

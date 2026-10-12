@@ -34,6 +34,8 @@ HuggingFace è bloccato dalla rete: i modelli si scaricano da GitHub (già fatto
 - **Colore pelle**: i clip iPhone HLG vanno convertiti con `HDR_TO_SDR` in make_reel.py (mobius npl=400 + sat 1.4
   + leggero warm). Non toccarlo: le versioni più chiare sono state bocciate come "cadaveriche".
   `probe_hdr` deve riconoscere HLG (attenzione all'output di ffprobe con la virgola finale).
+- **Scontorno**: `Matter.run` toglie anche il muro bianco tra i ricci (colore muro campionato, `wall_thr` 44) e
+  decontamina i bordi (`matter.clean`). Non abbassarlo: con la versione vecchia restava bianco tra i capelli.
 - **Faccia (busto scontornato)**, layout a keyframe in `layouts`:
   - `big` (grande al centro, con punch) sulle cose eclatanti/hook;
   - `mid_l` / `mid_r` / `mid_c` per il parlato normale, faccia ALTA nella safe zone (occhi ~y 1440 su 1920);

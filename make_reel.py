@@ -56,6 +56,7 @@ class Matter:
     def __init__(self, model):
         self.sess = ort.InferenceSession(model, providers=["CPUExecutionProvider"])
         self.inp = self.sess.get_inputs()[0].name
+        self.wall_thr = 44  # distanza colore (LAB) sotto cui un pixel vicino al bordo è "muro"
 
     def mask(self, bgr):
         x = cv2.resize(cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB), (320, 320)).astype(np.float32) / 255.0
@@ -66,20 +67,30 @@ class Matter:
         return cv2.resize(m, (bgr.shape[1], bgr.shape[0]), interpolation=cv2.INTER_LINEAR)
 
     def run(self, frames):
+        """Alpha per ogni frame + frame "decontaminati" (via il bianco del muro tra i capelli).
+        Il colore del muro si campiona dallo sfondo; vicino al bordo (fino a ~90 px) i pixel di quel colore
+        diventano trasparenti, lontano dal bordo (occhi, denti) restano intatti."""
         alphas, prev = [], None
+        self.clean = []
         for f in frames:
-            a = self.mask(f)
-            prev = a if prev is None else 0.6 * a + 0.4 * prev
-            a = np.clip((prev - 0.15) / 0.7, 0, 1)            # contrasto sul bordo
-            # vicino al bordo togli i pixel chiari e poco saturi (muro bianco dietro capelli/spalle)
-            core = cv2.erode((a > 0.5).astype(np.uint8), np.ones((31, 31), np.uint8)).astype(np.float32)
-            core = cv2.GaussianBlur(core, (0, 0), 6)
-            hsv = cv2.cvtColor(f, cv2.COLOR_BGR2HSV).astype(np.float32) / 255.0
-            wall = np.clip((hsv[..., 2] - 0.55) / 0.15, 0, 1) * np.clip((0.22 - hsv[..., 1]) / 0.1, 0, 1)
-            a = a * (1 - wall * (1 - core))
-            a = cv2.erode(a, np.ones((3, 3), np.uint8))
-            a = cv2.GaussianBlur(a, (0, 0), 1.0)               # bordo morbido
-            alphas.append(a.astype(np.float32))
+            raw = self.mask(f)
+            prev = raw if prev is None else 0.6 * raw + 0.4 * prev
+            a = np.clip((prev - 0.15) / 0.7, 0, 1)
+            bgpix = f[raw < 0.05]
+            wall = np.median(bgpix.reshape(-1, 3), 0) if len(bgpix) > 500 else np.array([225, 225, 225])
+            lab = cv2.cvtColor(f, cv2.COLOR_BGR2LAB).astype(np.float32)
+            wl = cv2.cvtColor(wall.reshape(1, 1, 3).astype(np.uint8), cv2.COLOR_BGR2LAB).astype(np.float32)[0, 0]
+            dist = np.sqrt(((lab - wl) ** 2).sum(-1))
+            wallness = np.clip((self.wall_thr - dist) / 14, 0, 1)
+            k = max(int(f.shape[1] / 6) | 1, 3)  # banda dal bordo proporzionale alla larghezza del frame
+            core = cv2.erode((a > 0.5).astype(np.uint8), np.ones((k, k), np.uint8)).astype(np.float32)
+            core = cv2.GaussianBlur(core, (0, 0), k / 12)
+            a = a * (1 - wallness * (1 - core))
+            a = cv2.morphologyEx(a, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+            a = cv2.GaussianBlur(a, (0, 0), 0.8).astype(np.float32)
+            fd = np.clip((f.astype(np.float32) - (1 - a[..., None]) * wall) / np.maximum(a[..., None], 0.15), 0, 255)
+            self.clean.append(fd.astype(np.uint8))
+            alphas.append(a)
         return alphas
 
 
@@ -239,6 +250,7 @@ def main(cfg_path):
         # busto a piena risoluzione, poi posizionato con keyframe di layout
         sp = read_frames(src, a, dur, W, H, speed, fit="cover")
         alphas = matter.run(sp)
+        sp = matter.clean
 
         # sfondo: lista di (file, start, dur_out) in sequenza
         bg = []
