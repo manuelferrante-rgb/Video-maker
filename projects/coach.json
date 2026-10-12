@@ -1,0 +1,426 @@
+{
+ "output": "../out/reel_coach.mp4",
+ "speed": 1.15,
+ "bust": {
+  "anchor": [
+   0.5,
+   0.48
+  ],
+  "sway": 7,
+  "bob": 5,
+  "tilt": 1.0,
+  "zoom": 0.04
+ },
+ "transition": 0.22,
+ "layouts": {
+  "big": {
+   "cx": 540,
+   "cy": 1020,
+   "w": 1250,
+   "punch": 0.06
+  },
+  "mid_c": {
+   "cx": 540,
+   "cy": 1440,
+   "w": 860
+  },
+  "mid_l": {
+   "cx": 330,
+   "cy": 1440,
+   "w": 800
+  },
+  "mid_r": {
+   "cx": 750,
+   "cy": 1440,
+   "w": 800
+  },
+  "hidden": {
+   "cx": 540,
+   "cy": 1440,
+   "w": 800,
+   "hidden": true
+  }
+ },
+ "subs": {
+  "font": "Anton",
+  "size": 74,
+  "outline": 5,
+  "shadow": 4,
+  "spacing": 1,
+  "highlight": "5CE1F6",
+  "margin_v": 520,
+  "max_words": 3,
+  "max_chars": 20
+ },
+ "segments": [
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/cfb7d59e-IMG_7962.mov",
+   "cut": [
+    0.33,
+    2.07
+   ],
+   "words": [
+    [
+     "UN",
+     0.33
+    ],
+    [
+     "COACH",
+     0.57
+    ],
+    [
+     "|CI",
+     0.93
+    ],
+    [
+     "DEVE",
+     1.05
+    ],
+    [
+     "TENERE",
+     1.23
+    ],
+    [
+     "|ALL'ATLETA",
+     1.41
+    ]
+   ],
+   "layout": [
+    [
+     0.33,
+     "big"
+    ],
+    [
+     1.2,
+     "mid_r"
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/40a8d805-IMG_6079.mov",
+     "start": 0.6
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f0b65b95-IMG_7963.mov",
+   "cut": [
+    0.53,
+    4.65
+   ],
+   "words": [
+    [
+     "PRIMA",
+     0.53
+    ],
+    [
+     "DI",
+     0.98
+    ],
+    [
+     "|PROGRAMMAZIONE",
+     1.13
+    ],
+    [
+     "|TECNICA",
+     1.88
+    ],
+    [
+     "|È",
+     2.48
+    ],
+    [
+     "MOLTO",
+     2.63
+    ],
+    [
+     "PIÙ",
+     2.85
+    ],
+    [
+     "|IMPORTANTE",
+     3.0
+    ],
+    [
+     "|CREARE",
+     3.3
+    ],
+    [
+     "UN",
+     3.68
+    ],
+    [
+     "|RAPPORTO",
+     3.83
+    ],
+    [
+     "UMANO",
+     4.28
+    ]
+   ],
+   "layout": [
+    [
+     0.53,
+     "mid_r"
+    ],
+    [
+     2.4,
+     "hidden"
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f24f396d-copy_96BC5849-45A5-4A22-9C11-DCFE4CE5AA90.mov",
+     "start": 2.3,
+     "dur": 1.7,
+     "crop": [
+      0.18,
+      0.02,
+      0.815,
+      0.655
+     ]
+    },
+    {
+     "image": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/34495917-image.jpg",
+     "from": [
+      0.17,
+      0,
+      0.47,
+      1
+     ],
+     "to": [
+      0.47,
+      0,
+      0.77,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f5d5c81a-IMG_7964.mov",
+   "cut": [
+    0.0,
+    1.52
+   ],
+   "words": [
+    [
+     "UN",
+     0.0
+    ],
+    [
+     "ASPETTO",
+     0.1
+    ],
+    [
+     "|MOLTO",
+     0.28
+    ],
+    [
+     "SOTTOVALUTATO",
+     0.47
+    ]
+   ],
+   "layout": "mid_r",
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/bf6a8775-copy_96BC5849-45A5-4A22-9C11-DCFE4CE5AA90.mov",
+     "start": 0.0,
+     "crop": [
+      0.15,
+      0.02,
+      0.785,
+      0.655
+     ]
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/613678bb-IMG_7966.mov",
+   "cut": [
+    0.7,
+    2.53
+   ],
+   "words": [
+    [
+     "MA",
+     0.7
+    ],
+    [
+     "TI",
+     0.97
+    ],
+    [
+     "FARÀ",
+     1.11
+    ],
+    [
+     "|MIGLIORARE",
+     1.31
+    ],
+    [
+     "|COME",
+     1.65
+    ],
+    [
+     "COACH",
+     1.78
+    ],
+    [
+     "|O",
+     2.06
+    ],
+    [
+     "ATLETA",
+     2.19
+    ]
+   ],
+   "layout": "mid_l",
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/79a18d6b-2106326185074779162.mov",
+     "start": 0.3
+    }
+   ],
+   "still_until": 99
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/35f75f4b-IMG_7967.mov",
+   "cut": [
+    0.55,
+    1.91
+   ],
+   "words": [
+    [
+     "E",
+     0.55
+    ],
+    [
+     "SOPRATTUTTO",
+     0.73
+    ],
+    [
+     "|COME",
+     1.2
+    ],
+    [
+     "PERSONA",
+     1.44
+    ]
+   ],
+   "layout": "mid_l",
+   "still_until": 99,
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/15301ba5-copy_96BC5849-45A5-4A22-9C11-DCFE4CE5AA90.mov",
+     "start": 2.3,
+     "crop": [
+      0.3,
+      0.02,
+      0.935,
+      0.655
+     ]
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/16b93b5b-IMG_7968.mov",
+   "cut": [
+    0.11,
+    2.64
+   ],
+   "words": [
+    [
+     "DIVENTARE",
+     0.11
+    ],
+    [
+     "FORTI",
+     0.62
+    ],
+    [
+     "|INSIEME",
+     0.91
+    ],
+    [
+     "|SARÀ",
+     1.34
+    ],
+    [
+     "PIÙ",
+     1.63
+    ],
+    [
+     "|SODDISFACENTE",
+     1.77
+    ]
+   ],
+   "layout": "mid_l",
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/15301ba5-copy_96BC5849-45A5-4A22-9C11-DCFE4CE5AA90.mov",
+     "start": 3.48,
+     "dur": 0.7,
+     "crop": [
+      0.3,
+      0.02,
+      0.935,
+      0.655
+     ]
+    },
+    {
+     "image": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/bc149950-image.jpg",
+     "from": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "to": [
+      0.3,
+      0.13,
+      0.72,
+      0.42
+     ]
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "output": "../out/cover_coach.jpg",
+  "background": {
+   "image_note": "vedi G3",
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/15301ba5-copy_96BC5849-45A5-4A22-9C11-DCFE4CE5AA90.mov",
+   "time": 4.2,
+   "src_size": [
+    1080,
+    1920
+   ],
+   "crop": [
+    324,
+    40,
+    1005,
+    1250
+   ],
+   "dim": 0.92
+  },
+  "face": {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/cfb7d59e-IMG_7962.mov",
+   "time": 1.4,
+   "cx": 330,
+   "cy": 1225,
+   "w": 770,
+   "tilt": 0
+  },
+  "title": [
+   "COSA CONTA",
+   "PIÙ DELLA",
+   "*PROGRAMMAZIONE?"
+  ],
+  "title_y": 790,
+  "line_gap": 140,
+  "size": 125,
+  "outline": 8,
+  "shadow": 7
+ }
+}

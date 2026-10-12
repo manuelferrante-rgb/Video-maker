@@ -24,11 +24,15 @@ def probe_hdr(path):
     return out.strip().strip(",") in ("arib-std-b67", "smpte2084")
 
 
-def read_frames(path, start, dur, w, h, speed=1.0, fit="cover"):
-    """Decodifica [start, start+dur*speed] di path, accelerato di `speed`, in frame BGR w x h."""
+def read_frames(path, start, dur, w, h, speed=1.0, fit="cover", crop=None):
+    """Decodifica [start, start+dur*speed] di path, accelerato di `speed`, in frame BGR w x h.
+    crop=[x0, y0, x1, y1] in frazioni del frame: ritaglia prima di scalare (es. per togliere scritte)."""
     vf = []
     if probe_hdr(path):
         vf.append(HDR_TO_SDR)
+    if crop:
+        x0, y0, x1, y1 = crop
+        vf.append(f"crop=iw*{x1 - x0}:ih*{y1 - y0}:iw*{x0}:ih*{y0}")
     if speed != 1.0:
         vf.append(f"setpts=PTS/{speed}")
     if fit == "cover":
@@ -77,6 +81,30 @@ class Matter:
             a = cv2.GaussianBlur(a, (0, 0), 1.0)               # bordo morbido
             alphas.append(a.astype(np.float32))
         return alphas
+
+
+def ken_burns(path, n, rect0, rect1):
+    """Foto animata: n frame W x H che passano dal ritaglio rect0 a rect1 ([x0, y0, x1, y1] in frazioni,
+    allargati/ristretti automaticamente a 9:16 attorno al loro centro)."""
+    from PIL import Image, ImageOps
+    img = np.array(ImageOps.exif_transpose(Image.open(path)).convert("RGB"))[:, :, ::-1]
+    ih, iw = img.shape[:2]
+    def box(r):
+        cx, cy = (r[0] + r[2]) / 2 * iw, (r[1] + r[3]) / 2 * ih
+        h = max((r[3] - r[1]) * ih, (r[2] - r[0]) * iw * 16 / 9)
+        h = min(h, ih, iw * 16 / 9)
+        w = h * 9 / 16
+        return np.array([min(max(cx, w / 2), iw - w / 2), min(max(cy, h / 2), ih - h / 2), w, h])
+    b0, b1 = box(rect0), box(rect1)
+    out = []
+    for k in range(n):
+        u = k / max(n - 1, 1)
+        u = u * u * (3 - 2 * u)  # smoothstep
+        cx, cy, w, h = b0 + (b1 - b0) * u
+        sx = W / w
+        M = np.array([[sx, 0, W / 2 - cx * sx], [0, sx, H / 2 - cy * sx]], np.float32)
+        out.append(cv2.warpAffine(img, M, (W, H), flags=cv2.INTER_AREA, borderMode=cv2.BORDER_REFLECT))
+    return out
 
 
 def ease_out(t):
@@ -216,7 +244,11 @@ def main(cfg_path):
         bg = []
         for part in seg["background"]:
             n = int(round(part["dur"] * FPS)) if "dur" in part else nfr - len(bg)
-            fr = list(read_frames(P(part["file"]), part["start"], n / FPS + 0.05, W, H, part.get("speed", 1.0)))[:n]
+            if "image" in part:  # foto con zoom/panoramica
+                fr = ken_burns(P(part["image"]), n, part.get("from", [0, 0, 1, 1]), part.get("to", [0, 0, 1, 1]))
+            else:
+                fr = list(read_frames(P(part["file"]), part["start"], n / FPS + 0.05, W, H, part.get("speed", 1.0),
+                                     crop=part.get("crop")))[:n]
             if "letterbox" in part:
                 fr = bg_blur_fill(fr, part["letterbox"], part.get("strip_y"))
             bg += fr
