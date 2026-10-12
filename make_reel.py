@@ -294,9 +294,19 @@ def main(cfg_path):
         sp = read_frames(src, a, dur, W, H, speed, fit="cover")
         if seg.get("layout") == "hidden":  # busto mai visibile: niente scontorno
             alphas = [np.zeros(sp.shape[1:3], np.float32)] * len(sp)
-        else:
-            alphas = matter.run(sp)
-            sp = matter.clean
+        else:  # cache su disco: rifare un render per correzioni non rifà lo scontorno
+            import hashlib
+            key = hashlib.md5(f"{src}|{a}|{b}|{speed}|{type(matter).__name__}|{nfr}".encode()).hexdigest()[:16]
+            cpath = os.path.join(HERE, "out", "matte_cache", key + ".npz")
+            if os.path.exists(cpath):
+                z = np.load(cpath)
+                alphas = list(z["a"].astype(np.float32) / 255.0)
+                sp = z["f"]
+            else:
+                alphas = matter.run(sp)
+                sp = np.array(matter.clean)
+                os.makedirs(os.path.dirname(cpath), exist_ok=True)
+                np.savez(cpath, a=(np.array(alphas) * 255).astype(np.uint8), f=sp)
 
         # sfondo: lista di (file, start, dur_out) in sequenza
         bg = []
