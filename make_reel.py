@@ -307,6 +307,16 @@ def main(cfg_path):
             else:
                 fr = list(read_frames(P(part["file"]), part["start"], n / FPS + 0.05, W, H, part.get("speed", 1.0),
                                      crop=part.get("crop")))[:n]
+            if "zoom" in part:  # movimento di camera sullo sfondo: zoom dal centro (o da "zoom_center")
+                z0, z1 = part["zoom"]
+                cx, cy = part.get("zoom_center", [0.5, 0.5])
+                nz = len(fr)
+                for i in range(nz):
+                    u = i / max(nz - 1, 1)
+                    u = ease_out(u) if part.get("zoom_ease") == "punch" else u
+                    z = z0 + (z1 - z0) * u
+                    M = np.array([[z, 0, W * cx * (1 - z)], [0, z, H * cy * (1 - z)]], np.float32)
+                    fr[i] = cv2.warpAffine(fr[i], M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
             if "letterbox" in part:
                 fr = bg_blur_fill(fr, part["letterbox"], part.get("strip_y"))
             bg += fr

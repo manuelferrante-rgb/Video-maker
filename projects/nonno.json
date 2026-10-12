@@ -39,6 +39,12 @@
    "cy": 1440,
    "w": 800,
    "hidden": true
+  },
+  "big_s": {
+   "cx": 540,
+   "cy": 1150,
+   "w": 950,
+   "punch": 0.06
   }
  },
  "subs": {
@@ -77,7 +83,7 @@
      1.68
     ]
    ],
-   "layout": "big",
+   "layout": "big_s",
    "background": [
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
@@ -87,6 +93,10 @@
       0,
       0.73,
       0.7
+     ],
+     "zoom": [
+      1.0,
+      1.05
      ]
     }
    ]
@@ -119,7 +129,7 @@
      1.5
     ]
    ],
-   "layout": "mid_r",
+   "layout": "hidden",
    "background": [
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
@@ -129,6 +139,14 @@
       0,
       0.73,
       0.7
+     ],
+     "zoom": [
+      1.05,
+      1.1
+     ],
+     "zoom_center": [
+      0.5,
+      0.3
      ]
     }
    ]
@@ -178,12 +196,40 @@
     {
      "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
      "start": 2.4,
+     "dur": 0.75,
      "crop": [
       0.03,
       0,
       0.73,
       0.7
+     ],
+     "zoom": [
+      1.0,
+      1.04
+     ],
+     "zoom_center": [
+      0.5,
+      0.3
      ]
+    },
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+     "start": 3.15,
+     "crop": [
+      0.03,
+      0,
+      0.73,
+      0.7
+     ],
+     "zoom": [
+      1.04,
+      1.2
+     ],
+     "zoom_center": [
+      0.5,
+      0.25
+     ],
+     "zoom_ease": "punch"
     }
    ]
   },
@@ -255,6 +301,14 @@
       0,
       0.73,
       0.7
+     ],
+     "zoom": [
+      1.0,
+      1.08
+     ],
+     "zoom_center": [
+      0.5,
+      0.3
      ]
     }
    ]
@@ -294,7 +348,7 @@
     ],
     [
      1.5,
-     "big"
+     "big_s"
     ]
    ],
    "background": [
@@ -306,6 +360,10 @@
       0,
       0.73,
       0.7
+     ],
+     "zoom": [
+      1.08,
+      1.0
      ]
     }
    ]
@@ -315,7 +373,7 @@
   "output": "../out/cover_nonno.jpg",
   "background": {
    "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
-   "time": 3.7,
+   "time": 2.53,
    "src_size": [
     720,
     1280
@@ -331,7 +389,7 @@
   "face": {
    "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d6d6c8c5-IMG_8047.mov",
    "time": 0.9,
-   "cx": 300,
+   "cx": 790,
    "cy": 1385,
    "w": 600,
    "tilt": 0
@@ -340,7 +398,7 @@
    "NON DEVI",
    "FARE *SQUAT?"
   ],
-  "title_y": 800,
+  "title_y": 560,
   "line_gap": 150,
   "size": 140,
   "outline": 8,
