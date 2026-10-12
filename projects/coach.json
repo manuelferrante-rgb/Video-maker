@@ -389,31 +389,36 @@
  "cover": {
   "output": "../out/cover_coach.jpg",
   "background": {
-   "image": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/bc149950-image.jpg",
-   "rect": [
-    0.3,
-    0.1,
-    0.72,
-    0.42
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/40a8d805-IMG_6079.mov",
+   "time": 3.4,
+   "src_size": [
+    720,
+    1280
+   ],
+   "crop": [
+    0,
+    0,
+    720,
+    1280
    ],
    "dim": 0.92
   },
   "face": {
-   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/cfb7d59e-IMG_7962.mov",
-   "time": 1.4,
-   "cx": 330,
-   "cy": 1225,
-   "w": 770,
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/ff250d21-IMG_7948.mov",
+   "time": 1.2,
+   "cx": 780,
+   "cy": 1260,
+   "w": 720,
    "tilt": 0
   },
   "title": [
-   "DIVENTARE",
-   "*FORTI",
-   "*INSIEME"
+   "NESSUNO",
+   "DIVENTA FORTE",
+   "*DA *SOLO"
   ],
-  "title_y": 780,
-  "line_gap": 150,
-  "size": 140,
+  "title_y": 760,
+  "line_gap": 145,
+  "size": 135,
   "outline": 8,
   "shadow": 7
  }
