@@ -118,6 +118,43 @@ def ken_burns(path, n, rect0, rect1):
     return out
 
 
+class BiRefMatter:
+    """Scontorno di alta qualità (BiRefNet-portrait) per sfondi non uniformi (es. all'aperto).
+    Lento su CPU (~30 s/frame): calcola un frame ogni `stride` e interpola in mezzo."""
+
+    URL = "https://github.com/danielgatis/rembg/releases/download/v0.0.0/BiRefNet-portrait-epoch_150.onnx"
+
+    def __init__(self, model, stride=3):
+        if not os.path.exists(model):  # ~1 GB: scaricato solo quando serve
+            subprocess.run(["curl", "-fsSL", "--retry", "3", "-o", model, self.URL], check=True)
+        self.sess = ort.InferenceSession(model, providers=["CPUExecutionProvider"])
+        self.inp = self.sess.get_inputs()[0].name
+        self.stride = stride
+
+    def mask(self, bgr):
+        x = cv2.resize(cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB), (1024, 1024)).astype(np.float32) / 255.0
+        x = ((x - [0.485, 0.456, 0.406]) / [0.229, 0.224, 0.225]).transpose(2, 0, 1)[None].astype(np.float32)
+        o = self.sess.run(None, {self.inp: x})[0][0, 0]
+        o = 1 / (1 + np.exp(-np.clip(o, -30, 30)))
+        return cv2.resize(o, (bgr.shape[1], bgr.shape[0]), interpolation=cv2.INTER_LINEAR).astype(np.float32)
+
+    def run(self, frames):
+        n = len(frames)
+        keys = sorted(set(list(range(0, n, self.stride)) + [n - 1]))
+        km = {}
+        for i, k in enumerate(keys):
+            print(f"    birefnet {i + 1}/{len(keys)}", flush=True)
+            km[k] = self.mask(frames[k])
+        alphas = []
+        for j in range(n):
+            a = max(k for k in keys if k <= j)
+            b = min(k for k in keys if k >= j)
+            u = 0 if a == b else (j - a) / (b - a)
+            alphas.append(km[a] * (1 - u) + km[b] * u)
+        self.clean = list(frames)
+        return alphas
+
+
 def ease_out(t):
     return 1 - (1 - min(max(t, 0), 1)) ** 3
 
@@ -229,7 +266,10 @@ def main(cfg_path):
     out = P(cfg["output"])
     tmp = out + ".work"
     os.makedirs(tmp, exist_ok=True)
-    matter = Matter(P(cfg["matting_model"]))
+    if cfg.get("matting") == "birefnet":
+        matter = BiRefMatter(os.path.join(HERE, "models", "birefnet-portrait.onnx"), cfg.get("matting_stride", 3))
+    else:
+        matter = Matter(P(cfg["matting_model"]))
     bust = cfg["bust"]
     layouts = cfg["layouts"]
     keys = []
@@ -249,8 +289,11 @@ def main(cfg_path):
 
         # busto a piena risoluzione, poi posizionato con keyframe di layout
         sp = read_frames(src, a, dur, W, H, speed, fit="cover")
-        alphas = matter.run(sp)
-        sp = matter.clean
+        if seg.get("layout") == "hidden":  # busto mai visibile: niente scontorno
+            alphas = [np.zeros(sp.shape[1:3], np.float32)] * len(sp)
+        else:
+            alphas = matter.run(sp)
+            sp = matter.clean
 
         # sfondo: lista di (file, start, dur_out) in sequenza
         bg = []

@@ -1,0 +1,351 @@
+{
+ "output": "../out/reel_nonno.mp4",
+ "speed": 1.15,
+ "bust": {
+  "anchor": [
+   0.5,
+   0.48
+  ],
+  "sway": 7,
+  "bob": 5,
+  "tilt": 1.0,
+  "zoom": 0.04
+ },
+ "transition": 0.22,
+ "layouts": {
+  "big": {
+   "cx": 540,
+   "cy": 1020,
+   "w": 1250,
+   "punch": 0.06
+  },
+  "mid_c": {
+   "cx": 540,
+   "cy": 1440,
+   "w": 860
+  },
+  "mid_l": {
+   "cx": 330,
+   "cy": 1440,
+   "w": 800
+  },
+  "mid_r": {
+   "cx": 750,
+   "cy": 1440,
+   "w": 800
+  },
+  "hidden": {
+   "cx": 540,
+   "cy": 1440,
+   "w": 800,
+   "hidden": true
+  }
+ },
+ "subs": {
+  "font": "Anton",
+  "size": 74,
+  "outline": 5,
+  "shadow": 4,
+  "spacing": 1,
+  "highlight": "5CE1F6",
+  "margin_v": 520,
+  "max_words": 3,
+  "max_chars": 20
+ },
+ "segments": [
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/e8bae090-IMG_8046.mov",
+   "cut": [
+    0.92,
+    2.12
+   ],
+   "words": [
+    [
+     "NON",
+     0.95
+    ],
+    [
+     "DEVI",
+     1.1
+    ],
+    [
+     "|FARE",
+     1.4
+    ],
+    [
+     "SQUAT",
+     1.68
+    ]
+   ],
+   "layout": "big",
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+     "start": 0.0,
+     "crop": [
+      0.03,
+      0,
+      0.73,
+      0.7
+     ]
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/fb6b7b55-IMG_8048.mov",
+   "cut": [
+    0.65,
+    1.85
+   ],
+   "words": [
+    [
+     "QUANTE",
+     0.67
+    ],
+    [
+     "VOLTE",
+     0.9
+    ],
+    [
+     "|TE",
+     1.15
+    ],
+    [
+     "L'HANNO",
+     1.25
+    ],
+    [
+     "DETTO?",
+     1.5
+    ]
+   ],
+   "layout": "mid_r",
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+     "start": 1.04,
+     "crop": [
+      0.03,
+      0,
+      0.73,
+      0.7
+     ]
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/d6d6c8c5-IMG_8047.mov",
+   "cut": [
+    0.72,
+    2.32
+   ],
+   "words": [
+    [
+     "BEH",
+     0.75
+    ],
+    [
+     "DILLO",
+     0.9
+    ],
+    [
+     "|A",
+     1.1
+    ],
+    [
+     "MIO",
+     1.17
+    ],
+    [
+     "NONNO",
+     1.27
+    ],
+    [
+     "|DI",
+     1.52
+    ],
+    [
+     "85",
+     1.58
+    ],
+    [
+     "ANNI",
+     2.0
+    ]
+   ],
+   "layout": "hidden",
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+     "start": 2.4,
+     "crop": [
+      0.03,
+      0,
+      0.73,
+      0.7
+     ]
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/a677be1e-IMG_8049.mov",
+   "cut": [
+    0.85,
+    3.52
+   ],
+   "words": [
+    [
+     "SE",
+     0.85
+    ],
+    [
+     "È",
+     1.11
+    ],
+    [
+     "SERVITO",
+     1.25
+    ],
+    [
+     "|A",
+     1.71
+    ],
+    [
+     "LUI",
+     1.78
+    ],
+    [
+     "|PER",
+     1.98
+    ],
+    [
+     "RIPRENDERSI",
+     2.05
+    ],
+    [
+     "|DALL'OPERAZIONE",
+     2.45
+    ],
+    [
+     "|ALLE",
+     2.98
+    ],
+    [
+     "ANCHE",
+     3.2
+    ]
+   ],
+   "layout": [
+    [
+     0.85,
+     "mid_r"
+    ],
+    [
+     2.42,
+     "hidden"
+    ]
+   ],
+   "still_until": 2.4,
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+     "start": 5.6,
+     "crop": [
+      0.03,
+      0,
+      0.73,
+      0.7
+     ]
+    }
+   ]
+  },
+  {
+   "clip": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/f759af08-IMG_8050.mov",
+   "cut": [
+    0.55,
+    1.88
+   ],
+   "words": [
+    [
+     "IMMAGINA",
+     0.57
+    ],
+    [
+     "|I",
+     0.95
+    ],
+    [
+     "BENEFICI",
+     1.05
+    ],
+    [
+     "|PER",
+     1.55
+    ],
+    [
+     "TE",
+     1.7
+    ]
+   ],
+   "layout": [
+    [
+     0.55,
+     "mid_r"
+    ],
+    [
+     1.5,
+     "big"
+    ]
+   ],
+   "background": [
+    {
+     "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+     "start": 7.92,
+     "crop": [
+      0.03,
+      0,
+      0.73,
+      0.7
+     ]
+    }
+   ]
+  }
+ ],
+ "cover": {
+  "output": "../out/cover_nonno.jpg",
+  "background": {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+   "time": 3.7,
+   "src_size": [
+    720,
+    1280
+   ],
+   "crop": [
+    22,
+    0,
+    526,
+    896
+   ],
+   "dim": 0.92
+  },
+  "face": {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/e8bae090-IMG_8046.mov",
+   "time": 1.5,
+   "cx": 330,
+   "cy": 1225,
+   "w": 770,
+   "tilt": 0
+  },
+  "title": [
+   "NON DEVI",
+   "FARE *SQUAT?"
+  ],
+  "title_y": 800,
+  "line_gap": 150,
+  "size": 140,
+  "outline": 8,
+  "shadow": 7
+ },
+ "matting": "birefnet",
+ "matting_stride": 3
+}
