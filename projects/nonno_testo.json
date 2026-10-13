@@ -1,0 +1,168 @@
+{
+ "output": "../out/reel_nonno_testo.mp4",
+ "duration": 9.25,
+ "subs": {
+  "font": "Anton",
+  "size": 74,
+  "outline": 5,
+  "shadow": 4,
+  "spacing": 1,
+  "highlight": "5CE1F6",
+  "margin_v": 520,
+  "max_words": 3,
+  "max_chars": 20
+ },
+ "background": [
+  {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+   "start": 0.0,
+   "dur": 3.6,
+   "crop": [
+    0.03,
+    0,
+    0.73,
+    0.7
+   ],
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "zoom_center": [
+    0.45,
+    0.35
+   ]
+  },
+  {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+   "start": 3.6,
+   "dur": 0.5,
+   "crop": [
+    0.03,
+    0,
+    0.73,
+    0.7
+   ],
+   "zoom": [
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+   "start": 4.1,
+   "dur": 0.8,
+   "crop": [
+    0.03,
+    0,
+    0.73,
+    0.7
+   ],
+   "zoom": [
+    1.0,
+    1.22
+   ],
+   "zoom_center": [
+    0.45,
+    0.12
+   ],
+   "zoom_ease": "punch"
+  },
+  {
+   "file": "/root/.claude/uploads/ab7ff892-0872-5a6b-831d-a43713ffdb7a/41964a85-67e0d873f6364442bb0dfeb5a778b0a8.mov",
+   "start": 4.9,
+   "crop": [
+    0.03,
+    0,
+    0.73,
+    0.7
+   ],
+   "zoom": [
+    1.08,
+    1.0
+   ],
+   "zoom_center": [
+    0.45,
+    0.35
+   ]
+  }
+ ],
+ "beats": [
+  {
+   "t": [
+    0.0,
+    1.9
+   ],
+   "lines": [
+    "NON DEVI",
+    "FARE *SQUAT"
+   ],
+   "size": 84,
+   "y": 1150,
+   "punch": true
+  },
+  {
+   "t": [
+    1.9,
+    3.6
+   ],
+   "lines": [
+    "QUANTE VOLTE",
+    "TE L'HANNO *DETTO?"
+   ],
+   "size": 70,
+   "y": 1150
+  },
+  {
+   "t": [
+    3.6,
+    4.9
+   ],
+   "lines": [
+    "MIO NONNO",
+    "*85 ANNI"
+   ],
+   "size": 96,
+   "y": 1150,
+   "punch": true
+  },
+  {
+   "t": [
+    4.9,
+    6.1
+   ],
+   "lines": [
+    "LO SQUAT",
+    "LO HA AIUTATO",
+    "A *RIPRENDERSI"
+   ],
+   "size": 66,
+   "y": 1150
+  },
+  {
+   "t": [
+    6.1,
+    7.3
+   ],
+   "lines": [
+    "DALL'OPERAZIONE",
+    "ALLE *ANCHE"
+   ],
+   "size": 70,
+   "y": 1150
+  },
+  {
+   "t": [
+    7.3,
+    9.25
+   ],
+   "lines": [
+    "IMMAGINA",
+    "COSA PUÒ FARE",
+    "PER *TE"
+   ],
+   "size": 76,
+   "y": 1150,
+   "punch": true
+  }
+ ]
+}
