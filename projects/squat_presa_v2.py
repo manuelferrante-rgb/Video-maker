@@ -29,6 +29,9 @@ KEY = {"SQUAT", "LARGHEZZA", "PRESA", "STRETTA", "COMPATTA", "MOBILITÀ", "SPALL
        "SALDO", "TENSIONI"}
 BIG = {1}  # segmento "GUARDA I GOMITI": tutto evidenziato e più grande
 
+# durata di ogni segmento = numero intero di frame, così i tempi calcolati coincidono col video
+SEGS = [(s, s + round((e - s) * FPS) / FPS, *rest) for s, e, *rest in SEGS]
+
 starts, t = [], 0.0
 for s, e, *_ in SEGS:
     starts.append(t)
@@ -69,7 +72,8 @@ lst = []
 for i, (s, e, z, _) in enumerate(SEGS):
     cw, ch = int(W / z) // 2 * 2, int(H / z) // 2 * 2
     d = e - s
-    run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s:.3f}", "-i", P, "-t", f"{d:.3f}", "-vf",
+    run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s:.3f}", "-i", P, "-t", f"{d:.4f}", "-frames:v",
+         str(round(d * FPS)), "-vf",
          f"scale={W}:{H},crop={cw}:{ch}:(iw-{cw})/2:(ih-{ch})*0.25,scale={W}:{H}:flags=lanczos,{GRADE_AROLL},"
          f"setsar=1,fps={FPS}",
          "-af", f"afade=t=in:d=0.015,afade=t=out:st={d - 0.03:.3f}:d=0.03", "-c:v", "libx264", "-crf", "14",
@@ -84,13 +88,13 @@ run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{OUT}/
 
 # 2) B-roll
 # Elia: gomiti alti. Movimento reale rallentato (0.8x) solo nel tratto fermo, poi fermo immagine per l'analisi.
-EL_T0, EL_T1 = starts[2], seg_end(2)
+EL_T0, EL_T1 = starts[2], seg_end(2) + 1.5 / FPS
 # Mani sulla presa, poi entrata sotto il bilanciere
 HA_T0, HA_T1 = starts[3], word_t(3, "RENDE")
-BI_T0, BI_T1 = HA_T1, seg_end(3)
+BI_T0, BI_T1 = HA_T1, seg_end(3) + 1.5 / FPS  # un frame oltre il taglio: niente coda di A-roll
 FR_T0, FR_T1 = word_t(6, "TIENE"), word_t(6, "SENZA")
 BROLL = [  # inizio, fine, file, inizio sorgente, velocità, filtro extra
-    (0.0, seg_end(0), "ultimarep.mov", 0.35, 1.0, None),
+    (0.0, seg_end(0) + 1.5 / FPS, "ultimarep.mov", 0.35, 1.0, None),
     (EL_T0, EL_T1, "GomitialtiElia.mov", 0.0, 0.8, "elia"),
     (HA_T0, HA_T1, "Sistemazionepresamani.mov", 0.45, 1.0, None),
     (BI_T0, BI_T1, "Sistemazionebilanciere.mov", 0.0, 0.85, None),
@@ -107,12 +111,15 @@ def is_hlg(f):
     return "arib-std-b67" in o
 
 
+# allinea i B-roll alla griglia dei frame (niente buchi tra un taglio e l'altro)
+import math
+BROLL = [(round(t0 * FPS) / FPS, round(t1 * FPS) / FPS, *r) for t0, t1, *r in BROLL]
 for k, (t0, t1, f, ss, sp, extra) in enumerate(BROLL):
     nfr = int(round((t1 - t0) * FPS))
     vf = []
     if extra == "elia":
         play = EL_PLAY / sp
-        z = f"min(1+({EL_ZOOM}-1)*(1-pow(1-on/{EL_ZOOM_FR},3)),{EL_ZOOM})"
+        z = f"min(1.1+({EL_ZOOM}-1.1)*(1-pow(1-on/{EL_ZOOM_FR},3)),{EL_ZOOM})"
         p = f"(zoom-1)/({EL_ZOOM}-1)"
         vf += [GRADE_ELIA, f"trim=0:{EL_PLAY}", f"setpts=PTS/{sp}", f"fps={FPS}",
                f"tpad=stop_mode=clone:stop_duration={max(t1 - t0 - play, 0) + 0.2:.3f}",
@@ -162,6 +169,8 @@ for j, pg in enumerate(pages):
         ev.append(f"Dialogue: 0,{ass_t(st)},{ass_t(seg_end(seg))},Main,,0,0,0,,{pop}{{\\c{YELLOW}}}{txt}")
         continue
     words = [f"{{\\c{YELLOW if w in KEY else '&H00FFFFFF&'}}}{w.rstrip(',.?')}" for w, *_ in pg]
+    if len(" ".join(w for w, *_ in pg)) > 17 and len(words) == 3:
+        words[1] += "\\N"
     pop = r"{\fscx108\fscy108\t(0,100,\fscx100\fscy100)}"
     ev.append(f"Dialogue: 0,{ass_t(st)},{ass_t(en)},Main,,0,0,0,,{pop}{' '.join(words)}")
 
@@ -207,7 +216,7 @@ ass = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
 PlayResY: {H}
-WrapStyle: 0
+WrapStyle: 2
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -224,7 +233,7 @@ fc, last = [], "[0:v]"
 for k, (t0, t1, *_r) in enumerate(BROLL):
     inputs += ["-i", f"{OUT}/b{k}.mp4"]
     fc.append(f"[{k + 1}:v]setpts=PTS-STARTPTS+{t0:.4f}/TB[bb{k}]")
-    fc.append(f"{last}[bb{k}]overlay=eof_action=pass:enable='between(t,{t0:.4f},{t1 - 0.001:.4f})'[o{k}]")
+    fc.append(f"{last}[bb{k}]overlay=eof_action=pass:enable='between(t,{t0 - 0.004:.4f},{t1 - 0.02:.4f})'[o{k}]")
     last = f"[o{k}]"
 fc.append(f"{last}ass={OUT}/subs.ass,format=yuv420p[vf]")
 run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(fc), "-map", "[vf]", "-map", "0:a",
