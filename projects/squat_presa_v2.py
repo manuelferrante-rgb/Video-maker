@@ -52,12 +52,12 @@ def seg_end(i):
 
 
 # Colore: correzioni leggere e uguali per tutti (alte luci recuperate, niente look "HDR")
-HL = "curves=all='0/0 0.6/0.6 0.85/0.82 1/0.95'"
-GRADE_AROLL = f"{HL},colorbalance=rm=-0.02:gm=0.015:bm=0.01:rh=-0.02:gh=0.01,eq=saturation=0.97"
+# neutro: niente curve né desaturazione (la v2 con le alte luci compresse sembrava opaca)
+GRADE_AROLL = "colorbalance=rm=-0.015:gm=0.01:rh=-0.01"
 TONEMAP = ("zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,tonemap=mobius:param=0.3:desat=0,"
            "zscale=t=bt709:m=bt709:r=tv,format=yuv420p")
-GRADE_GYM = f"{HL},colorbalance=rm=-0.03:bm=-0.02:rh=-0.02:bh=-0.02,eq=saturation=1.05:contrast=1.02"
-GRADE_ELIA = "eq=brightness=0.05:contrast=1.06:saturation=0.75,colorbalance=rs=0.05:bs=-0.08:rm=0.04:bm=-0.06"
+GRADE_GYM = "colorbalance=rm=-0.02:rh=-0.01"
+GRADE_ELIA = "eq=brightness=0.03:saturation=0.88,colorbalance=rs=0.04:bs=-0.06:rm=0.03:bm=-0.05"
 
 
 def run(cmd):
@@ -193,6 +193,16 @@ ev.append(f"Dialogue: 2,{ass_t(g0 + 0.15)},{ass_t(EL_T1)},Main,,0,0,0,,{{\\an4\\
 ev.append(f"Dialogue: 2,{ass_t(HA_T0 + 0.1)},{ass_t(HA_T1)},Main,,0,0,0,,{{\\an7\\pos(455,560)\\3c{RED}{OUTLINE}"
           f"\\alpha&HFF&\\t(0,180,\\alpha&H00&\\1a&HFF&)\\p1}}{rrect(540, 210, 40)}")
 
+# "allargala": linea tra le mani che si allarga seguendo il gesto (mani: sorgente 55.45 -> 55.95)
+la0, la1 = out_t(5, 55.42), out_t(5, 55.92)
+lend = seg_end(5)
+dur_ms = int((la1 - la0) * 1000)
+ev.append(f"Dialogue: 2,{ass_t(la0)},{ass_t(lend)},Main,,0,0,0,,{{\\an5\\move(600,1320,540,1225,0,{dur_ms})"
+          f"\\1c{YELLOW}\\bord0\\shad2\\4c&H000000&\\fscx8\\t(0,{dur_ms},\\fscx100)\\p1}}m 0 0 l 940 0 l 940 9 l 0 9")
+for x0, x1 in ((600 - 40, 540 - 470), (600 + 40, 540 + 470)):
+    ev.append(f"Dialogue: 2,{ass_t(la0)},{ass_t(lend)},Main,,0,0,0,,{{\\an5\\move({x0},1320,{x1},1225,0,{dur_ms})"
+              f"\\1c{YELLOW}\\bord0\\shad2\\4c&H000000&\\p1}}m 0 0 l 10 0 l 10 64 l 0 64")
+
 ass = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -220,7 +230,7 @@ fc.append(f"{last}ass={OUT}/subs.ass,format=yuv420p[vf]")
 run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", ";".join(fc), "-map", "[vf]", "-map", "0:a",
      "-c:v", "libx264", "-crf", "16", "-preset", "slow", "-profile:v", "high", "-pix_fmt", "yuv420p",
      "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-t", f"{TOTAL:.3f}",
-     f"{OUT}/reel_squat_presa_v2.mp4"])
+     f"{OUT}/reel_squat_presa_v3.mp4"])
 print("TOTAL", round(TOTAL, 2))
 for k, b in enumerate(BROLL):
     print("broll", k, b[2], round(b[0], 2), round(b[1], 2))
