@@ -233,7 +233,7 @@ def card1(fr, t):
 
 
 render_card("card1", C1_T1 - C1_T0, card1)
-SFX += [(C1_T0 - 0.08, "whoosh", 0.35), (C1_T0 + C1_X, "hit", 0.5), (C1_T1 - 0.2, "swoosh", 0.3)]
+SFX += [(C1_T0 - 0.08, "whoosh", 0.32), (C1_T0 + C1_X, "hit", 0.45)]
 
 # card 2: contatore "+1000 TECNICISMI" barrato su "non servono mille tecnicismi"
 C2_T0 = starts[6]
@@ -254,7 +254,7 @@ def card2(fr, t):
     bd.rounded_rectangle([0, 0, bw - 1, bh - 1], radius=26, fill=(8, 18, 32, 255), outline=NAVY + (255,), width=4)
     x = (t - C2_CNT[0]) / max(C2_CNT[1] - C2_CNT[0], 0.1)
     val = int(round(1000 * ease_out(x))) if x > 0 else 0
-    txt = f"+{val:,}".replace(",", ".")
+    txt = f"{val}"
     f = font(180)
     l, tt, r, b = f.getbbox(txt)
     bd.text(((bw - (r - l)) / 2 - l, (bh - (b - tt)) / 2 - tt + 20), txt, font=f, fill=IVORY + (255,))
@@ -267,11 +267,11 @@ def card2(fr, t):
 
 
 render_card("card2", C2_T1 - C2_T0, card2)
-SFX += [(C2_T0 - 0.06, "whoosh", 0.35), (C2_T0 + C2_X, "hit", 0.5), (C2_T1 - 0.2, "swoosh", 0.3)]
+SFX += [(C2_T0 - 0.06, "whoosh", 0.32), (C2_T0 + C2_X, "hit", 0.45)]
 # tick del contatore
 tt_ = C2_CNT[0]
 while tt_ < C2_CNT[1]:
-    SFX.append((C2_T0 + tt_, "tick", 0.25))
+    pass
     tt_ += 0.07 + 0.25 * ((tt_ - C2_CNT[0]) / (C2_CNT[1] - C2_CNT[0])) ** 2
 
 CARDS = [(C1_T0, C1_T1, "card1"), (C2_T0, C2_T1, "card2")]
@@ -308,7 +308,7 @@ for j, pg in enumerate(pages):
     ev.append(f"Dialogue: 5,{ass_t(st)},{ass_t(en)},Sub,,0,0,0,,{{\\fad(60,0)}}{' '.join(words)}")
 
 
-def label(t0, t1, txt, y, box=BLACK_A, fg=WHITE_A, size=90, sfx=True, rot=0):
+def label(t0, t1, txt, y, box=BLACK_A, fg=WHITE_A, size=90, sfx=False, rot=0):
     pop = rf"{{\an8\pos(540,{y})\frz{rot}\3c{box}\c{fg}\fs{size}\fscx0\fscy0\t(0,90,\fscx112\fscy112)\t(90,170,\fscx100\fscy100)}}"
     ev.append(f"Dialogue: 4,{ass_t(t0)},{ass_t(t1)},Lab,,0,0,0,,{pop}{txt}")
     if sfx:
@@ -316,28 +316,25 @@ def label(t0, t1, txt, y, box=BLACK_A, fg=WHITE_A, size=90, sfx=True, rot=0):
 
 
 # hook
-label(0.02, word_t(0, "ATTIVA"), "SE TI DICO...", 300, size=100)
 label(word_t(0, "ATTIVA"), C1_T0, "ATTIVA", 290, size=110)
-label(word_t(0, "DORSALE,"), C1_T0, "IL DORSALE?", 430, box=ORANGE_A, size=110)
-SFX.append((0.0, "hit", 0.35))
+label(word_t(0, "DORSALE,"), C1_T0, "IL DORSALE", 430, box=ORANGE_A, size=110)
 # nelle trazioni pensa solo una cosa
-label(starts[1] + 0.05, seg_end(1), "NELLE TRAZIONI", 240)
-label(word_t(1, "PENSA"), seg_end(1), "PENSA SOLO", 350)
-label(word_t(1, "UNA"), seg_end(1), "UNA COSA", 465, box=ORANGE_A, size=110)
+label(starts[1] + 0.05, seg_end(1), "NELLE TRAZIONI", 270)
+label(word_t(1, "PENSA"), seg_end(1), "PENSA SOLO", 380)
+label(word_t(1, "UNA"), seg_end(1), "UNA COSA", 490, box=ORANGE_A, size=110)
 # tira giù la sbarra (trazione reale) + frecce che scendono
 TIRA = word_t(2, "TIRA")
-label(TIRA, seg_end(2), "TIRA GIÙ", 290, box=ORANGE_A, size=120, sfx=False)
-label(word_t(2, "LA"), seg_end(2), "LA SBARRA", 450, size=100)
-SFX += [(TIRA - 0.05, "swoosh", 0.3), (TIRA, "hit", 0.45)]
+label(TIRA, seg_end(2), "TIRA GIÙ", 900, box=ORANGE_A, size=120)
+label(word_t(2, "LA"), seg_end(2), "LA SBARRA", 1050, size=100)
+SFX += [(TIRA - 0.05, "swoosh", 0.3)]
 chev = "m 0 0 l 40 40 l 80 0 l 80 22 l 40 62 l 0 22"
 for side_x in (110, 890):
     for k in range(3):
-        y = 760 + k * 70
+        y = 700 + k * 70
         t0 = TIRA + 0.1 + k * 0.12
         ev.append(f"Dialogue: 4,{ass_t(t0)},{ass_t(seg_end(2))},Shp,,0,0,0,,{{\\an7\\pos({side_x},{y})\\1c{ORANGE_A}"
                   f"\\bord3\\3c{BLACK_A}\\shad0\\alpha&HFF&\\t(0,120,\\alpha&H00&)\\p1}}{chev}")
 # quel movimento -> stacco
-SFX.append((starts[3], "swoosh", 0.25))
 # depressione scapolare: cerchio e dorsale che seguono il corpo (come v1, in rosso sottile)
 
 
@@ -393,28 +390,28 @@ tracked(dep_b0 + 0.25, dor_t, 612, 810, OUT_L + r"|\alpha&HFF&\t(0,160,\alpha&H0
 tracked(dor_t, seg_end(5), 400, 950, OUT_L + r"|\alpha&HFF&\t(0,160,\alpha&H00&\1a&HFF&)", ellipse(75, 165))
 tracked(dor_t, seg_end(5), 400, 950, rf"\1c{RED}\1a&HD8&\bord0\shad0\blur12|\alpha&HFF&\t(0,200,\alpha&H00&\1a&HD8&)",
         ellipse(66, 156), layer=1)
-label(sc_t, dor_t, "DEPRESSIONE", 250, box=ORANGE_A, size=84, sfx=False)
-label(sc_t + 0.12, dor_t, "SCAPOLARE", 370, size=84, sfx=False)
-label(dor_t, seg_end(5), "DORSALE", 250, box=ORANGE_A, size=96, sfx=False)
-SFX += [(dep_b0 - 0.05, "swoosh", 0.3), (sc_t, "ding", 0.22), (dor_t, "pop", 0.3)]
+label(sc_t, dor_t, "DEPRESSIONE", 280, box=ORANGE_A, size=84, sfx=False)
+label(sc_t + 0.12, dor_t, "SCAPOLARE", 400, size=84, sfx=False)
+label(dor_t, seg_end(5), "DORSALE", 280, box=ORANGE_A, size=96, sfx=False)
+SFX += [(sc_t, "ding", 0.2)]
 
 # ma capire quello che si sta facendo: trazione completa + etichetta con spunta
 CAP = word_t(6, "CAPIRE")
-label(CAP, seg_end(6), "CAPIRE", 290, box=ORANGE_A, size=120, sfx=False)
+label(CAP, seg_end(6), "CAPIRE", 300, box=ORANGE_A, size=120, sfx=False)
 check = "m 0 34 l 22 12 l 46 36 l 98 0 l 118 22 l 46 78"
-ev.append(f"Dialogue: 4,{ass_t(CAP + 0.15)},{ass_t(seg_end(6))},Shp,,0,0,0,,{{\\an7\\pos(810,318)\\1c{WHITE_A}"
+ev.append(f"Dialogue: 4,{ass_t(CAP + 0.15)},{ass_t(seg_end(6))},Shp,,0,0,0,,{{\\an7\\pos(800,330)\\1c{WHITE_A}"
           f"\\bord4\\3c{BLACK_A}\\shad0\\fscx0\\fscy0\\t(0,120,\\fscx110\\fscy110)\\t(120,180,\\fscx100\\fscy100)\\p1}}{check}")
-SFX += [(C2_T1 - 0.02, "swoosh", 0.2), (CAP + 0.15, "ding", 0.22)]
+SFX += [(CAP + 0.1, "pop", 0.3)]
 
-# chiusura: pulsante "SEGUIMI" con cursore che clicca
+# chiusura: pulsante "SEGUIMI" con cursore che clicca (CTA)
 B0 = starts[7] + 0.1
-CLK = B0 + 0.55
-ev.append(f"Dialogue: 4,{ass_t(B0)},{ass_t(TOTAL)},Btn,,0,0,0,,{{\\an8\\pos(540,300)\\fscx0\\fscy0"
+CLK = B0 + 0.6
+ck = int((CLK - B0) * 1000)
+ev.append(f"Dialogue: 4,{ass_t(B0)},{ass_t(TOTAL)},Btn,,0,0,0,,{{\\an8\\pos(540,320)\\fscx0\\fscy0"
           f"\\t(0,100,\\fscx112\\fscy112)\\t(100,180,\\fscx100\\fscy100)"
-          f"\\t({int((CLK - B0) * 1000)},{int((CLK - B0) * 1000) + 80},\\fscx92\\fscy92)"
-          f"\\t({int((CLK - B0) * 1000) + 80},{int((CLK - B0) * 1000) + 180},\\fscx100\\fscy100)}}  SEGUIMI  ")
+          f"\\t({ck},{ck + 80},\\fscx92\\fscy92)\\t({ck + 80},{ck + 180},\\fscx100\\fscy100)}}  SEGUIMI  ")
 cursor = "m 0 0 l 0 105 l 27 81 l 45 123 l 63 114 l 45 75 l 81 75"
-ev.append(f"Dialogue: 6,{ass_t(B0 + 0.15)},{ass_t(TOTAL)},Shp,,0,0,0,,{{\\an7\\move(800,600,640,370,0,{int((CLK - B0 - 0.15) * 1000)})"
+ev.append(f"Dialogue: 6,{ass_t(B0 + 0.15)},{ass_t(TOTAL)},Shp,,0,0,0,,{{\\an7\\move(800,620,640,390,0,{ck - 150})"
           f"\\1c{WHITE_A}\\bord4\\3c{BLACK_A}\\shad0\\p1}}{cursor}")
 SFX += [(B0, "pop", 0.3), (CLK, "click", 0.5)]
 
