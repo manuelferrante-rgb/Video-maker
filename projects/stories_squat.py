@@ -162,14 +162,15 @@ save(im, "storia_3_spiegazione")
 
 # 5) CTA con link
 im = background(f"{D}/f_man_63.5.png", crop_y=0.2, dark=0.40, zoom=1.0, cx=0.5)
-y = label(im, "VUOI CHE TI SEGUA", 300, 92)
-y = label(im, "ANCHE TU?", y + 6, 118, box=ORANGE)
-y = text_block(im, ["Programmazione e correzione", "della tecnica, costruite su di te."], y + 46, 50, hl={"TECNICA,"})
+y = label(im, "MANDAMI IL TUO", 300, 96)
+y = label(im, "SQUAT", y + 6, 124, box=ORANGE)
+y = text_block(im, ["Compila il form al link qui sotto:", "ti contatto io e mi mandi il video", "della tua alzata da analizzare."],
+               y + 46, 48, hl={"FORM", "VIDEO", "ANALIZZARE."})
 # zona link: frecce ai lati che puntano al centro + scritta
 zy = 1260
 d = ImageDraw.Draw(im)
 ft = f(FB, 60)
-txt = "CLICCA IL LINK"
+txt = "COMPILA IL FORM"
 d.text(((W - ft.getlength(txt)) / 2, zy - 190), txt, font=ft, fill=(255, 255, 255))
 chevrons_down(im, W / 2, zy - 100, n=3, size=40)
 for side in (-1, 1):  # frecce laterali verso lo sticker
