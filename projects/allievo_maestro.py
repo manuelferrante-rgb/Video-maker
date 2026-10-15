@@ -10,13 +10,14 @@ SFXD = "/home/user/Video-maker/sfx"
 os.makedirs(OUT, exist_ok=True)
 W, H, FPS = 1080, 1920, 30
 
-# pezzi: (inizio sorgente, durata sorgente, velocità, crop (cx, cy, zoom), fermo immagine finale in s)
+# pezzi: (inizio sorgente, durata sorgente, velocità, crop iniziale (cx, cy, zoom), crop finale, fermo finale in s)
+# il crop si sposta durante il pezzo per seguire il gesto (zoom leggero)
 CUTS = [
-    (72.6, 2.2, 1.0, (420, 820, 1.45), 0.0),   # io: trazione con 15 kg
-    (141.4, 1.6, 1.0, (540, 980, 1.25), 0.0),  # arriva lui e si mette la zavorra (io guardo)
-    (145.2, 0.9, 1.0, (480, 760, 1.4), 0.0),   # prende la sbarra "per scaldarsi"
-    (151.0, 3.9, 1.15, (480, 640, 1.45), 0.5),  # muscle up con 15 kg, fermo in cima
-    (159.6, 1.4, 1.0, (540, 1100, 1.15), 0.0),  # la mia faccia
+    (72.8, 1.8, 1.0, (430, 930, 1.12), (430, 780, 1.18), 0.0),    # io: trazione con 15 kg
+    (141.6, 1.3, 1.0, (540, 980, 1.1), (540, 980, 1.1), 0.0),     # arriva lui e si mette la zavorra
+    (145.3, 0.7, 1.0, (500, 860, 1.12), (500, 860, 1.12), 0.0),   # prende la sbarra "per scaldarsi"
+    (151.0, 3.9, 1.2, (500, 900, 1.1), (490, 700, 1.22), 0.3),    # muscle up con 15 kg, fermo in cima
+    (159.7, 0.65, 1.0, (540, 1300, 1.15), (540, 1300, 1.15), 0.0),  # io che rido
 ]
 
 
@@ -25,14 +26,18 @@ def run(cmd):
 
 
 lst, starts, t = [], [], 0.0
-for i, (ss, d, sp, (cx, cy, z), fz) in enumerate(CUTS):
-    cw, ch = int(W / z) // 2 * 2, int(H / z) // 2 * 2
-    x0 = int(min(max(cx - cw / 2, 0), W - cw))
-    y0 = int(min(max(cy - ch / 2, 0), H - ch))
+for i, (ss, d, sp, c0, c1, fz) in enumerate(CUTS):
     out_d = d / sp + fz
     nfr = round(out_d * FPS)
-    vf = (f"setpts=PTS/{sp},fps={FPS},crop={cw}:{ch}:{x0}:{y0},scale={W}:{H}:flags=lanczos,setsar=1"
-          + (f",tpad=stop_mode=clone:stop_duration={fz}" if fz else ""))
+    nmove = max(round(d / sp * FPS) - 1, 1)
+    p = f"min(on/{nmove},1)"
+    ez = f"({p})*({p})*(3-2*({p}))"  # smoothstep
+    z = f"({c0[2]}+({c1[2]}-{c0[2]})*{ez})"
+    cx = f"2*({c0[0]}+({c1[0]}-{c0[0]})*{ez})"
+    cy = f"2*({c0[1]}+({c1[1]}-{c0[1]})*{ez})"
+    vf = (f"setpts=PTS/{sp},fps={FPS}" + (f",tpad=stop_mode=clone:stop_duration={fz}" if fz else "")
+          + f",scale={W * 2}:{H * 2}:flags=lanczos,zoompan=z='{z}':x='max(0,min(iw-iw/zoom,{cx}-iw/zoom/2))'"
+          f":y='max(0,min(ih-ih/zoom,{cy}-ih/zoom/2))':d=1:s={W}x{H}:fps={FPS},setsar=1")
     af = f"atempo={sp},afade=t=in:d=0.03,afade=t=out:st={d / sp - 0.05:.3f}:d=0.05" + (f",apad=pad_dur={fz}" if fz else "")
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ss}", "-t", f"{d}", "-i", SRC, "-vf", vf, "-af", af,
          "-frames:v", str(nfr), "-c:v", "libx264", "-crf", "15", "-preset", "fast", "-pix_fmt", "yuv420p",
@@ -67,19 +72,16 @@ s1, s2, s3, s4, s5 = starts
 top = s4 + CUTS[3][1] / CUTS[3][2]  # inizio del fermo in cima al muscle up
 # 1) io
 label(0.05, s2, "IO:", 1150, size=110, sfx=("pop", 0.3))
-label(0.35, s2, "TRAZIONI CON 15 KG", 1280, box=ORANGE, size=84, sfx=("pop", 0.25))
-label(1.2, s2, "TUTTO FIERO", 1400, size=64, rot=-3)
+label(0.3, s2, "TRAZIONI CON 15 KG", 1280, box=ORANGE, size=84, sfx=("pop", 0.25))
 # 2) arriva lui
 label(s2, s4, "POI ARRIVA LUI...", 1340, size=92, sfx=("swoosh", 0.3))
 label(s3 + 0.05, s4, "E SI SCALDA CON 15 KG", 1470, box=ORANGE, size=76, sfx=("pop", 0.25))
-# 3) muscle up
-label(s4 + 0.1, s5, "DI MUSCLE UP", 1150, box=ORANGE, size=110, sfx=("whoosh", 0.3))
-SFX.append((top, "hit", 0.5))
-label(top, s5, "BUONGIORNO", 1300, size=92, rot=-4)
-# 4) io dopo
-label(s5, TOTAL, "L'ALLIEVO", 300, size=104, sfx=("ding", 0.25))
-label(s5 + 0.35, TOTAL, "HA SUPERATO IL MAESTRO", 420, box=ORANGE, size=74, sfx=("pop", 0.25))
-
+# 3) muscle up + battuta subito (prima che si scrolli)
+label(s4 + 0.05, TOTAL, "DI MUSCLE UP", 1040, box=ORANGE, size=104, sfx=("whoosh", 0.3))
+JOKE = s4 + 0.4
+label(JOKE, TOTAL, "ALMENO L'HO", 1190, size=84, sfx=("pop", 0.28))
+label(JOKE + 0.15, TOTAL, "ALLENATO BENE", 1310, size=84)
+SFX.append((top, "hit", 0.45))
 ass = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -107,8 +109,20 @@ with wave.open(f"{OUT}/sfx.wav", "wb") as wv:
     wv.setnchannels(2); wv.setsampwidth(2); wv.setframerate(sr)
     wv.writeframes((np.clip(mix, -1, 1) * 32767).astype(np.int16).tobytes())
 
-run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/base.mp4", "-i", f"{OUT}/sfx.wav", "-filter_complex",
-     f"[0:v]ass={OUT}/subs.ass,format=yuv420p[v];[0:a][1:a]amix=inputs=2:normalize=0:duration=first,"
+# emoji 😂 accanto a "ALLENATO BENE" (libass non disegna emoji a colori: PNG da Noto Color Emoji)
+from PIL import Image, ImageDraw, ImageFont
+fe = ImageFont.truetype("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf", 109)
+em = Image.new("RGBA", (140, 140))
+ImageDraw.Draw(em).text((10, 10), "😂", font=fe, embedded_color=True)
+em = em.crop(em.getbbox()).resize((96, 86), Image.LANCZOS)
+em.save(f"{OUT}/emoji.png")
+lw = ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-BlackItalic.otf", 84).getlength("ALLENATO BENE")
+EX, EY = int(540 + lw / 2 + 34), 1314
+E0 = JOKE + 0.25
+run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/base.mp4", "-i", f"{OUT}/sfx.wav", "-loop", "1", "-i",
+     f"{OUT}/emoji.png", "-filter_complex",
+     f"[0:v]ass={OUT}/subs.ass[s];[2:v]format=rgba,fade=t=in:st={E0:.3f}:d=0.12:alpha=1[e];"
+     f"[s][e]overlay={EX}:{EY}:shortest=1:enable='gte(t,{E0:.3f})',format=yuv420p[v];[0:a][1:a]amix=inputs=2:normalize=0:duration=first,"
      f"alimiter=limit=0.95[a]", "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "16", "-preset", "slow",
      "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-t", f"{TOTAL:.3f}",
      f"{OUT}/reel_allievo_maestro.mp4"])
