@@ -64,27 +64,28 @@ ev, SFX = [], []
 
 
 def label(t0, t1, txt, y, box=BLACK, size=96, rot=0, sfx=None):
-    ev.append(f"Dialogue: 4,{ass_t(t0)},{ass_t(t1)},Lab,,0,0,0,,{{\\an8\\pos(540,{y})\\frz{rot}\\3c{box}\\fs{size}"
-              f"\\fscx0\\fscy0\\t(0,90,\\fscx114\\fscy114)\\t(90,170,\\fscx100\\fscy100)}}{txt}")
+    """entrata morbida (dissolvenza + piccola salita) e poi ferma, per leggere bene."""
+    ev.append(f"Dialogue: 4,{ass_t(t0)},{ass_t(t1)},Lab,,0,0,0,,{{\\an8\\move(540,{y + 24},540,{y},0,220)\\fad(200,120)"
+              f"\\frz{rot}\\3c{box}\\fs{size}}}{txt}")
     if sfx:
         SFX.append((t0, sfx[0], sfx[1]))
 
 
 c0, c1, c2, c3, c4, c5, c6 = starts
 OVER_BAR = c4 + (153.6 - CUTS[4][0]) / CUTS[4][2]  # quando supera la sbarra
-# 1) io
-label(0.05, c1, "IO:", 1150, size=110, sfx=("pop", 0.3))
-label(0.3, c1, "TRAZIONI CON 15 KG", 1280, box=ORANGE, size=84, sfx=("pop", 0.25))
-# 2) arriva lui (mini tagli)
-label(c1, c3, "POI ARRIVA LUI...", 1340, size=92, sfx=("swoosh", 0.3))
-SFX.append((c2, "swoosh", 0.18))
-label(c3, OVER_BAR, "E SI SCALDA CON 15 KG", 1340, box=ORANGE, size=76, sfx=("swoosh", 0.22))
-# 3) supera la sbarra
-label(OVER_BAR, c6, "DI MUSCLE UP", 1040, box=ORANGE, size=110, sfx=("hit", 0.45))
+# testi pochi e fermi: si costruisce una frase che resta leggibile
+# 1) io (hook: entra subito, tutto insieme)
+label(0.0, c1, "IO:", 1330, size=100)
+label(0.0, c1, "TRAZIONI CON 15 KG", 1450, box=ORANGE, size=84)
+# 2-3) lui: in alto mentre si prepara (la mia testa è in basso), poi "DI MUSCLE UP" in basso quando lui sale
+label(c1, OVER_BAR, "POI ARRIVA LUI", 300, size=92)
+label(c1, OVER_BAR, "E SI SCALDA CON 15 KG", 425, box=ORANGE, size=80)
+label(OVER_BAR, c6, "DI MUSCLE UP", 1470, box=ORANGE, size=96, sfx=("hit", 0.4))
 # 4) io che arrivo ridendo
 JOKE = c6
-label(JOKE, TOTAL, "ALMENO L'HO", 300, size=96, sfx=("pop", 0.3))
-label(JOKE + 0.12, TOTAL, "ALLENATO BENE", 425, box=ORANGE, size=96)
+label(JOKE, TOTAL, "ALMENO L'HO", 300, size=96)
+label(JOKE, TOTAL, "ALLENATO BENE", 425, box=ORANGE, size=96)
+SFX.append((JOKE, "pop", 0.25))
 ass = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -121,7 +122,7 @@ em = em.crop(em.getbbox()).resize((96, 86), Image.LANCZOS)
 em.save(f"{OUT}/emoji.png")
 lw = ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-BlackItalic.otf", 96).getlength("ALLENATO BENE")
 EX, EY = int(540 + lw / 2 + 36), 438
-E0 = JOKE + 0.2
+E0 = JOKE + 0.05
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/base.mp4", "-i", f"{OUT}/sfx.wav", "-loop", "1", "-i",
      f"{OUT}/emoji.png", "-filter_complex",
      f"[0:v]ass={OUT}/subs.ass[s];[2:v]format=rgba,fade=t=in:st={E0:.3f}:d=0.12:alpha=1[e];"
