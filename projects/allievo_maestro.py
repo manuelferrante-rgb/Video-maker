@@ -126,7 +126,7 @@ em = em.crop(em.getbbox()).resize((96, 86), Image.LANCZOS)
 em.save(f"{OUT}/emoji.png")
 lw = ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-BlackItalic.otf", 96).getlength("ALLENATO BENE")
 EX, EY = int(540 + lw / 2 + 36), 438
-E0 = JOKE + 0.05
+E0 = TOTAL + 10  # emoji tolta su richiesta (resta il codice se servisse)
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/base.mp4", "-i", f"{OUT}/sfx.wav", "-loop", "1", "-i",
      f"{OUT}/emoji.png", "-filter_complex",
      f"[0:v]ass={OUT}/subs.ass[s];[2:v]format=rgba,fade=t=in:st={E0:.3f}:d=0.12:alpha=1[e];"
