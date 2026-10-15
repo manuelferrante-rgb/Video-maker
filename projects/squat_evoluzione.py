@@ -204,7 +204,14 @@ label(I0, I1, "IPERTROFIA", 1060, size=110)
 label(I1, F1, "IPERTROFIA", 1060, size=110)
 label(F1, TOTAL, "FORZA?", 1060, box=ORANGE_A, size=120)
 SFX += [(F0, "hit", 0.35), (I0, "swoosh", 0.25), (F1, "hit", 0.35)]
-label(F1 + 0.15, TOTAL, "SCRIVILO NEI COMMENTI", 300, size=70)
+# CTA commenti: compare appena sparisce "SECONDO TE" e resta fino alla fine, con un battito leggero
+CM0 = F0
+dur_ms = int((TOTAL - CM0) * 1000)
+beat = "".join(rf"\t({k},{k + 300},\fscx106\fscy106\3c&H002C66E8&)\t({k + 300},{k + 600},\fscx100\fscy100\3c&H00000000&)"
+               for k in range(250, dur_ms, 600))
+ev.append(f"Dialogue: 4,{ass_t(CM0)},{ass_t(TOTAL)},Lab,,0,0,0,,{{\\an8\\pos(540,290)\\3c&H00000000&\\fs76"
+          f"\\fscx0\\fscy0\\t(0,90,\\fscx112\\fscy112)\\t(90,170,\\fscx100\\fscy100){beat}}}SCRIVILO NEI COMMENTI")
+SFX.append((CM0 + 0.02, "pop", 0.22))
 ass = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
