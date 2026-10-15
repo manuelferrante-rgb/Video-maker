@@ -9,6 +9,8 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 W, H, FPS = 1080, 1920, 30
 DUR = float(sys.argv[1]) if len(sys.argv) > 1 else 3.6
 OUTP = sys.argv[2] if len(sys.argv) > 2 else "/home/user/Video-maker/out/card_51.mov"
+T51 = float(sys.argv[3]) if len(sys.argv) > 3 else 1.55  # quando si evidenzia lo squat 51%
+TMETA = float(sys.argv[4]) if len(sys.argv) > 4 else 2.1  # quando compare "più della metà"
 
 BG0, BG1 = (14, 38, 22), (34, 74, 44)
 PANEL = (9, 26, 16)
@@ -56,7 +58,7 @@ PX0, PY0, PX1, PY1 = 70, 470, W - 70, 1480
 d0.rounded_rectangle([PX0, PY0, PX1, PY1], radius=44, fill=PANEL + (255,))
 fm = f(FM, 30)
 hdr = "TEAM ANALYSIS · FINALREP EUROS 2026"
-spaced(d0, ((W - spaced_w(hdr, fm, 5)) / 2, 300), hdr, fm, MUTED, 5)
+spaced(d0, ((W - spaced_w(hdr, fm, 5)) / 2, 280), hdr, fm, MUTED, 5)
 CX, CY, R0, R1 = W / 2, 1040, 175, 330  # anello
 
 
@@ -75,10 +77,10 @@ def frame(fr):
         x += ft.getlength(s)
     spaced(d, (PX0 + 50, PY0 + 50), "TOTAL & CONTRIBUTION", f(FM, 32), MUTED, 6)
     # anello: le fette si disegnano in sequenza
-    prog = ease((tt - 0.25) / 1.3) * TOT
+    prog = ease((tt - 0.15) / max(T51 - 0.3, 0.6)) * TOT
     start = -90.0
     acc = 0
-    pop = ease((tt - 1.7) / 0.35)  # la fetta squat si stacca un po'
+    pop = ease((tt - T51) / 0.3)  # la fetta squat si stacca un po'
     for name, pct, col in SLICES:
         seg = max(min(prog - acc, pct), 0)
         if seg > 0:
@@ -107,12 +109,12 @@ def frame(fr):
         acc += pct
     d.ellipse([CX - R0 + 8, CY - R0 + 8, CX + R0 - 8, CY + R0 - 8], fill=PANEL + (255,))
     # contatore totale al centro
-    val = int(round(8811 * ease((tt - 0.25) / 1.3)))
+    val = int(round(8811 * ease((tt - 0.15) / max(T51 - 0.3, 0.6))))
     d.text((CX, CY - 18), f"{val:,}".replace(",", "."), font=f(FIB, 86), fill=WHITE, anchor="mm")
     d.text((CX, CY + 52), "KG TOTALE", font=f(FM, 28), fill=MUTED, anchor="mm")
     # evidenza squat: etichetta dentro la fetta che cresce, poi "PIÙ DELLA METÀ" sotto
-    if tt > 1.55:
-        sp_ = ease((tt - 1.55) / 0.3)
+    if tt > T51:
+        sp_ = ease((tt - T51) / 0.3)
         mid = math.radians(-90 + 51 / TOT * 180)
         lr = (R0 + R1) / 2 + 18 * pop
         lx, ly = CX + lr * math.cos(mid), CY + lr * math.sin(mid)
@@ -121,8 +123,8 @@ def frame(fr):
         ld.text((lx, ly - 40), "SQUAT", font=f(FM, int(32 + 4 * sp_)), fill=PANEL + (255,), anchor="mm")
         ld.text((lx, ly + 16), "51%", font=f(FIB, int(52 + 16 * sp_)), fill=PANEL + (255,), anchor="mm")
         im.alpha_composite(lay)
-    if tt > 2.1:
-        s2 = ease((tt - 2.1) / 0.3)
+    if tt > TMETA:
+        s2 = ease((tt - TMETA) / 0.3)
         ImageDraw.Draw(im).text((CX, 1420 - 25 * (1 - s2)), "PIÙ DELLA METÀ DEL TOTALE", font=f(FM, 34),
                                 fill=G_SQ + (int(255 * s2),), anchor="mm")
     # fonte
