@@ -80,7 +80,7 @@ for i, (s, e, z, _) in enumerate(SEGS):
     extra = f",tpad=stop_mode=clone:stop_duration={TAIL * SPEED:.3f}" if i == len(SEGS) - 1 else ""
     af = f"afade=t=in:d=0.015,afade=t=out:st={d - 0.03:.3f}:d=0.03" + (f",apad=pad_dur={TAIL * SPEED:.3f}" if extra else "")
     nfr = round(d * FPS) + (round(TAIL * SPEED * FPS) if extra else 0)
-    run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s:.3f}", "-i", P, "-t", f"{d:.4f}", "-vf",
+    run(["ffmpeg", "-v", "error", "-y", "-ss", f"{s:.3f}", "-t", f"{d:.4f}", "-i", P, "-vf",
          f"scale={W}:{H},crop={cw}:{ch}:(iw-{cw})/2:(ih-{ch})*0.0,scale={W}:{H}:flags=lanczos,setsar=1,fps={FPS}{extra}",
          "-af", af, "-frames:v", str(nfr), "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-pix_fmt", "yuv420p",
          "-c:a", "pcm_s16le", "-ar", "48000", f"{OUT}/s{i}.mov"])
