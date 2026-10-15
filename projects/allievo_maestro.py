@@ -13,10 +13,10 @@ W, H, FPS = 1080, 1920, 30
 # pezzi: (inizio sorgente, durata sorgente, velocità, crop iniziale (cx, cy, zoom), crop finale, fermo finale in s)
 # il crop si sposta durante il pezzo per seguire il gesto (zoom leggero)
 CUTS = [
-    (72.95, 1.2, 1.0, (430, 920, 1.1), (430, 790, 1.16), 0.0),     # 0 io: trazione con 15 kg
-    (141.8, 0.5, 1.0, (540, 980, 1.08), (540, 980, 1.08), 0.0),   # 1 arriva lui: cintura (mini taglio)
-    (144.3, 0.4, 1.0, (540, 960, 1.08), (540, 960, 1.08), 0.0),   # 2 cintura messa (mini taglio)
-    (148.3, 0.5, 1.0, (520, 880, 1.08), (520, 880, 1.08), 0.0),   # 3 già in oscillazione
+    (72.95, 1.7, 1.0, (430, 920, 1.1), (430, 760, 1.16), 0.0),     # 0 io: trazione con 15 kg
+    (141.8, 0.8, 1.0, (540, 980, 1.08), (540, 980, 1.08), 0.0),   # 1 arriva lui: cintura (mini taglio)
+    (144.2, 0.6, 1.0, (540, 960, 1.08), (540, 960, 1.08), 0.0),   # 2 cintura messa (mini taglio)
+    (148.1, 0.8, 1.0, (520, 880, 1.08), (520, 880, 1.08), 0.0),   # 3 già in oscillazione
     (152.2, 3.1, 1.25, (500, 820, 1.1), (490, 700, 1.2), 0.0),   # 4 muscle up con 15 kg
     (156.2, 0.8, 1.6, (500, 820, 1.1), (500, 860, 1.1), 0.0),     # 5 scende dalla sbarra
     (158.9, 1.5, 1.0, (540, 960, 1.0), (560, 960, 1.04), 0.0),    # 6 io che cammino verso la camera e rido
@@ -63,10 +63,15 @@ ORANGE, BLACK, WHITE = "&H002C66E8&", "&H00000000&", "&H00FFFFFF&"
 ev, SFX = [], []
 
 
-def label(t0, t1, txt, y, box=BLACK, size=96, rot=0, sfx=None):
-    """entrata morbida (dissolvenza + piccola salita) e poi ferma, per leggere bene."""
-    ev.append(f"Dialogue: 4,{ass_t(t0)},{ass_t(t1)},Lab,,0,0,0,,{{\\an8\\move(540,{y + 24},540,{y},0,220)\\fad(200,120)"
-              f"\\frz{rot}\\3c{box}\\fs{size}}}{txt}")
+def label(t0, t1, txt, y, box=BLACK, size=96, rot=0, sfx=None, anim="soft"):
+    """soft: dissolvenza + piccola salita poi ferma; static: già ferma dal primo frame; zoom: leggero zoom in."""
+    if anim == "static":
+        fx = f"\\pos(540,{y})"
+    elif anim == "zoom":
+        fx = f"\\pos(540,{y})\\fad(150,0)\\fscx90\\fscy90\\t(0,450,0.6,\\fscx100\\fscy100)"
+    else:
+        fx = f"\\move(540,{y + 24},540,{y},0,220)\\fad(200,120)"
+    ev.append(f"Dialogue: 4,{ass_t(t0)},{ass_t(t1)},Lab,,0,0,0,,{{\\an8{fx}\\frz{rot}\\3c{box}\\fs{size}}}{txt}")
     if sfx:
         SFX.append((t0, sfx[0], sfx[1]))
 
@@ -75,17 +80,16 @@ c0, c1, c2, c3, c4, c5, c6 = starts
 OVER_BAR = c4 + (153.6 - CUTS[4][0]) / CUTS[4][2]  # quando supera la sbarra
 # testi pochi e fermi: si costruisce una frase che resta leggibile
 # 1) io (hook: entra subito, tutto insieme)
-label(0.0, c1, "IO:", 1330, size=100)
-label(0.0, c1, "TRAZIONI CON 15 KG", 1450, box=ORANGE, size=84)
+label(0.0, 2.5, "IO:", 1330, size=100, anim="static")
+label(0.0, 2.5, "TRAZIONI CON 15 KG", 1450, box=ORANGE, size=84, anim="static")
 # 2-3) lui: in alto mentre si prepara (la mia testa è in basso), poi "DI MUSCLE UP" in basso quando lui sale
-label(c1, OVER_BAR, "POI ARRIVA LUI", 300, size=92)
-label(c1, OVER_BAR, "E SI SCALDA CON 15 KG", 425, box=ORANGE, size=80)
-label(OVER_BAR, c6, "DI MUSCLE UP", 1470, box=ORANGE, size=96, sfx=("hit", 0.4))
+label(2.5, OVER_BAR, "POI ARRIVA LUI", 300, size=92)
+label(2.5, OVER_BAR, "E SI SCALDA CON LO STESSO PESO", 420, box=ORANGE, size=62)
+label(OVER_BAR, c6, "DI MUSCLE UP", 1150, box=ORANGE, size=110, anim="static")
 # 4) io che arrivo ridendo
 JOKE = c6
-label(JOKE, TOTAL, "ALMENO L'HO", 300, size=96)
-label(JOKE, TOTAL, "ALLENATO BENE", 425, box=ORANGE, size=96)
-SFX.append((JOKE, "pop", 0.25))
+label(JOKE, TOTAL, "ALMENO L'HO", 300, size=96, anim="zoom")
+label(JOKE, TOTAL, "ALLENATO BENE", 425, box=ORANGE, size=96, anim="zoom")
 ass = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
