@@ -69,3 +69,9 @@ HuggingFace è bloccato dalla rete: i modelli si scaricano da GitHub (già fatto
 
 Ordine dei clip se ambiguo, quale take tenere se ci sono doppioni, nome atleta/tag. Per il resto decidi tu e
 proponi; Manuel corregge sul risultato.
+
+## Brand (aggiornato)
+
+- Logo: `assets/brand/logo_mf_originale.png` (originale su nero) e `assets/brand/logo_mf_trasparente.png` (scontornato).
+- **Storie**: logo piccolo in alto a sinistra dentro la safe zone (x 56, y 262, largo 170 px), titoli da y 400 in giù
+  (vedi `logo()` in `projects/stories_set2.py`). Nei reel per ora niente logo.

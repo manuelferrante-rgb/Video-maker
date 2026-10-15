@@ -103,7 +103,18 @@ def footer(im, n):
         d.ellipse([x - r, 1495 - r, x + r, 1495 + r], fill=(ORANGE if k == n else IVORY) + ((255,) if k == n else (120,)))
 
 
+LOGO = "/home/user/Video-maker/assets/brand/logo_mf_trasparente.png"
+
+
+def logo(im, w=170, x=56, y=262):
+    """logo MF piccolo in alto a sinistra, dentro la safe zone (sotto la barra delle storie)."""
+    lg = Image.open(LOGO).convert("RGBA")
+    lg = lg.resize((w, int(lg.height * w / lg.width)), Image.LANCZOS)
+    im.alpha_composite(lg, (x, y))
+
+
 def save(im, name):
+    logo(im)
     im.convert("RGB").save(f"{D}/{name}.png", optimize=True)
     # anteprima con le zone non sicure di Instagram (solo per controllo)
     pv = im.convert("RGBA").copy()
@@ -150,7 +161,7 @@ def link_zone(im, zy, title="COMPILA IL FORM"):
 # ===================== SET A: squat 51% del totale ==========================================================
 # A1 intro: il calisthenics si è diviso, lo streetlifting cresce, niente più gambe saltate
 im = background(f"{D}/f_mu.png", crop_y=0.25, dark=0.45, zoom=1.0, cx=0.5)
-y = label(im, "IL CALISTHENICS", 290, 100)
+y = label(im, "IL CALISTHENICS", 400, 100)
 y = label(im, "NON È PIÙ UNO SOLO", y + 6, 84, box=ORANGE)
 y = text_block(im, ["Freestyle, skills, endurance...", "e lo streetlifting che cresce", "gara dopo gara."], y + 50, 52,
                hl={"STREETLIFTING"})
@@ -161,11 +172,11 @@ save(im, "A1_intro")
 
 # A2 domanda (quiz: 20% / 50% / 70%)
 im = background(f"{D}/f_sqgara.png", crop_y=0.0, dark=0.45, zoom=1.2, cx=0.62)
-y = label(im, "SECONDO TE", 300, 100)
+y = label(im, "SECONDO TE", 400, 100)
 y = label(im, "QUANTO PESA LO SQUAT", y + 6, 76, box=ORANGE)
 text_block(im, ["sul totale di gara", "nello streetlifting?"], y + 40, 56, font=FX, color=(255, 255, 255),
            hl={"TOTALE"})
-sticker_zone(im, 850, 1170, "SCEGLI LA TUA RISPOSTA")
+sticker_zone(im, 960, 1280, "SCEGLI LA TUA RISPOSTA")
 footer(im, 1)
 save(im, "A2_domanda")
 
@@ -174,7 +185,7 @@ im = background(f"{D}/f_card.png", crop_y=0.5, dark=0.25, zoom=1.0, cx=0.5, blur
 d = ImageDraw.Draw(im)
 fq = f(FB, 420)
 d.text((W / 2, 1000), "?", font=fq, fill=(126, 214, 150, 235), anchor="mm")
-y = label(im, "IL RISULTATO", 300, 104)
+y = label(im, "IL RISULTATO", 400, 104)
 y = label(im, "TI SORPRENDERÀ", y + 6, 104, box=ORANGE)
 y = text_block(im, ["Lo squat pesa sul totale", "molto più di quanto pensi."], 1260, 52, font=FX, color=(255, 255, 255),
                hl={"MOLTO"})
@@ -184,7 +195,7 @@ save(im, "A3_risposta")
 
 # A5 CTA link
 im = background(f"{D}/f_man1.png", crop_y=0.2, dark=0.42, zoom=1.0, cx=0.5)
-y = label(im, "VUOI UN PERCORSO", 290, 96)
+y = label(im, "VUOI UN PERCORSO", 400, 96)
 y = label(im, "PERSONALIZZATO", y + 6, 96, box=ORANGE)
 text_block(im, ["per migliorare davvero", "nello streetlifting?"], y + 40, 56, font=FX, color=(255, 255, 255),
            hl={"STREETLIFTING?"})
@@ -195,7 +206,7 @@ save(im, "A5_link")
 # ===================== SET B: squat prima/ora ===============================================================
 # B1 intro
 im = background(f"{D}/f_man2.png", crop_y=0.2, dark=0.45, zoom=1.0, cx=0.5)
-y = label(im, "GOMITI E SETUP:", 290, 92)
+y = label(im, "GOMITI E SETUP:", 400, 92)
 y = label(im, "FATTO.", y + 6, 120, box=ORANGE)
 y = text_block(im, ["Ma qual è la vera lacuna", "nel tuo squat?"], y + 40, 58, font=FX, color=(255, 255, 255),
                hl={"LACUNA"})
@@ -205,19 +216,19 @@ save(im, "B1_intro")
 
 # B2 domanda (sondaggio: poco / abbastanza / molto)
 im = background(f"{D}/f_fis1.png", crop_y=0.3, dark=0.5, zoom=1.0, cx=0.5)
-y = label(im, "QUANTO CONTA", 300, 104)
+y = label(im, "QUANTO CONTA", 400, 104)
 y = label(im, "ESSERE GROSSI", y + 6, 110, box=ORANGE)
 text_block(im, ["per essere forti nello squat?"], y + 40, 56, font=FX, color=(255, 255, 255), hl={"FORTI"})
-sticker_zone(im, 850, 1170, "VOTA QUI SOTTO")
+sticker_zone(im, 960, 1280, "VOTA QUI SOTTO")
 footer(im, 1)
 save(im, "B2_domanda")
 
 # B3 spiegazione: prima / ora
 im = background(f"{D}/f_230.png", crop_y=0.5, dark=0.8, zoom=1.0, cx=0.5, blur=16)
-y = label(im, "PER ESSERE FORTE", 290, 96)
+y = label(im, "PER ESSERE FORTE", 400, 96)
 y = label(im, "SERVONO MUSCOLI", y + 6, 100, box=ORANGE)
-photo_card(im, f"{D}/f_kb.png", (80, 200, 560, 1200), 70, 560, 455, 640, label_txt="PRIMA")
-photo_card(im, f"{D}/f_230.png", (560, 1080, 1080, 1800), 555, 560, 455, 640, label_txt="230 KG", label_box=ORANGE)
+photo_card(im, f"{D}/f_kb.png", (80, 200, 560, 1200), 70, 680, 455, 540, label_txt="PRIMA")
+photo_card(im, f"{D}/f_230.png", (560, 1080, 1080, 1800), 555, 680, 455, 540, label_txt="230 KG", label_box=ORANGE)
 y = text_block(im, ["Ripetizioni, tempo sotto tensione,", "complementari: così si costruisce."], 1250, 46,
                hl={"RIPETIZIONI,", "TENSIONE,", "COMPLEMENTARI:"})
 label(im, "TUTTO NEL PROSSIMO REEL", 1400, 44)
@@ -226,11 +237,11 @@ save(im, "B3_spiegazione")
 
 # B5 domanda finale: chi guida chi
 im = background(f"{D}/f_fis2.png", crop_y=0.3, dark=0.5, zoom=1.0, cx=0.5)
-y = label(im, "SECONDO TE", 300, 100)
+y = label(im, "SECONDO TE", 400, 100)
 y = label(im, "CHI GUIDA CHI?", y + 6, 112, box=ORANGE)
 text_block(im, ["La forza porta ipertrofia", "o l'ipertrofia porta forza?"], y + 40, 54, font=FX, color=(255, 255, 255),
            hl={"FORZA", "IPERTROFIA", "FORZA?", "L'IPERTROFIA"})
-sticker_zone(im, 900, 1200, "SCEGLI LA TUA")
+sticker_zone(im, 1000, 1300, "SCEGLI LA TUA")
 footer(im, 4)
 save(im, "B5_domanda_finale")
 print("ok")

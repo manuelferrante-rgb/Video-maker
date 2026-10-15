@@ -102,7 +102,18 @@ def footer(im, n):
         d.ellipse([x - r, 1495 - r, x + r, 1495 + r], fill=(ORANGE if k == n else IVORY) + ((255,) if k == n else (120,)))
 
 
+LOGO = "/home/user/Video-maker/assets/brand/logo_mf_trasparente.png"
+
+
+def logo(im, w=170, x=56, y=262):
+    """logo MF piccolo in alto a sinistra, dentro la safe zone (sotto la barra delle storie)."""
+    lg = Image.open(LOGO).convert("RGBA")
+    lg = lg.resize((w, int(lg.height * w / lg.width)), Image.LANCZOS)
+    im.alpha_composite(lg, (x, y))
+
+
 def save(im, name):
+    logo(im)
     im.convert("RGB").save(f"{D}/{name}.png", optimize=True)
     # anteprima con le zone non sicure di Instagram (solo per controllo)
     pv = im.convert("RGBA").copy()
@@ -116,10 +127,10 @@ def save(im, name):
 
 # 1) DOMANDA 1: problema
 im = background(f"{D}/f_squat.png", crop_y=0.0, dark=0.42, zoom=1.25, cx=0.62)
-y = label(im, "IL TUO SQUAT", 300, 104)
+y = label(im, "IL TUO SQUAT", 400, 104)
 y = label(im, "NON GIRA?", y + 6, 118, box=ORANGE)
 text_block(im, ["Prima di cambiare programma,", "dove guarderesti per primo?"], y + 50, 54, hl={"PRIMO?"})
-sticker_zone(im, 850, 1170, "RISPONDI QUI SOTTO")
+sticker_zone(im, 960, 1260, "RISPONDI QUI SOTTO")
 footer(im, 0)
 save(im, "storia_1_domanda")
 
@@ -127,28 +138,28 @@ save(im, "storia_1_domanda")
 im = background(f"{D}/f_presa.png", crop_y=0.4, dark=0.8, zoom=1.08, cx=0.6, blur=14)
 # foto della presa in un riquadro in basso, sotto lo sticker
 ph = Image.open(f"{D}/f_presa.png").convert("RGB")
-ph = ph.crop((100, 470, 1080, 826)).resize((880, 320), Image.LANCZOS)
+ph = ph.crop((100, 520, 1080, 800)).resize((880, 250), Image.LANCZOS)
 mask = Image.new("L", ph.size, 0)
 ImageDraw.Draw(mask).rounded_rectangle([0, 0, ph.width, ph.height], radius=36, fill=255)
 card = Image.new("RGBA", ph.size)
 card.paste(ph, (0, 0), mask)
-im.alpha_composite(card, ((W - ph.width) // 2, 1140))
-ImageDraw.Draw(im).rounded_rectangle([(W - ph.width) // 2, 1140, (W + ph.width) // 2, 1140 + ph.height], radius=36,
+im.alpha_composite(card, ((W - ph.width) // 2, 1225))
+ImageDraw.Draw(im).rounded_rectangle([(W - ph.width) // 2, 1225, (W + ph.width) // 2, 1225 + ph.height], radius=36,
                                      outline=IVORY + (220,), width=4)
-y = label(im, "E LA TUA PRESA", 300, 100)
+y = label(im, "E LA TUA PRESA", 400, 100)
 y = label(im, "COM'È?", y + 6, 118, box=ORANGE)
 text_block(im, ["Quanto larghe tieni le mani", "sul bilanciere nello squat?"], y + 50, 54, hl={"MANI"})
-sticker_zone(im, 850, 1120, "SCEGLI LA TUA")
+sticker_zone(im, 960, 1210, "SCEGLI LA TUA")
 footer(im, 1)
 save(im, "storia_2_domanda")
 
 # 3) SPIEGAZIONE (contenuto del reel, senza aggiunte)
-im = background(f"{D}/f_elia.png", crop_y=0.12, dark=0.5, zoom=1.55, cx=0.45)
+im = background(f"{D}/f_elia.png", crop_y=0.025, dark=0.5, zoom=1.55, cx=0.45)
 # cerchio rosso sul gomito, come nel reel
 d = ImageDraw.Draw(im)
-ex, ey = 600, 640
+ex, ey = 600, 740
 d.ellipse([ex - 120, ey - 120, ex + 120, ey + 120], outline=(230, 46, 46, 255), width=7)
-y = label(im, "LA RISPOSTA:", 300, 70, box=(0, 0, 0))
+y = label(im, "LA RISPOSTA:", 400, 70, box=(0, 0, 0))
 y = label(im, "GUARDA I GOMITI", y + 6, 96, box=ORANGE)
 y = 880
 y = text_block(im, ["La larghezza della presa", "decide dove finiscono."], y, 56, font=FX, color=(255, 255, 255),
@@ -162,7 +173,7 @@ save(im, "storia_3_spiegazione")
 
 # 5) CTA con link
 im = background(f"{D}/f_man_63.5.png", crop_y=0.2, dark=0.40, zoom=1.0, cx=0.5)
-y = label(im, "MANDAMI IL TUO", 300, 96)
+y = label(im, "MANDAMI IL TUO", 400, 96)
 y = label(im, "SQUAT", y + 6, 124, box=ORANGE)
 y = text_block(im, ["Compila il form al link qui sotto:", "ti contatto io e mi mandi il video", "della tua alzata da analizzare."],
                y + 46, 48, hl={"FORM", "VIDEO", "ANALIZZARE."})
