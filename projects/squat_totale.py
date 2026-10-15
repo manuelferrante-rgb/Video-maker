@@ -235,11 +235,11 @@ SFX.append((word_t(6, "COMPLETI."), "hit", 0.35))
 B0 = VOICE_END + 0.05
 CLK = B0 + 0.5
 ck = int((CLK - B0) * 1000)
-ev.append(f"Dialogue: 4,{ass_t(B0)},{ass_t(TOTAL)},Btn,,0,0,0,,{{\\an8\\pos(540,1180)\\fscx0\\fscy0"
+ev.append(f"Dialogue: 4,{ass_t(B0)},{ass_t(TOTAL)},Btn,,0,0,0,,{{\\an8\\pos(540,1330)\\fscx0\\fscy0"
           f"\\t(0,100,\\fscx112\\fscy112)\\t(100,180,\\fscx100\\fscy100)"
           f"\\t({ck},{ck + 80},\\fscx92\\fscy92)\\t({ck + 80},{ck + 180},\\fscx100\\fscy100)}}  SEGUIMI  ")
 cursor = "m 0 0 l 0 105 l 27 81 l 45 123 l 63 114 l 45 75 l 81 75"
-ev.append(f"Dialogue: 6,{ass_t(B0 + 0.1)},{ass_t(TOTAL)},Shp,,0,0,0,,{{\\an7\\move(800,1460,640,1250,0,{ck - 100})"
+ev.append(f"Dialogue: 6,{ass_t(B0 + 0.1)},{ass_t(TOTAL)},Shp,,0,0,0,,{{\\an7\\move(800,1560,640,1400,0,{ck - 100})"
           f"\\1c{WHITE_A}\\bord4\\3c{BLACK_A}\\shad0\\p1}}{cursor}")
 SFX += [(B0, "pop", 0.28), (CLK, "click", 0.5)]
 
