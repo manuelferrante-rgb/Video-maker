@@ -13,11 +13,13 @@ W, H, FPS = 1080, 1920, 30
 # pezzi: (inizio sorgente, durata sorgente, velocità, crop iniziale (cx, cy, zoom), crop finale, fermo finale in s)
 # il crop si sposta durante il pezzo per seguire il gesto (zoom leggero)
 CUTS = [
-    (72.8, 1.8, 1.0, (430, 930, 1.12), (430, 780, 1.18), 0.0),    # io: trazione con 15 kg
-    (141.6, 1.3, 1.0, (540, 980, 1.1), (540, 980, 1.1), 0.0),     # arriva lui e si mette la zavorra
-    (145.3, 0.7, 1.0, (500, 860, 1.12), (500, 860, 1.12), 0.0),   # prende la sbarra "per scaldarsi"
-    (151.0, 3.9, 1.2, (500, 900, 1.1), (490, 700, 1.22), 0.3),    # muscle up con 15 kg, fermo in cima
-    (159.7, 0.65, 1.0, (540, 1300, 1.15), (540, 1300, 1.15), 0.0),  # io che rido
+    (72.95, 1.2, 1.0, (430, 920, 1.1), (430, 790, 1.16), 0.0),     # 0 io: trazione con 15 kg
+    (141.8, 0.5, 1.0, (540, 980, 1.08), (540, 980, 1.08), 0.0),   # 1 arriva lui: cintura (mini taglio)
+    (144.3, 0.4, 1.0, (540, 960, 1.08), (540, 960, 1.08), 0.0),   # 2 cintura messa (mini taglio)
+    (148.3, 0.5, 1.0, (520, 880, 1.08), (520, 880, 1.08), 0.0),   # 3 già in oscillazione
+    (152.2, 3.1, 1.25, (500, 820, 1.1), (490, 700, 1.2), 0.0),   # 4 muscle up con 15 kg
+    (156.2, 0.8, 1.6, (500, 820, 1.1), (500, 860, 1.1), 0.0),     # 5 scende dalla sbarra
+    (158.9, 1.5, 1.0, (540, 960, 1.0), (560, 960, 1.04), 0.0),    # 6 io che cammino verso la camera e rido
 ]
 
 
@@ -68,20 +70,21 @@ def label(t0, t1, txt, y, box=BLACK, size=96, rot=0, sfx=None):
         SFX.append((t0, sfx[0], sfx[1]))
 
 
-s1, s2, s3, s4, s5 = starts
-top = s4 + CUTS[3][1] / CUTS[3][2]  # inizio del fermo in cima al muscle up
+c0, c1, c2, c3, c4, c5, c6 = starts
+OVER_BAR = c4 + (153.6 - CUTS[4][0]) / CUTS[4][2]  # quando supera la sbarra
 # 1) io
-label(0.05, s2, "IO:", 1150, size=110, sfx=("pop", 0.3))
-label(0.3, s2, "TRAZIONI CON 15 KG", 1280, box=ORANGE, size=84, sfx=("pop", 0.25))
-# 2) arriva lui
-label(s2, s4, "POI ARRIVA LUI...", 1340, size=92, sfx=("swoosh", 0.3))
-label(s3 + 0.05, s4, "E SI SCALDA CON 15 KG", 1470, box=ORANGE, size=76, sfx=("pop", 0.25))
-# 3) muscle up + battuta subito (prima che si scrolli)
-label(s4 + 0.05, TOTAL, "DI MUSCLE UP", 1040, box=ORANGE, size=104, sfx=("whoosh", 0.3))
-JOKE = s4 + 0.4
-label(JOKE, TOTAL, "ALMENO L'HO", 1190, size=84, sfx=("pop", 0.28))
-label(JOKE + 0.15, TOTAL, "ALLENATO BENE", 1310, size=84)
-SFX.append((top, "hit", 0.45))
+label(0.05, c1, "IO:", 1150, size=110, sfx=("pop", 0.3))
+label(0.3, c1, "TRAZIONI CON 15 KG", 1280, box=ORANGE, size=84, sfx=("pop", 0.25))
+# 2) arriva lui (mini tagli)
+label(c1, c3, "POI ARRIVA LUI...", 1340, size=92, sfx=("swoosh", 0.3))
+SFX.append((c2, "swoosh", 0.18))
+label(c3, OVER_BAR, "E SI SCALDA CON 15 KG", 1340, box=ORANGE, size=76, sfx=("swoosh", 0.22))
+# 3) supera la sbarra
+label(OVER_BAR, c6, "DI MUSCLE UP", 1040, box=ORANGE, size=110, sfx=("hit", 0.45))
+# 4) io che arrivo ridendo
+JOKE = c6
+label(JOKE, TOTAL, "ALMENO L'HO", 300, size=96, sfx=("pop", 0.3))
+label(JOKE + 0.12, TOTAL, "ALLENATO BENE", 425, box=ORANGE, size=96)
 ass = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -116,9 +119,9 @@ em = Image.new("RGBA", (140, 140))
 ImageDraw.Draw(em).text((10, 10), "😂", font=fe, embedded_color=True)
 em = em.crop(em.getbbox()).resize((96, 86), Image.LANCZOS)
 em.save(f"{OUT}/emoji.png")
-lw = ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-BlackItalic.otf", 84).getlength("ALLENATO BENE")
-EX, EY = int(540 + lw / 2 + 34), 1314
-E0 = JOKE + 0.25
+lw = ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-BlackItalic.otf", 96).getlength("ALLENATO BENE")
+EX, EY = int(540 + lw / 2 + 36), 438
+E0 = JOKE + 0.2
 run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/base.mp4", "-i", f"{OUT}/sfx.wav", "-loop", "1", "-i",
      f"{OUT}/emoji.png", "-filter_complex",
      f"[0:v]ass={OUT}/subs.ass[s];[2:v]format=rgba,fade=t=in:st={E0:.3f}:d=0.12:alpha=1[e];"
