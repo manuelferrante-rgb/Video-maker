@@ -58,7 +58,7 @@ card = card.rotate(4, expand=True, resample=Image.BICUBIC)
 shadow = Image.new("RGBA", card.size, (0, 0, 0, 0))
 shadow.putalpha(card.split()[3].point(lambda v: int(v * 0.55)))
 shadow = shadow.filter(ImageFilter.GaussianBlur(18))
-cx0, cy0 = 640, 980
+cx0, cy0 = 640, 760
 canvas.alpha_composite(shadow, (cx0 + 10, cy0 + 16))
 canvas.alpha_composite(card, (cx0, cy0))
 label(canvas, "IO: TRAZIONI", cx0 + card.width / 2, cy0 + card.height - 40, 54, rot=4)
