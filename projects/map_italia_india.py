@@ -6,7 +6,7 @@ import json, math, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 W, H, FPS = 1080, 1920, 30
-DUR = float(sys.argv[1]) if len(sys.argv) > 1 else 2.6
+DUR = float(sys.argv[1]) if len(sys.argv) > 1 else 1.9
 OUTP = sys.argv[2] if len(sys.argv) > 2 else "/home/user/Video-maker/out/map_italia_india.mov"
 GEO = "/home/user/Video-maker/assets/geo"
 OCEAN, LAND, LAND_EDGE = (12, 28, 46), (52, 72, 96), (78, 100, 126)
@@ -103,7 +103,7 @@ def render(fr, n):
     k = min(max(upto, 1), 199)
     (x0, y0), (x1, y1) = pts[k - 1], pts[k + 1]
     ang = math.degrees(math.atan2(-(y1 - y0), x1 - x0))
-    pl = plane0.rotate(ang + 45, expand=True, resample=Image.BICUBIC)  # l'emoji punta in alto a destra
+    pl = plane0.rotate(ang - 45, expand=True, resample=Image.BICUBIC)  # il muso dell'emoji punta a 45° (alto a destra)
     pl = pl.resize((int(pl.width * 0.9), int(pl.height * 0.9)), Image.LANCZOS)
     px, py = pts[k]
     im.alpha_composite(pl, (int(px - pl.width / 2), int(py - pl.height / 2)))
