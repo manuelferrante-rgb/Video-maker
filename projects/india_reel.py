@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Reel "un mese in India": selfie in palestra (hook) -> imbarco -> cartina Italia/India -> arrivo -> palestra -> seguimi.
-Due versioni: "voce" (voiceover tagliato a 1.1x + sottotitoli) e "scritte" (solo testo, senza voce).
+Versione parlata: voiceover a 1.1x con le frasi attaccate (nessun buco), le immagini seguono la voce.
 Testo bianco con bordo nero, senza riquadro, centrato sotto la metà (sotto la faccia). Effetti sonori pochi; la musica la mette Manuel.
 Uso: python3 projects/india_reel.py"""
 import os, subprocess, wave
@@ -21,7 +21,7 @@ def run(cmd):
 
 # ---------- voce: tre frasi tagliate sulla voce reale (sorgente, inizio, fine) ----------
 VOICE = [(9.86, 11.72), (12.30, 13.56), (13.89, 16.80)]
-V_AT = [0.0, 3.80, 4.98]  # dove parte ogni frase nel reel
+V_AT = [0.0, 1.77, 2.98]  # dove parte ogni frase nel reel (pause minime tra le frasi)
 # parole (tempo sorgente del modello +0.08) -> tempo nel reel
 WORDS = [
     (0, [("RIUSCIRÒ", 9.8), ("AD", 10.28), ("ALLENARMI", 10.44), ("UN", 10.92), ("MESE", 11.0), ("IN", 11.24),
@@ -37,23 +37,23 @@ def wt(i, t):
 
 
 # ---------- immagini: (file, inizio sorgente, durata, zoom iniziale, zoom finale) ----------
-MAP = f"{OUT}/map15.mov"
+MAP = f"{OUT}/map11.mov"
+MAP_DUR = 1.1
 SHOTS = [
-    ("IMG_8231", 0.60, 1.25, 1.18, 1.0),   # selfie in palestra (hook, entra con zoom)
-    ("IMG_8223", 1.75, 0.40, 1.0, 1.06),   # pontile d'imbarco
-    ("IMG_8218", 1.05, 0.40, 1.0, 1.06),   # porta dell'aereo
-    ("IMG_8221", 0.10, 0.45, 1.0, 1.08),   # finestrino, motore
-    ("MAP", 0.0, 1.50, 1.0, 1.0),          # cartina Italia -> India
-    ("IMG_8217", 0.85, 0.45, 1.0, 1.05),   # aereo al gate in India
-    ("IMG_8214", 0.70, 0.65, 1.0, 1.04),   # io sorridente in aeroporto
-    ("IMG_8231", 3.05, 0.40, 1.0, 1.0),    # palestra: ragazzo che passa
-    ("IMG_8231", 5.70, 0.40, 1.0, 1.0),    # rack e bilanciere
-    ("IMG_8231", 7.05, 0.40, 1.0, 1.0),    # sala
-    ("IMG_8231", 8.75, 0.90, 1.0, 1.05),   # sala grande con gente
-    ("IMG_8231", 0.00, 1.10, 1.0, 1.08),   # di nuovo io (chiude il loop con l'inizio)
+    ("IMG_8231", 0.60, 0.95, 1.18, 1.0),   # "riuscirò ad allenarmi un mese": selfie in palestra (hook, entra con zoom)
+    ("IMG_8218", 1.05, 0.30, 1.0, 1.06),   # "in": porta dell'aereo
+    ("IMG_8221", 0.10, 0.30, 1.0, 1.08),   # "India?": finestrino, motore
+    ("MAP", 0.0, MAP_DUR, 1.0, 1.0),       # "beh io sono": cartina Italia -> India
+    ("IMG_8214", 0.80, 0.35, 1.0, 1.04),   # "arrivato": io sorridente in aeroporto
+    ("IMG_8231", 3.05, 0.40, 1.0, 1.0),    # "proverò tutte le palestre": ragazzo che passa
+    ("IMG_8231", 5.70, 0.40, 1.0, 1.0),    #   rack e bilanciere
+    ("IMG_8231", 7.05, 0.40, 1.0, 1.0),    #   sala
+    ("IMG_8231", 8.75, 0.95, 1.0, 1.05),   # "se vuoi scoprirlo": sala grande con gente
+    ("IMG_8231", 0.00, 1.15, 1.0, 1.08),   # "seguimi": di nuovo io (chiude il loop con l'inizio)
 ]
 
-subprocess.run([f"python3", f"{R}/projects/map_italia_india.py", "1.5", MAP], check=True)
+# cartina spostata in alto di 300 px: l'India finisce sopra i sottotitoli
+subprocess.run([f"python3", f"{R}/projects/map_italia_india.py", str(MAP_DUR), MAP, "300"], check=True)
 
 lst, starts, t = [], [], 0.0
 for i, (src, ss, d, z0, z1) in enumerate(SHOTS):
@@ -79,8 +79,8 @@ TOTAL = t
 open(f"{OUT}/shots.txt", "w").write("\n".join(lst) + "\n")
 run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", f"{OUT}/shots.txt", "-c", "copy",
      f"{OUT}/base.mp4"])
-T_MAP = starts[4]
-T_GYM = starts[7]
+T_MAP = starts[3]
+T_GYM = starts[5]
 
 # ---------- audio ----------
 sr = 48000
@@ -122,11 +122,10 @@ voice = load(f"{OUT}/voce_norm.wav")[:n]
 sfx = np.zeros((n, 2), np.float32)
 SFX = [
     (0.0, "whoosh", 0.35),                 # ingresso del selfie
-    (starts[1] - 0.05, "swoosh", 0.25),    # si parte
-    (starts[3] - 0.15, "aereo_decollo", 0.55),
-    (T_MAP + 0.36, "aereo_atterraggio", 0.6),  # tonfo quando l'aereo arriva in India (~1.0 s nella cartina)
+    (starts[1] - 0.15, "aereo_decollo", 0.5),
+    (T_MAP + 0.74 - 0.62, "aereo_atterraggio", 0.55),  # tonfo quando l'aereo arriva in India (67% della cartina)
     (T_GYM - 0.08, "whoosh", 0.35),        # dentro la palestra
-    (starts[11] + 0.1, "pop", 0.45),       # seguimi
+    (starts[9] + 0.05, "pop", 0.45),  # seguimi
 ]
 for t0, nm, vol in SFX:
     place(sfx, load(f"{SFXD}/{nm}.wav"), max(t0, 0), vol)
@@ -166,26 +165,18 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 # versione voce: hook intero subito, poi pagine sincronizzate con la voce
 w = {k: [wt(i, tt) for _, tt in ws] for k, (i, ws) in enumerate(WORDS)}
 EV_V = [
-    ev(0.0, w[0][6] + 0.45, "RIUSCIRÒ AD ALLENARMI\\NUN MESE IN INDIA?"),
+    ev(0.0, w[1][0], "RIUSCIRÒ AD ALLENARMI\\NUN MESE IN INDIA?"),
     ev(w[1][0], w[2][0], "BEH, IO SONO\\NARRIVATO"),
     ev(w[2][0], w[2][4], "PROVERÒ TUTTE\\NLE PALESTRE"),
     ev(w[2][4], w[2][7], "SE VUOI\\NSCOPRIRLO:"),
     ev(w[2][7], TOTAL, "SEGUIMI", size=110),
 ]
-# versione scritte: stessi momenti ma un po' più lunghe per poterle leggere
-EV_S = [
-    ev(0.0, T_MAP, "RIUSCIRÒ AD ALLENARMI\\NUN MESE IN INDIA?"),
-    ev(starts[5], T_GYM, "BEH, IO SONO\\NARRIVATO"),
-    ev(T_GYM, starts[10] + 0.3, "PROVERÒ TUTTE\\NLE PALESTRE"),
-    ev(starts[10] + 0.3, starts[11] + 0.1, "SE VUOI\\NSCOPRIRLO:"),
-    ev(starts[11] + 0.1, TOTAL, "SEGUIMI", size=110),
-]
 
-for name, events, mix in (("voce", EV_V, voice + sfx * 0.9), ("scritte", EV_S, sfx)):
+for name, events, mix in (("voce", EV_V, voice + sfx * 0.9),):
     ass(events, f"{OUT}/subs_{name}.ass")
-    write(f"{OUT}/audio_{name}.wav", mix * (1.0 if name == "voce" else 1.4))
+    write(f"{OUT}/audio_{name}.wav", mix)
     run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/base.mp4", "-i", f"{OUT}/audio_{name}.wav", "-vf",
          f"ass={OUT}/subs_{name}.ass", "-af", "alimiter=limit=0.95", "-map", "0:v", "-map", "1:a",
          "-c:v", "libx264", "-crf", "16", "-preset", "slow", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
-         "-movflags", "+faststart", "-t", f"{TOTAL:.3f}", f"{OUT}/reel_india_{name}.mp4"])
+         "-movflags", "+faststart", "-t", f"{TOTAL:.3f}", f"{OUT}/reel_india_{name}_v2.mp4"])
 print("TOTAL", round(TOTAL, 2), [round(x, 2) for x in starts], {k: [round(x, 2) for x in v] for k, v in w.items()})

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Animazione cartina: volo Italia -> India (verticale 1080x1920). Uso: map_italia_india.py durata_s uscita.mov
+"""Animazione cartina: volo Italia -> India (verticale 1080x1920). Uso: map_italia_india.py durata_s uscita.mov [dy]
 Terre da Natural Earth (assets/geo), Italia e India evidenziate, rotta tratteggiata che si disegna, aereo che la segue,
 la camera parte sull'Italia, si allarga durante il volo e stringe sull'India. Uscita RGBA (qtrle) per sovrapporla."""
 import json, math, subprocess, sys
@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 W, H, FPS = 1080, 1920, 30
 DUR = float(sys.argv[1]) if len(sys.argv) > 1 else 1.9
 OUTP = sys.argv[2] if len(sys.argv) > 2 else "/home/user/Video-maker/out/map_italia_india.mov"
+DY = float(sys.argv[3]) if len(sys.argv) > 3 else 0  # sposta la cartina in alto di DY px (spazio per i sottotitoli)
 GEO = "/home/user/Video-maker/assets/geo"
 OCEAN, LAND, LAND_EDGE = (12, 28, 46), (52, 72, 96), (78, 100, 126)
 ORANGE, IVORY = (232, 102, 44), (242, 238, 227)
@@ -78,7 +79,7 @@ def render(fr, n):
 
     def P(lon, lat):
         x, y = merc(lon, lat)
-        return W / 2 + (x - cx) * s, H / 2 - (y - cy) * s
+        return W / 2 + (x - cx) * s, H / 2 - DY - (y - cy) * s
 
     im = Image.new("RGBA", (W, H), OCEAN + (255,))
     d = ImageDraw.Draw(im)
@@ -91,7 +92,7 @@ def render(fr, n):
             d.polygon([P(*q) for q in r], fill=col + (255,))
     # rotta tratteggiata fino al punto raggiunto
     pts = [arc(k / 200) for k in range(201)]
-    pts = [(W / 2 + (x - cx) * s, H / 2 - (y - cy) * s) for x, y in pts]
+    pts = [(W / 2 + (x - cx) * s, H / 2 - DY - (y - cy) * s) for x, y in pts]
     upto = int(fly * 200)
     for k in range(0, upto, 6):
         d.line(pts[k:min(k + 4, upto) + 1], fill=IVORY + (255,), width=7)
