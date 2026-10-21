@@ -45,3 +45,10 @@ f = 400 * (1 + 2.5 * u)
 s = np.sin(2 * np.pi * np.cumsum(f) / SR) * 0.3 + band(n, 2000, 6000) * 0.25
 save("disegno", s * np.sin(np.pi * u) ** 1.5, 0.6)
 print("ok")
+
+# comparsa morbida (riquadro dell'hook): "blop" basso e corto, attacco dolce
+m = int(0.18 * SR); tt = np.arange(m) / SR
+f = 420 * np.exp(-tt * 9) + 260
+s = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.minimum(tt / 0.008, 1) * np.exp(-tt / 0.05)
+save("comparsa", s, 0.6)
+print("ok comparsa")

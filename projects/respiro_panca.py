@@ -101,7 +101,7 @@ B = [
 BR = []
 for i, (t0, t1, src, ss) in enumerate(B):
     t0, t1 = snap(t0), snap(t1)
-    render_clip(src, ss, t1 - t0, f"{OUT}/br{i}.mp4")
+    render_clip(src, ss, t1 - t0 + 0.1, f"{OUT}/br{i}.mp4")  # qualche fotogramma in più: niente buchi agli stacchi
     BR.append((t0, t1, f"{OUT}/br{i}.mp4"))
 
 # scheda "il consiglio classico" barrato: sfondo panca sfocato e scurito

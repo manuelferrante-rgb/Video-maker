@@ -65,16 +65,16 @@ def w(src):  # tempi parola del modello (+0.08)
 
 # ---------------- B-roll: (inizio nel reel, fine, file, inizio sorgente, velocità, zoom, centro zoom) ----------------
 HOOK_END = 2.6
-B = [
-    (SO[3], w(30.64), "b_-5241644845136615582", 0.05, 1.0, 1.0, None),    # mentre scendi: atleta scende
-    (w(30.64), w(32.29), "b_6066581454588218446", 0.45, 1.0, 1.0, None),  # pensa di mantenerla: atleta scende
+B = [  # ogni atleta compare una volta sola
+    (SO[3], w(32.29), "b_-5241644845136615582", 0.05, 1.0, 1.0, None),    # mentre scendi, pensa di mantenerla
     (w(32.29), w(33.49), "b_IMG_5440_c", 0.45, 1.0, 1.35, (480, 1560)),   # il ginocchio seguirà: ginocchia e piedi
-    (w(33.49), w(34.93), "b_152768267402597092", 0.85, 1.0, 1.0, None),   # e tu manterrai: risalita
-    (w(34.93), SO[5], "b_-5241644845136615582", 1.60, 1.0, 1.0, None),    # spinta ottimale: risalita
-    (w(37.73), w(38.29), "b_152768267402597092", 0.0, 1.0, 1.0, None),    # ai miei atleti
-    (w(38.29), w(39.57), "b_6066581454588218446", 2.70, 1.0, 1.0, None),  # e subito l'alzata: risalita
+    (SO[5], SO[5] + 0.40, "b_IMG_5440_a", 0.0, 1.0, 1.0, None),          # è il primo consiglio: io che mi sistemo
+    (SO[5] + 0.40, w(37.25), "b_IMG_5440_b", 0.3, 1.0, 1.0, None),        #   (seconda inquadratura, stacco veloce)
+    (w(37.25), w(38.29), "b_6066581454588218446", 0.6, 1.1, 1.0, None),   # che do ai miei atleti
+    (w(38.29), w(38.29) + 0.72, "b_152768267402597092", 0.9, 1.1, 1.0, None),  # e subito: altri atleti, bam bam
+    (w(38.29) + 0.72, w(39.89), "b_-5241644845136615582", 1.65, 1.15, 1.0, None),
 ]
-KNEE = B[2]
+KNEE = B[1]
 
 
 def snap(x):
@@ -99,7 +99,7 @@ def render_clip(src, ss, dur, sp, z, c, out):
 BR = []
 for i, (t0, t1, src, ss, sp, z, c) in enumerate(B):
     t0, t1 = snap(t0), snap(t1)
-    render_clip(src, ss, t1 - t0, sp, z, c, f"{OUT}/br{i}.mp4")
+    render_clip(src, ss, t1 - t0 + 0.1, sp, z, c, f"{OUT}/br{i}.mp4")  # qualche fotogramma in più: niente buchi agli stacchi
     BR.append((t0, t1, f"{OUT}/br{i}.mp4"))
 
 # clip dell'hook: atleta fermo col bilanciere, poi scende (2.6 s)
@@ -279,11 +279,40 @@ def knee_layer(tt):
     return im
 
 
+T_SP0, T_SP1 = snap(w(34.53)), snap(SO[5])   # "sensazione di spinta ottimale"
+SP_P = [(290 + x * 500, 330 + y * 930) for x, y in catmull(SOLE)]
+SP_LAT = [(290 + x * 500, 330 + y * 930) for x, y in catmull(LATERAL, closed=False)]
+
+
+def spinta_layer(tt):
+    im = Image.new("RGBA", (W, H), (20, 48, 79, 255))
+    d = ImageDraw.Draw(im)
+    e = ease((tt - T_SP0) / 0.25)
+    d.polygon(SP_P, fill=(10, 26, 44, 255))
+    d.line(SP_P + [SP_P[0]], fill=(255, 255, 255, 255), width=10, joint="curve")
+    for (cx, cy), r in TOES:
+        x, y = 290 + cx * 500, 330 + cy * 930
+        rr = r * 500
+        d.ellipse([x - rr, y - rr * 1.15, x + rr, y + rr * 1.15], fill=(10, 26, 44, 255), outline=(255, 255, 255, 255),
+                  width=8)
+    puls = 0.75 + 0.25 * math.sin((tt - T_SP0) * 9)
+    for wd, al in ((60, 50), (36, 100), (16, 255)):
+        d.line(SP_LAT, fill=ORANGE + (int(al * e * puls),), width=wd, joint="curve")
+    for k in range(3):  # frecce di spinta che salgono
+        ph = ((tt - T_SP0) * 1.6 + k / 3) % 1
+        y = 1180 - ph * 520
+        a = int(255 * e * math.sin(ph * math.pi))
+        d.line([(160, y + 70), (230, y), (300, y + 70)], fill=ORANGE + (a,), width=16, joint="curve")
+    return im
+
+
 p = writer(f"{OUT}/gfx.mov")
 for k in range(round(TOTAL * FPS)):
     tt = k / FPS
     im = foot_layer(tt) if T_P[0] - 0.05 <= tt < T_FOOT_END else Image.new("RGBA", (W, H), (0, 0, 0, 0))
     im.alpha_composite(knee_layer(tt))
+    if T_SP0 <= tt < T_SP1:
+        im = spinta_layer(tt)
     p.stdin.write(im.tobytes())
 p.stdin.close(); p.wait()
 
@@ -337,10 +366,11 @@ def load(path):
 
 
 mix = np.zeros((int((TOTAL + 1) * sr), 2), np.float32)
-SFX = [(0.0, "pop", 0.35), (T_EXP1 - 0.53, "trascina", 0.6),
+SFX = [(0.0, "comparsa", 0.22), (T_EXP1 - 0.53, "trascina", 0.32),  # più leggeri sul riquadro
        (T_P[0], "punto_1", 0.45), (T_P[1], "punto_2", 0.45), (T_P[2], "punto_3", 0.45), (T_DRAW0, "disegno", 0.4),
        (T_EXT, "punto_3", 0.35)]
-SFX += [(t0 - 0.06, "swoosh", 0.22) for t0, _, _ in BR if t0 > 1]
+SFX += [(t0 - 0.06, "swoosh", 0.06) for t0, _, _ in BR if t0 > 1]  # fruscio appena accennato
+SFX += [(T_SP0, "punto_3", 0.25)]
 for t0, nm, vol in SFX:
     x = load(f"{SFXD}/{nm}.wav")
     i0 = max(int(t0 * sr), 0)

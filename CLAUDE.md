@@ -83,6 +83,11 @@ proponi; Manuel corregge sul risultato.
 - Centrati orizzontalmente, poco sotto la metà: di default y ~1450, appena sotto il mento quando c'è la faccia
   (mai sopra bocca/faccia). Sempre nella safe zone (y 250-1580, x 60-1020).
 - Voce sempre senza pause e a 1,1x; B-roll (anche animazioni mie/stock Pixabay) su quasi ogni frase.
-- Effetti sonori leggeri quando compaiono B-roll e grafiche (es. `sfx/trascina.wav`, `punto_1-3.wav`).
+- Effetti sonori LEGGERI quando compaiono B-roll e grafiche (es. `sfx/comparsa.wav`, `trascina.wav`, `punto_1-3.wav`);
+  il fruscio sugli stacchi dei B-roll quasi impercettibile (vol ~0.06). Mai suoni forti.
+- Niente punti morti, reel sempre "animato" ma senza forzarlo. Il parlato che manda Manuel NON va usato per forza
+  tutto: si taglia quello che non serve.
+- B-roll atleti: non ripetere la stessa persona (al massimo una volta); Manuel che si sistema/il suo squat si possono
+  usare più volte. Sui momenti "subito migliora" stacchi veloci tra atleti diversi (bam bam).
 - CTA: per ora NIENTE "link in bio" (Manuel sta costruendo il funnel sul sito); chiudere su un invito tipo
   "provalo e fammi sapere".
