@@ -145,8 +145,9 @@ def gfx(tt):
         if s > 0:
             d = ImageDraw.Draw(im)
             x0, x1 = 140, 140 + (W - 280) * s
-            d.line([(x0, 880), (x1, 760)], fill=ORANGE + (255,), width=22)
-            d.line([(x0, 880), (x1, 760)], fill=(255, 255, 255, 255), width=6)
+            y1 = 900 - 180 * s
+            d.line([(x0, 900), (x1, y1)], fill=(0, 0, 0, 255), width=40)
+            d.line([(x0, 900), (x1, y1)], fill=ORANGE + (255,), width=30)
     if T_CHAMP0 <= tt < T_CHAMP1:  # etichetta sulla clip del campione
         e = ease((tt - T_CHAMP0) / 0.2)
         T = TAG.copy()
@@ -228,8 +229,8 @@ fc = ["[0:v]setpts=PTS-STARTPTS[v0]"]
 last = "v0"
 for i, (t0, t1, path) in enumerate(BR):
     inp += ["-i", path]
-    fc.append(f"[{3 + i}:v]setpts=PTS-STARTPTS+{t0:.4f}/TB[b{i}]")
-    fc.append(f"[{last}][b{i}]overlay=eof_action=pass:enable='between(t,{t0:.4f},{t1 - 0.001:.4f})'[o{i}]")
+    fc.append(f"[{3 + i}:v]setpts=PTS-STARTPTS+{t0 - 0.02:.4f}/TB[b{i}]")  # leggero anticipo: niente fotogrammi scoperti
+    fc.append(f"[{last}][b{i}]overlay=eof_action=pass:enable='between(t,{t0 - 0.01:.4f},{t1 - 0.01:.4f})'[o{i}]")
     last = f"o{i}"
 fc.append(f"[2:v]setpts=PTS-STARTPTS[gx];[{last}][gx]overlay=eof_action=pass,ass={OUT}/subs.ass,format=yuv420p[v]")
 fc.append("[0:a][1:a]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.95[a]")

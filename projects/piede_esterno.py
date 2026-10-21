@@ -386,8 +386,8 @@ fc = ["[0:v]setpts=PTS-STARTPTS[v0]"]
 last = "v0"
 for i, (t0, t1, path) in enumerate(BR):
     inp += ["-i", path]
-    fc.append(f"[{4 + i}:v]setpts=PTS-STARTPTS+{t0:.4f}/TB[b{i}]")
-    fc.append(f"[{last}][b{i}]overlay=eof_action=pass:enable='between(t,{t0:.4f},{t1 - 0.001:.4f})'[o{i}]")
+    fc.append(f"[{4 + i}:v]setpts=PTS-STARTPTS+{t0 - 0.02:.4f}/TB[b{i}]")  # leggero anticipo: niente fotogrammi scoperti
+    fc.append(f"[{last}][b{i}]overlay=eof_action=pass:enable='between(t,{t0 - 0.01:.4f},{t1 - 0.01:.4f})'[o{i}]")
     last = f"o{i}"
 fc.append(f"[2:v]setpts=PTS-STARTPTS[cd];[{last}][cd]overlay=eof_action=pass[oc]")
 fc.append(f"[3:v]setpts=PTS-STARTPTS[gx];[oc][gx]overlay=eof_action=pass,ass={OUT}/subs.ass,format=yuv420p[v]")
