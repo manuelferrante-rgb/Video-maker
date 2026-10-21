@@ -75,3 +75,11 @@ proponi; Manuel corregge sul risultato.
 - Logo: `assets/brand/logo_mf_originale.png` (originale su nero) e `assets/brand/logo_mf_trasparente.png` (scontornato).
 - **Storie**: logo piccolo in alto a sinistra dentro la safe zone (x 56, y 262, largo 170 px), titoli da y 400 in giù
   (vedi `logo()` in `projects/stories_set2.py`). Nei reel per ora niente logo.
+
+## Sottotitoli standard (aggiornato, reel India)
+
+- Bianchi, Inter ExtraBold ~84, bordo nero 7 + leggera ombra, **nessun riquadro dietro**; pagine brevi per frase di senso
+  (max 2 righe), piccolo "pop" d'ingresso.
+- Centrati orizzontalmente, poco sotto la metà: di default y ~1450, appena sotto il mento quando c'è la faccia
+  (mai sopra bocca/faccia). Sempre nella safe zone (y 250-1580, x 60-1020).
+- Voce sempre senza pause e a 1,1x; B-roll (anche animazioni mie/stock Pixabay) su quasi ogni frase.
