@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Copertina "parte esterna del piede": io col piede disegnato (punto 3 acceso), titolo nella fascia 3:4."""
-from PIL import Image, ImageDraw, ImageFont
+"""Copertina "parte esterna del piede": io col piede disegnato ma sfocato (curiosità), in evidenza solo il titolo."""
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 D = "/home/user/Video-maker/out/cover_piede"
 W, H = 1080, 1920
@@ -20,6 +20,16 @@ def label(im, txt, cx, y, size, box=(0, 0, 0), fg=(255, 255, 255)):
 
 
 im = Image.open(f"{D}/base.png").convert("RGBA")
+# piede sfocato: si intuisce la sagoma ma non si leggono punti e scritte
+box = (20, 200, 520, 1040)
+m = Image.new("L", im.size, 0)
+ImageDraw.Draw(m).rounded_rectangle(box, radius=120, fill=255)
+m = m.filter(ImageFilter.GaussianBlur(40))
+face = Image.new("L", im.size, 0)  # la faccia resta nitida
+ImageDraw.Draw(face).ellipse([395, 330, 690, 880], fill=255)
+m = Image.composite(Image.new("L", im.size, 0), m, face.filter(ImageFilter.GaussianBlur(14)))
+clean = Image.open(f"{D}/clean.png").convert("RGBA")  # stesso fotogramma senza grafica: sulla faccia niente scritte
+im = Image.composite(im.filter(ImageFilter.GaussianBlur(28)), clean, m)
 y = label(im, "NESSUNO TE LO DICE", W / 2, 1060, 78)
 label(im, "LA PARTE ESTERNA DEL PIEDE", W / 2, y + 8, 64, box=ORANGE)
 im.convert("RGB").save(f"{D}/copertina_piede_esterno.jpg", quality=95)
