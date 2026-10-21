@@ -83,3 +83,6 @@ proponi; Manuel corregge sul risultato.
 - Centrati orizzontalmente, poco sotto la metà: di default y ~1450, appena sotto il mento quando c'è la faccia
   (mai sopra bocca/faccia). Sempre nella safe zone (y 250-1580, x 60-1020).
 - Voce sempre senza pause e a 1,1x; B-roll (anche animazioni mie/stock Pixabay) su quasi ogni frase.
+- Effetti sonori leggeri quando compaiono B-roll e grafiche (es. `sfx/trascina.wav`, `punto_1-3.wav`).
+- CTA: per ora NIENTE "link in bio" (Manuel sta costruendo il funnel sul sito); chiudere su un invito tipo
+  "provalo e fammi sapere".
