@@ -32,3 +32,23 @@ Secondo esempio approvato (reel "Basta cavi e cavetti"):
 Regole aggiunte:
 - La prima frase NON deve ripetere la frase del reel (né il titolo della copertina): parte già dal ragionamento.
 - L'emoji può stare a fine della prima frase, non per forza in apertura.
+
+Terzo esempio, scritto da Manuel (reel "parte esterna del piede", ottobre 2026):
+
+    Tante informazioni complicate: pensare a tre punti del piede, centro piede, punta, tallone… ma quindi dove sentire il peso sul piede nello squat??!
+
+    Data la conformazione del piede (arco plantare) senti la pressione sulla parte esterna nel centro piede!
+
+    Tienila lì, resti stabile e la spinta rimane ottimale, piena per tutta l'alzata.
+
+    È la prima correzione che do ai miei atleti, e l'alzata diventa subito più efficace 🦶
+
+    Se vuoi farti analizzare lo squat da me: LINK 🔗 in BIO
+
+Regole aggiunte:
+- Contenuti tecnici: aprire sulla confusione/domanda del lettore ("tante informazioni complicate… ma quindi dove…??!"),
+  poi la risposta semplice con il perché (anatomia in parole semplici), poi il beneficio. Tono parlato, punteggiatura
+  espressiva ammessa (??!, …, !).
+- Focus sul beneficio positivo (stabilità, spinta ottimale), non sull'errore (es. ginocchia che cadono all'interno).
+- Nelle CAPTION la CTA può essere "Se vuoi farti analizzare lo squat da me: LINK 🔗 in BIO" (diverso dal parlato del
+  reel, dove per ora il "link in bio" non va detto). Emoji anche nella CTA.
