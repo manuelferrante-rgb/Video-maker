@@ -19,9 +19,8 @@ CUTS = [
     ("IMG_8498", 8.60, 11.00, 3.0),  # la lego
     ("IMG_8498", 13.00, 15.50, 3.0), # il nodo
     ("IMG_8498", 18.50, 20.90, 2.5), # tiro la corda
-    ("IMG_8500", 0.00, 2.60, 3.0),   # stendo la maglia
-    ("IMG_8500", 7.00, 11.00, 3.0),  # stendo i pantaloncini
-    ("IMG_8500", 13.20, 15.60, 1.6), # risultato finale
+    ("IMG_8500", 7.60, 11.00, 3.0),  # stendo i pantaloncini (niente corda vuota)
+    ("IMG_8500", 13.20, 15.60, 1.4), # risultato finale
 ]
 
 
