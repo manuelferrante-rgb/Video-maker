@@ -85,6 +85,15 @@ HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
   (originale: `logo_mf_originale.png`). Titoli da y 400 in giù. Nei reel per ora niente logo.
 - Brand: navy `#14304F`, arancio `#E8662C`, avorio `#F2EEE3`.
 
+## Serie "Input giusti" (ottobre 2026, una puntata ogni mercoledì)
+
+- 4 reel: muscle up -> trazioni -> dip -> squat (in quest'ordine). Intro uguale per tutti ("input giusti per far
+  recepire le informazioni nel modo corretto"), poi subito la parte dell'esercizio.
+- Storie per puntata (5): 1) richiamo alla serie, puzzle a 4 pezzi che si scopre un pezzo a puntata, titolo
+  "Input giusti per trasformare informazioni in qualcosa di utile"; 2) "Quale input utilizzeresti?" con zona libera
+  per lo sticker (le opzioni le mette Manuel); 3) soluzione argomentata, coerente con il reel; 4) il reel;
+  5) "Vuoi farti analizzare <esercizio>? Compila il form qua sotto" con zona per lo sticker link.
+
 ## Caption
 
 Vedi `projects/caption_style.md` (esempi approvati, l'ultimo scritto da Manuel). In breve:
