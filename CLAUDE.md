@@ -93,6 +93,9 @@ HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
   "Input giusti per trasformare informazioni in qualcosa di utile"; 2) "Quale input utilizzeresti?" con zona libera
   per lo sticker (le opzioni le mette Manuel); 3) soluzione argomentata, coerente con il reel; 4) il reel;
   5) "Vuoi farti analizzare <esercizio>? Compila il form qua sotto" con zona per lo sticker link.
+- Editing richiesto: oltre ai sottotitoli (centrati, in basso), **titoli in alto** più grandi in riquadri curati
+  (nero/arancio, Inter Black Italic, y ~280-500) sui concetti chiave; immagini/clip a tema Pixabay mentre parla per
+  tenere alta l'attenzione; sfx leggeri sull'hook e all'entrata di ogni esercizio.
 
 ## Caption
 
