@@ -34,10 +34,10 @@ EPS = [  # chiave, nome, foto, informazione, input, spiegazione, soggetto del fo
       "Spalle avanti e addome duro", "ti tengono stabile."],
      "I TUOI DIP?"),
     ("sq", "SQUAT",
-     ["«Respira col diaframma, mantieni", "il baricentro al centro»"],
-     ["Rilassa il carico,", "pancia tra le gambe!"],
-     ["Mentre scendi non hai tempo", "di pensare al baricentro.", "Pancia tra le gambe ti fa",
-      "restare compatto e in equilibrio", "sotto il bilanciere."],
+     ["«Respira col diaframma, mantieni", "il baricentro al centro del piede»"],
+     ["Rilassa il carico, pancia tra", "le gambe, bilanciere contro!"],
+     ["Mentre scendi non hai tempo", "di pensare al baricentro.", "Pancia tra le gambe e bilanciere",
+      "contro ti fanno restare compatto", "e in equilibrio sotto il carico."],
      "IL TUO SQUAT?"),
 ]
 NAMES = [e[1] for e in EPS]

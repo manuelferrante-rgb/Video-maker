@@ -17,6 +17,10 @@ W, H, FPS, SP = 1080, 1920, 30, 1.1
 TONEMAP = ("zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,tonemap=mobius:param=0.3:desat=0,"
            "zscale=t=bt709:m=bt709:r=tv,format=yuv420p")
 HDR = {"IMG_7636", "IMG_7607", "IMG_7642", "IMG_7650"}
+# squat HLG in luce calda: col tonemap standard la pelle viene rossa e i bianchi slavati (stessa correzione della copertina)
+COLORFIX = {"IMG_7650": ("zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,"
+                         "zscale=t=bt709:m=bt709:r=tv,format=yuv420p,colorbalance=rs=-0.06:rm=-0.06:rh=-0.04:bm=0.03,"
+                         "eq=contrast=1.12:saturation=0.85:gamma=0.97")}
 ORANGE, BLACK = (232, 102, 44), (12, 12, 12)
 FBI = "/usr/share/fonts/opentype/inter/Inter-BlackItalic.otf"
 OR, WH = "{\\c&H2C66E8&}", "{\\c&HFFFFFF&}"
@@ -49,12 +53,13 @@ REELS = {
         br=[(0.48, 2.63, "IMG_7642", 0.3, 1.0, 1.3, (330, 1150)),
             (6.28, 7.55, "IMG_8485", 1.9, 1.0, 1.0, None)]),
     "squat": dict(
-        name="SQUAT", clip="IMG_8562", segs=[(0.20, 0.77), (1.09, 3.93), (9.35, 11.40)],
-        pages=[(1.09, "RESPIRA COL DIAFRAMMA"), (2.42, "MANTIENI IL BARICENTRO\\NAL CENTRO"),
-               (9.35, "RILASSA IL CARICO"), (10.38, f"{OR}PANCIA TRA LE GAMBE")],
+        name="SQUAT", clip="IMG_8562", segs=[(0.20, 0.77), (1.09, 4.15), (9.35, 12.40)],
+        pages=[(1.09, "RESPIRA COL DIAFRAMMA"), (2.42, f"MANTIENI IL BARICENTRO\\NAL CENTRO DEL {OR}PIEDE"),
+               (9.35, "RILASSA IL CARICO"), (10.38, f"{OR}PANCIA TRA LE GAMBE"),
+               (11.36, f"{OR}BILANCIERE CONTRO!")],
         br=[(0.20, 2.42, "IMG_8492", 1.0, 1.0, 1.0, None),
-            (2.42, 3.93, "pix/p302326", 0.0, 1.0, 1.0, None),
-            (10.38, 11.40, "IMG_7650", 3.2, 1.0, 1.0, None)]),
+            (2.42, 4.15, "pix/p302326", 0.0, 1.0, 1.0, None),
+            (10.38, 12.40, "IMG_7650", 3.2, 1.0, 1.0, None)]),
 }
 
 
@@ -77,7 +82,7 @@ def src_path(name):
 
 def render_clip(src, ss, dur, sp, z, c, out):
     nfr = round(dur * FPS)
-    pre = (TONEMAP + ",") if src in HDR else ""
+    pre = (COLORFIX.get(src, TONEMAP) + ",") if src in HDR else ""
     zf = ""
     if z != 1.0:
         cx, cy = c
