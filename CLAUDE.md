@@ -32,6 +32,14 @@ HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
    grafiche PIL in RGBA (qtrle) sovrapposte, sottotitoli ASS, mix audio numpy.
    Stacchi: renderizza ogni B-roll +0.1 s e anticipalo di 0.02 s (`setpts=...+{t0 - 0.02}`), altrimenti compaiono
    1-2 fotogrammi del parlato tra un B-roll e l'altro.
+   **Per i nuovi reel parlati usa `projects/reel_kit.py`** (motore comune: segmenti, B-roll, titoli in alto con
+   barra/numero, evidenziatore arancio, sottotitoli, sfx, loudness esatta): esempi `infortunio_regole.py`,
+   `panca_fermi.py`; serie con intro comune: `input_giusti.py`.
+   Note pratiche: parakeet salta pezzi nelle clip lunghe con pause → trascrivi a blocchi di voce; i suoi tempi
+   parola sono in anticipo ~0.3 s. Il loudnorm a passata singola su reel corti resta a -12.5: reel_kit corregge
+   col guadagno misurato. I vecchi script usano `/home/user/Video-maker`: crea il symlink
+   `ln -s /home/user/video-maker /home/user/Video-maker`. Clip HLG in luce calda (pelle rossa, bianchi slavati):
+   tonemap `hable` npl=100 + `colorbalance` (vedi `COLORFIX` in `input_giusti.py`).
 4. **Controlla sempre** i fotogrammi del risultato (contact sheet) e il loudness prima di consegnare.
 5. Consegna: reel + copertina (+ caption in chat, + storie se richieste). Poi commit + push sul branch di lavoro.
 
@@ -98,6 +106,15 @@ HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
   tenere alta l'attenzione; sfx leggeri sull'hook e all'entrata di ogni esercizio.
 - Caption per ogni reel: apertura comune sul concetto di input giusti, poi la parte specifica dell'esercizio, e in
   chiusura l'invito ai commenti: non sono gli unici input, se te ne vengono in mente altri scrivili nei commenti.
+
+- Stato: 4 reel + copertine + storie + caption consegnati e approvati (ottobre 2026), script `input_giusti.py`,
+  `cover_input_giusti.py`, `stories_input_giusti.py`.
+
+## Altri reel approvati (ottobre 2026)
+
+- "3 regole d'oro dopo un infortunio" (`infortunio_regole.py`) e "fermi lunghi in panca" (`panca_fermi.py`), con
+  copertine `cover_inf_panca.py` e storie `stories_inf_panca.py` (box domanda aperto, sondaggio, spiegazione,
+  form). Nelle storie sui temi di salute: riga "sempre con il via libera del tuo medico o fisioterapista".
 
 ## Caption
 
