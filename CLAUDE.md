@@ -1,93 +1,103 @@
-# Video-maker: reel Instagram per Manuel Ferrante (@_manuelferrante)
+# Video-maker: reel e storie Instagram per Manuel Ferrante (@_manuelferrante)
 
-Manuel manda: i suoi clip parlati (selfie iPhone, spesso HDR/HLG, muro bianco dietro) + uno o più video di sfondo.
-Si consegna SEMPRE il pacchetto completo: **reel + copertina + caption**. Si risponde in italiano.
+Manuel è coach di streetlifting/calisthenics. Usa Claude come **editor autonomo**: manda parlati, B-roll e istruzioni,
+Claude monta e consegna. Si risponde **sempre in italiano**, tono diretto. Non chiedergli di scegliere tra opzioni
+tecniche: decidi tu, consegna, lui corregge sul risultato. Chiedi solo se manca qualcosa di essenziale.
 
-Gli strumenti (dipendenze, modelli in `models/`, font) li installa `.claude/hooks/session-start.sh` all'avvio.
-HuggingFace è bloccato dalla rete: i modelli si scaricano da GitHub (già fatto dall'hook).
+Strumenti (ffmpeg, modelli ASR in `models/`, font Inter/Anton/Noto Emoji) li installa `.claude/hooks/session-start.sh`.
+HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
 
-## Flusso di lavoro
+## Da dove arrivano i file
 
-1. **Analizza i clip parlati**: `python3 analyze_clips.py out/draft.json <clip...>` (ordine = nome file, salvo
-   indicazioni). Dà testo, taglio sulla voce reale e tempi parola. Rileggi e correggi a mano: il modello sbaglia
-   termini tecnici e numeri (es. "masso l'app" = MUSCLE UP, "squadra" = SQUAT, "deep" = DIP). Se ci sono due take
-   della stessa frase, tienine una sola (di solito la più recente) e dillo a Manuel.
-2. **Guarda lo sfondo** (frame a 1-2 fps con `tile`, e scene cut con `select='gt(scene,0.25)'`) e capisci cosa
-   succede e quando.
-3. **Abbina lo sfondo alle parole**: sotto ogni frase va la parte di sfondo IN TEMA con quello che Manuel dice
-   (dice "muscle up" → si vede il muscle up; dice un carico → si vede quell'alzata/quella scritta). Si possono
-   spezzare più parti di sfondo dentro una stessa frase (`background` con `dur`). Evita outro/loghi di altri.
-4. Scrivi `projects/<nome>.json` (modello: `projects/streetlifting_635.json`) e lancia
-   `python3 make_reel.py projects/<nome>.json`. Controlla i frame del risultato prima di consegnare.
-5. Copertina: sezione `cover` nello stesso JSON, `python3 make_cover.py projects/<nome>.json`.
-6. Caption: vedi sotto. Consegna reel e copertina con SendUserFile, la caption in chat.
-7. Commit + push sul branch di lavoro (non i video sorgente; gli output vanno in `out/`, ignorato da git:
-   copia nella root del repo solo i file finali da consegnare se serve).
+- Caricati in chat: `/root/.claude/uploads/<id-sessione>/...` (copiali in `src_<nome>/`, gitignored).
+- Google Drive (cartella condivisa "chiunque abbia il link"): cerca con il connettore Drive
+  (`parentId = '<id cartella>'`) e scarica con
+  `curl -sSL "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"`.
+  Cartelle usate: `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc` (parlati), `1Ko5w_pQKPRjSpGm9DkB8uOMUMCLhHmxh` (nuova).
+- Stock: Pixabay (`PIXABAY_API_KEY` in env, host pixabay.com / cdn.pixabay.com). Pexels non disponibile.
+- Output sempre in `out/<nome>/` (gitignored). Si consegnano con SendUserFile; lo script va committato in `projects/`.
+
+## Flusso di lavoro (reel)
+
+1. **Trascrivi** il parlato: `python3 analyze_clips.py out/x.json <clip>` dà testo e tempi; per i tagli usa
+   l'energia della voce (soglia ~ picco-30/32 dB a blocchi di 10 ms) e la trascrizione per segmenti (vedi
+   `projects/piede_esterno.py`, lista `SEGS`). Il modello sbaglia termini tecnici: correggi a mano.
+   Se ci sono doppie take o frasi che Manuel poi rinnega ("no, questa non mi piace"), tienine una / tagliale.
+   **Il parlato NON va usato per forza tutto**: si tiene solo quello che serve.
+2. **Guarda i B-roll** (fotogrammi con `tile` e timestamp) e abbina a ogni frase la clip IN TEMA con le parole.
+3. **Scrivi uno script Python per reel** in `projects/<nome>.py` (modelli: `piede_esterno.py` = completo con hook
+   animato, punti numerati, B-roll, sfx; `respiro_panca.py` = parlato + citazione + scheda barrata;
+   `india_reel.py` = voiceover + cartina animata `map_italia_india.py`; `panni_giungla.py` = muto, solo scritta POV).
+   Pipeline: un ffmpeg per segmento (`-ss/-t` PRIMA di `-i`), concat, overlay dei B-roll con `enable`,
+   grafiche PIL in RGBA (qtrle) sovrapposte, sottotitoli ASS, mix audio numpy.
+   Stacchi: renderizza ogni B-roll +0.1 s e anticipalo di 0.02 s (`setpts=...+{t0 - 0.02}`), altrimenti compaiono
+   1-2 fotogrammi del parlato tra un B-roll e l'altro.
+4. **Controlla sempre** i fotogrammi del risultato (contact sheet) e il loudness prima di consegnare.
+5. Consegna: reel + copertina (+ caption in chat, + storie se richieste). Poi commit + push sul branch di lavoro.
 
 ## Regole del reel (approvate da Manuel)
 
-- **Durata massima ~10 s.** Tagliare tutte le pause: i tagli seguono l'energia della voce (analyze_clips), non i
-  timestamp grezzi del modello (sono in anticipo di 0.3-0.5 s e lasciano vuoti tra le frasi).
-- **Velocità ~1.1-1.15x** (`speed`, audio con atempo). Ultimo reel: 1.15.
-- **Hook forte all'inizio**: la frase più eclatante (un numero, un record) apre il video, con Manuel grande.
-- **Audio**: solo la voce di Manuel, sfondo muto, loudnorm -14 LUFS.
-- **Colore pelle**: i clip iPhone HLG vanno convertiti con `HDR_TO_SDR` in make_reel.py (mobius npl=400 + sat 1.4
-  + leggero warm). Non toccarlo: le versioni più chiare sono state bocciate come "cadaveriche".
-  `probe_hdr` deve riconoscere HLG (attenzione all'output di ffprobe con la virgola finale).
-- **Scontorno**: `Matter.run` toglie anche il muro bianco tra i ricci (colore muro campionato, `wall_thr` 44) e
-  decontamina i bordi (`matter.clean`). Non abbassarlo: con la versione vecchia restava bianco tra i capelli.
-- **Faccia (busto scontornato)**, layout a keyframe in `layouts`:
-  - `big` (grande al centro, con punch) sulle cose eclatanti/hook;
-  - `mid_l` / `mid_r` / `mid_c` per il parlato normale, faccia ALTA nella safe zone (occhi ~y 1440 su 1920);
-  - `hidden` per sparire e lasciare vedere solo lo sfondo (es. mentre si vede un'alzata con la sua scritta).
-  - Non esagerare con i movimenti: `still_until` tiene il busto fermo (niente dondolio) in un tratto.
-    Nel reel approvato: grande sull'hook → scivola via → sparisce → rientra e resta fermo → zoom grande sul
-    numero forte → normale fino alla fine.
-- **Sottotitoli**: pagine per frase di senso ("|PAROLA" nel JSON forza una nuova pagina); font Anton, MAIUSCOLO, bianco con bordo nero + ombra, parola pronunciata in azzurro `5CE1F6`.
-  Dimensione 74, max 3 parole per volta, centrati orizzontalmente, a ~72% dell'altezza (margin_v 520).
-  Scrivere le parole come dette ("37 KG E MEZZO DI MUSCLE UP"), numeri in cifre.
+- **Nessun punto morto.** Voce senza pause, **velocità 1,1x** (atempo), loudnorm -14 LUFS. B-roll muti.
+- Durata: quella che serve senza buchi (reel parlati 15-19 s; reel virali/POV 7-9 s).
+- **Hook forte** nei primi 1-2 s, Manuel grande o un'animazione (es. riquadro che parte dal dito e si apre a tutto
+  schermo seguendo la mano, `card.mov` in `piede_esterno.py`).
+- **B-roll su quasi ogni frase**, coerenti con le parole: suoi video, atleti, animazioni mie (PIL), stock Pixabay.
+  Atleti: **non ripetere la stessa persona** (al massimo una); Manuel che si sistema / il suo squat si possono
+  ripetere. Sui momenti "subito migliora": stacchi veloci tra atleti diversi (bam bam).
+- Reel sempre "animato" ma **senza forzarlo**: niente animazioni a raffica, testi leggibili e fermi.
+- **Effetti sonori LEGGERI** (`sfx/`, generati da `sfx/make_sfx*.py`, niente licenze): `comparsa`, `trascina`,
+  `punto_1-3`, `disegno`, `whoosh`, `swoosh`, `pop`, `hit`, `aereo_decollo/atterraggio`. Fruscio sugli stacchi
+  quasi impercettibile (vol ~0.06). Mai suoni forti. Musica: la mette Manuel su Instagram.
+- **Colore naturale**: nessun grading sul parlato iPhone; i clip HLG (`arib-std-b67`) solo tonemap
+  (`zscale ... tonemap=mobius`, vedi `TONEMAP` negli script). Gli effetti "opachi" sono stati bocciati.
+- **Niente loghi/outro di altri** nelle clip (taglia prima dell'outro). Le citazioni di altri creator vanno tradotte
+  nei sottotitoli; il nome si tagga, non si scrive.
+- **CTA nel parlato**: per ora NIENTE "link in bio" (Manuel sta costruendo il funnel sul sito). Chiudere su un
+  invito tipo "provaci e fammi sapere" / "e tu cosa ne pensi?".
 
-## Copertina (stile dei riferimenti di Manuel)
+## Sottotitoli standard
 
-- Frame dello sfondo più forte (atleta ben visibile, ritaglia via le scritte in sovrimpressione dello sfondo).
-- Manuel scontornato in basso a sinistra con un'espressione forte (stupito, mano in faccia...).
-- Titolo clickbait su 2-3 righe centrato, Anton ~125-150, bianco + parole chiave azzurre (`*parola` nel JSON),
-  bordo e ombra neri, che passa sopra i capelli.
-- **Deve funzionare nel ritaglio 3:4 della griglia profilo** (1080x1440 centrale: y 240-1680): faccia intera
-  (dai capelli alla barba) e titolo dentro quella fascia. Fai sempre l'anteprima del ritaglio.
+- Bianchi, **Inter ExtraBold ~78-84**, bordo nero 7 + leggera ombra, **nessun riquadro dietro**; pagine brevi per
+  frase di senso (max 2 righe), piccolo "pop" d'ingresso. Una parola chiave può essere arancio `#E8662C`.
+- Centrati, di default **y ~1450**, appena sotto il mento quando c'è la faccia (mai sopra bocca/faccia).
+  Sempre nella safe zone (y 250-1580, x 60-1020).
+- Etichette/grafiche: Inter Black Italic in riquadri neri o arancio, sempre nella safe zone, mai sulla testa.
+- Reel POV/virali: una sola scritta per tutto il video, bianca con bordo nero, centrata un po' sopra il centro
+  (y ~760); il video è abbastanza corto da ripartire mentre la leggi.
 
-## Caption (stile approvato, vedi `projects/caption_style.md`)
+## Copertina
 
-- Apertura: il fatto/numero secco o direttamente il ragionamento, MAI la stessa frase del reel/copertina; max 1 emoji
-  (anche a fine frase), da variare in base al tema (non sempre 👀).
-- 3 paragrafi brevi e discorsivi sul significato per lo streetlifting, niente elenchi di numeri.
-- **Nessun hashtag.** Niente em dash (—). Tono diretto, niente frasi da guru.
-- Una sola CTA finale: "Se ti interessano questi contenuti, seguimi."
-- Atleta e organizzatori: solo taggati da Manuel, non nominati nel testo.
+- Stile: fotogramma forte (Manuel con espressione decisa o la scena), titolo su 2 righe: riquadro nero +
+  riquadro arancio (Inter Black Italic), nella fascia y ~1060-1250.
+- Curiosità: si può sfocare la parte che "spoilera" (es. il piede disegnato) e rendere **illeggibile** il riquadro
+  arancio (si vede che c'è scritto qualcosa ma non si legge). Faccia sempre nitida.
+- Per i POV: stessa scritta del reel. **Sempre anteprima del ritaglio 3:4 della griglia** (y 240-1680).
+- Script modello: `projects/cover_piede.py`, `cover_respiro.py`, `cover_panni.py`.
 
-## Cosa chiedere a Manuel solo se manca
+## Storie (set da 4 + il reel come 4ª)
 
-Ordine dei clip se ambiguo, quale take tenere se ci sono doppioni, nome atleta/tag. Per il resto decidi tu e
-proponi; Manuel corregge sul risultato.
+- Struttura tipica: 1-2 storie con box domanda (risposta multipla o aperta) o slider, 1 spiegazione minima +
+  "IL REEL NELLA PROSSIMA STORIA", (reel), storia finale con domanda corta oppure link ("Vuoi farti correggere lo
+  squat da me? CLICCA QUI" con zona per lo sticker link). Prima proponi le idee, Manuel dice sì/no.
+- Stile: foto reale scurita in navy, etichette nei riquadri, arancio come accento, zona sticker libera,
+  footer con puntini e @_manuelferrante. Helper in `projects/stories_set2.py`, esempio completo `stories_set3.py`.
+- **Logo** piccolo in alto a sinistra (x 56, y 262, largo 170): `assets/brand/logo_mf_trasparente.png`
+  (originale: `logo_mf_originale.png`). Titoli da y 400 in giù. Nei reel per ora niente logo.
+- Brand: navy `#14304F`, arancio `#E8662C`, avorio `#F2EEE3`.
 
-## Brand (aggiornato)
+## Caption
 
-- Logo: `assets/brand/logo_mf_originale.png` (originale su nero) e `assets/brand/logo_mf_trasparente.png` (scontornato).
-- **Storie**: logo piccolo in alto a sinistra dentro la safe zone (x 56, y 262, largo 170 px), titoli da y 400 in giù
-  (vedi `logo()` in `projects/stories_set2.py`). Nei reel per ora niente logo.
+Vedi `projects/caption_style.md` (esempi approvati, l'ultimo scritto da Manuel). In breve:
+apertura sulla domanda/confusione del lettore (mai la stessa frase del reel), risposta semplice col perché,
+beneficio positivo (non l'errore), max 1-2 emoji, niente hashtag, niente em dash (—).
+CTA: "Se ti interessano questi contenuti, seguimi." oppure "Se vuoi farti analizzare lo squat da me: LINK 🔗 in BIO".
 
-## Sottotitoli standard (aggiornato, reel India)
+## In sospeso
 
-- Bianchi, Inter ExtraBold ~84, bordo nero 7 + leggera ombra, **nessun riquadro dietro**; pagine brevi per frase di senso
-  (max 2 righe), piccolo "pop" d'ingresso.
-- Centrati orizzontalmente, poco sotto la metà: di default y ~1450, appena sotto il mento quando c'è la faccia
-  (mai sopra bocca/faccia). Sempre nella safe zone (y 250-1580, x 60-1020).
-- Voce sempre senza pause e a 1,1x; B-roll (anche animazioni mie/stock Pixabay) su quasi ogni frase.
-- Effetti sonori LEGGERI quando compaiono B-roll e grafiche (es. `sfx/comparsa.wav`, `trascina.wav`, `punto_1-3.wav`);
-  il fruscio sugli stacchi dei B-roll quasi impercettibile (vol ~0.06). Mai suoni forti.
-- Niente punti morti, reel sempre "animato" ma senza forzarlo. Il parlato che manda Manuel NON va usato per forza
-  tutto: si taglia quello che non serve.
-- B-roll atleti: non ripetere la stessa persona (al massimo una volta); Manuel che si sistema/il suo squat si possono
-  usare più volte. Sui momenti "subito migliora" stacchi veloci tra atleti diversi (bam bam).
-- CTA: per ora NIENTE "link in bio" (Manuel sta costruendo il funnel sul sito); chiudere su un invito tipo
-  "provalo e fammi sapere".
+- Analisi Instagram via Graph API (solo lettura): partire SOLO quando Manuel dà il via. Servono account
+  professionale, app Meta, token come secret d'ambiente (mai in chat), host graph.instagram.com/graph.facebook.com.
+
+## Vecchia pipeline (legacy)
+
+`make_reel.py` / `make_cover.py` con JSON (`projects/streetlifting_635.json`): stile vecchio (Anton, azzurro
+`5CE1F6`, busto scontornato). Manuel ha chiesto di ripartire da zero con lo stile sopra: usarla solo se la chiede.
