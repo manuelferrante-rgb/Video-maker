@@ -96,6 +96,8 @@ HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
 - Editing richiesto: oltre ai sottotitoli (centrati, in basso), **titoli in alto** più grandi in riquadri curati
   (nero/arancio, Inter Black Italic, y ~280-500) sui concetti chiave; immagini/clip a tema Pixabay mentre parla per
   tenere alta l'attenzione; sfx leggeri sull'hook e all'entrata di ogni esercizio.
+- Caption per ogni reel: apertura comune sul concetto di input giusti, poi la parte specifica dell'esercizio, e in
+  chiusura l'invito ai commenti: non sono gli unici input, se te ne vengono in mente altri scrivili nei commenti.
 
 ## Caption
 
