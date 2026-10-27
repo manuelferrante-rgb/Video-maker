@@ -12,6 +12,10 @@ ORANGE = (232, 102, 44)
 FB = "/usr/share/fonts/opentype/inter/Inter-BlackItalic.otf"
 TONEMAP = ("zscale=t=linear:npl=203,format=gbrpf32le,zscale=p=bt709,tonemap=mobius:param=0.3:desat=0,"
            "zscale=t=bt709:m=bt709:r=tv,format=yuv420p,")
+# squat (HLG, luce calda): tonemap hable + bilanciamento, altrimenti pelle rossa e bianchi slavati
+FIX = {"squat": ("zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,"
+                 "zscale=t=bt709:m=bt709:r=tv,format=yuv420p,colorbalance=rs=-0.06:rm=-0.06:rh=-0.04:bm=0.03,"
+                 "eq=contrast=1.12:saturation=0.85:gamma=0.97,")}
 # reel: (clip, secondo, hdr, nome)
 COVERS = {"mu": ("IMG_7636", 4.2, True, "MUSCLE UP"), "trazioni": ("IMG_8337", 1.9, False, "TRAZIONI"),
           "dip": ("IMG_8485", 0.5, False, "DIP"), "squat": ("IMG_7650", 2.5, True, "SQUAT")}
@@ -33,7 +37,7 @@ for key, (clip, ss, hdr, name) in COVERS.items():
     D = f"{R}/out/input_giusti/{key}"
     base = f"{D}/cover_base.png"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(ss), "-i", f"{S}/{clip}.mov", "-frames:v", "1",
-                    "-vf", f"{TONEMAP if hdr else ''}scale={W}:{H}:flags=lanczos", base], check=True)
+                    "-vf", f"{FIX.get(key, TONEMAP if hdr else '')}scale={W}:{H}:flags=lanczos", base], check=True)
     im = Image.open(base).convert("RGBA")
     y = label(im, "INPUT GIUSTI", W / 2, 1062, 92)
     label(im, name, W / 2, y + 10, 118, box=ORANGE)
