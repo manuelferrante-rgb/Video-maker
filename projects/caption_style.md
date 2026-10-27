@@ -52,3 +52,18 @@ Regole aggiunte:
 - Focus sul beneficio positivo (stabilità, spinta ottimale), non sull'errore (es. ginocchia che cadono all'interno).
 - Nelle CAPTION la CTA può essere "Se vuoi farti analizzare lo squat da me: LINK 🔗 in BIO" (diverso dal parlato del
   reel, dove per ora il "link in bio" non va detto). Emoji anche nella CTA.
+
+Quarto esempio, rivisto da Manuel (serie "Input giusti", puntata muscle up, ottobre 2026):
+
+    Sai cosa fare nel muscle up, ma sotto la sbarra non riesci a metterlo in pratica?? Si parte da qui con la serie "Input giusti".
+
+    "Attiva il dorsale e non extraruotare le spalle" è corretto, ma a metà alzata non hai tempo di pensarci.
+
+    Pensa a portare giù la sbarra, con i gomiti vicini e le spalle oltre la sbarra: nella transizione ti ritrovi sopra la sbarra in modo fluido 💪
+
+    Te ne vengono in mente altri? Scrivi i tuoi nei commenti👇
+
+Regole aggiunte:
+- Caption BREVI: 4 righe (domanda + aggancio alla serie, informazione, input + beneficio, invito ai commenti).
+- Riferimento alla serie nella prima frase, corto, senza giorni o calendario delle puntate.
+- Chiusura serie: "Te ne vengono in mente altri? Scrivi i tuoi nei commenti👇".
