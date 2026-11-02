@@ -67,3 +67,17 @@ Regole aggiunte:
 - Caption BREVI: 4 righe (domanda + aggancio alla serie, informazione, input + beneficio, invito ai commenti).
 - Riferimento alla serie nella prima frase, corto, senza giorni o calendario delle puntate.
 - Chiusura serie: "Te ne vengono in mente altri? Scrivi i tuoi nei commenti👇".
+
+Quinto esempio, rivisto da Manuel (serie "Input giusti", puntata trazioni, novembre 2026):
+
+    Ti dicono di deprimere le scapole nelle trazioni, ma mentre tiri non sai a cosa pensare?? Seconda puntata della serie "Input giusti".
+
+    "Scapole depresse: aumenta lo spazio subacromiale" è corretto, ma mentre esegui il gesto non hai tempo di pensarci.
+
+    Pensa a tirare giù la sbarra, non ti allontanare ma pensa di rimanere vicino e con il naso di sfiorare la sbarra, gambe avanti (tallone sotto sbarra) mantenendole compatte e la traiettoria sarà efficiente💪
+
+    Te ne vengono in mente altri? Scrivi i tuoi nei commenti👇
+
+Regole aggiunte:
+- Nell'input Manuel aggiunge dettagli pratici concreti (naso che sfiora la sbarra, tallone sotto la sbarra) e chiude
+  sul beneficio tecnico (traiettoria efficiente). Meglio input concreti e visivi che frasi generiche.
