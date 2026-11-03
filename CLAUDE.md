@@ -43,7 +43,10 @@ HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
    col guadagno misurato. I vecchi script usano `/home/user/Video-maker`: crea il symlink
    `ln -s /home/user/video-maker /home/user/Video-maker`. Clip HLG in luce calda (pelle rossa, bianchi slavati):
    tonemap `hable` npl=100 + `colorbalance` (vedi `COLORFIX` in `input_giusti.py`).
-4. **Controlla sempre** i fotogrammi del risultato (contact sheet) e il loudness prima di consegnare.
+4. **Controlla sempre** i fotogrammi del risultato (contact sheet) e il loudness prima di consegnare. Manuel lo
+   chiede esplicitamente: prima di ogni invio ricontrolla TUTTO, sia che si veda bene (testi leggibili e non tagliati,
+   soggetto non coperto da dischi/oggetti, niente fotogrammi sfocati o vuoti, niente flash tra gli stacchi) sia che
+   rispetti ogni sua indicazione data in chat. Correggi prima di mandare.
 5. Consegna: reel + copertina (+ caption in chat, + storie se richieste). Poi commit + push sul branch di lavoro.
 
 ## Regole del reel (approvate da Manuel)
