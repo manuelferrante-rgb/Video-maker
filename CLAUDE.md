@@ -134,6 +134,45 @@ in riquadro arancio); B-roll in riquadro arrotondato al centro della scheda o pi
 sinistra sul parlato con didascalia in corsivo; transizioni morbide e più sfx (sempre leggeri).
 I sottotitoli restano quelli approvati (bianchi, parola chiave arancio).
 
+## Reel di novembre 2026 (consegnati) e feedback di Manuel da ricordare sempre
+
+- "In che giorni allenarsi" (format IG1): `giorni_allenamento.py` (versioni A 18 s / B 23 s), schede animate
+  `giorni_cards.py` su `ig1_cards.py` (fondo scuro, serif Instrument Serif in `assets/fonts/`, gauge, split, settimana,
+  batteria), copertina `cover_giorni.py`, storie `stories_giorni.py` (sondaggio, slider, spiegazione 3 punti, form
+  "programmazione su misura per te"). `reel_kit.py` ora ha `overlays` (B-roll in riquadro con didascalia) e la
+  dissolvenza opzionale come 8° campo dei B-roll.
+- "L'intenzione" (reel muto con musica): `intenzione.py` (V1 split screen, V2 bianco e nero -> colore sul drop),
+  copertina split `cover_intenzione.py`, musica originale `sfx/make_music.py` (drop al secondo esatto).
+- Pubblicati come reel di prova: Manuel li ha tagliati entrambi a ~18 s.
+
+Feedback (valgono per tutti i prossimi video):
+- **Versioni di prova = stessa durata (~18 s), cambia solo il formato/approccio**, non la lunghezza. Copertina e
+  caption uguali tra le versioni, così il test misura solo il montaggio.
+- Durata giusta per i reel: ~18 s. Meglio corto e denso che lungo.
+- Copy/script: parla a un **atleta intermedio che vuole diventare avanzato e si allena da solo** (4 sedute intense);
+  tono da coach di forza serio. Concetti con il perché (es. sistema nervoso, recupero), niente elenchi di giorni o
+  numeri che non hanno senso (es. "72 ore"), niente frasi vaghe tipo "i giorni contano quanto la scheda" senza
+  spiegare. Chiusure che chiede: "Ti è stato utile? Com'è la tua split settimanale? Fammelo sapere nei commenti".
+- Manuel registra uno script unico: le versioni le ricavi tu con i tagli. Taglia TUTTE le pause (anche 0,2-0,5 s),
+  1,1x, prendi la take migliore quando ripete ("ripeto").
+- Format IG1: Manuel in camera solo a inizio e fine (e poco nel mezzo, sempre coperto da B-roll in riquadro, titoli
+  o sottotitoli). Nel mezzo schede animate e B-roll; animazioni dove cala l'attenzione; sfx leggeri ma curati.
+- Reel "a contrasto" (stile 2IG): **stesso video/esercizio** per bianco e nero (rallentato, momenti in cui perde
+  tempo, è distratto, poca intenzione) e colore (le ripetizioni in cui dà tutto). Etichette solo se il girato le
+  mostra davvero (niente "CELLULARE" senza un telefono in scena), centrate e sempre alla stessa altezza. Esercizi
+  che vuole: muscle up, panca, curl bicipiti (+ squat). Ricontrolla il cambio di musica sul testo chiave.
+- Bianco e nero: abbastanza luminoso da leggere bene il soggetto (gamma ~1.25), mai scuro.
+- Copertine: gli piace il fondo con lui che fa l'esercizio (es. squat) e lui scontornato più piccolo e di lato,
+  con un frame in cui sorride/è aperto (scelto il 152,6 del parlato); fai scegliere il frame se è incerto, mandando
+  una striscia di candidati con i secondi.
+- Storie: domande banali (quiz generici) bocciate; meglio slider o domande che fanno riflettere. Form finale:
+  "Vuoi una programmazione su misura per te?".
+- Prima di ogni invio: controllo completo (immagini, testi non tagliati, soggetto visibile, musica/drop, loudness,
+  ogni indicazione della chat). Manuel scrive spesso "Fatto?": rispondi con lo stato preciso.
+- Caption: Manuel le fa anche con un'altra AI; il prompt-modello è in `projects/caption_style.md`.
+- Nota tecnica: non usare `pkill -f`/`pgrep -f` con stringhe che compaiono nel tuo stesso comando (uccide la shell);
+  usa il PID o `pgrep -a python3 | grep`.
+
 ## Caption
 
 Vedi `projects/caption_style.md` (esempi approvati, l'ultimo scritto da Manuel). In breve:

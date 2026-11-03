@@ -81,3 +81,9 @@ Quinto esempio, rivisto da Manuel (serie "Input giusti", puntata trazioni, novem
 Regole aggiunte:
 - Nell'input Manuel aggiunge dettagli pratici concreti (naso che sfiora la sbarra, tallone sotto la sbarra) e chiude
   sul beneficio tecnico (traiettoria efficiente). Meglio input concreti e visivi che frasi generiche.
+
+Prompt-modello per farsi scrivere la caption da un'altra AI (dato a Manuel, novembre 2026): ruolo copywriter di
+Manuel; pubblico atleta intermedio che si allena da solo; tono da coach di forza serio; incollare il contenuto del
+reel; regole: max 4 righe, prima riga sulla domanda del lettore senza ripetere reel/copertina, perché semplice,
+beneficio positivo, dettagli pratici, 1-2 emoji, niente hashtag né trattini lunghi, chiusura con domanda nei
+commenti, niente "link in bio"; esempio approvato (trazioni); chiedere 3 proposte di apertura.
