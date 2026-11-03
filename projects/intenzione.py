@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Reel muto "L'intenzione" (sul modello del riferimento 2IG: 2 atleti, stesso programma, solo uno migliora),
 con i miei B-roll in src_giorni e musica originale (sfx/make_music.py). Due approcci da testare:
-  V1 split screen: sopra l'atleta senza intenzione (bianco e nero, rallentato, pause con "POCO RECUPERO" e
-     "CELLULARE"), sotto quello con intenzione (colore, velocità reale); scritte sulla linea di mezzo;
+  V1 split screen: sopra l'atleta senza intenzione (bianco e nero, rallentato, pause con "DISTRAZIONI" e
+     "POCO RECUPERO"), sotto quello con intenzione (colore, velocità reale); scritte sulla linea di mezzo;
      drop della musica su "L'INTENZIONE".
   V2 a tutto schermo: prima tutto in bianco e nero rallentato con le pause, poi sul drop colore e stacchi a tempo
      di musica sulle alzate vere, con "L'INTENZIONE" fissa.
@@ -71,7 +71,7 @@ def tag(im, txt, x, y, a, box=(0, 0, 0), size=44):
     d.text((50 - l, 14 - t), txt, font=f, fill=(255, 255, 255, 255))
     if a < 1:
         lay.putalpha(lay.split()[3].point(lambda v: int(v * a)))
-    im.alpha_composite(lay, (int(x), int(y)))
+    im.alpha_composite(lay, (int(W / 2 - w / 2 if x is None else x), int(y)))  # x None = centrata
 
 
 def big_word(im, txt, y, a, s):
@@ -95,10 +95,10 @@ def pop(x):
     return 1.06 - 0.06 * ease((x - 0.6) / 0.4)
 
 
-def gfx(draw, out):
+def gfx(draw, out, dur=DUR):
     p = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{W}x{H}",
                           "-r", str(FPS), "-i", "-", "-c:v", "qtrle", "-pix_fmt", "argb", out], stdin=subprocess.PIPE)
-    for k in range(round(DUR * FPS)):
+    for k in range(round(dur * FPS)):
         im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         draw(im, k / FPS)
         p.stdin.write(im.tobytes())
@@ -109,12 +109,12 @@ def window(t, t0, t1, fin=0.25, fout=0.2):
     return ease((t - t0) / fin) * (1 - ease((t - (t1 - fout)) / fout))
 
 
-def finish(video, gfxmov, music, name):
+def finish(video, gfxmov, music, name, dur=DUR):
     tmp = f"{OUT}/{name}_tmp.mp4"
     run(["ffmpeg", "-v", "error", "-y", "-i", video, "-i", gfxmov, "-i", music, "-filter_complex",
          "[0:v][1:v]overlay=eof_action=pass,format=yuv420p[v];[2:a]loudnorm=I=-14:TP=-1.5:LRA=9,aresample=48000[a]",
          "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "16", "-preset", "slow", "-c:a", "aac", "-b:a",
-         "192k", "-t", f"{DUR}", "-movflags", "+faststart", tmp])
+         "192k", "-t", f"{dur}", "-movflags", "+faststart", tmp])
     meas = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", tmp, "-af", "loudnorm=print_format=json",
                            "-f", "null", "-"], capture_output=True, text=True).stderr
     li = float(meas[meas.rindex("{"):].split('"input_i" : "')[1].split('"')[0])
@@ -124,13 +124,12 @@ def finish(video, gfxmov, music, name):
 
 
 # ---------------- V1: split screen ----------------
-DROP1 = 17.4
+DROP1, DUR1 = 13.2, 18.8
 # (inizio, fine, sopra: file, ss, vel, centro y, etichetta | sotto: file, ss, vel, centro y)
 V1 = [(0.0, 4.4, ("IMG_8442", 19.0, 0.5, 1050, None), ("IMG_8636", 3.5, 1.0, 1100)),
-      (4.4, 8.8, ("IMG_8454", 0.0, 0.6, 780, "POCO RECUPERO"), ("IMG_8695", 1.0, 1.0, 860)),
-      (8.8, 13.0, ("IMG_8452", 25.8, 0.35, 1000, "CELLULARE"), ("IMG_8643", 3.0, 1.0, 820)),
-      (13.0, DROP1, ("IMG_8454", 43.6, 0.6, 820, "POCO RECUPERO"), ("IMG_8641", 13.0, 1.0, 1250)),
-      (DROP1, DUR, ("IMG_8442", 22.6, 0.5, 1000, None), ("IMG_8641", 17.6, 1.0, 1250))]
+      (4.4, 8.8, ("IMG_8454", 0.0, 0.6, 780, "DISTRAZIONI"), ("IMG_8695", 1.0, 1.0, 860)),
+      (8.8, DROP1, ("IMG_8454", 43.6, 0.6, 820, "POCO RECUPERO"), ("IMG_8643", 3.0, 1.0, 820)),
+      (DROP1, DUR1, ("IMG_8442", 22.6, 0.5, 1000, None), ("IMG_8641", 17.6, 1.0, 1250))]
 TEXT1 = [(0.0, 4.4, "2 ATLETI.\nSTESSO PROGRAMMA."), (4.4, 8.8, "PERCHÉ SOLO UNO\nDIVENTA PIÙ FORTE?"),
          (8.8, DROP1, "LA DIFFERENZA?")]
 
@@ -155,20 +154,20 @@ def v1():
                 center_text(d, txt, 960 - (40 if "\n" in txt else 0), 64, window(t, a, b))
         for a, b, top, _ in V1:
             if top[4] and a <= t < b:
-                tag(im, top[4], 50, 660, window(t, a + 0.5, b, 0.2, 0.2), size=58)
+                tag(im, top[4], None, 700, window(t, a + 0.5, b, 0.2, 0.2), size=58)
         if t >= DROP1:
             big_word(im, "L'INTENZIONE", 960, 1.0, pop((t - DROP1) / 0.3))
-    gfx(draw, f"{D}/gfx.mov")
-    make_music(DUR, DROP1, 7, f"{D}/music.wav")
-    finish(f"{D}/video.mp4", f"{D}/gfx.mov", f"{D}/music.wav", "reel_intenzione_v1_split")
+    gfx(draw, f"{D}/gfx.mov", DUR1)
+    make_music(DUR1, DROP1, 5, f"{D}/music.wav")
+    finish(f"{D}/video.mp4", f"{D}/gfx.mov", f"{D}/music.wav", "reel_intenzione_v1_split", DUR1)
 
 
 # ---------------- V2: bianco e nero -> colore sul drop ----------------
 BEAT = 60 / 92
 DROP2 = 16 * BEAT  # 4 battute a 92 BPM (10.43 s)
 V2 = [(0.0, 3.6, "IMG_8442", 19.0, 0.5, True, None),
-      (3.6, 7.0, "IMG_8454", 0.0, 0.6, True, "POCO RECUPERO"),
-      (7.0, DROP2, "IMG_8452", 25.8, 0.35, True, "CELLULARE")]
+      (3.6, 7.0, "IMG_8454", 0.0, 0.6, True, "DISTRAZIONI"),
+      (7.0, DROP2, "IMG_8454", 43.6, 0.6, True, "POCO RECUPERO")]
 CUTS = ["IMG_8641", 17.6], ["IMG_8636", 3.5], ["IMG_8695", 1.5], ["IMG_8641", 13.2], ["IMG_8643", 3.0], \
        ["IMG_8636", 9.0], ["IMG_8641", 21.0]
 TEXT2 = [(0.0, 3.6, "STESSO PROGRAMMA."), (3.6, DROP2, "RISULTATI DIVERSI?")]
@@ -198,7 +197,7 @@ def v2():
                 center_text(d, txt, 760, 72, window(t, a, b))
         for a, b, f, ss, sp, bw, lab in V2:
             if lab and a <= t < b:
-                tag(im, lab, W / 2 - 230, 1150, window(t, a + 0.5, b, 0.2, 0.2), size=60)
+                tag(im, lab, None, 880, window(t, a + 0.5, b, 0.2, 0.2), size=58)
         if t >= DROP2:
             big_word(im, "L'INTENZIONE", 760, 1.0, pop((t - DROP2) / 0.3))
     gfx(draw, f"{D}/gfx.mov")
