@@ -127,10 +127,10 @@ def build(cfg):
 
     # ---- B-roll (+0.1 s di margine, anticipati di 0.02 s all'overlay)
     BR = []
-    for i, (s0, s1, path, ss, sp, z, c) in enumerate(cfg["br"]):
+    for i, (s0, s1, path, ss, sp, z, c, *opt) in enumerate(cfg["br"]):
         t0, t1 = snap(ot(s0)), snap(ot(s1))
         render_clip(path, ss, t1 - t0 + 0.1, sp, z, c, f"{OUT}/br{i}.mp4")
-        BR.append((t0, t1, f"{OUT}/br{i}.mp4"))
+        BR.append((t0, t1, f"{OUT}/br{i}.mp4", opt[0] if opt else 0))  # opt: dissolvenza in entrata (s)
 
     # ---- grafiche: righe di titoli in alto (con barra animata o numero), evidenziatore
     YT = 300
@@ -142,6 +142,8 @@ def build(cfg):
         strike = ot(tt["strike"]) if "strike" in tt else None
         rows.append((ot(tt["t0"]), ot(tt["t1"]), boxes, strike))
     glows = [(ot(g0), ot(g1), xy) for g0, g1, xy in cfg.get("glow", [])]
+    # livelli extra disegnati sopra (es. B-roll in riquadro): (inizio, fine, draw(im, t_locale))
+    extra = [(ot(e0), ot(e1), fn) for e0, e1, fn in cfg.get("overlays", [])]
     p = writer(f"{OUT}/gfx.mov")
     for k in range(round(TOTAL * FPS)):
         tt = k / FPS
@@ -165,6 +167,9 @@ def build(cfg):
                 e = ease((tt - strike) / 0.22)
                 d.line([(xs, YT + 26), (xs + (b.width + 20) * e, YT - 26)], fill=ORANGE + (int(255 * fade),),
                        width=14)
+        for e0, e1, fn in extra:
+            if e0 <= tt < e1:
+                fn(im, tt - e0, e1 - e0)
         for g0, g1, (gx, gy) in glows:
             if not (g0 <= tt < g1):
                 continue
@@ -204,7 +209,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     sr = 48000
     mix = np.zeros((int((TOTAL + 1) * sr), 2), np.float32)
     SFX = [(ot(s) + dt, nm, vol) for s, dt, nm, vol in cfg.get("sfx", [])]
-    SFX += [(t0 - 0.06, "swoosh", 0.06) for t0, _, _ in BR]
+    SFX += [(t0 - 0.06, "swoosh", 0.06) for t0, _, _, _ in BR]
     for t0, nm, vol in SFX:
         x = load(f"{SFXD}/{nm}.wav")
         i0 = max(int(t0 * sr), 0)
@@ -218,9 +223,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     inp = ["-i", f"{OUT}/talk.mov", "-i", f"{OUT}/sfx.wav", "-i", f"{OUT}/gfx.mov"]
     fc = ["[0:v]setpts=PTS-STARTPTS[v0]"]
     last = "v0"
-    for i, (t0, t1, path) in enumerate(BR):
+    for i, (t0, t1, path, fd) in enumerate(BR):
         inp += ["-i", path]
-        fc.append(f"[{3 + i}:v]setpts=PTS-STARTPTS+{max(t0 - 0.02, 0):.4f}/TB[b{i}]")
+        fade = f"format=yuva420p,fade=t=in:st=0:d={fd}:alpha=1," if fd else ""
+        fc.append(f"[{3 + i}:v]{fade}setpts=PTS-STARTPTS+{max(t0 - 0.02, 0):.4f}/TB[b{i}]")
         fc.append(f"[{last}][b{i}]overlay=eof_action=pass:enable='between(t,{t0 - 0.01:.4f},{t1 - 0.01:.4f})'[o{i}]")
         last = f"o{i}"
     fc.append(f"[2:v]setpts=PTS-STARTPTS[gx];[{last}][gx]overlay=eof_action=pass,ass={OUT}/subs.ass,format=yuv420p[v]")
@@ -238,5 +244,5 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
          "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", tmp])
     os.replace(tmp, name)
     print(cfg["name"], "TOTAL", round(TOTAL, 2), "segmenti", [round(x, 2) for x in SO],
-          "B-roll", [(round(a, 2), round(b, 2)) for a, b, _ in BR])
+          "B-roll", [(round(a, 2), round(b, 2)) for a, b, _, _ in BR])
     return TOTAL

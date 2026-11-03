@@ -15,4 +15,6 @@ Cartella Drive parlati `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc`, scaricati in `src_gi
 
 ## Pezzi usati
 
-(nessuno ancora)
+- Reel "giorni di allenamento" (A e B, `giorni_allenamento.py`): IMG_8641 12-16 s (scheda intro) e 19-21 s;
+  IMG_8636 6-7.2 s; IMG_8454 45-46.5 s; IMG_8452 2-4 s (riquadro); IMG_8634 5.5-8.5 s (riquadro).
+- Non ancora usati: IMG_8442, IMG_8643, IMG_8695.
