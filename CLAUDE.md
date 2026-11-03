@@ -116,6 +116,18 @@ HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
   copertine `cover_inf_panca.py` e storie `stories_inf_panca.py` (box domanda aperto, sondaggio, spiegazione,
   form). Nelle storie sui temi di salute: riga "sempre con il via libera del tuo medico o fisioterapista".
 
+## Format "IG1" (riferimento in Drive, cartella parlati, novembre 2026)
+
+Reel tecnico/storytelling di 20-25 s max sul modello del video di riferimento (registrazione schermo di un altro
+creator: si prende lo STILE, mai le sue clip). Struttura: hook domanda + risposta secca, contesto, problema,
+step 1-2, risultato, chiusura che riprende l'hook. Tagli stretti su silenzi ed "ehm".
+Elementi da riprodurre: schede scure a tutto schermo tra un pezzo di parlato e l'altro con occhiello piccolo
+spaziato ("— IL PROBLEMA", "— STEP 01") + titolo grande in serif (una parola in corsivo), animazioni a linee
+sottili bianche con accenti arancio (schemi, archi/gauge che si riempiono, curve che salgono, numeri grandi
+in riquadro arancio); B-roll in riquadro arrotondato al centro della scheda o picture-in-picture in alto a
+sinistra sul parlato con didascalia in corsivo; transizioni morbide e più sfx (sempre leggeri).
+I sottotitoli restano quelli approvati (bianchi, parola chiave arancio).
+
 ## Caption
 
 Vedi `projects/caption_style.md` (esempi approvati, l'ultimo scritto da Manuel). In breve:
