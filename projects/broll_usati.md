@@ -17,6 +17,7 @@ Cartella Drive parlati `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc`, scaricati in `src_gi
 
 - Reel "giorni di allenamento" (A e B, `giorni_allenamento.py`): IMG_8641 12-16 s (scheda intro) e 19-21 s;
   IMG_8636 6-7.2 s; IMG_8454 45-46.5 s; IMG_8452 2-4 s (riquadro); IMG_8634 5.5-8.5 s (riquadro).
-- Reel "L'intenzione" (V1 split e V2 colore, `intenzione.py`): IMG_8442 19-21 s e 22.6-25 s (B/N);
-  IMG_8454 0-2.7 s e 43.6-46.3 s (B/N); IMG_8452 25.8-27.3 s (B/N); IMG_8636 3.5-8 s e 9-11 s; IMG_8695 1-5.5 s;
-  IMG_8643 3-7.2 s; IMG_8641 13-17.4 s e 17.6-23 s, 21-23 s.
+- Reel "L'intenzione" (V1 split e V2 colore, `intenzione.py`): B/N (momenti persi) IMG_8636 23-25.6 s,
+  IMG_8695 0-1.4 s, IMG_8643 24-27 s, IMG_8641 38.6-43 s; colore (ripetizioni) IMG_8636 6-8.6 e 11-12.8 s,
+  IMG_8695 1-4.6 s, IMG_8643 11.5-13, 16.5-18.5 e 21-24 s, IMG_8641 15-18 e 19.5-22.1 s.
+- Non ancora usati: IMG_8442 (panca, maglia fucsia), IMG_8452 (affondi) a parte 2-4 s, IMG_8634 oltre 8.5 s.
