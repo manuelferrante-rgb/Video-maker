@@ -14,6 +14,9 @@ HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
   (`parentId = '<id cartella>'`) e scarica con
   `curl -sSL "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"`.
   Cartelle usate: `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc` (parlati), `1Ko5w_pQKPRjSpGm9DkB8uOMUMCLhHmxh` (nuova).
+- B-roll lunghi: Manuel carica girati lunghi; prendi solo i momenti salienti (non per forza tutti) e nei reel
+  successivi usa altri momenti degli stessi file, così non deve ricaricare tutto. Tieni traccia dei pezzi usati
+  in `projects/broll_usati.md` (file, intervallo, reel).
 - Stock: Pixabay (`PIXABAY_API_KEY` in env, host pixabay.com / cdn.pixabay.com). Pexels non disponibile.
 - Output sempre in `out/<nome>/` (gitignored). Si consegnano con SendUserFile; lo script va committato in `projects/`.
 
