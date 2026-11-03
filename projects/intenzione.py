@@ -38,7 +38,7 @@ def part(path, ss, dur, sp, bw, h, cy, out):
         vf += f",framerate=fps={FPS}:interp_start=0:interp_end=255:scene=100"
     vf += f",fps={FPS}"
     if bw:
-        vf += ",hue=s=0,eq=contrast=1.12:brightness=-0.03,vignette=PI/5"
+        vf += ",hue=s=0,eq=contrast=1.1:brightness=0.03:gamma=1.25,vignette=PI/6"
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{ss}", "-t", f"{dur * sp + 0.5}", "-i", path, "-vf", vf + ",setsar=1",
          "-an", "-frames:v", str(round(dur * FPS)), "-c:v", "libx264", "-crf", "15", "-preset", "fast",
          "-pix_fmt", "yuv420p", out])
@@ -130,7 +130,7 @@ DROP1, DUR1 = 13.2, 18.8
 # stesso video sopra e sotto: sopra (bianco e nero, rallentato) i momenti in cui perdo tempo o sono distratto,
 # sotto (colore, velocità reale o quasi) le ripetizioni in cui do tutto.
 # (inizio, fine, sopra: file, ss, vel, centro y, etichetta | sotto: file, [(ss, durata nel reel, vel)], centro y)
-V1 = [(0.0, 4.4, ("IMG_8636", 23.0, 0.6, 1100, None), ("IMG_8636", [(6.0, 2.6, 1.0), (11.0, 1.8, 1.0)], 1100)),
+V1 = [(0.0, 4.4, ("IMG_8636", 23.0, 0.6, 1000, None), ("IMG_8636", [(6.0, 2.6, 1.0), (11.0, 1.8, 1.0)], 1100)),
       (4.4, 8.8, ("IMG_8695", 0.0, 0.32, 860, "POCA INTENZIONE"), ("IMG_8695", [(1.0, 4.4, 0.82)], 700)),
       (8.8, DROP1, ("IMG_8643", 24.0, 0.68, 820, "DISTRAZIONI"), ("IMG_8643", [(21.0, 3.0, 1.0), (11.5, 1.4, 1.0)], 820)),
       (DROP1, DUR1, ("IMG_8641", 38.6, 0.8, 1000, "PERDI TEMPO"), ("IMG_8641", [(15.0, 3.0, 1.0), (19.5, 2.6, 1.0)], 1250))]
