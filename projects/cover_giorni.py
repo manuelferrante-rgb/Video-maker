@@ -30,7 +30,7 @@ def label(im, txt, cx, y, size, box=(0, 0, 0), fg=(255, 255, 255)):
 # sfondo ingrandito e spostato a destra, così lo squat resta visibile accanto a me
 src = cv2.resize(cv2.imread(f"{D}/st/squat_bg.png"), (int(W * 1.18), int(H * 1.18)))
 bg = src[int(H * 0.09):int(H * 0.09) + H, 0:W].astype(np.float32) * 0.62
-fr = cv2.resize(cv2.imread(f"{D}/st/f_98.3.png"), (W, H))
+fr = cv2.resize(cv2.imread(f"{D}/st/f_100.0.png"), (W, H))
 mt = Matter(f"{R}/models/u2net_human_seg.onnx")
 alpha = mt.run([fr])[0]
 # bordo dei capelli: stringo un po' la maschera per togliere l'alone chiaro del muro
