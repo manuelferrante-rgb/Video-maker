@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Reel muto "L'intenzione" (sul modello del riferimento 2IG: 2 atleti, stesso programma, solo uno migliora),
 con i miei B-roll in src_giorni e musica originale (sfx/make_music.py). Due approcci da testare:
-  V1 split screen: sopra l'atleta senza intenzione (bianco e nero, rallentato, pause con "DISTRAZIONI" e
-     "POCO RECUPERO"), sotto quello con intenzione (colore, velocità reale); scritte sulla linea di mezzo;
+  V1 split screen, stesso esercizio sopra e sotto (panca, muscle up, curl, squat): sopra i momenti senza intenzione
+     (bianco e nero, rallentato, "POCA INTENZIONE", "DISTRAZIONI", "PERDI TEMPO"), sotto le ripetizioni in cui do
+     tutto (colore, velocità reale); scritte sulla linea di mezzo;
      drop della musica su "L'INTENZIONE".
   V2 a tutto schermo: prima tutto in bianco e nero rallentato con le pause, poi sul drop colore e stacchi a tempo
      di musica sulle alzate vere, con "L'INTENZIONE" fissa.
@@ -126,10 +127,13 @@ def finish(video, gfxmov, music, name, dur=DUR):
 # ---------------- V1: split screen ----------------
 DROP1, DUR1 = 13.2, 18.8
 # (inizio, fine, sopra: file, ss, vel, centro y, etichetta | sotto: file, ss, vel, centro y)
-V1 = [(0.0, 4.4, ("IMG_8442", 19.0, 0.5, 1050, None), ("IMG_8636", 3.5, 1.0, 1100)),
-      (4.4, 8.8, ("IMG_8454", 0.0, 0.6, 780, "DISTRAZIONI"), ("IMG_8695", 1.0, 1.0, 860)),
-      (8.8, DROP1, ("IMG_8454", 43.6, 0.6, 820, "POCO RECUPERO"), ("IMG_8643", 3.0, 1.0, 820)),
-      (DROP1, DUR1, ("IMG_8442", 22.6, 0.5, 1000, None), ("IMG_8641", 17.6, 1.0, 1250))]
+# stesso video sopra e sotto: sopra (bianco e nero, rallentato) i momenti in cui perdo tempo o sono distratto,
+# sotto (colore, velocità reale o quasi) le ripetizioni in cui do tutto.
+# (inizio, fine, sopra: file, ss, vel, centro y, etichetta | sotto: file, [(ss, durata nel reel, vel)], centro y)
+V1 = [(0.0, 4.4, ("IMG_8636", 23.0, 0.6, 1100, None), ("IMG_8636", [(6.0, 2.6, 1.0), (11.0, 1.8, 1.0)], 1100)),
+      (4.4, 8.8, ("IMG_8695", 0.0, 0.32, 860, "POCA INTENZIONE"), ("IMG_8695", [(1.0, 4.4, 0.82)], 860)),
+      (8.8, DROP1, ("IMG_8643", 24.0, 0.68, 820, "DISTRAZIONI"), ("IMG_8643", [(21.0, 3.0, 1.0), (11.5, 1.4, 1.0)], 820)),
+      (DROP1, DUR1, ("IMG_8641", 4.0, 0.8, 1100, "PERDI TEMPO"), ("IMG_8641", [(15.0, 3.0, 1.0), (19.5, 2.6, 1.0)], 1250))]
 TEXT1 = [(0.0, 4.4, "2 ATLETI.\nSTESSO PROGRAMMA."), (4.4, 8.8, "PERCHÉ SOLO UNO\nDIVENTA PIÙ FORTE?"),
          (8.8, DROP1, "LA DIFFERENZA?")]
 
@@ -140,7 +144,11 @@ def v1():
     segs = []
     for i, (a, b, top, bot) in enumerate(V1):
         part(f"{S}/{top[0]}.mov", top[1], b - a, top[2], True, 960, top[3], f"{D}/t{i}.mp4")
-        part(f"{S}/{bot[0]}.mov", bot[1], b - a, bot[2], False, 960, bot[3], f"{D}/b{i}.mp4")
+        pieces = []
+        for j, (ss, du, sp) in enumerate(bot[1]):
+            part(f"{S}/{bot[0]}.mov", ss, du, sp, False, 960, bot[2], f"{D}/b{i}_{j}.mp4")
+            pieces.append(f"{D}/b{i}_{j}.mp4")
+        concat(pieces, f"{D}/b{i}.mp4")
         run(["ffmpeg", "-v", "error", "-y", "-i", f"{D}/t{i}.mp4", "-i", f"{D}/b{i}.mp4", "-filter_complex",
              "vstack", "-c:v", "libx264", "-crf", "15", "-preset", "fast", "-pix_fmt", "yuv420p", f"{D}/s{i}.mp4"])
         segs.append(f"{D}/s{i}.mp4")
@@ -165,11 +173,11 @@ def v1():
 # ---------------- V2: bianco e nero -> colore sul drop ----------------
 BEAT = 60 / 92
 DROP2 = 16 * BEAT  # 4 battute a 92 BPM (10.43 s)
-V2 = [(0.0, 3.6, "IMG_8442", 19.0, 0.5, True, None),
-      (3.6, 7.0, "IMG_8454", 0.0, 0.6, True, "DISTRAZIONI"),
-      (7.0, DROP2, "IMG_8454", 43.6, 0.6, True, "POCO RECUPERO")]
-CUTS = ["IMG_8641", 17.6], ["IMG_8636", 3.5], ["IMG_8695", 1.5], ["IMG_8641", 13.2], ["IMG_8643", 3.0], \
-       ["IMG_8636", 9.0], ["IMG_8641", 21.0]
+V2 = [(0.0, 3.6, "IMG_8636", 23.0, 0.7, True, None),
+      (3.6, 7.0, "IMG_8643", 24.0, 0.88, True, "DISTRAZIONI"),
+      (7.0, DROP2, "IMG_8641", 4.0, 1.0, True, "PERDI TEMPO")]
+CUTS = ["IMG_8695", 1.6], ["IMG_8636", 6.0], ["IMG_8643", 21.0], ["IMG_8641", 15.0], ["IMG_8636", 11.0], \
+       ["IMG_8643", 16.5], ["IMG_8641", 19.5]
 TEXT2 = [(0.0, 3.6, "STESSO PROGRAMMA."), (3.6, DROP2, "RISULTATI DIVERSI?")]
 
 
