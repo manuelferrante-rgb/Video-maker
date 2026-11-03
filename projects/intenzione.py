@@ -131,9 +131,9 @@ DROP1, DUR1 = 13.2, 18.8
 # sotto (colore, velocità reale o quasi) le ripetizioni in cui do tutto.
 # (inizio, fine, sopra: file, ss, vel, centro y, etichetta | sotto: file, [(ss, durata nel reel, vel)], centro y)
 V1 = [(0.0, 4.4, ("IMG_8636", 23.0, 0.6, 1100, None), ("IMG_8636", [(6.0, 2.6, 1.0), (11.0, 1.8, 1.0)], 1100)),
-      (4.4, 8.8, ("IMG_8695", 0.0, 0.32, 860, "POCA INTENZIONE"), ("IMG_8695", [(1.0, 4.4, 0.82)], 860)),
+      (4.4, 8.8, ("IMG_8695", 0.0, 0.32, 860, "POCA INTENZIONE"), ("IMG_8695", [(1.0, 4.4, 0.82)], 700)),
       (8.8, DROP1, ("IMG_8643", 24.0, 0.68, 820, "DISTRAZIONI"), ("IMG_8643", [(21.0, 3.0, 1.0), (11.5, 1.4, 1.0)], 820)),
-      (DROP1, DUR1, ("IMG_8641", 4.0, 0.8, 1100, "PERDI TEMPO"), ("IMG_8641", [(15.0, 3.0, 1.0), (19.5, 2.6, 1.0)], 1250))]
+      (DROP1, DUR1, ("IMG_8641", 38.6, 0.8, 1000, "PERDI TEMPO"), ("IMG_8641", [(15.0, 3.0, 1.0), (19.5, 2.6, 1.0)], 1250))]
 TEXT1 = [(0.0, 4.4, "2 ATLETI.\nSTESSO PROGRAMMA."), (4.4, 8.8, "PERCHÉ SOLO UNO\nDIVENTA PIÙ FORTE?"),
          (8.8, DROP1, "LA DIFFERENZA?")]
 
@@ -175,7 +175,7 @@ BEAT = 60 / 92
 DROP2 = 16 * BEAT  # 4 battute a 92 BPM (10.43 s)
 V2 = [(0.0, 3.6, "IMG_8636", 23.0, 0.7, True, None),
       (3.6, 7.0, "IMG_8643", 24.0, 0.88, True, "DISTRAZIONI"),
-      (7.0, DROP2, "IMG_8641", 4.0, 1.0, True, "PERDI TEMPO")]
+      (7.0, DROP2, "IMG_8641", 38.6, 0.8, True, "PERDI TEMPO")]
 CUTS = ["IMG_8695", 1.6], ["IMG_8636", 6.0], ["IMG_8643", 21.0], ["IMG_8641", 15.0], ["IMG_8636", 11.0], \
        ["IMG_8643", 16.5], ["IMG_8641", 19.5]
 TEXT2 = [(0.0, 3.6, "STESSO PROGRAMMA."), (3.6, DROP2, "RISULTATI DIVERSI?")]
