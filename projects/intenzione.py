@@ -127,10 +127,10 @@ def finish(video, gfxmov, music, name):
 DROP1 = 17.4
 # (inizio, fine, sopra: file, ss, vel, centro y, etichetta | sotto: file, ss, vel, centro y)
 V1 = [(0.0, 4.4, ("IMG_8442", 19.0, 0.5, 1050, None), ("IMG_8636", 3.5, 1.0, 1100)),
-      (4.4, 8.8, ("IMG_8454", 0.0, 0.6, 780, "POCO RECUPERO"), ("IMG_8641", 13.0, 1.0, 900)),
-      (8.8, 13.0, ("IMG_8452", 25.3, 0.5, 1000, "CELLULARE"), ("IMG_8643", 3.0, 1.0, 820)),
-      (13.0, DROP1, ("IMG_8454", 43.6, 0.6, 820, "POCO RECUPERO"), ("IMG_8695", 1.0, 1.0, 860)),
-      (DROP1, DUR, ("IMG_8442", 22.6, 0.5, 1000, None), ("IMG_8641", 17.6, 1.0, 900))]
+      (4.4, 8.8, ("IMG_8454", 0.0, 0.6, 780, "POCO RECUPERO"), ("IMG_8695", 1.0, 1.0, 860)),
+      (8.8, 13.0, ("IMG_8452", 25.8, 0.35, 1000, "CELLULARE"), ("IMG_8643", 3.0, 1.0, 820)),
+      (13.0, DROP1, ("IMG_8454", 43.6, 0.6, 820, "POCO RECUPERO"), ("IMG_8641", 13.0, 1.0, 1250)),
+      (DROP1, DUR, ("IMG_8442", 22.6, 0.5, 1000, None), ("IMG_8641", 17.6, 1.0, 1250))]
 TEXT1 = [(0.0, 4.4, "2 ATLETI.\nSTESSO PROGRAMMA."), (4.4, 8.8, "PERCHÉ SOLO UNO\nDIVENTA PIÙ FORTE?"),
          (8.8, DROP1, "LA DIFFERENZA?")]
 
@@ -155,7 +155,7 @@ def v1():
                 center_text(d, txt, 960 - (40 if "\n" in txt else 0), 64, window(t, a, b))
         for a, b, top, _ in V1:
             if top[4] and a <= t < b:
-                tag(im, top[4], 60, 690, window(t, a + 0.5, b, 0.2, 0.2))
+                tag(im, top[4], 50, 660, window(t, a + 0.5, b, 0.2, 0.2), size=58)
         if t >= DROP1:
             big_word(im, "L'INTENZIONE", 960, 1.0, pop((t - DROP1) / 0.3))
     gfx(draw, f"{D}/gfx.mov")
@@ -168,7 +168,7 @@ BEAT = 60 / 92
 DROP2 = 16 * BEAT  # 4 battute a 92 BPM (10.43 s)
 V2 = [(0.0, 3.6, "IMG_8442", 19.0, 0.5, True, None),
       (3.6, 7.0, "IMG_8454", 0.0, 0.6, True, "POCO RECUPERO"),
-      (7.0, DROP2, "IMG_8452", 25.3, 0.5, True, "CELLULARE")]
+      (7.0, DROP2, "IMG_8452", 25.8, 0.35, True, "CELLULARE")]
 CUTS = ["IMG_8641", 17.6], ["IMG_8636", 3.5], ["IMG_8695", 1.5], ["IMG_8641", 13.2], ["IMG_8643", 3.0], \
        ["IMG_8636", 9.0], ["IMG_8641", 21.0]
 TEXT2 = [(0.0, 3.6, "STESSO PROGRAMMA."), (3.6, DROP2, "RISULTATI DIVERSI?")]
@@ -198,7 +198,7 @@ def v2():
                 center_text(d, txt, 760, 72, window(t, a, b))
         for a, b, f, ss, sp, bw, lab in V2:
             if lab and a <= t < b:
-                tag(im, lab, W / 2 - 200, 1150, window(t, a + 0.5, b, 0.2, 0.2), size=48)
+                tag(im, lab, W / 2 - 230, 1150, window(t, a + 0.5, b, 0.2, 0.2), size=60)
         if t >= DROP2:
             big_word(im, "L'INTENZIONE", 760, 1.0, pop((t - DROP2) / 0.3))
     gfx(draw, f"{D}/gfx.mov")
