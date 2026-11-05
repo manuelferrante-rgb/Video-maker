@@ -173,6 +173,19 @@ Feedback (valgono per tutti i prossimi video):
 - Nota tecnica: non usare `pkill -f`/`pgrep -f` con stringhe che compaiono nel tuo stesso comando (uccide la shell);
   usa il PID o `pgrep -a python3 | grep`.
 
+## Linee guida contenuti (da un reel di riferimento sull'algoritmo, mandato da Manuel a novembre 2026)
+
+Valgono per ogni nuovo contenuto (idea, script, hook, caption):
+- **Parti dall'esperienza.** Modalità 1: un episodio vero, un risultato o una situazione vissuta con un atleta (o da
+  Manuel stesso); le call/analisi con i clienti sono la fonte principale. Modalità 2: se il tema è generico,
+  chiediti quali elementi, dati e situazioni reali inserire per "portarlo a terra" e renderlo unico.
+- **Specifica il tema.** Non "come migliorare lo squat" ma "come un mio atleta ha sbloccato lo squat a 180 kg
+  cambiando un solo input" (tema generico -> contesto preciso + risultato concreto).
+- **Stile e comunicazione = personal brand.** Non vince il contenuto "più giusto", vince chi arriva al potenziale
+  cliente e trasmette un messaggio chiaro. Obiettivo: essere un riferimento per il pubblico prima di pensare alle
+  vendite (niente toni da venditore).
+- Quando proponi idee o script, chiedi a Manuel l'episodio/il dato reale se manca, invece di inventarlo.
+
 ## Caption
 
 Vedi `projects/caption_style.md` (esempi approvati, l'ultimo scritto da Manuel). In breve:
