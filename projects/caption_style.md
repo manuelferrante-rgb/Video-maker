@@ -87,3 +87,18 @@ Manuel; pubblico atleta intermedio che si allena da solo; tono da coach di forza
 reel; regole: max 4 righe, prima riga sulla domanda del lettore senza ripetere reel/copertina, perché semplice,
 beneficio positivo, dettagli pratici, 1-2 emoji, niente hashtag né trattini lunghi, chiusura con domanda nei
 commenti, niente "link in bio"; esempio approvato (trazioni); chiedere 3 proposte di apertura.
+
+Sesto esempio, rivisto da Manuel (reel "L'intenzione", stesso programma ma solo uno migliora, novembre 2026):
+
+    Tutto uguale. Uno migliora, l'altro è fermo da mesi.
+
+    La differenza non sta nella scheda. Sta nell'entrare in palestra ogni volta e dare il 100% della giornata, seguire il programma, recuperare il giusto tra le serie e tra le sedute, e mettere l'attenzione sulle cose che contano davvero.
+
+    La scheda ti dà la direzione, l'intenzione con cui la esegui decide i risultati 🎯
+
+    Cosa ti ha fatto fare il salto di qualità? Fammelo sapere nei commenti👇
+
+Regole aggiunte:
+- Hook più secco possibile: frasi brevissime ("Tutto uguale.") che da sole bastano a capire il messaggio.
+- "Dare il 100% della giornata": realistico, non perfezione assoluta.
+- Chiusura con domanda sull'esperienza del lettore ("Cosa ti ha fatto fare il salto di qualità?"), non generica.
