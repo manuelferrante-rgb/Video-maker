@@ -102,3 +102,18 @@ Regole aggiunte:
 - Hook più secco possibile: frasi brevissime ("Tutto uguale.") che da sole bastano a capire il messaggio.
 - "Dare il 100% della giornata": realistico, non perfezione assoluta.
 - Chiusura con domanda sull'esperienza del lettore ("Cosa ti ha fatto fare il salto di qualità?"), non generica.
+
+Settimo esempio, rivisto da Manuel (serie "Input giusti", puntata squat, novembre 2026):
+
+    Ti dicono tante cose, ma sotto il bilanciere non sai a cosa pensare?? Ultima puntata della serie "Input giusti".
+
+    "Diaframma e baricentro al centro del piede" è corretto, ma...
+
+    Pensa a rilassare il carico, a portare la pancia tra le gambe e a spingere il bilanciere contro la schiena: resti compatto e in equilibrio sotto il carico💪
+
+    Te ne vengono in mente altri? Scrivi i tuoi nei commenti👇
+
+Regole aggiunte:
+- Apertura generica e corta ("Ti dicono tante cose") invece di elencare i cue tecnici nella prima riga.
+- La spiegazione può chiudersi in sospeso ("è corretto, ma..."): il reel completa il concetto.
+- Niente aggiunte oltre il beneficio del reel (tolto "dalla discesa fino alla risalita").
