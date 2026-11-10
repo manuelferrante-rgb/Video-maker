@@ -161,28 +161,39 @@ MEL = [[(0, 78), (3, 78), (6, 81), (8, 80), (10, 78), (12, 76), (14, 73)],
        [(0, 78), (3, 78), (6, 81), (8, 83), (10, 81), (12, 80), (13, 78), (14, 76)]]
 
 
-def make_phonk(out, bpm=130, intro_bars=2, main_bars=7, tail=3.7):
+def make_phonk(out, bpm=130, intro_bars=2, main_bars=7, tail=3.7, intro_beats=None):
+    """intro_beats: intro corta (es. 2 beat) al posto delle battute di intro: solo riser + battito, poi drop."""
     beat = 60 / bpm
     bar = beat * 4
     s16 = beat / 4
-    t_drop = intro_bars * bar
+    t_drop = intro_bars * bar if intro_beats is None else intro_beats * beat
     t_stop = t_drop + main_bars * bar
     t_hit = t_stop + bar
     dur = t_stop + tail
     buf = np.zeros((int((dur + 0.5) * SR), 2))
 
-    # ---- intro: pad, campanaccio ovattato, battito che accelera, riser
-    for b in range(intro_bars):
-        t0 = b * bar
-        add(buf, pad(PROG[b % 4], bar + 0.5), t0, 0.5)
-        for st, m in MEL[b % 2]:
-            add(buf, cowbell(m, 0.3, bright=0.15 + 0.25 * b), t0 + st * s16, 0.35, pan=0.45)
-        t = tt(bar)
-        add(buf, np.sin(2 * np.pi * note(BASS[b % 4]) * t) * np.minimum(1, t / 0.1) * np.exp(-t * 0.6), t0, 0.35)
-    hb = [0, 2, 4, 6, 8, 10, 12, 13, 14, 15]
-    for i, st in enumerate(hb):
-        add(buf, kick(0.3, 1.5), (intro_bars - 1) * bar + st * s16, 0.25 + 0.04 * i)
-    add(buf, riser(bar * 1.5), t_drop - bar * 1.5, 0.35)
+    if intro_beats is not None:
+        # intro corta: battito sui sedicesimi che accelera + riser + campanaccio ovattato
+        n16 = int(round(t_drop / s16))
+        for st in range(0, n16, 2 if n16 > 6 else 1):
+            add(buf, kick(0.3, 1.5), st * s16, 0.3 + 0.05 * st)
+        add(buf, riser(t_drop + 0.4)[int(0.4 * SR):], 0, 0.45)
+        for st, m in MEL[0][:3]:
+            if st * s16 < t_drop:
+                add(buf, cowbell(m, 0.3, bright=0.3), st * s16, 0.3)
+    else:
+        # ---- intro: pad, campanaccio ovattato, battito che accelera, riser
+        for b in range(intro_bars):
+            t0 = b * bar
+            add(buf, pad(PROG[b % 4], bar + 0.5), t0, 0.5)
+            for st, m in MEL[b % 2]:
+                add(buf, cowbell(m, 0.3, bright=0.15 + 0.25 * b), t0 + st * s16, 0.35, pan=0.45)
+            t = tt(bar)
+            add(buf, np.sin(2 * np.pi * note(BASS[b % 4]) * t) * np.minimum(1, t / 0.1) * np.exp(-t * 0.6), t0, 0.35)
+        hb = [0, 2, 4, 6, 8, 10, 12, 13, 14, 15]
+        for i, st in enumerate(hb):
+            add(buf, kick(0.3, 1.5), (intro_bars - 1) * bar + st * s16, 0.25 + 0.04 * i)
+        add(buf, riser(bar * 1.5), t_drop - bar * 1.5, 0.35)
     # piccolo vuoto prima del drop: si silenzia l'ultima sedicesima
     i0, i1 = int((t_drop - s16) * SR), int(t_drop * SR)
     buf[i0:i1] *= np.linspace(1, 0.05, i1 - i0)[:, None]
