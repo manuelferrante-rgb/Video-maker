@@ -198,6 +198,17 @@ apertura sulla domanda/confusione del lettore (mai la stessa frase del reel), ri
 beneficio positivo (non l'errore), max 1-2 emoji, niente hashtag, niente em dash (—).
 CTA: "Se ti interessano questi contenuti, seguimi." oppure "Se vuoi farti analizzare lo squat da me: LINK 🔗 in BIO".
 
+## Reel "THIS IS STREETLIFTING" (novembre 2026, trial reel A/B)
+
+- Edit hype muto con musica sui riferimenti in Drive (sottocartella "Riferimenti"): `this_is_streetlifting.py`, musica
+  originale phonk 130 BPM `sfx/make_phonk.py`, copertina `cover_streetlifting.py`. Ordine fisso: muscle up -> trazioni
+  (chin up) -> dip -> squat, ogni scritta solo sul suo esercizio; chiusura "THIS IS STREETLIFTING". A = con i nomi,
+  B = solo la chiusura. Stile: intro B/N con flash negativi/arancio, drop a colori sul beat, punch-in, raffica, Anton.
+- **Clip iPhone HLG nei reel "cinematici"**: il tonemap zscale gonfia i colori (Manuel: "si vede che c'era HDR"). Base
+  naturale = HLG letto come SDR (`scale=in_color_matrix=bt2020:out_color_matrix=bt709`) + `grade()` dello script.
+- I file grandi su Drive non si caricano dal connettore: si mandano in chat, Manuel li sposta in "montati"
+  (`1CQ_3Nnt_mpPjLTmcc--1Dagis5yhmkOC`).
+
 ## In sospeso
 
 - Analisi Instagram via Graph API (solo lettura): partire SOLO quando Manuel dà il via. Servono account
