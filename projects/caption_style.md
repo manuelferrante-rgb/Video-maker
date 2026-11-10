@@ -117,3 +117,18 @@ Regole aggiunte:
 - Apertura generica e corta ("Ti dicono tante cose") invece di elencare i cue tecnici nella prima riga.
 - La spiegazione può chiudersi in sospeso ("è corretto, ma..."): il reel completa il concetto.
 - Niente aggiunte oltre il beneficio del reel (tolto "dalla discesa fino alla risalita").
+
+Ottavo esempio, rivisto da Manuel (reel "fermi lunghi in panca", copertina v2, novembre 2026):
+
+    Il problema spesso non nasce in basso ma da come ci arrivi.
+
+    Resti piantato al petto e pensi che la soluzione sia allungare il fermo??
+    Se il bilanciere scende già instabile, restare più a lungo al petto non lo sistema.
+
+    Prendi aria, carico rilassato bene a braccia tese, discese lente e controllate: arrivi al petto compatto e la spinta parte piena 💪
+
+    Tu come lavori sul punto debole della panca? Fammelo sapere nei commenti👇
+
+Regole aggiunte:
+- Prima riga = il concetto chiave in una frase secca (il "perché"), POI la domanda del lettore e la spiegazione.
+- Negli input preferisce azioni semplici e concrete ("prendi aria") a termini tecnici ("scapole ferme").
