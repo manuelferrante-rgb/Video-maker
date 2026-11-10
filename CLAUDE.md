@@ -86,7 +86,12 @@ HuggingFace è bloccato: i modelli arrivano da GitHub (già fatto dall'hook).
 - Curiosità: si può sfocare la parte che "spoilera" (es. il piede disegnato) e rendere **illeggibile** il riquadro
   arancio (si vede che c'è scritto qualcosa ma non si legge). Faccia sempre nitida.
 - Per i POV: stessa scritta del reel. **Sempre anteprima del ritaglio 3:4 della griglia** (y 240-1680).
-- Script modello: `projects/cover_piede.py`, `cover_respiro.py`, `cover_panni.py`.
+- **Metodo standard (Manuel: "voglio che fai più o meno sempre questa")**: `projects/cover_panca_v2.py`. Sfondo = Manuel
+  che fa l'esercizio, ingrandito e spostato in modo che si veda bene in alto a destra; davanti Manuel scontornato a
+  mezzo busto, grande, un po' a sinistra del centro, con un'espressione FORTE presa dal parlato (perplesso/deciso:
+  scegli la più marcata, non la prima che va bene); titolo centrato sotto il mento. Sottotitolo bruciato sul petto
+  tolto con inpaint, bordi dei ricci ricolorati (niente alone del muro), mano senza buchi, fondo sfumato al buio.
+- Script modello: `projects/cover_panca_v2.py` (standard), `cover_piede.py`, `cover_respiro.py`, `cover_panni.py`.
 
 ## Storie (set da 4 + il reel come 4ª)
 
