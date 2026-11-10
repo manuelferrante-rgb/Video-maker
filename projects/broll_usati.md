@@ -31,6 +31,6 @@ Cartella Drive parlati `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc`, scaricati in `src_gi
 | IMG_7163 | 20 s | dip zavorrati alle parallele, luce viola (buche ~4.4, 6.9, ...) |
 | IMG_7178 | 52 s | squat pesante: setup sotto il bilanciere 4-16, stacco 16-18, rep con buca ~26.7, 30.7, 34.5, 39, 43.5, 48 |
 
-- Reel "THIS IS STREETLIFTING" V2 (A e B, `this_is_streetlifting.py`): 7178 6-6.9, 24.6-28.3; 7167 5.35-9.05,
+- Reel "THIS IS STREETLIFTING" V3 (A e B, `this_is_streetlifting.py`): 7178 6-6.9, 24.6-28.3; 7167 5.45-7.3,
   10-12.96; 7171 1.95-3.8; 7163 3.6-5.45. (V1 usava anche:) 7178 8-8.7, 6-6.9, 24.6-28.3, 30.85-31.3;
   7167 3-3.7, 5.35-9.05, 7.45-7.9, 10-12.96; 7171 1.95-3.8, 6.1-6.56; 7163 0.6-1.3, 4-5.85, 7.6-8.06.

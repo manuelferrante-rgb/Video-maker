@@ -205,7 +205,8 @@ CTA: "Se ti interessano questi contenuti, seguimi." oppure "Se vuoi farti analiz
   (chin up) -> dip -> squat, ogni scritta solo sul suo esercizio; chiusura "THIS IS STREETLIFTING". A = con i nomi,
   B = solo la chiusura. Stile: intro B/N con flash negativi/arancio, drop a colori sul beat, punch-in, raffica, Anton.
   V2 (feedback): niente intro lenta (solo 2 beat), **niente ripetizioni** degli esercizi, tutto "tremato" a jump-cut
-  come la raffica (gli e' piaciuta di piu'), alzate complete, ~15.7 s cosi' il finale (la parte piu' bella) si vede.
+  come la raffica (gli e' piaciuta di piu'), alzate complete; V3: muscle up tagliato appena sopra la sbarra e
+  subito le trazioni, 13.9 s, cosi' il finale (la parte piu' bella) si vede.
 - **Clip iPhone HLG nei reel "cinematici"**: il tonemap zscale gonfia i colori (Manuel: "si vede che c'era HDR"). Base
   naturale = HLG letto come SDR (`scale=in_color_matrix=bt2020:out_color_matrix=bt709`) + `grade()` dello script.
 - I file grandi su Drive non si caricano dal connettore: si mandano in chat, Manuel li sposta in "montati"

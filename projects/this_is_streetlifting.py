@@ -36,9 +36,9 @@ BEAT = 60 / BPM
 BAR = 4 * BEAT
 S16 = BEAT / 4
 T_DROP = 2 * BEAT          # 0.92: intro di un attimo (preparazione allo squat), poi subito il drop
-T_STOP = T_DROP + 6 * BAR   # 12.0
-T_HIT = T_STOP + BAR        # 13.85
-DUR = T_STOP + 3.7          # 15.7
+T_STOP = T_DROP + 5 * BAR   # 10.15
+T_HIT = T_STOP + BAR        # 12.0
+DUR = T_STOP + 3.7          # 13.85
 
 
 def b(n):  # tempo della n-esima battuta (beat) dall'inizio
@@ -59,30 +59,31 @@ def rep(beat0, file, src0, cuts, per=2):
 # Ordine fisso (Manuel): muscle up -> chin up -> dip -> squat, ogni esercizio una volta sola (niente ripetizioni).
 SHOTS = (
     [(b(0), b(2), "IMG_7178", 6.0, 1.0, 1.3, 1.45, 0.56, 0.30, "bw")]            # entra sotto il bilanciere
-    + rep(2, "IMG_7167", 5.35, [(1.15, 0.42, 0.40), (1.45, 0.52, 0.33), (1.2, 0.50, 0.36), (1.5, 0.55, 0.33)])
-    + rep(10, "IMG_7171", 1.95, [(1.15, 0.40, 0.42), (1.5, 0.42, 0.30)])
-    + rep(14, "IMG_7163", 3.6, [(1.25, 0.33, 0.66), (1.55, 0.32, 0.68)])
-    + rep(18, "IMG_7178", 24.6, [(1.1, 0.55, 0.50), (1.35, 0.57, 0.47), (1.6, 0.60, 0.52), (1.2, 0.56, 0.47)])
+    # muscle up: si stacca appena e' sopra la sbarra (Manuel), poi subito le trazioni
+    + rep(2, "IMG_7167", 5.45, [(1.15, 0.42, 0.40), (1.45, 0.52, 0.33)])
+    + rep(6, "IMG_7171", 1.95, [(1.15, 0.40, 0.42), (1.5, 0.42, 0.30)])
+    + rep(10, "IMG_7163", 3.6, [(1.25, 0.33, 0.66), (1.55, 0.32, 0.68)])
+    + rep(14, "IMG_7178", 24.6, [(1.1, 0.55, 0.50), (1.35, 0.57, 0.47), (1.6, 0.60, 0.52), (1.2, 0.56, 0.47)])
     # chiusura: cammina verso la camera, rallentato, colore sul colpo con THIS IS STREETLIFTING
-    + [(b(26), DUR, "IMG_7167", 10.0, 0.8, 1.0, 1.14, 0.50, 0.42, "bw_then_col")]
+    + [(b(22), DUR, "IMG_7167", 10.0, 0.8, 1.0, 1.14, 0.50, 0.42, "bw_then_col")]
 )
 
 LABELS = [  # solo versione A: (t0, t1, testo), una volta per esercizio
-    (b(2) + 0.05, b(10) - 0.2, "MUSCLE UP"),
-    (b(10) + 0.03, b(14) - 0.2, "CHIN UP"),
-    (b(14) + 0.03, b(18) - 0.2, "DIP"),
-    (b(18) + 0.03, b(26) - 0.2, "SQUAT"),
+    (b(2) + 0.05, b(6) - 0.15, "MUSCLE UP"),
+    (b(6) + 0.03, b(10) - 0.2, "CHIN UP"),
+    (b(10) + 0.03, b(14) - 0.2, "DIP"),
+    (b(14) + 0.03, b(22) - 0.2, "SQUAT"),
 ]
 FINAL = [(T_STOP + 2 * BEAT, "THIS IS", 112, 1180), (T_HIT, "STREETLIFTING", 168, 1330)]
 LABEL_Y = 1330
 
 CUTS = [s[0] for s in SHOTS[1:]]
 PUNCH = sorted(set(CUTS[:-1] + [T_HIT]))
-NEG = [b(1), b(10), b(14), b(18)]
-TINT = [b(1) + 2 * S16, b(6), b(22)]
+NEG = [b(1), b(6), b(10), b(14)]
+TINT = [b(1) + 2 * S16, b(4), b(18)]
 WHITE = [T_DROP, T_HIT]
 SHAKE = [(T_DROP, T_STOP, 8)]
-WHIP = [b(10), b(14), b(18), b(26)]
+WHIP = [b(6), b(10), b(14), b(22)]
 
 
 def decode(sh):
@@ -241,7 +242,7 @@ def process(fr, t, u, sh, rng):
 def render(version):
     os.makedirs(TMP, exist_ok=True)
     music = f"{TMP}/music.wav"
-    _, info = make_phonk(music, bpm=BPM, intro_beats=2, main_bars=6, tail=DUR - T_STOP)
+    _, info = make_phonk(music, bpm=BPM, intro_beats=2, main_bars=5, tail=DUR - T_STOP)
     assert abs(info["drop"] - T_DROP) < 1e-6 and abs(info["hit"] - T_HIT) < 1e-6
     silent = f"{TMP}/video_{version}.mp4"
     enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
@@ -288,7 +289,7 @@ def render(version):
     gain = -14.0 - lufs
     final = f"{OUT}/this_is_streetlifting_{version}.mp4"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", silent, "-i", mix, "-filter_complex",
-                    f"[1]volume={gain:.2f}dB,alimiter=limit=0.94:level=0[a]", "-map", "0:v", "-map", "[a]",
+                    f"[1]volume={gain:.2f}dB,alimiter=limit=0.88:level=0[a]", "-map", "0:v", "-map", "[a]",
                     "-c:v", "copy", "-c:a", "aac", "-b:a", "256k", "-shortest", "-movflags", "+faststart", final],
                    check=True)
     print("ok", final, f"(gain {gain:+.1f} dB)")
