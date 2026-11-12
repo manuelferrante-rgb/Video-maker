@@ -16,12 +16,11 @@
 7. Scrivi a Claude la data del cambio.
 
 ## B. Sito (nella sessione del sito, repo Manuel-Ferrante-Coaching, branch main)
-1. Commit e push su main delle modifiche con Vincenzo e Stefano (al 12/11 su GitHub non ci sono ancora).
-2. Cloudflare Web Analytics: crea un account gratis su cloudflare.com -> Web Analytics -> Add a site
+1. Cloudflare Web Analytics: crea un account gratis su cloudflare.com -> Web Analytics -> Add a site
    (manuelferrante.it) -> copia lo snippet e dallo alla sessione del sito da inserire nella pagina.
-3. Modulo Formspree: campi nascosti utm_source e utm_medium compilati dall'URL.
-4. Una riga con un risultato in kg sotto il sottotitolo, prima del modulo.
-5. Facoltativo: titolo e sottotitolo coerenti con la bio (proposta di Claude su richiesta).
+2. Modulo Formspree: campi nascosti utm_source e utm_medium compilati dall'URL.
+3. Una riga con un risultato in kg sotto il sottotitolo, prima del modulo.
+4. Facoltativo: titolo e sottotitolo coerenti con la bio (proposta di Claude su richiesta).
 
 ## C. Reel di test (3 trial, ~18 s ciascuno)
 Regole per registrare: guarda in camera; la prima frase e' il gancio; registra il gancio 2-3 volte in modi diversi
@@ -36,6 +35,9 @@ Regole per registrare: guarda in camera; la prima frase e' il gancio; registra i
 3. Case study, Vincenzo (160 kg di stacco a 57 kg, 15 anni; dip a peso corporeo zavorrato). Servono: ok dei genitori;
    da dove partiva (kg, eta'); il blocco; cosa avete cambiato e perche'; in quanto tempo; video del 160 e del dip.
    Parlato: gancio sul risultato, centro sul problema e sulla tua scelta, chiusura che riprende il gancio.
+
+4. Idee case study gia' nel documento: Stefano (muscle up partendo dall'elastico), Vincenzo dopo il primo test.
+   Vincenzo e Stefano NON vanno sul sito (scelta di Manuel). 160/57 = 2,8: dire "quasi 3 volte il peso corporeo".
 
 ## D. Misure
 - Dopo 7 giorni da ogni trial: screenshot degli insights (salti, media visione, visite profilo, follow, eta').
