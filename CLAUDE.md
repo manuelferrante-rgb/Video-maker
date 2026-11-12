@@ -271,3 +271,7 @@ Script dei 3 reel di test (tacco nello squat completo; Vincenzo ganci + struttur
 `projects/script_test_novembre.md`, MESSI DA PARTE da Manuel il 12/11, da riprendere piu' avanti. Domande aperte: tesi
 sulle percentuali, dati di Vincenzo + ok genitori, se vuole guardare gratis gli squat di chi scrive, ok a "link nel
 profilo" nelle chiusure, conferma che la prima cosa forte va nei primi 2-3 s. Lista operativa: `projects/todo_manuel.md`.
+Script "a loop" (richiesta di Manuel, 12/11): il gancio iniziale e' forte e il finale si collega all'inizio, cosi' il
+video ricomincia senza stacco (l'ultima frase resta aperta e la prima la completa). La CTA va prima della frase-ponte
+o nella caption, mai dopo, altrimenti rompe il loop. Valido per i prossimi script, compresi quelli in
+`projects/script_test_novembre.md`.
