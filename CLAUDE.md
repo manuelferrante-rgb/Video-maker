@@ -238,3 +238,7 @@ DM: arrivano SOLO dalle sponsorizzate; nei reel organici nessuna chiusura da' un
 Regole di montaggio da qui in avanti (obiettivo salti < 35%): prima immagine = Manuel in camera che guarda
 l'obiettivo o un movimento forte; nessuno stacco su B-roll o scheda prima che la frase del gancio sia finita; nessuna
 scheda scura entro i primi 3 s; il gancio parte da un caso o un numero reale, mai da una domanda che seleziona.
+Funnel (Manuel, 12/11/2026): obiettivo principale = coaching online. Scala: programma gratuito via DM -> programmi
+sul sito (9 EUR singola alzata, 19 EUR completi) -> modulo coaching su manuelferrante.it. 6 clienti arrivati da
+Instagram finora; programma gratis dato a ~4 persone. Ultimi 30 gg: 6.100 visite profilo, +44 follower, 9 tap sul link.
+Reel sugli atleti funzionano anche organici (da 3 trazioni a 75 kg: ~3K senza ads): parlare dei suoi atleti e taggarli.
