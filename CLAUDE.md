@@ -234,3 +234,7 @@ Lezioni: in 4 reel su 5 la prima frattura è a 1,5-3 s, quando si stacca dalla f
 chiuso il gancio; le schede animate scure come prima immagine o entro 3 s fanno crollare (Giorni B); funziona il caso
 reale con persona e prima/dopo (Abbandonare). Animazioni sì, ma sopra un caso concreto e dopo il gancio.
 Visite al profilo alte ma follow quasi zero: manca una promessa chiara di cosa si ottiene seguendo.
+DM: arrivano SOLO dalle sponsorizzate; nei reel organici nessuna chiusura da' un motivo per scrivere.
+Regole di montaggio da qui in avanti (obiettivo salti < 35%): prima immagine = Manuel in camera che guarda
+l'obiettivo o un movimento forte; nessuno stacco su B-roll o scheda prima che la frase del gancio sia finita; nessuna
+scheda scura entro i primi 3 s; il gancio parte da un caso o un numero reale, mai da una domanda che seleziona.
