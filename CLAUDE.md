@@ -267,3 +267,7 @@ Arianna squat 100 kg, muscle up 28,75 kg), metodo in 5 passi, programmi PDF 8 se
 Street 3 a 19 EUR, Forza & Fisico in arrivo), video testimonianze, FAQ.
 Identita': Manuel vuole restare ATLETA + coach (nome profilo approvato "Manuel Ferrante | Atleta Streetlifting & Strength
 Coach"). I contenuti da atleta restano, ma come prova del metodo (decisioni sul proprio allenamento, gare), non come diario.
+Script dei 3 reel di test (tacco nello squat completo; Vincenzo ganci + struttura; percentuali in attesa della tesi):
+`projects/script_test_novembre.md`, MESSI DA PARTE da Manuel il 12/11, da riprendere piu' avanti. Domande aperte: tesi
+sulle percentuali, dati di Vincenzo + ok genitori, se vuole guardare gratis gli squat di chi scrive, ok a "link nel
+profilo" nelle chiusure, conferma che la prima cosa forte va nei primi 2-3 s. Lista operativa: `projects/todo_manuel.md`.
