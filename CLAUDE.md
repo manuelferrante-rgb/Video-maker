@@ -221,3 +221,15 @@ CTA: "Se ti interessano questi contenuti, seguimi." oppure "Se vuoi farti analiz
 
 `make_reel.py` / `make_cover.py` con JSON (`projects/streetlifting_635.json`): stile vecchio (Anton, azzurro
 `5CE1F6`, busto scontornato). Manuel ha chiesto di ripartire da zero con lo stile sopra: usarla solo se la chiede.
+
+## Analisi performance reel (12 novembre 2026, insights mandati da Manuel)
+
+Dati (views / salti / media / visite profilo / follow): Abbandonare un esercizio 3.540 / 31,9% / 8 s su 14 / 28 / 0;
+Respiro panca 3.120 / 43,3% / 8 su 16 / 15 / 0; Non è forte 2.734 / 43,1% / 6 su 8 / 9 / 1; Attiva il dorsale
+1.488 / 45,3% / 8 su 15 / 11 / 0; Giorni B 645 / 68,2% / 6 su 23 / 3 / 0. Fuori scala: "Muscle up +60kg, ecco il
+segreto" 65,6K (reazione a un'alzata estrema di un altro atleta) e il lead magnet fissato "50/60/70 kg alle trazioni,
+scrivimi e ricevi il programma" 11,2K.
+Lezioni: in 4 reel su 5 la prima frattura è a 1,5-3 s, quando si stacca dalla faccia a B-roll/scheda prima di aver
+chiuso il gancio; le schede animate scure come prima immagine o entro 3 s fanno crollare (Giorni B); funziona il caso
+reale con persona e prima/dopo (Abbandonare). Animazioni sì, ma sopra un caso concreto e dopo il gancio.
+Visite al profilo alte ma follow quasi zero: manca una promessa chiara di cosa si ottiene seguendo.
