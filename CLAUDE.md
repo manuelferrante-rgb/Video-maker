@@ -227,9 +227,9 @@ CTA: "Se ti interessano questi contenuti, seguimi." oppure "Se vuoi farti analiz
 Dati (views / salti / media / visite profilo / follow): Abbandonare un esercizio 3.540 / 31,9% / 8 s su 14 / 28 / 0;
 Respiro panca 3.120 / 43,3% / 8 su 16 / 15 / 0; Non è forte 2.734 / 43,1% / 6 su 8 / 9 / 1; Attiva il dorsale
 1.488 / 45,3% / 8 su 15 / 11 / 0; Giorni B 645 / 68,2% / 6 su 23 / 3 / 0. "Muscle up +60kg" (65,6K) e il lead
-magnet "50/60/70 kg alle trazioni" (11,2K) erano SPONSORIZZATI: non usarli come riferimento organico. Migliori organici
-in griglia: "Parco con neanche 3 trazioni fino a 75 kg" 5,4K e "Lui: muscle up / Io: trazioni" 5,3K (caso reale,
-numero o contrasto in copertina).
+magnet "50/60/70 kg alle trazioni" (11,2K) erano SPONSORIZZATI: non usarli come riferimento organico. Riferimenti organici
+(tutti pubblicati come trial e poi nel feed): massimo 3,5K (Abbandonare), buoni ~2K, andati male ~500. Quello che
+decide la diffusione e' la percentuale di salti: 31,9% -> 3,5K; ~43% -> 2,7-3,1K; 45% -> 1,5K; 68% -> 645.
 Lezioni: in 4 reel su 5 la prima frattura è a 1,5-3 s, quando si stacca dalla faccia a B-roll/scheda prima di aver
 chiuso il gancio; le schede animate scure come prima immagine o entro 3 s fanno crollare (Giorni B); funziona il caso
 reale con persona e prima/dopo (Abbandonare). Animazioni sì, ma sopra un caso concreto e dopo il gancio.
