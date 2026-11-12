@@ -265,5 +265,5 @@ Sito manuelferrante.it (visto 12/11): hero "Iniziamo a lavorare insieme / Non so
 form breve subito sotto (sport, obiettivi, nome, numero), poi risultati (Nicolo' trazioni 70 kg, Jasmin squat 200 kg,
 Arianna squat 100 kg, muscle up 28,75 kg), metodo in 5 passi, programmi PDF 8 settimane (Single lift, Street 4 e
 Street 3 a 19 EUR, Forza & Fisico in arrivo), video testimonianze, FAQ.
-Identita': Manuel vuole restare ATLETA + coach (proposto nome profilo "Manuel Ferrante | Atleta Streetlifting & Strength
+Identita': Manuel vuole restare ATLETA + coach (nome profilo approvato "Manuel Ferrante | Atleta Streetlifting & Strength
 Coach"). I contenuti da atleta restano, ma come prova del metodo (decisioni sul proprio allenamento, gare), non come diario.

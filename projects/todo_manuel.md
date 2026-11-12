@@ -3,7 +3,7 @@
 Stato: in raccolta, Manuel non ha ancora modificato nulla.
 
 ## Profilo Instagram
-- Nome: "Manuel Ferrante | Atleta Streetlifting & Strength Coach" (da confermare, era indeciso).
+- Nome: "Manuel Ferrante | Atleta Streetlifting & Strength Coach" (approvato).
 - Bio (approvata): "Da intermedio ad avanzato: prima i kg, poi l'estetica / Streetlifting, powerlifting, palestra /
   100+ atleti, fino alla gara / Coaching + programma gratis 👇".
 - Link 1: manuelferrante.it/?utm_source=instagram&utm_medium=bio, titolo "Coaching e programmi".
