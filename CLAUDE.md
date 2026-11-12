@@ -248,3 +248,15 @@ follow e DM ogni 100 visite.
 Posizionamento (Manuel): coach di FORZA, non solo streetlifting (allena anche powerlifting e palestra); target da
 intermedio ad avanzato con un obiettivo in kg, "prima i kg, l'estetica viene di conseguenza". Niente nomi di atleti
 in bio. Contatto in bio = WhatsApp con messaggio precompilato; il sito si spinge nelle storie.
+
+## Documento idee e strategia (Google Doc `1GdYfZRjIfezq_w6JzbGntxbta1NikE8CYbRuJm1LEk0`)
+Idee da fare / fatte (barrate), analisi di uno stratega, protocolli. Da tenere sempre presenti:
+- Struttura: PROBLEMA SPECIFICO -> conseguenza -> ragionamento/soluzione di Manuel; 1 reel = 1 concetto; reel a cerchio
+  (il finale riprende l'hook); "questo reel potrebbe pubblicarlo identico un altro coach?" Se si', manca Manuel.
+- Linguaggio da evitare: "ti svelo il segreto", "3 errori che stai facendo", "devi assolutamente", "se vuoi migliorare".
+- CTA coerente con l'obiettivo (commento / salvataggio / discussione), non sempre "scrivimi".
+- Case study: "era bloccato qui -> abbiamo cambiato X perche' -> dopo N settimane Y".
+- Protocolli: trazioni (dato gratis a 3 persone -> 1 cliente, 4 mesi, 290 EUR); dip (Vincenzo, peso corporeo zavorrato a
+  15 anni); squat (Jasmin 200 kg); muscle up (Nicolo' +30 kg, Lorenzo record italiano).
+Test di novembre 2026: 3 trial, uno per formato (esercizio, programmazione, case study), stesse regole dei primi 3 s,
+~18 s; confronto su salti, media visione, visite profilo ogni 1000 views, follow, fascia 13-17.
