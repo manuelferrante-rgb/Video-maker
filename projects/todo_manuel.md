@@ -1,29 +1,11 @@
-# Lista operativa per Manuel (consegnata il 12/11/2026)
-
-## A. Instagram (10 minuti, da telefono: Modifica profilo)
-1. Nome: `Manuel Ferrante | Atleta Streetlifting & Strength Coach`
-2. Bio:
-   Da intermedio ad avanzato: prima i kg, poi l'estetica
-   Streetlifting, powerlifting, palestra
-   100+ atleti, fino alla gara
-   Coaching + programma gratis 👇
-3. Link 1 (primo, quello che si vede): `https://manuelferrante.it/?utm_source=instagram&utm_medium=bio`, titolo "Coaching e programmi".
-4. Link 2: `https://wa.me/39NUMERO?text=Ciao%20Manuel%2C%20vengo%20da%20Instagram.%20Vorrei%20il%20programma%20gratuito.%20Il%20mio%20obiettivo%20%C3%A8%3A%20`
-   (NUMERO = il tuo cellulare senza +39 e senza spazi), titolo "Programma gratis". Provalo da un altro telefono.
-5. Fissati (max 3; "..." sul post -> Fissa / Rimuovi): 1) programma gratuito trazioni, 2) Risultati dei miei atleti,
-   3) da 3 trazioni a 75 kg.
-6. WhatsApp Business (gia' attivo): NON aggiungere il pulsante WhatsApp di IG (chat vuota, si perde il testo
-   precompilato). Su WA Business: risposta rapida /programma (programma + domanda su allenamento e massimali) ed
-   etichette "Programma gratis", "Interessato coaching", "Cliente" da contare ogni mese.
-7. Scrivi a Claude la data del cambio.
+# Lista operativa per Manuel (aggiornata il 12/11/2026)
 
 ## B. Sito (nella sessione del sito, repo Manuel-Ferrante-Coaching, branch main)
-1. PRIORITA': modulo Formspree con campi nascosti utm_source e utm_medium compilati dall'URL (nella mail di ogni
-   candidatura c'e' da dove arriva: bio, storie...).
-2. Facoltativo: Cloudflare Web Analytics (quante persone entrano nel sito da ogni fonte): account gratis su
-   cloudflare.com -> Web Analytics -> Add a site -> snippet alla sessione del sito.
-3. Una riga con un risultato in kg sotto il sottotitolo, prima del modulo.
-4. Facoltativo: titolo e sottotitolo coerenti con la bio (proposta di Claude su richiesta).
+1. PRIORITA': campo nascosto nel modulo che salva la provenienza (utm_source / utm_medium). Messaggio da incollare
+   nella sessione del sito: vedi chat del 12/11. Poi scrivi a Claude, che controlla il codice su GitHub.
+2. Una riga con un risultato in kg sotto il sottotitolo, prima del modulo.
+3. Facoltativo: titolo e sottotitolo coerenti con la bio (proposta di Claude su richiesta).
+4. Facoltativo: Cloudflare Web Analytics (quante persone entrano nel sito da ogni fonte).
 
 ## C. Reel di test (3 trial, ~18 s ciascuno)
 Regole per registrare: guarda in camera; la prima frase e' il gancio; registra il gancio 2-3 volte in modi diversi
@@ -35,17 +17,19 @@ Regole per registrare: guarda in camera; la prima frase e' il gancio; registra i
    stessa inquadratura. Chiusura: "Tacco: si' o no?" (commenti).
 2. Programmazione, percentuali nello street / top set calculator. Manca la tua tesi in una frase (hanno senso o no, e
    perche'). Girato: registrazione schermo del calculator + una serie zavorrata. Chiusura: invito a salvare.
-3. Case study, Vincenzo (160 kg di stacco a 57 kg, 15 anni; dip a peso corporeo zavorrato). Servono: ok dei genitori;
-   da dove partiva (kg, eta'); il blocco; cosa avete cambiato e perche'; in quanto tempo; video del 160 e del dip.
-   Parlato: gancio sul risultato, centro sul problema e sulla tua scelta, chiusura che riprende il gancio.
-
-4. Prossimo case study (gia' nel documento): Stefano, muscle up partendo dall'elastico.
-   Vincenzo e Stefano NON vanno sul sito (scelta di Manuel). 160/57 = 2,8: dire "quasi 3 volte il peso corporeo".
+3. Case study, Vincenzo (160 kg di stacco a 57 kg, quasi 3 volte il peso corporeo, 15 anni; dip a peso corporeo
+   zavorrato). Servono: ok dei genitori; da dove partiva (kg, eta'); il blocco; cosa avete cambiato e perche'; in quanto
+   tempo; video del 160 e del dip. Parlato: gancio sul risultato, centro sul problema e sulla tua scelta, chiusura che
+   riprende il gancio.
+Prossimo case study: Stefano, muscle up partendo dall'elastico. Vincenzo e Stefano solo nei reel, non sul sito.
 
 ## D. Misure
-- Link nelle storie: https://manuelferrante.it/?utm_source=instagram&utm_medium=storie (clic: insights della storia).
+- Profilo cambiato il 12/11/2026: da qui contiamo follow e messaggi ogni 100 visite al profilo.
+- Link da usare nelle storie: https://manuelferrante.it/?utm_source=instagram&utm_medium=storie
+  (i clic li vedi negli insights della storia).
 - Dopo 7 giorni da ogni trial: screenshot degli insights (salti, media visione, visite profilo, follow, eta').
-- Ogni mese: moduli di coaching arrivati (oggi ~1) e messaggi WhatsApp "programma gratis".
+- Ogni mese: candidature di coaching arrivate (oggi ~1) e messaggi WhatsApp per il programma gratis.
 
 ## Fatto
+- A. Profilo Instagram: nome, bio, link (sito + WhatsApp), fissati (12/11).
 - Sito unito in main, Pages pubblica da main (12/11).
