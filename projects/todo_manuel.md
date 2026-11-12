@@ -33,4 +33,4 @@ Stato: in raccolta, Manuel non ha ancora modificato nulla.
 
 ## Sito: main aggiornato (FATTO 12/11)
 - main e claude/brief-redesign-sito-jzyaim ora coincidono (stesso commit 751620d). Le modifiche future vanno su main.
-- Resta da controllare: Settings -> Pages, da quale branch e' pubblicato (se e' ancora la copia claude/..., passarlo a main).
+- Pages pubblica da main (deploy verificato da Manuel il 12/11). Nulla da cambiare.
