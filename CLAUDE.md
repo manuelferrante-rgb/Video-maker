@@ -245,3 +245,6 @@ Reel sugli atleti funzionano anche organici (da 3 trazioni a 75 kg: ~3K senza ad
 Sponsorizzate finite a inizio novembre (ultime: obiettivo "visite al profilo", 3 EUR/giorno, nessun DM): il calo
 delle views di novembre e' la fine delle ads. Prossimo test: stesse ads DOPO aver cambiato bio e fissati, confrontando
 follow e DM ogni 100 visite.
+Posizionamento (Manuel): coach di FORZA, non solo streetlifting (allena anche powerlifting e palestra); target da
+intermedio ad avanzato con un obiettivo in kg, "prima i kg, l'estetica viene di conseguenza". Niente nomi di atleti
+in bio. Contatto in bio = WhatsApp con messaggio precompilato; il sito si spinge nelle storie.
