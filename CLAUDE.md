@@ -261,3 +261,7 @@ Idee da fare / fatte (barrate), analisi di uno stratega, protocolli. Da tenere s
   15 anni); squat (Jasmin 200 kg); muscle up (Nicolo' +30 kg, Lorenzo record italiano).
 Test di novembre 2026: 3 trial, uno per formato (esercizio, programmazione, case study), stesse regole dei primi 3 s,
 ~18 s; confronto su salti, media visione, visite profilo ogni 1000 views, follow, fascia 13-17.
+Sito manuelferrante.it (visto 12/11): hero "Iniziamo a lavorare insieme / Non solo allenarti, ma godendoti ogni passo",
+form breve subito sotto (sport, obiettivi, nome, numero), poi risultati (Nicolo' trazioni 70 kg, Jasmin squat 200 kg,
+Arianna squat 100 kg, muscle up 28,75 kg), metodo in 5 passi, programmi PDF 8 settimane (Single lift, Street 4 e
+Street 3 a 19 EUR, Forza & Fisico in arrivo), video testimonianze, FAQ.
