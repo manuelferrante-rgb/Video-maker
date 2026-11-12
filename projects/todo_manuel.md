@@ -30,3 +30,9 @@ Stato: in raccolta, Manuel non ha ancora modificato nulla.
 - Esercizio: scarpa col tacco nello squat.
 - Programmazione: percentuali nello street / top set calculator.
 - Case study: Vincenzo (ok dei genitori, e' minorenne) oppure Jasmin / Lorenzo.
+
+## Unire il sito nuovo in main (Manuel lo vuole)
+- La copia claude/brief-redesign-sito-jzyaim contiene tutto main: unione senza conflitti (fast-forward).
+- Da GitHub web: repo Manuel-Ferrante-Coaching -> Pull requests -> New pull request -> base: main,
+  compare: claude/brief-redesign-sito-jzyaim -> Create -> Merge. Oppure chiederlo alla sessione del sito.
+- Dopo: in Settings -> Pages, controllare da quale branch e' pubblicato; se si passa a main, il sito resta identico.
