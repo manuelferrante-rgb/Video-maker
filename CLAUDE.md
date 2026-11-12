@@ -247,7 +247,8 @@ delle views di novembre e' la fine delle ads. Prossimo test: stesse ads DOPO ave
 follow e DM ogni 100 visite.
 Posizionamento (Manuel): coach di FORZA, non solo streetlifting (allena anche powerlifting e palestra); target da
 intermedio ad avanzato con un obiettivo in kg, "prima i kg, l'estetica viene di conseguenza". Niente nomi di atleti
-in bio. Contatto in bio = WhatsApp con messaggio precompilato; il sito si spinge nelle storie.
+in bio. Clienti coaching: arrivano dal MODULO sul sito (~1 al mese), non dai DM; i DM portavano acquisti dei programmi
+(con le sponsorizzate). Link in bio: 1) sito (coaching e programmi), 2) WhatsApp precompilato per il programma gratis.
 
 ## Documento idee e strategia (Google Doc `1GdYfZRjIfezq_w6JzbGntxbta1NikE8CYbRuJm1LEk0`)
 Idee da fare / fatte (barrate), analisi di uno stratega, protocolli. Da tenere sempre presenti:
