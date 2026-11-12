@@ -17,7 +17,11 @@ Stato: in raccolta, Manuel non ha ancora modificato nulla.
   e Stefano (da elastico a muscle up zavorrato). Oggi non ci sono.
 - Titolo/sottotitolo hero coerenti con la bio (proposta solo se la chiede).
 - Una prova (risultato in kg) vicino al titolo, prima del form.
-- Verificare se il sito ha statistiche (per contare i moduli da Instagram).
+- Statistiche: il sito NON ne ha (repo manuelferrante-rgb/Manuel-Ferrante-Coaching, branch
+  claude/brief-redesign-sito-jzyaim, GitHub Pages, modulo via Formspree). Da fare con la chat del sito:
+  1) Cloudflare Web Analytics (gratis, senza cookie, quindi senza banner); 2) campo nascosto nel modulo Formspree che
+  salva utm_source/utm_medium dell'URL, cosi' ogni candidatura dice se arriva da Instagram.
+- Per Vincenzo e Stefano servono i loro video (nominati come gli altri, es. vincenzo-stacco-160kg.mp4).
 
 ## Misure da segnare
 - Data del cambio bio; poi follow e DM ogni 100 visite; moduli coaching al mese (oggi ~1).
