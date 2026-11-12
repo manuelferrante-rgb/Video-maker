@@ -1,36 +1,45 @@
-# Lista per Manuel (da consegnare passo per passo quando dice "ok, dimmi tutto")
+# Lista operativa per Manuel (consegnata il 12/11/2026)
 
-Stato: in raccolta, Manuel non ha ancora modificato nulla.
+## A. Instagram (10 minuti, da telefono: Modifica profilo)
+1. Nome: `Manuel Ferrante | Atleta Streetlifting & Strength Coach`
+2. Bio:
+   Da intermedio ad avanzato: prima i kg, poi l'estetica
+   Streetlifting, powerlifting, palestra
+   100+ atleti, fino alla gara
+   Coaching + programma gratis 👇
+3. Link 1 (primo, quello che si vede): `https://manuelferrante.it/?utm_source=instagram&utm_medium=bio`, titolo "Coaching e programmi".
+4. Link 2: `https://wa.me/39NUMERO?text=Ciao%20Manuel%2C%20vengo%20da%20Instagram.%20Vorrei%20il%20programma%20gratuito.%20Il%20mio%20obiettivo%20%C3%A8%3A%20`
+   (NUMERO = il tuo cellulare senza +39 e senza spazi), titolo "Programma gratis". Provalo da un altro telefono.
+5. Fissati (max 3; "..." sul post -> Fissa / Rimuovi): 1) programma gratuito trazioni, 2) Risultati dei miei atleti,
+   3) da 3 trazioni a 75 kg.
+6. Facoltativo: WhatsApp Business (messaggio di benvenuto, etichette "programma gratis", "cliente").
+7. Scrivi a Claude la data del cambio.
 
-## Profilo Instagram
-- Nome: "Manuel Ferrante | Atleta Streetlifting & Strength Coach" (approvato).
-- Bio (approvata): "Da intermedio ad avanzato: prima i kg, poi l'estetica / Streetlifting, powerlifting, palestra /
-  100+ atleti, fino alla gara / Coaching + programma gratis 👇".
-- Link 1: manuelferrante.it/?utm_source=instagram&utm_medium=bio, titolo "Coaching e programmi".
-- Link 2: WhatsApp precompilato (wa.me/39NUMERO?text=...), titolo "Programma gratis".
-- Fissati: 1) programma gratuito trazioni, 2) carosello Risultati dei miei atleti (copertina non modificabile, resta),
-  3) da 3 trazioni a 75 kg.
-- Valutare WhatsApp Business (messaggio di benvenuto, etichette).
+## B. Sito (nella sessione del sito, repo Manuel-Ferrante-Coaching, branch main)
+1. Commit e push su main delle modifiche con Vincenzo e Stefano (al 12/11 su GitHub non ci sono ancora).
+2. Cloudflare Web Analytics: crea un account gratis su cloudflare.com -> Web Analytics -> Add a site
+   (manuelferrante.it) -> copia lo snippet e dallo alla sessione del sito da inserire nella pagina.
+3. Modulo Formspree: campi nascosti utm_source e utm_medium compilati dall'URL.
+4. Una riga con un risultato in kg sotto il sottotitolo, prima del modulo.
+5. Facoltativo: titolo e sottotitolo coerenti con la bio (proposta di Claude su richiesta).
 
-## Sito
-- Aggiungere ai risultati: Vincenzo (stacco 160 kg a 57 kg di peso corporeo, 15 anni; dip a peso corporeo zavorrato)
-  e Stefano (da elastico a muscle up zavorrato). Oggi non ci sono.
-- Titolo/sottotitolo hero coerenti con la bio (proposta solo se la chiede).
-- Una prova (risultato in kg) vicino al titolo, prima del form.
-- Statistiche: il sito NON ne ha (repo manuelferrante-rgb/Manuel-Ferrante-Coaching, branch
-  claude/brief-redesign-sito-jzyaim, GitHub Pages, modulo via Formspree). Da fare con la chat del sito:
-  1) Cloudflare Web Analytics (gratis, senza cookie, quindi senza banner); 2) campo nascosto nel modulo Formspree che
-  salva utm_source/utm_medium dell'URL, cosi' ogni candidatura dice se arriva da Instagram.
-- Per Vincenzo e Stefano servono i loro video (nominati come gli altri, es. vincenzo-stacco-160kg.mp4).
+## C. Reel di test (3 trial, ~18 s ciascuno)
+Regole per registrare: guarda in camera; la prima frase e' il gancio; registra il gancio 2-3 volte in modi diversi
+(servono per il test A/B); frasi corte, senza pause; chiudi riprendendo il gancio; niente "ti svelo il segreto",
+"3 errori", "devi assolutamente".
+1. Esercizio, scarpa col tacco nello squat. Da dire: con uno squat che funziona e caviglia mobile, il tacco porta il
+   ginocchio piu' avanti; se tieni la stessa dinamica il busto si piega di piu' e ti sbilanci; valuta se ti serve; se lo
+   metti, rivedi dinamica e angoli e allarga i piedi. Girato: tuo squat con e senza tacco, stesso carico, di lato,
+   stessa inquadratura. Chiusura: "Tacco: si' o no?" (commenti).
+2. Programmazione, percentuali nello street / top set calculator. Manca la tua tesi in una frase (hanno senso o no, e
+   perche'). Girato: registrazione schermo del calculator + una serie zavorrata. Chiusura: invito a salvare.
+3. Case study, Vincenzo (160 kg di stacco a 57 kg, 15 anni; dip a peso corporeo zavorrato). Servono: ok dei genitori;
+   da dove partiva (kg, eta'); il blocco; cosa avete cambiato e perche'; in quanto tempo; video del 160 e del dip.
+   Parlato: gancio sul risultato, centro sul problema e sulla tua scelta, chiusura che riprende il gancio.
 
-## Misure da segnare
-- Data del cambio bio; poi follow e DM ogni 100 visite; moduli coaching al mese (oggi ~1).
+## D. Misure
+- Dopo 7 giorni da ogni trial: screenshot degli insights (salti, media visione, visite profilo, follow, eta').
+- Ogni mese: moduli di coaching arrivati (oggi ~1) e messaggi WhatsApp "programma gratis".
 
-## Reel di test (3 trial)
-- Esercizio: scarpa col tacco nello squat.
-- Programmazione: percentuali nello street / top set calculator.
-- Case study: Vincenzo (ok dei genitori, e' minorenne) oppure Jasmin / Lorenzo.
-
-## Sito: main aggiornato (FATTO 12/11)
-- main e claude/brief-redesign-sito-jzyaim ora coincidono (stesso commit 751620d). Le modifiche future vanno su main.
-- Pages pubblica da main (deploy verificato da Manuel il 12/11). Nulla da cambiare.
+## Fatto
+- Sito unito in main, Pages pubblica da main (12/11).
