@@ -31,8 +31,6 @@ Stato: in raccolta, Manuel non ha ancora modificato nulla.
 - Programmazione: percentuali nello street / top set calculator.
 - Case study: Vincenzo (ok dei genitori, e' minorenne) oppure Jasmin / Lorenzo.
 
-## Unire il sito nuovo in main (Manuel lo vuole)
-- La copia claude/brief-redesign-sito-jzyaim contiene tutto main: unione senza conflitti (fast-forward).
-- Da GitHub web: repo Manuel-Ferrante-Coaching -> Pull requests -> New pull request -> base: main,
-  compare: claude/brief-redesign-sito-jzyaim -> Create -> Merge. Oppure chiederlo alla sessione del sito.
-- Dopo: in Settings -> Pages, controllare da quale branch e' pubblicato; se si passa a main, il sito resta identico.
+## Sito: main aggiornato (FATTO 12/11)
+- main e claude/brief-redesign-sito-jzyaim ora coincidono (stesso commit 751620d). Le modifiche future vanno su main.
+- Resta da controllare: Settings -> Pages, da quale branch e' pubblicato (se e' ancora la copia claude/..., passarlo a main).
