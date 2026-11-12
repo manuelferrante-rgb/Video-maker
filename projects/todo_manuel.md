@@ -36,7 +36,7 @@ Regole per registrare: guarda in camera; la prima frase e' il gancio; registra i
    da dove partiva (kg, eta'); il blocco; cosa avete cambiato e perche'; in quanto tempo; video del 160 e del dip.
    Parlato: gancio sul risultato, centro sul problema e sulla tua scelta, chiusura che riprende il gancio.
 
-4. Idee case study gia' nel documento: Stefano (muscle up partendo dall'elastico), Vincenzo dopo il primo test.
+4. Prossimo case study (gia' nel documento): Stefano, muscle up partendo dall'elastico.
    Vincenzo e Stefano NON vanno sul sito (scelta di Manuel). 160/57 = 2,8: dire "quasi 3 volte il peso corporeo".
 
 ## D. Misure
