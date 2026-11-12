@@ -12,7 +12,9 @@
    (NUMERO = il tuo cellulare senza +39 e senza spazi), titolo "Programma gratis". Provalo da un altro telefono.
 5. Fissati (max 3; "..." sul post -> Fissa / Rimuovi): 1) programma gratuito trazioni, 2) Risultati dei miei atleti,
    3) da 3 trazioni a 75 kg.
-6. Facoltativo: WhatsApp Business (messaggio di benvenuto, etichette "programma gratis", "cliente").
+6. WhatsApp Business (gia' attivo): NON aggiungere il pulsante WhatsApp di IG (chat vuota, si perde il testo
+   precompilato). Su WA Business: risposta rapida /programma (programma + domanda su allenamento e massimali) ed
+   etichette "Programma gratis", "Interessato coaching", "Cliente" da contare ogni mese.
 7. Scrivi a Claude la data del cambio.
 
 ## B. Sito (nella sessione del sito, repo Manuel-Ferrante-Coaching, branch main)
