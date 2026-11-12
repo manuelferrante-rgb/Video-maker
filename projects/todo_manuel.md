@@ -16,9 +16,10 @@
 7. Scrivi a Claude la data del cambio.
 
 ## B. Sito (nella sessione del sito, repo Manuel-Ferrante-Coaching, branch main)
-1. Cloudflare Web Analytics: crea un account gratis su cloudflare.com -> Web Analytics -> Add a site
-   (manuelferrante.it) -> copia lo snippet e dallo alla sessione del sito da inserire nella pagina.
-2. Modulo Formspree: campi nascosti utm_source e utm_medium compilati dall'URL.
+1. PRIORITA': modulo Formspree con campi nascosti utm_source e utm_medium compilati dall'URL (nella mail di ogni
+   candidatura c'e' da dove arriva: bio, storie...).
+2. Facoltativo: Cloudflare Web Analytics (quante persone entrano nel sito da ogni fonte): account gratis su
+   cloudflare.com -> Web Analytics -> Add a site -> snippet alla sessione del sito.
 3. Una riga con un risultato in kg sotto il sottotitolo, prima del modulo.
 4. Facoltativo: titolo e sottotitolo coerenti con la bio (proposta di Claude su richiesta).
 
@@ -40,6 +41,7 @@ Regole per registrare: guarda in camera; la prima frase e' il gancio; registra i
    Vincenzo e Stefano NON vanno sul sito (scelta di Manuel). 160/57 = 2,8: dire "quasi 3 volte il peso corporeo".
 
 ## D. Misure
+- Link nelle storie: https://manuelferrante.it/?utm_source=instagram&utm_medium=storie (clic: insights della storia).
 - Dopo 7 giorni da ogni trial: screenshot degli insights (salti, media visione, visite profilo, follow, eta').
 - Ogni mese: moduli di coaching arrivati (oggi ~1) e messaggi WhatsApp "programma gratis".
 
