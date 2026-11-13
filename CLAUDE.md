@@ -279,3 +279,5 @@ Trial "THIS IS STREETLIFTING" (13 s, muto con musica, 13/11): 170 views, salti 6
 follower, ~40% fuori Italia (India 14,8%, Iran 11,8%, Turchia, Polonia). Meta' del pubblico perso entro ~2 s. Lezione:
 l'edit hype senza parlato e con testo in inglese non ha una promessa nei primi secondi e attira pubblico estero che
 non puo' diventare cliente. Non pubblicato nel feed.
+Regola (approvata da Manuel 13/11): gli edit hype muti solo per i follower (storie o post occasionali), mai come trial
+per crescere; per persone nuove che possono diventare clienti serve il parlato in italiano con il gancio sul problema.
