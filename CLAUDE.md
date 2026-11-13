@@ -275,3 +275,7 @@ Script "a loop" (richiesta di Manuel, 12/11): il gancio iniziale e' forte e il f
 video ricomincia senza stacco (l'ultima frase resta aperta e la prima la completa). La CTA va prima della frase-ponte
 o nella caption, mai dopo, altrimenti rompe il loop. Valido per i prossimi script, compresi quelli in
 `projects/script_test_novembre.md`.
+Trial "THIS IS STREETLIFTING" (13 s, muto con musica, 13/11): 170 views, salti 64,3%, media 3 s, 0 follow, 99,4% non
+follower, ~40% fuori Italia (India 14,8%, Iran 11,8%, Turchia, Polonia). Meta' del pubblico perso entro ~2 s. Lezione:
+l'edit hype senza parlato e con testo in inglese non ha una promessa nei primi secondi e attira pubblico estero che
+non puo' diventare cliente. Non pubblicato nel feed.
