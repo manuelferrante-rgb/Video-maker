@@ -289,4 +289,6 @@ Script di Manuel: `projects/goodlift_script_promozione.md`; versione adattata ag
 `projects/brief_editor_novembre.md` (sez. 4): Telegram e storie subito, trial reel ~18 s dopo il 19/11 con GoodLift
 aggiunto ai link in bio. Telegram solo per il gruppo atleti. Mai "giudice ufficiale" o "precisione al 100%".
 Ok dell'atleta per ogni video mostrato. Per i reel GoodLift la CTA "link in bio" e' approvata (scelta di Manuel).
+Dentro GoodLift niente titoli o frasi di vendita (Manuel: "brutti, non e' questo lo scopo"): solo i bottoni
+WhatsApp precompilato "vengo da GoodLift" e candidatura con utm_source=goodlift.
 Brief generale per la chat editor: `projects/brief_editor_novembre.md` (aggiornalo quando cambiano le regole).

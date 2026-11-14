@@ -6,7 +6,7 @@
 2b. Da verificare con Manuel: manuelferrante.it apre il sito di GitHub Pages? (in repo non c'e' il file CNAME).
 2c. Link del sito in bio con ?utm_source=instagram&utm_medium=bio, altrimenti le candidature dalla bio
     risultano "diretto".
-2d. GoodLift: dopo il verdetto un passo verso Manuel (programma gratis su WhatsApp + candidatura), con
+2d. GoodLift: sotto il verdetto solo i due bottoni (programma gratis su WhatsApp + candidatura), senza titoli, con
     utm_source=goodlift e testo WhatsApp "vengo da GoodLift". Messaggio per la sessione del sito: chat del 14/11.
 3. Facoltativo: titolo e sottotitolo coerenti con la bio (proposta di Claude su richiesta).
 4. Facoltativo: Cloudflare Web Analytics (quante persone entrano nel sito da ogni fonte).
