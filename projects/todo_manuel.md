@@ -1,9 +1,13 @@
 # Lista operativa per Manuel (aggiornata il 12/11/2026)
 
 ## B. Sito (nella sessione del sito, repo Manuel-Ferrante-Coaching, branch main)
-1. PRIORITA': campo nascosto nel modulo che salva la provenienza (utm_source / utm_medium). Messaggio da incollare
-   nella sessione del sito: vedi chat del 12/11. Poi scrivi a Claude, che controlla il codice su GitHub.
-2. Una riga con un risultato in kg sotto il sottotitolo, prima del modulo.
+1. FATTO (verificato su main il 14/11): campo nascosto utm_source/utm_medium nel modulo (default "diretto").
+2. FATTO (14/11): riga "Risultati dei miei atleti: squat 200 kg · trazioni +70 kg · muscle up +28,75 kg".
+2b. Da verificare con Manuel: manuelferrante.it apre il sito di GitHub Pages? (in repo non c'e' il file CNAME).
+2c. Link del sito in bio con ?utm_source=instagram&utm_medium=bio, altrimenti le candidature dalla bio
+    risultano "diretto".
+2d. GoodLift: dopo il verdetto un passo verso Manuel (programma gratis su WhatsApp + candidatura), con
+    utm_source=goodlift e testo WhatsApp "vengo da GoodLift". Messaggio per la sessione del sito: chat del 14/11.
 3. Facoltativo: titolo e sottotitolo coerenti con la bio (proposta di Claude su richiesta).
 4. Facoltativo: Cloudflare Web Analytics (quante persone entrano nel sito da ogni fonte).
 
