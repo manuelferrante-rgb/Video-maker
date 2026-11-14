@@ -79,3 +79,54 @@ Prossimo case study dopo Vincenzo: Stefano, muscle up partendo dall'elastico.
 ## 3. Dopo la pubblicazione
 A 7 giorni da ogni trial Manuel porta nella chat strategia gli screenshot degli insight: salti, media visione,
 visite profilo, follow, fascia d'età, paesi.
+
+## 4. GoodLift (giudice delle alzate, web app gratuita di Manuel)
+
+Script originale di Manuel: projects/goodlift_script_promozione.md (scheda app, storie, 2 trial reel, Telegram).
+Qui sotto le modifiche fatte in base agli insight. Dove c'è conflitto valgono queste.
+
+Link: https://manuelferrante-rgb.github.io/Manuel-Ferrante-Coaching/goodlift/
+Nelle storie usare sempre ?utm_source=instagram&utm_medium=storie in fondo al link, così si capisce da dove arrivano.
+Promesse vietate: "giudice ufficiale", "precisione al 100%". Ok dell'atleta per ogni video mostrato (soprattutto i NO REP).
+
+Ordine:
+1. Video Telegram per gli atleti: subito (pubblico interno, non tocca le misure). 40-50 s come da script.
+   Telegram solo per il gruppo atleti, mai come CTA in reel o storie.
+2. Storie con lo sticker link "PROVA GOODLIFT": subito, script di Manuel invariato (12-15 s, follower).
+   Sondaggio "Valida o no rep?" il giorno prima, il giorno dopo il video con il link e la risposta.
+3. Trial reel: dopo il 19/11. Prima va finita la misura a 7 giorni del nuovo profilo, poi si aggiunge
+   GoodLift ai link in bio (altrimenti "link in bio" porta altrove e la misura si sporca).
+
+Trial reel: modifiche rispetto allo script originale
+- Durata ~18 s, non 22-25 (i dati dicono che corto e denso va meglio). Tagliare la parte "agitazione".
+- Sono due reel per due pubblici diversi, non un test A/B: dentro ognuno si testa solo il gancio (2-3 take).
+- Il gancio parte da un caso reale (un'alzata vera giudicata dall'app), non da una domanda che seleziona.
+  "Le tue trazioni sono pulite? Sicuro?" diventa un'alzata vera con il verdetto.
+- Primi 3 s: l'alzata vera (o Manuel in camera). Lo schermo dell'app entra solo dopo il gancio.
+- A loop, CTA "È gratis, link in bio" prima della frase-ponte. Gli overlay restano parole singole, i
+  sottotitoli quelli standard.
+- I gradi e i verdetti sono quelli che l'app dà davvero su quel video: niente numeri inventati.
+
+Reel A (chi gareggia, street/powerlifting), ~18 s
+- 0-3 s, squat di gara con i giudici o di un atleta, overlay "ROSSO":
+  "Questo squat in palestra l'avresti dato valido. In gara è rosso."
+- 3-8 s, replay dell'app con la linea del femore: "Femore [X]° sopra il parallelo. Dal vivo non lo vedi:
+  lo scopri in pedana, quando il carico l'hai già alzato."
+- 8-14 s, schermo dell'app: "Per questo ho fatto GoodLift. Carichi il video e ti giudica come in gara:
+  valida o no rep, il motivo e di quanto."
+- 14-16 s, Manuel in camera: "È gratis, link in bio."
+- 16-18 s, frase-ponte che riporta all'inizio: "Perché il tuo squat in palestra..."
+
+Reel B (trazioni e muscle up), ~18 s
+- 0-3 s, trazione zavorrata vera, overlay "NO REP": "Questa trazione l'avrei data valida. GoodLift no."
+- 3-8 s, replay "MENTO SOTTO" (o il motivo vero dato dall'app): "Il mento arriva alla sbarra ma non la supera.
+  Un giudice te la boccia in mezzo secondo."
+- 8-14 s, schermo dell'app con i chip 1º 2º 3º: "GoodLift guarda kip, gambe, mento, ginocchia nel muscle up.
+  Ti dice se è valida e cosa sistemare."
+- 14-16 s, Manuel in camera: "È gratis, link in bio."
+- 16-18 s, frase-ponte: "Perché anche quella che pensi pulita..."
+
+Caption: quelle di Manuel nello script originale vanno bene (niente em dash, max 1-2 emoji).
+
+Girato da chiedere a Manuel: alzata vera + registrazione dello schermo dell'app sullo stesso video (verdetto e
+replay), Manuel in camera per il gancio (2-3 take) e la CTA, ok scritto dell'atleta.

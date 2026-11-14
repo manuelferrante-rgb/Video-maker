@@ -281,3 +281,12 @@ l'edit hype senza parlato e con testo in inglese non ha una promessa nei primi s
 non puo' diventare cliente. Non pubblicato nel feed.
 Regola (approvata da Manuel 13/11): gli edit hype muti solo per i follower (storie o post occasionali), mai come trial
 per crescere; per persone nuove che possono diventare clienti serve il parlato in italiano con il gancio sul problema.
+
+## GoodLift (novembre 2026)
+Web app gratuita di Manuel che giudica le alzate (GOOD LIFT / NO REP, replay con linee):
+https://manuelferrante-rgb.github.io/Manuel-Ferrante-Coaching/goodlift/ (poi manuelferrante.it/goodlift).
+Script di Manuel: `projects/goodlift_script_promozione.md`; versione adattata agli insight in
+`projects/brief_editor_novembre.md` (sez. 4): Telegram e storie subito, trial reel ~18 s dopo il 19/11 con GoodLift
+aggiunto ai link in bio. Telegram solo per il gruppo atleti. Mai "giudice ufficiale" o "precisione al 100%".
+Ok dell'atleta per ogni video mostrato. Per i reel GoodLift la CTA "link in bio" e' approvata (scelta di Manuel).
+Brief generale per la chat editor: `projects/brief_editor_novembre.md` (aggiornalo quando cambiano le regole).
