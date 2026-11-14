@@ -209,8 +209,18 @@ CTA: "Se ti interessano questi contenuti, seguimi." oppure "Se vuoi farti analiz
   subito le trazioni, 13.9 s, cosi' il finale (la parte piu' bella) si vede.
 - **Clip iPhone HLG nei reel "cinematici"**: il tonemap zscale gonfia i colori (Manuel: "si vede che c'era HDR"). Base
   naturale = HLG letto come SDR (`scale=in_color_matrix=bt2020:out_color_matrix=bt709`) + `grade()` dello script.
-- I file grandi su Drive non si caricano dal connettore: si mandano in chat, Manuel li sposta in "montati"
+- I file > 10 MB non si caricano su Drive dal connettore: si mandano in chat, Manuel li sposta in "montati"
   (`1CQ_3Nnt_mpPjLTmcc--1Dagis5yhmkOC`).
+
+## GoodLift (app gratuita di Manuel che giudica le alzate, novembre 2026)
+
+- Script e scheda: file di Manuel `goodlift-script-promozione.md` (copia in `projects/goodlift_script_promozione.md`).
+  Piano di montaggio scena per scena (storia 15 s con sticker link, trial reel A gare / B calisthenics, video Telegram
+  ~45 s, lista delle registrazioni schermo S1-S9): `projects/goodlift_montaggi.md`. Copertine bozza `cover_goodlift.py`.
+- Regole: una CTA per contenuto (storia = sticker "PROVA GOODLIFT", reel = link in bio, Telegram = link nel testo);
+  Telegram solo per il gruppo atleti; mai "giudice ufficiale" o "100% preciso"; ricordare a Manuel l'ok degli atleti
+  (soprattutto NO REP, es. Jasmin). Link: https://manuelferrante-rgb.github.io/Manuel-Ferrante-Coaching/goodlift/
+  (il sito non e' raggiungibile dalla sessione: proxy). Upload su Drive dal connettore: max 10 MB.
 
 ## In sospeso
 
