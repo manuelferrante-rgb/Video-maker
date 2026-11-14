@@ -1,5 +1,13 @@
 # GoodLift: piano di montaggio (storia, 2 trial reel, video Telegram)
 
+> AGGIORNAMENTO 14/11: dove c'è conflitto vale la sezione 4 di `projects/brief_editor_novembre.md`.
+> Ordine: 1) video Telegram subito; 2) storie subito (sondaggio il giorno prima: `stories_goodlift.py`, poi il video
+> con lo sticker); 3) trial reel solo dopo il 19/11, ~18 s, senza "agitazione", gancio su un'alzata vera giudicata
+> dall'app con verdetto e gradi veri, schermo dell'app solo dopo il gancio, a loop con "È gratis, link in bio" prima
+> della frase-ponte, dentro ogni reel si testa solo il gancio (2-3 take). Le tabelle dei reel qui sotto sono
+> SUPERATE dal brief (restano valide la lista delle registrazioni schermo e le indicazioni CapCut).
+> Link nelle storie: https://manuelferrante-rgb.github.io/Manuel-Ferrante-Coaching/goodlift/?utm_source=instagram&utm_medium=storie
+
 Link: https://manuelferrante-rgb.github.io/Manuel-Ferrante-Coaching/goodlift/
 Una sola CTA per contenuto: storia = sticker link "PROVA GOODLIFT"; reel = "link in bio"; Telegram = link nel testo.
 Telegram mai nominato nei reel e nelle storie. Mai "giudice ufficiale" o "100% preciso": "ti giudica come in gara,
