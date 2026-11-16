@@ -84,3 +84,15 @@ Col tacco il ginocchio va piu' avanti e il peso resta a meta' piede. / Nicolo' h
 che tengono il busto verticale: a lui non serve. / Tu lo usi? Scrivimelo. / Io lo decido cosi', per ognuno:
 B-roll: Jasmin col tacco di lato; primo piano del tallone rialzato dalla scarpa; Jasmin senza tacco (se c'e') per il
 prima/dopo; Nicolo' senza tacco di lato.
+
+## Trial 1 v5 (16/11, DA REGISTRARE): versione "professionale" con punto debole + Nicolo' catena posteriore
+Ganci: 1 "Jasmin: 200 kg di squat col tacco. Nicolo' il tacco non lo usa." (MIGLIORE) | 2 "Jasmin squatta col tacco.
+Nicolo' senza. Li alleno tutti e due io." | 3 "Il tacco aiuta tutti? A Jasmin si'. A Nicolo' no."
+Corpo: Dipende dal punto debole. / Jasmin ha la caviglia rigida: senza tacco finiva sul tallone. / Col tacco il
+ginocchio va avanti e il peso resta a meta' piede. / Nicolo' ha caviglia mobile e busto gia' verticale: non gli serve. /
+Con lui lavoriamo sulla catena posteriore. / Non sai se ti serve? Mandami il tuo squat di lato. / Io lo decido cosi',
+per ognuno:   (71 parole col gancio 1, ~20 s a 1,1x)
+Visivo: gancio in camera (muro bianco) | PUNTO DEBOLE | Jasmin senza tacco + segno sul tallone | Jasmin col tacco +
+punto a meta' piede, TACCO SI' | Nicolo' in gara, TACCO NO | Nicolo' da dietro + box squat westside, CATENA POSTERIORE |
+CTA e ponte in camera.
+B-roll in arrivo da Manuel: Jasmin con e senza tacco, Nicolo' in gara, Nicolo' da dietro, box squat westside.
