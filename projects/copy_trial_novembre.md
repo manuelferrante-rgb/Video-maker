@@ -70,3 +70,17 @@ Corpo: Non e' una moda: dipende dalla caviglia. / Quella di Jasmin si blocca: co
 busto resta dritto. / Nicolo' ha la caviglia mobile: col tacco il busto cadrebbe avanti. / Tu lo usi? Scrivimelo. /
 Io lo decido cosi', per ognuno: (-> riparte il gancio). 57 parole.
 Copertina: [TACCO O NO?] / [DIPENDE DA QUESTO]. Da confermare: motivi veri di Jasmin e Nicolo', ok di entrambi.
+
+## Trial 1 v4 (16/11, DEFINITIVA DA REGISTRARE): contesto vero di Manuel
+Contesto (non tutto va detto): Jasmin caviglia piu' rigida (non "bloccata"); senza tacco in buca restava sul tallone;
+col tacco e' come se il tallone si alzasse, il ginocchio va piu' avanti, il busto si flette naturalmente e il peso
+resta a meta' piede, non si sbilancia avanti col bilanciere. 200 kg fatti COL tacco. Si lavora comunque sulla mobilita'.
+Nicolo': caviglia piu' mobile e leve che tengono gia' il busto piu' verticale; ~170-180 senza tacco (non confrontare i kg).
+Idea per un prossimo reel: con Nicolo' si e' lavorato sull'attivare di piu' la catena posteriore.
+Ganci: 1 "Jasmin: 200 kg di squat con il tacco. Nicolo' il tacco non lo usa." (MIGLIORE) | 2 "Jasmin squatta con il
+tacco. Nicolo' senza. Li alleno tutti e due io." | 3 "Il tacco aiuta tutti? A Jasmin si'. A Nicolo' no."
+Corpo: Dipende dalla caviglia. / Quella di Jasmin e' piu' rigida: senza tacco, in buca finiva sul tallone. /
+Col tacco il ginocchio va piu' avanti e il peso resta a meta' piede. / Nicolo' ha la caviglia piu' mobile e leve
+che tengono il busto verticale: a lui non serve. / Tu lo usi? Scrivimelo. / Io lo decido cosi', per ognuno:
+B-roll: Jasmin col tacco di lato; primo piano del tallone rialzato dalla scarpa; Jasmin senza tacco (se c'e') per il
+prima/dopo; Nicolo' senza tacco di lato.
