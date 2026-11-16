@@ -34,3 +34,11 @@ Cartella Drive parlati `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc`, scaricati in `src_gi
 - Reel "THIS IS STREETLIFTING" V3 (A e B, `this_is_streetlifting.py`): 7178 6-6.9, 24.6-28.3; 7167 5.45-7.3,
   10-12.96; 7171 1.95-3.8; 7163 3.6-5.45. (V1 usava anche:) 7178 8-8.7, 6-6.9, 24.6-28.3, 30.85-31.3;
   7167 3-3.7, 5.35-9.05, 7.45-7.9, 10-12.96; 7171 1.95-3.8, 6.1-6.56; 7163 0.6-1.3, 4-5.85, 7.6-8.06.
+
+## Trial tacco (16/11/2026, projects/tacco.py) - Drive cartella parlati
+- 5069432589416529262.mp4 (b3, Jasmin CON tacco): 0.45-3.2 a 0.85x
+- 9114660095108623932.mp4 (b5, Jasmin SENZA tacco): 1.25-3.2
+- -1386854435724045278.mp4 (b2, Nicolo' in gara): 0.9-2.8; fotogramma 1.6 per la copertina
+- 8510363288666549072.mp4 (b4, Nicolo' da dietro, 256x480): 1.0-2.1 in riquadro
+- 8460332548395192040.mp4 (b1, box squat westside): 0-1.3 a 0.9x
+- IMG_9075.MOV (parlato): ganci 10.5-14.1 / 20.7-24.7 / 30.5-33.1, corpo 36.5-183.6; fotogramma 12.6 copertina
