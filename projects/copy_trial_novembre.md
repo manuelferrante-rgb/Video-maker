@@ -59,3 +59,13 @@ Gancio: "Non è forte chi pesa 100 kg e stacca 200. È forte chi ne pesa 57 e ne
 Corpo: "Vincenzo ha 15 anni. Quando è arrivato da me [stacco/peso di partenza]. Il problema era [blocco].
 Abbiamo cambiato [scelta] perché [motivo]. Dopo [tempo]: 160 kg, quasi tre volte il suo peso."
 CTA: "Pensi di essere troppo leggero per tirare pesante? Dimmelo nei commenti." Ponte: "Perché alla fine..."
+
+## Trial 1 v3 (16/11): tacco con Jasmin (col tacco) e Nicolo' (senza). VERSIONE DA REGISTRARE
+Ganci: 1 "Jasmin squatta con il tacco. Nicolo' senza. Li alleno tutti e due io." (MIGLIORE) | 2 "Due miei atleti,
+stesso squat. Una usa il tacco, uno no." | 3 "Jasmin squatta 200 kg con il tacco. Nicolo' senza." (solo se il 200 e'
+col tacco) | 4 "Non e' il tacco che ti fa scendere. E' la caviglia." | 5 "Il tacco aiuta tutti? A Jasmin si'. A Nicolo' no."
+| 6 "Stesso coach, stesso squat, due scarpe diverse."
+Corpo: Non e' una moda: dipende dalla caviglia. / Quella di Jasmin si blocca: col tacco il ginocchio va avanti e il
+busto resta dritto. / Nicolo' ha la caviglia mobile: col tacco il busto cadrebbe avanti. / Tu lo usi? Scrivimelo. /
+Io lo decido cosi', per ognuno: (-> riparte il gancio). 57 parole.
+Copertina: [TACCO O NO?] / [DIPENDE DA QUESTO]. Da confermare: motivi veri di Jasmin e Nicolo', ok di entrambi.
