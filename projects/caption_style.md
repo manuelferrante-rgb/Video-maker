@@ -132,3 +132,17 @@ Ottavo esempio, rivisto da Manuel (reel "fermi lunghi in panca", copertina v2, n
 Regole aggiunte:
 - Prima riga = il concetto chiave in una frase secca (il "perché"), POI la domanda del lettore e la spiegazione.
 - Negli input preferisce azioni semplici e concrete ("prendi aria") a termini tecnici ("scapole ferme").
+
+## Caption pubblicata da Manuel (trial "Tacco nello squat", 16/11/2026)
+Note: ha anticipato il paragrafo "il tacco non risolve tutto" subito dopo la domanda; atleti taggati
+(@jasmincalisti = Jasmin, @nikmarzo = Nicolo'); "il peso resta in spinta"; CTA = mandami il tuo squat (DM).
+
+Il tacco nello squat lo metti perché la usano tutti o perché ti serve davvero?
+
+Il tacco però non risolve tutto. È uno strumento utile, ma intanto si lavora sulla mobilità della caviglia e sulla dinamica dello squat, e si decide quanto e come usarlo.
+
+Dipende da dove sei debole. @jasmincalisti ha la caviglia più rigida: senza tacco in buca finiva sul tallone. Con il tacco il ginocchio va più avanti e il peso resta in spinta.
+
+@nikmarzo ha la caviglia più mobile e con le sue leve rimane più verticale: a lui il tacco non serve. Con lui lavoriamo sulla catena posteriore.
+
+Non sai se ti serve? Mandami il tuo squat ripreso di lato e lo guardiamo insieme. 🏋️
