@@ -35,12 +35,15 @@ def panel(path, cx_src, cx_dst, zoom=1.0, dy=0):
     y0 = int((H * zoom - H) / 2 + dy)
     out = np.zeros((H, W, 3), np.float32)
     xs, xe = max(x0, 0), min(x0 + W, im.shape[1])
-    out[:, xs - x0:xe - x0] = im[y0:y0 + H, xs:xe]
+    ys, ye = max(y0, 0), min(y0 + H, im.shape[0])
+    out[ys - y0:ye - y0, xs - x0:xe - x0] = im[ys:ye, xs:xe]
+    if ye - y0 < H:  # sotto l'immagine: ripeto l'ultima riga (pavimento)
+        out[ye - y0:] = out[ye - y0 - 1]
     return out
 
 
 # sfondo: Jasmin (b3, col tacco, soggetto a x~495) a sinistra, Nicolo' (b2, x~570) a destra
-left = panel(f"{D}/st/bgj.png", 495, 210, 1.05)
+left = panel(f"{D}/st/bgj.png", 495, 210, 1.25, dy=330)
 right = panel(f"{D}/st/bg2.png", 720, 860, 1.9, dy=456)
 xx = np.arange(W, dtype=np.float32)[None, :, None]
 mix = np.clip((xx - 470) / 140, 0, 1)
@@ -83,7 +86,7 @@ alpha = cv2.GaussianBlur(cv2.erode(hard2, np.ones((3, 3), np.uint8)).astype(np.f
 yy = np.arange(H, dtype=np.float32)[:, None]
 alpha = alpha * np.clip((1480 - yy) / 240, 0, 1)                # niente scrivania: sfumo il busto
 
-SC, TX, TY = 0.66, W / 2 - 600 * 0.66, 780 - 870 * 0.66          # viso (600, 870) -> (540, 780)
+SC, TX, TY = 0.66, W / 2 - 600 * 0.66, 1150 - 870 * 0.66         # viso (600, 870) -> (540, 1150)
 M = np.float32([[SC, 0, TX], [0, SC, TY]])
 fgw = cv2.warpAffine(fg, M, (W, H), flags=cv2.INTER_CUBIC)
 al = cv2.warpAffine(alpha, M, (W, H), flags=cv2.INTER_LINEAR, borderValue=0)
@@ -91,7 +94,7 @@ sh = cv2.GaussianBlur(al, (0, 0), 30)[..., None]
 img = bg * (1 - 0.5 * sh)
 img = img * (1 - al[..., None]) + fgw * al[..., None]
 im = Image.fromarray(cv2.cvtColor(np.clip(img, 0, 255).astype(np.uint8), cv2.COLOR_BGR2RGB)).convert("RGBA")
-y = label(im, "TACCO SÌ O NO?", W / 2, 1010, 88)
+y = label(im, "TACCO SÌ O NO?", W / 2, 1385, 88)
 label(im, "DIPENDE DA QUESTO", W / 2, y + 10, 78, box=ORANGE)
 im.convert("RGB").save(f"{D}/copertina_tacco.jpg", quality=95)
 im.convert("RGB").crop((0, 240, 1080, 1680)).resize((540, 720)).save(f"{D}/_check_griglia.jpg", quality=85)

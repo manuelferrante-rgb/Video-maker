@@ -47,7 +47,7 @@ PAGES = {"H1": [(10.55, f"JASMIN: {OR}200 KG{WH}\\NDI SQUAT"), (12.09, f"CON IL 
          "P7": [(108.19, f"QUINDI\\N{OR}NON GLI SERVE")],
          "P8": [(127.60, f"ANZI, HA UNA DINAMICA\\N{OR}TROPPO VERTICALE")],
          "P9": [(162.43, "CON LUI CI SIAMO\\NCONCENTRATI"), (164.12, f"SULLA CATENA\\N{OR}CINETICA POSTERIORE")],
-         "P10": [(174.81, "NON SO SE TI SERVE:"), (175.85, f"MANDAMI IL TUO\\N{OR}SQUAT")],
+         "P10": [(174.81, "NON SAI SE TI SERVE?"), (175.85, f"MANDAMI IL TUO\\N{OR}SQUAT")],
          "P11": [(181.67, "IO LO DECIDO COSÌ,\\NPER OGNUNO")]}
 
 HOOK_TITLES = {"H1": [("200 KG", "n"), ("COL TACCO", "o")],
@@ -81,15 +81,15 @@ def subsegs(a, b, gap=0.16, pre=0.05, post=0.07):
 
 
 def pip(path, ss, caption, sp=1.0):
-    clip = ClipFrames(path, ss, 3.0, sp, w=330, h=620)
+    clip = ClipFrames(path, ss, 3.0, sp, w=430, h=800)
 
     def draw(im, t, dur):
         a = ease(t / 0.22) * (1 - ease((t - (dur - 0.15)) / 0.15))
         if a <= 0:
             return
         s = 0.9 + 0.1 * eout(t / 0.3)
-        w, h = 330 * s, 620 * s
-        x0, y0 = 50, 300
+        w, h = 430 * s, 800 * s
+        x0, y0 = 40, 290
         rounded_frame(im, clip.at(t), (x0, y0, x0 + w, y0 + h), a, radius=24, border=(255, 255, 255, 110))
         ImageDraw.Draw(im).text((x0 + 22, y0 + h - 22), caption, font=font(FSI, 46), fill=alpha(WHITE, a),
                                 anchor="ls", stroke_width=2, stroke_fill=(0, 0, 0, int(160 * a)))
@@ -127,6 +127,7 @@ def make(v):
 
     pages = [(ref(s), txt) for n in names for s, txt in PAGES[n]]
     br = [(start("P3"), nxt("P3"), f"{S}/b5.mp4", 1.25, 1.0, 1.15, (540, 1000)),          # Jasmin senza tacco
+          (start("P4"), ref(65.33), f"{S}/b3.mp4", 0.0, 0.8, 1.8, (525, 1380)),          # zoom sulla scarpa col tacco
           (ref(65.33), nxt("P5"), f"{S}/b3.mp4", 0.45, 0.85, 1.3, (540, 1250)),           # Jasmin col tacco
           (ref(98.05), nxt("P7"), f"{S}/b2.mp4", 0.9, 1.0, 1.0, None),                   # Nicolo' in gara
           (ref(164.12), nxt("P9"), f"{S}/b1.mp4", 0.0, 0.9, 1.0, None)]                   # box squat
