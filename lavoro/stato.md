@@ -18,3 +18,8 @@ Copy: `projects/copy_trial_novembre.md`.
 
 ## Font e colori
 Sottotitoli Inter ExtraBold bianchi, accento arancio #E8662C; titoli Inter Black Italic; navy #14304F, avorio #F2EEE3.
+
+## Decisione 16/11 (trial tacco)
+Copy definitivo: v5 in `projects/copy_trial_novembre.md`. Consegnare 3 VIDEO, uno per gancio (1, 2, 3), stesso montaggio
+dopo il gancio, stessa durata il piu' possibile, stessa copertina e caption: Manuel li pubblica tutti e 3 come trial.
+In attesa: parlato (3 ganci + corpo) e B-roll Jasmin con/senza tacco, Nicolo' gara, da dietro, box squat westside.
