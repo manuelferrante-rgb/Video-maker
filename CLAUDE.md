@@ -292,3 +292,5 @@ Ok dell'atleta per ogni video mostrato. Per i reel GoodLift la CTA "link in bio"
 Dentro GoodLift niente titoli o frasi di vendita (Manuel: "brutti, non e' questo lo scopo"): solo i bottoni
 WhatsApp precompilato "vengo da GoodLift" e candidatura con utm_source=goodlift.
 Brief generale per la chat editor: `projects/brief_editor_novembre.md` (aggiornalo quando cambiano le regole).
+Prompt riutilizzabili per altre AI (16/11): `projects/prompt_ai_copy.md` (ganci, script a loop, caption, copertina) e
+`projects/prompt_ai_montaggio.md` (montaggio e controlli dei primi 3 s). Aggiornali quando arrivano nuovi insight.
