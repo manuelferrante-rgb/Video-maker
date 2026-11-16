@@ -11,11 +11,10 @@ Copy: `projects/copy_trial_novembre.md`.
 - Trial 3 Vincenzo: in attesa di dati (partenza, blocco, cambio, tempo) + ok genitori + video 160 kg e dip.
 
 ## Risposte di Manuel alle domande iniziali
-- Parti volute (B-roll / grafiche / musica ed effetti / testi): DA CHIEDERE (domanda 1)
-- Tipo di video (1 clip sue / 2 scene animate): da chiedere
-- B-roll già girati: da chiedere
-- Musica con diritti: da chiedere
-- Effetti sonori: da chiedere (in repo ci sono quelli generati in `sfx/`)
+- 16/11: Manuel ha mandato `projects/prompt_ai_copy.md` e `projects/prompt_ai_montaggio.md`: il copy si fa col primo,
+  il montaggio col secondo. Quindi: B-roll si', titoli in alto + grafiche (dopo il gancio), sfx leggeri generati,
+  sottotitoli standard, NIENTE musica (la mette Manuel su Instagram), copertina standard, controllo in 8 punti.
+- Tipo di video: parlato in camera + B-roll suoi + grafiche a meta' (scelta mia secondo prompt_ai_montaggio).
 
 ## Font e colori
 Sottotitoli Inter ExtraBold bianchi, accento arancio #E8662C; titoli Inter Black Italic; navy #14304F, avorio #F2EEE3.

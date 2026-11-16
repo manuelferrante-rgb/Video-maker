@@ -4,21 +4,47 @@ Regole: ~18 s a 1,1x (circa 60-65 parole), primi 3 s = Manuel in camera o l'alza
 a loop (l'ultima frase resta aperta e la prima la completa), CTA commenti prima della frase-ponte,
 niente "link in bio/nel profilo" nel parlato. Tra le take cambia SOLO il gancio.
 
-## Trial 1: tacco nello squat (PRONTO)
+## Trial 1: tacco nello squat (v2, rifatto con prompt_ai_copy.md, 16/11)
 
-Gancio (3 take, una per volta, guardando in camera):
-- A: "Stesso carico, stesso squat. Cambia solo la scarpa. Guarda il busto."
-- B: "Stesso squat, stesso carico: a sinistra senza tacco, a destra col tacco. Guarda dove va il busto."
-- C: "Ho messo il tacco nel mio squat e il busto è finito in avanti. Stesso carico, guarda."
+Ganci (primi 3 s: Manuel in camera; lo split entra solo a gancio finito)
+1. Curiosita': "Stesso carico, stesso squat. Cambia solo la scarpa." (MIGLIORE)
+2. Curiosita': "Ho messo il tacco nel mio squat. Guarda dove finisce il busto."
+3. Numero: "[X] kg, due serie identiche. L'unica differenza e' il tacco."
+4. Numero: "Stessi [X] kg. Con il tacco il mio busto cade in avanti."
+5. Contrasto: "Non e' il tacco che ti fa scendere. E' la caviglia."
+6. Mito: "Il tacco nello squat aiuta tutti. Sul mio no."
 
-Corpo (una volta, uguale per tutte):
-"Col tacco il ginocchio va più avanti. La mia caviglia è già mobile: se scendo uguale, il busto si piega e il peso
-scappa in avanti. Il tacco serve se la caviglia ti blocca. Se lo usi, allarga un po' i piedi e rivedi la discesa.
-Tu lo usi? Dimmelo nei commenti. E prima di comprarlo, fai questa prova:"
-(-> il video riparte dal gancio: "stesso carico, stesso squat...")
+Script a loop (54 parole, ~18 s a 1,1x)
+0,0-2,5  Stesso carico, stesso squat. Cambia solo la scarpa.   | Manuel in camera | titolo: SOLO LA SCARPA
+2,5-4,0  Guarda il busto.                                        | split senza/con tacco | -
+4,0-6,5  Col tacco il ginocchio va piu' avanti.                  | split + linea/angolo sul ginocchio | GINOCCHIO AVANTI
+6,5-9,5  Io ho la caviglia mobile: il busto cade avanti.         | split + linea del busto che si inclina | BUSTO GIU'
+9,5-11,5 Il tacco serve se la caviglia ti blocca.                | Manuel in camera (titolo) | CAVIGLIA
+11,5-14  Se lo metti, allarga un po' i piedi.                    | B-roll piedi larghi col tacco | PIEDI LARGHI
+14-16    Tacco: si' o no? Scrivimelo.                            | Manuel in camera | TACCO: SI' O NO?
+16-18    Prima di comprarlo, fai questa prova:                   | Manuel in camera, nessun titolo -> riparte il gancio
 
-Girato: squat con e senza scarpa col tacco, stesso carico, 2-3 ripetizioni ciascuno, telefono di lato su
-appoggio fisso, stessa posizione e inquadratura (tutto il corpo, bilanciere compreso).
+Copertina: [TACCO NELLO SQUAT] / [SERVE DAVVERO?]
+
+Caption:
+Scarpa col tacco nello squat: la usi perche' ce l'hanno tutti o perche' ti serve?
+
+Il tacco porta il ginocchio piu' avanti. Se la caviglia ti blocca, ti aiuta a scendere con il busto dritto.
+Se la caviglia e' gia' mobile e non cambi niente, il busto cade in avanti e il peso scappa.
+
+Fai la prova: stesso carico, con e senza, ripreso di lato. In due serie vedi con quale spingi meglio.
+Se lo tieni, allarga un po' i piedi. 🏋️
+
+Tacco: si' o no? Scrivimelo nei commenti.
+
+Girato:
+- Parlato in camera: il gancio 1 + 2 altri ganci a scelta (3 take), poi il resto dello script una volta.
+- Squat con e senza tacco, stesso carico, 2-3 ripetizioni ciascuno, di lato, telefono fisso nella stessa posizione,
+  tutto il corpo + bilanciere.
+- 4-5 s dei piedi col tacco in posizione larga (da davanti, all'altezza delle ginocchia).
+
+Domande aperte: carico usato; Manuel ha davvero la caviglia mobile e il busto cade col tacco?; usa il tacco di solito?;
+c'e' un atleta che ha tolto/messo il tacco con un risultato (renderebbe il reel piu' suo)?
 
 ## Trial 2: percentuali nello street (MANCA LA TESI)
 
