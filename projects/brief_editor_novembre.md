@@ -67,7 +67,7 @@ Script di partenza: projects/script_test_novembre.md (da riscrivere a loop nella
 
 ### Trial 3: case study, Vincenzo (in attesa)
 - Servono: ok dei genitori, da dove partiva (kg, età, peso), il blocco, cosa avete cambiato e perché, in quanto
-  tempo, video del 160 kg di stacco e del dip zavorrato.
+  tempo, video del 160 kg di stacco (SOLO stacco, niente dip: reel monotematico, Manuel 16/11).
 - Dati certi: 15 anni, 57 kg, stacco 160 kg (quasi 3 volte il peso corporeo).
 - Primi 3 s: il 160 kg (movimento forte) con il numero in riquadro arancio, oppure Manuel in camera sul gancio
   e poi l'alzata. Prima/dopo visivo (video di quando ha iniziato, se c'è). Vincenzo taggato.

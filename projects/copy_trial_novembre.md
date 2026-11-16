@@ -58,6 +58,7 @@ CTA: "Tu come scegli il carico? Scrivimelo nei commenti." Ponte che riporta al g
 Gancio: "Non è forte chi pesa 100 kg e stacca 200. È forte chi ne pesa 57 e ne stacca 160."
 Corpo: "Vincenzo ha 15 anni. Quando è arrivato da me [stacco/peso di partenza]. Il problema era [blocco].
 Abbiamo cambiato [scelta] perché [motivo]. Dopo [tempo]: 160 kg, quasi tre volte il suo peso."
+DECISO 16/11: solo stacco, niente dip (reel monotematico).
 CTA: "Pensi di essere troppo leggero per tirare pesante? Dimmelo nei commenti." Ponte: "Perché alla fine..."
 
 ## Trial 1 v3 (16/11): tacco con Jasmin (col tacco) e Nicolo' (senza). VERSIONE DA REGISTRARE

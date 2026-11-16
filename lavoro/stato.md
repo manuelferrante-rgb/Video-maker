@@ -8,7 +8,7 @@ Controlli iniziali (16/11): Playwright + Chromium OK; FFmpeg ha vidstabdetect/vi
 Copy: `projects/copy_trial_novembre.md`.
 - Trial 1 tacco: copy pronto, in attesa del girato (squat con/senza tacco) + parlato (3 take del gancio).
 - Trial 2 percentuali: in attesa della tesi + caso reale.
-- Trial 3 Vincenzo: in attesa di dati (partenza, blocco, cambio, tempo) + ok genitori + video 160 kg e dip.
+- Trial 3 Vincenzo: in attesa di dati (partenza, blocco, cambio, tempo) + ok genitori + video 160 kg. Solo stacco, niente dip (monotematico).
 
 ## Risposte di Manuel alle domande iniziali
 - 16/11: Manuel ha mandato `projects/prompt_ai_copy.md` e `projects/prompt_ai_montaggio.md`: il copy si fa col primo,
