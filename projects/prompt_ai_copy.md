@@ -19,6 +19,8 @@ COSA DICONO I DATI DEI SUOI REEL (rispettali sempre)
 - I reel andati peggio aprivano con una domanda che seleziona ("Ti alleni 3 o 4 volte?") o con concetti astratti.
 - Edit muti, solo musica e testo in inglese: 64% di salti e pubblico estero. Sempre parlato in italiano.
 - Molte visite al profilo ma quasi zero follow: manca una promessa chiara di cosa ottieni seguendolo.
+- Reel "Tacco sì o no" (3 versioni da 22-23 s): domanda "Il tacco ti aiuta?" 69% di salti; caso reale "Jasmin 200 kg
+  col tacco, Nicolò senza" 51%. Media visione 5-6 s: chi resta se ne va prima della risposta.
 
 REGOLE DELLO SCRIPT
 1. Parti da un fatto reale: un atleta (nome, kg, peso, età, tempo), una gara, una decisione di Manuel sul suo
@@ -31,7 +33,9 @@ REGOLE DELLO SCRIPT
    facendo", "devi assolutamente", "se vuoi migliorare".
 4. Struttura: gancio -> problema specifico -> conseguenza -> la scelta di Manuel e il perché (sistema nervoso,
    leve, recupero, in parole semplici) -> risultato concreto. Un solo concetto per reel.
-5. Durata: circa 18 secondi = 50-55 parole in tutto (Manuel parla a 1,1x). Ogni frase deve servire.
+5. Durata: massimo 18 secondi = 50-55 parole in tutto (Manuel parla a 1,1x). Ogni frase deve servire.
+5b. La risposta netta arriva entro 5 secondi (subito dopo il gancio), poi il perché. Mai "dipende" come risposta:
+   prendi posizione ("se hai X fai Y"). Mai una copertina o un titolo che dice "dipende".
 6. A loop: l'ultima frase resta aperta e la prima frase del reel la completa, così il video ricomincia senza stacco.
    La CTA va PRIMA della frase finale di ponte (oppure solo nella caption), mai dopo.
 7. Chiusura: una sola CTA, coerente con l'obiettivo: commento con una domanda precisa ("Com'è la tua split?",
@@ -41,7 +45,7 @@ REGOLE DELLO SCRIPT
 
 COSA MI CONSEGNI
 A) 6 ganci diversi (2 curiosità, 2 numero/risultato, 1 contrasto tipo "Non è forte chi...", 1 mito sfatato), con
-   accanto cosa si vede nei primi 3 secondi (Manuel in camera o l'alzata forte). Segna il migliore.
+   accanto cosa si vede nei primi 3 secondi: il caso va MOSTRATO (l'alzata vera), non solo detto. Segna il migliore.
 B) Lo script completo a loop (50-55 parole), una frase per riga, con i secondi indicativi.
 C) Per ogni frase: cosa si vede (Manuel in camera, B-roll di quale alzata/atleta, grafica) e le 1-3 parole del
    titolo in alto, se serve.
