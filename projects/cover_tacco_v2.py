@@ -49,7 +49,7 @@ xx = np.arange(W, dtype=np.float32)[None, :, None]
 mix = np.clip((xx - 470) / 140, 0, 1)
 bg = (left * (1 - mix) + right * mix) * 0.6
 
-fr = cv2.resize(cv2.imread(f"{D}/st/f_12.6.png"), (W, H))
+fr = cv2.resize(cv2.imread(f"{R}/out/tacco_v2/st/f_34.9.png"), (W, H))
 mt = Matter(f"{R}/models/u2net_human_seg.onnx")
 mt.wall_thr = 8
 a = mt.run([fr])[0]
@@ -66,7 +66,7 @@ band = np.clip(1 - cv2.GaussianBlur(inner, (0, 0), 3), 0, 1)[..., None] * hard[.
 lab = cv2.cvtColor(fr, cv2.COLOR_BGR2LAB).astype(np.float32)
 wall = np.median(lab[ff.astype(bool)[:H, :W] & (hard == 0)].reshape(-1, 3), 0)
 dwall = np.sqrt(((lab - wall) ** 2).sum(-1))
-skin = np.median(lab[750:775, 625:655].reshape(-1, 3), 0)      # fronte
+skin = np.median(lab[875:900, 515:545].reshape(-1, 3), 0)      # fronte
 dskin = np.sqrt(((lab - skin) ** 2).sum(-1))
 # "muro" solo se e' piu' vicino al muro che alla pelle (la fronte resta intatta)
 wallish = (np.clip((30 - dwall) / 15, 0, 1) * (dwall < 0.8 * dskin))[..., None]
@@ -84,9 +84,9 @@ n, lbl, st, _ = cv2.connectedComponentsWithStats(hard2)
 hard2 = (lbl == 1 + np.argmax(st[1:, cv2.CC_STAT_AREA])).astype(np.uint8)   # via i pezzetti staccati
 alpha = cv2.GaussianBlur(cv2.erode(hard2, np.ones((3, 3), np.uint8)).astype(np.float32), (0, 0), 1.4)
 yy = np.arange(H, dtype=np.float32)[:, None]
-alpha = alpha * np.clip((1480 - yy) / 240, 0, 1)                # niente scrivania: sfumo il busto
+alpha = alpha * np.clip((1560 - yy) / 240, 0, 1)                # niente scrivania: sfumo il busto
 
-SC, TX, TY = 0.66, W / 2 - 600 * 0.66, 1150 - 870 * 0.66         # viso (600, 870) -> (540, 1150)
+SC, TX, TY = 0.66, W / 2 - 530 * 0.66, 1150 - 980 * 0.66         # viso (530, 980) -> (540, 1150)
 M = np.float32([[SC, 0, TX], [0, SC, TY]])
 fgw = cv2.warpAffine(fg, M, (W, H), flags=cv2.INTER_CUBIC)
 al = cv2.warpAffine(alpha, M, (W, H), flags=cv2.INTER_LINEAR, borderValue=0)

@@ -42,3 +42,5 @@ Cartella Drive parlati `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc`, scaricati in `src_gi
 - 8510363288666549072.mp4 (b4, Nicolo' da dietro, 256x480): 1.0-2.1 in riquadro
 - 8460332548395192040.mp4 (b1, box squat westside): 0-1.3 a 0.9x
 - IMG_9075.MOV (parlato): ganci 10.5-14.1 / 20.7-24.7 / 30.5-33.1, corpo 36.5-183.6; fotogramma 12.6 copertina
+- Tacco v2 (17/11, projects/tacco_v2.py): split b3 0-2.7 | b2 0.6-3.3 (zoom 1.6); b3 0.45-1.40 a 0.85x + fermo in buca;
+  b2 0.7-3.5 zoom 1.6; parlato IMG_9108 (src_tacco/parlato2.MOV), fotogramma 34.9 per la copertina.
