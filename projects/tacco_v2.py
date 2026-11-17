@@ -25,15 +25,53 @@ PH = {"HA": (9.70, 12.68, NORM),    # Jasmin squatta 200 kg con il tacco, Nicolo
       "S5": (90.40, 92.85, ZOOM),   # Tu lo usi? Scrivi tacco o senza
       "S6": (93.13, 93.86, NORM)}   # Ecco perche'...
 BODY = ["S2", "S3", "S4", "S5", "S6"]
-PAGES = {"HA": [(9.70, f"JASMIN SQUATTA\\N{OR}200 KG{WH} COL TACCO"), (11.95, f"NICOLÒ, {OR}SENZA")],
-         "HB": [(16.95, "DUE MIEI ATLETI"), (18.08, f"UNO SQUATTA\\NCOL {OR}TACCO"), (19.45, f"UNO {OR}SENZA")],
-         "S2": [(33.40, "LI ALLENO\\NTUTTI E DUE"), (34.78, f"DECIDE LA\\N{OR}CAVIGLIA")],
-         "S3": [(59.73, f"JASMIN HA LA\\NCAVIGLIA {OR}RIGIDA"), (61.17, f"COL TACCO IL {OR}GINOCCHIO\\N{WH}VA AVANTI"),
-                (62.53, f"E IL PESO RIMANE\\NAL {OR}CENTRO DEL PIEDE")],
-         "S4": [(82.90, f"NICOLÒ CE L'HA\\N{OR}MOBILE"), (83.96, "SCENDE GIÀ\\NVERTICALE"),
-                (85.00, f"IL TACCO\\N{OR}NON GLI SERVE")],
-         "S5": [(90.40, "TU LO USI?"), (91.16, f"SCRIVI {OR}TACCO{WH}\\NO {OR}SENZA")],
-         "S6": [(93.13, "ECCO PERCHÉ...")]}
+# sottotitoli parola per parola: la parola detta in quel momento e' arancio (tempi = parola nel sorgente).
+# "/" = nuova pagina, "|" = a capo.
+KARA = {"HA": [("JASMIN", 9.75), ("SQUATTA", 10.39), ("|", 0), ("200", 10.87), ("KG", 11.19), ("CON", 11.51),
+               ("IL", 11.59), ("TACCO,", 11.67), ("/", 0), ("NICOLÒ,", 11.99), ("SENZA", 12.47)],
+        "HB": [("DUE", 17.0), ("MIEI", 17.4), ("ATLETI,", 17.64), ("/", 0), ("UNO", 18.12), ("SQUATTA", 18.36),
+               ("|", 0), ("COL", 18.84), ("TACCO,", 19.08), ("/", 0), ("UNO", 19.48), ("SENZA", 19.8)],
+        "S2": [("LI", 33.45), ("ALLENO", 33.69), ("TUTTI", 34.09), ("|", 0), ("E", 34.17), ("DUE", 34.25), ("E", 34.41),
+               ("IO,", 34.57), ("/", 0), ("DECIDE", 34.81), ("LA", 35.13), ("|", 0), ("CAVIGLIA", 35.29)],
+        "S3": [("JASMIN", 59.75), ("HA", 60.39), ("LA", 60.47), ("|", 0), ("CAVIGLIA", 60.55), ("RIGIDA,", 60.87),
+               ("/", 0), ("COL", 61.19), ("TACCO", 61.43), ("IL", 61.75), ("|", 0), ("GINOCCHIO", 61.83), ("VA", 62.23),
+               ("AVANTI", 62.31), ("/", 0), ("E", 62.55), ("IL", 62.63), ("PESO", 62.71), ("RIMANE", 63.03), ("|", 0),
+               ("AL", 63.35), ("CENTRO", 63.51), ("DEL", 63.75), ("PIEDE", 63.83)],
+        "S4": [("NICOLÒ", 82.94), ("CE", 83.30), ("L'HA", 83.45), ("|", 0), ("MOBILE,", 83.66), ("/", 0),
+               ("SCENDE", 83.98), ("GIÀ", 84.38), ("|", 0), ("VERTICALE,", 84.62), ("/", 0), ("IL", 85.1),
+               ("TACCO", 85.26), ("|", 0), ("NON", 85.66), ("GLI", 85.82), ("SERVE", 85.98)],
+        "S5": [("TU", 90.45), ("LO", 90.69), ("USI?", 90.85), ("/", 0), ("SCRIVI", 91.25), ("TACCO", 91.81), ("|", 0),
+               ("O", 92.37), ("SENZA", 92.61)],
+        "S6": [("ECCO", 93.25), ("PERCHÉ...", 93.65)]}
+
+
+def kara_pages(n):
+    """una riga ASS per ogni parola: stessa pagina, la parola corrente in arancio (la prima della pagina col pop)"""
+    pages, cur = [], []
+    for w, t in KARA[n] + [("/", 0)]:
+        if w == "/":
+            if cur:
+                pages.append(cur)
+            cur = []
+        else:
+            cur.append((w, t))
+    out = []
+    for pg in pages:
+        words = [x for x in pg if x[0] != "|"]
+        for k, (w, t) in enumerate(words):
+            parts, j = [], 0
+            for x, _ in pg:
+                if x == "|":
+                    parts.append("\\N")
+                    continue
+                parts.append((OR + x + WH) if j == k else x)
+                j += 1
+            txt = " ".join(parts).replace(" \\N ", "\\N")
+            # la prima parola della pagina parte al taglio di inizio pagina (niente buchi); le altre sul tempo detto
+            out.append((t if k else t - 0.05, ("" if k == 0 else "§") + txt))
+    return out
+
+
 # testo grande sullo split: (lato, testo, istante sorgente in cui compare)
 HOOK_TXT = {"HA": [("L", "200 KG", None), ("R", "SENZA", 11.95)],
             "HB": [("L", "COL TACCO", None), ("R", "SENZA", 19.45)]}
@@ -156,7 +194,8 @@ def make(v):
         k, s = ref(src)
         return SO[k] + (s - segs[k][1]) / 1.1
 
-    pages = [(ref(s), txt) for n in names for s, txt in PAGES.get(n, [])]
+    pages = [(ref(PH[n][0]) if i == 0 else ref(s), txt)
+             for n in names for i, (s, txt) in enumerate(kara_pages(n))]
     br = [(start(hook), nxt(hook), f"{S}/split.mp4", 0.0, 1.0, 1.0, None),
           (start("S3"), nxt("S3"), f"{S}/j_hold.mp4", 0.0, 1.0, 1.15, (540, 1200)),
           (start("S4"), nxt("S4"), f"{S}/b2.mp4", 0.7, 1.0, 1.6, (630, 1330)),

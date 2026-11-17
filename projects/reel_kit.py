@@ -190,7 +190,10 @@ def build(cfg):
     POP = "\\fscx85\\fscy85\\t(0,110,\\fscx104\\fscy104)\\t(110,190,\\fscx100\\fscy100)"
     for i, (a, txt) in enumerate(pages):
         b = pages[i + 1][0] if i + 1 < len(pages) else TOTAL
-        ev.append(f"Dialogue: 1,{ass_t(a)},{ass_t(b)},Txt,,0,0,0,,{{\\an5\\pos(540,1450){POP}}}{txt}")
+        pp = POP
+        if txt.startswith("§"):  # stessa pagina, cambia solo la parola evidenziata: niente pop
+            txt, pp = txt[1:], ""
+        ev.append(f"Dialogue: 1,{ass_t(a)},{ass_t(b)},Txt,,0,0,0,,{{\\an5\\pos(540,1450){pp}}}{txt}")
     open(f"{OUT}/subs.ass", "w").write(f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}

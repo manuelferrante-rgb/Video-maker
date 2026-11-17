@@ -318,3 +318,9 @@ posizione netta. Primo fotogramma = Manuel fermo in una stanza: il caso (200 kg)
 sull'alzata vera. Due testi insieme nel primo secondo (titolo in alto + sottotitolo) = troppo da leggere.
 Campione piccolo (~200 views per versione): differenze di pochi punti non sono affidabili, 69 vs 51 si'.
 Rifacimento: `projects/brief_editor_novembre.md`, sezione 5.
+
+## Sottotitoli parola per parola (Manuel, 17/11/2026: vale da qui in avanti)
+La parola che Manuel sta dicendo diventa arancio, in concomitanza con la voce (stile karaoke): una riga ASS per parola,
+stessa pagina, pop solo sulla prima parola (`§` all'inizio del testo in reel_kit = niente pop). Esempio: `KARA` e
+`kara_pages()` in `projects/tacco_v2.py` (tempi parola = parakeet +0,2 s nel blocco). Sottotitoli anche nel gancio,
+dal primo fotogramma (molti guardano senza volume).
