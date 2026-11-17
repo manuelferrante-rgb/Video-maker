@@ -27,3 +27,9 @@ In attesa: parlato (3 ganci + corpo) e B-roll Jasmin con/senza tacco, Nicolo' ga
 ## 16/11 consegnato: trial tacco, 3 versioni (out/tacco/tacco_gancio1-3.mp4), copertina, caption (projects/caption_tacco.txt)
 Durate 23,6 / 23,9 / 22,7 s, -14,2 LUFS, picco -1,2 dB. Script `projects/tacco.py`, copertina `projects/cover_tacco.py`.
 Da confermare: @ di Jasmin e Nicolo', ok scritto; b4 e' a bassa risoluzione (256x480), usato solo in riquadro.
+
+## 17/11 rifacimento "Tacco o senza" (brief sez. 5, branch festive-darwin mergiato)
+Pronti: copertina `projects/cover_tacco_v2.py` (bozza col fotogramma del vecchio parlato), caption `projects/caption_tacco_v2.txt`.
+In attesa: nuovo parlato (gancio A e B + corpo), video Jasmin 200 kg (nel repo del sito, non accessibile da qui:
+chiesto a Manuel), conferma delle frasi su Jasmin "busto dritto" e Nicolo' "col tacco si sbilancia" (non dette da lui).
+Nicolo' senza tacco: c'e' gia' b2 (gara). Montaggio max 18 s, primo fotogramma split screen con la voce sopra.
