@@ -44,7 +44,7 @@ def panel(path, cx_src, cx_dst, zoom=1.0, dy=0):
 
 # sfondo: Jasmin (b3, col tacco, soggetto a x~495) a sinistra, Nicolo' (b2, x~570) a destra
 left = panel(f"{D}/st/bgj155.png", 495, 210, 1.25, dy=330)
-right = panel(f"{D}/st/bg2.png", 720, 860, 1.9, dy=456)
+right = panel(f"{D}/st/bg2.png", 720, 860, 1.9, dy=800)
 xx = np.arange(W, dtype=np.float32)[None, :, None]
 mix = np.clip((xx - 470) / 140, 0, 1)
 bg = (left * (1 - mix) + right * mix) * 0.6
