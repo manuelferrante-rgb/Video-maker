@@ -25,7 +25,9 @@ PH = {"HA": (9.70, 12.68, NORM),    # Jasmin squatta 200 kg con il tacco, Nicolo
       "S5": (90.40, 92.85, ZOOM),   # Tu lo usi? Scrivi tacco o senza
       "S6": (93.13, 93.86, NORM)}   # Ecco perche'...
 BODY = ["S2", "S3", "S4", "S5", "S6"]
-PAGES = {"S2": [(33.40, "LI ALLENO\\NTUTTI E DUE"), (34.78, f"DECIDE LA\\N{OR}CAVIGLIA")],
+PAGES = {"HA": [(9.70, f"JASMIN SQUATTA\\N{OR}200 KG{WH} COL TACCO"), (11.95, f"NICOLÒ, {OR}SENZA")],
+         "HB": [(16.95, "DUE MIEI ATLETI"), (18.08, f"UNO SQUATTA\\NCOL {OR}TACCO"), (19.45, f"UNO {OR}SENZA")],
+         "S2": [(33.40, "LI ALLENO\\NTUTTI E DUE"), (34.78, f"DECIDE LA\\N{OR}CAVIGLIA")],
          "S3": [(59.73, f"JASMIN HA LA\\NCAVIGLIA {OR}RIGIDA"), (61.17, f"COL TACCO IL {OR}GINOCCHIO\\N{WH}VA AVANTI"),
                 (62.53, f"E IL PESO RIMANE\\NAL {OR}CENTRO DEL PIEDE")],
          "S4": [(82.90, f"NICOLÒ CE L'HA\\N{OR}MOBILE"), (83.96, "SCENDE GIÀ\\NVERTICALE"),
