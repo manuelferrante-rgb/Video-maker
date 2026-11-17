@@ -294,3 +294,17 @@ WhatsApp precompilato "vengo da GoodLift" e candidatura con utm_source=goodlift.
 Brief generale per la chat editor: `projects/brief_editor_novembre.md` (aggiornalo quando cambiano le regole).
 Prompt riutilizzabili per altre AI (16/11): `projects/prompt_ai_copy.md` (ganci, script a loop, caption, copertina) e
 `projects/prompt_ai_montaggio.md` (montaggio e controlli dei primi 3 s). Aggiornali quando arrivano nuovi insight.
+
+## Trial "Tacco si' o no" (16/11/2026, insight dopo ~15 ore)
+3 versioni da 22-23 s, girate in camera a casa, titolo in alto + sottotitoli, copertina "TACCO SI' O NO? DIPENDE DA QUESTO".
+- V1 gancio domanda "Il tacco ti aiuta?" (titoli IL TACCO AIUTA? / PUNTO DEBOLE): 199 views, salti 68,8%, media 5 s, 0 follow.
+- V2 "Tacco si', tacco no" + "Jasmin squatta con il tacco... li alleno tutti e due io": 235 views, salti 55,1%, media 6 s, 0 follow.
+- V3 "Jasmin: 200 kg di squat con il tacco, e Nicolo' non lo usa": 165 views, salti 51,4%, media 6 s, 0 follow.
+Tutte: 97-100% non follower, Italia 92-96%, 25-34 la fascia piu' grande (13-17 dal 6% al 20%), 81-89% delle views dalla
+tab Reels (la copertina li' non si vede: conta il primo fotogramma), 1 like/commento/salvataggio circa.
+Lezioni: conferma che numero + caso reale batte la domanda (69% -> 51%), ma 51% e' ancora lontano dal 35%. Media 5-6 s:
+la risposta va data entro 5 s, non alla fine. 22-23 s e' troppo. "Dipende" non e' una risposta: serve una presa di
+posizione netta. Primo fotogramma = Manuel fermo in una stanza: il caso (200 kg) era detto, non mostrato -> si apre
+sull'alzata vera. Due testi insieme nel primo secondo (titolo in alto + sottotitolo) = troppo da leggere.
+Campione piccolo (~200 views per versione): differenze di pochi punti non sono affidabili, 69 vs 51 si'.
+Rifacimento: `projects/brief_editor_novembre.md`, sezione 5.

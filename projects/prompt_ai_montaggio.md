@@ -21,11 +21,16 @@ PRIMI 3 SECONDI (regole fisse)
 - Testo del gancio a schermo dal primo fotogramma, grande e fermo (sottotitolo o titolo in alto), così si capisce
   anche senza audio.
 - Il parlato parte subito: niente respiro, niente "allora", niente silenzio all'inizio.
+- Se il gancio cita un'alzata o un atleta (es. "200 kg"), il primo fotogramma È quell'alzata (o split screen dei due
+  casi), con la voce di Manuel sopra; Manuel in camera arriva dopo. Manuel fermo in una stanza come primo fotogramma
+  ha dato 51-69% di salti.
+- Nel primo secondo UN solo testo grande (es. "200 KG"): non titolo in alto + sottotitolo insieme.
+- L'80-90% delle views dei trial arriva dalla tab Reels, dove la copertina non si vede: conta il primo fotogramma.
 
 RITMO E PUNTI DI ROTTURA DA EVITARE
 - Velocità della voce 1,1x. Taglia TUTTE le pause, anche quelle da 0,2-0,5 s, gli "ehm" e le ripetizioni.
   Se Manuel ripete una frase, tieni la take migliore.
-- Durata circa 18 secondi. Meglio corto e denso.
+- Durata massimo 18 secondi (le versioni da 22-23 s hanno avuto media visione 5-6 s). Meglio 15 che 20.
 - Niente momento morto: ogni 2-3 secondi cambia qualcosa (B-roll, titolo, zoom leggero), ma senza animazioni a
   raffica. Testi sempre leggibili e fermi.
 - B-roll coerenti con la frase che si sta dicendo: se parla di squat si vede uno squat. Non ripetere lo stesso

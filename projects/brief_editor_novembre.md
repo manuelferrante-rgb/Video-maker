@@ -130,3 +130,32 @@ Caption: quelle di Manuel nello script originale vanno bene (niente em dash, max
 
 Girato da chiedere a Manuel: alzata vera + registrazione dello schermo dell'app sullo stesso video (verdetto e
 replay), Manuel in camera per il gancio (2-3 take) e la CTA, ok scritto dell'atleta.
+
+## 5. Rifacimento "Tacco sì o no" (17/11, dopo gli insight delle 3 versioni)
+
+Dati: V1 domanda "Il tacco ti aiuta?" 69% di salti; V2 "Tacco sì, tacco no" 55%; V3 "Jasmin 200 kg col tacco, Nicolò
+non lo usa" 51%. Tutte 22-23 s, media visione 5-6 s, 0 follow. 81-89% delle views dalla tab Reels (copertina non vista).
+Cosa cambia:
+- Durata massimo 18 s (circa 55 parole).
+- Primo fotogramma = le alzate vere: split screen Jasmin 200 kg col tacco | Nicolò senza, voce di Manuel sopra.
+  Manuel in camera solo dopo il gancio (dal secondo ~2,5).
+- Risposta netta entro 5 s: "decide la caviglia". Niente "dipende" (né nel parlato né in copertina).
+- Nel primo secondo un solo testo grande ("200 KG" sopra Jasmin, "SENZA" sopra Nicolò), niente titolo + sottotitolo.
+- Struttura a loop: la frase-ponte finale "Ecco perché..." riporta al gancio.
+
+Script (da confermare: che Nicolò abbia la caviglia mobile e che il motivo sia questo)
+| s | Cosa si vede | Voce |
+|---|---|---|
+| 0-2,5 | split screen: Jasmin 200 kg col tacco / Nicolò senza; "200 KG" e "SENZA" | Jasmin squatta 200 kg col tacco. Nicolò, senza. |
+| 2,5-5 | Manuel in camera, titolo in alto "DECIDE LA CAVIGLIA" | Li alleno tutti e due. Decide la caviglia. |
+| 5-9 | Jasmin a tutto schermo, linea sottile caviglia-ginocchio | Jasmin ha la caviglia rigida: il tacco le porta il ginocchio avanti e il busto resta dritto. |
+| 9-13 | Nicolò a tutto schermo, stessa linea | Nicolò ce l'ha mobile: col tacco il ginocchio va troppo avanti, il busto si piega e si sbilancia. |
+| 13-16 | Manuel in camera | Tu lo usi? Scrivimi "tacco" o "senza". |
+| 16-17,5 | stacco netto sullo split del primo fotogramma | Ecco perché... (-> riparte: "Jasmin squatta 200 kg col tacco") |
+
+Gancio B per il test (stesso resto): "Due miei atleti. Uno squatta col tacco, uno senza." (stesso split screen).
+Copertina: "TACCO O SENZA?" (nero) + "DECIDE LA CAVIGLIA" (arancio).
+Caption: rifarla con projects/prompt_ai_copy.md, senza "dipende"; Jasmin e Nicolò taggati.
+Girato: Manuel in camera (gancio A e B, 2-3 take; luce buona, parte a parlare subito), squat di Jasmin 200 kg
+(c'è anche videos/jasmin-squat-200kg.mp4 nel repo del sito), squat di Nicolò senza tacco (da chiedere), ok di
+entrambi.
