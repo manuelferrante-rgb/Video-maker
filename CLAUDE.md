@@ -308,3 +308,17 @@ posizione netta. Primo fotogramma = Manuel fermo in una stanza: il caso (200 kg)
 sull'alzata vera. Due testi insieme nel primo secondo (titolo in alto + sottotitolo) = troppo da leggere.
 Campione piccolo (~200 views per versione): differenze di pochi punti non sono affidabili, 69 vs 51 si'.
 Rifacimento: `projects/brief_editor_novembre.md`, sezione 5.
+
+## Rifacimento "Tacco o senza" (17/11/2026, insight dopo ~1 giorno) - PRIMO TRIAL SOTTO IL 35%
+Stesso corpo, 14 s, split screen Jasmin col tacco | Nicolo' senza, musica GTA bassa. Cambia solo il gancio:
+- A "Jasmin squatta 200 kg col tacco. Nicolo', senza." (etichette 200 KG | SENZA): 1.592 views, salti 30,1%, media 9 s
+  su 14, 18 like, 7 commenti, 2 salvataggi, 0 follow; 90% dalla tab Reels; 13-17 18%, 18-24 31%, 25-34 36%; Italia 97%.
+- B "Due miei atleti. Uno squatta col tacco..." (etichetta COL TACCO): 341 views, salti 38,0%, media 6 s, 0 follow.
+Rispetto alle 3 versioni del 16/11 (51-69% di salti, 22-23 s): alzate vere nel primo fotogramma, 14 s, risposta entro
+5 s ("decide la caviglia"), CTA binaria nei commenti (7 commenti).
+A batte B solo per il gancio: numero + nome dell'atleta + contrasto in una frase, scritti con 1 parola per lato.
+"Due miei atleti" senza numero = generico.
+FORMULA VINCENTE (format "Due atleti, una scelta"): [Atleta 1] fa [kg] [scelta A]. [Atleta 2], [scelta B]. -> "Li
+alleno tutti e due. Decide [fattore]." -> perche' per l'uno -> perche' per l'altro -> "Tu? Scrivimi A o B." -> ponte.
+Problema rimasto: 0 follow anche a 1.600 views -> serve una promessa di serie (caption e copertina riconoscibile).
+Nuovo contenuto con questa formula: `projects/brief_editor_novembre.md`, sezione 6.

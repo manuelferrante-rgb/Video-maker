@@ -30,7 +30,9 @@ PRIMI 3 SECONDI (regole fisse)
 RITMO E PUNTI DI ROTTURA DA EVITARE
 - Velocità della voce 1,1x. Taglia TUTTE le pause, anche quelle da 0,2-0,5 s, gli "ehm" e le ripetizioni.
   Se Manuel ripete una frase, tieni la take migliore.
-- Durata massimo 18 secondi (le versioni da 22-23 s hanno avuto media visione 5-6 s). Meglio 15 che 20.
+- Durata 14-16 secondi (il migliore, "Jasmin 200 kg col tacco, Nicolò senza", dura 14 s: 30% di salti, media 9 s).
+- Modello che ha funzionato: split screen delle due alzate vere dal primo fotogramma, una parola grande per lato
+  ("200 KG" | "SENZA"), voce di Manuel sopra; Manuel in camera dal secondo ~2,5 con il titolo della risposta.
 - Niente momento morto: ogni 2-3 secondi cambia qualcosa (B-roll, titolo, zoom leggero), ma senza animazioni a
   raffica. Testi sempre leggibili e fermi.
 - B-roll coerenti con la frase che si sta dicendo: se parla di squat si vede uno squat. Non ripetere lo stesso

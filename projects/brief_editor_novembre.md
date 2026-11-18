@@ -159,3 +159,30 @@ Caption: rifarla con projects/prompt_ai_copy.md, senza "dipende"; Jasmin e Nicol
 Girato: Manuel in camera (gancio A e B, 2-3 take; luce buona, parte a parlare subito), squat di Jasmin 200 kg
 (c'è anche videos/jasmin-squat-200kg.mp4 nel repo del sito), squat di Nicolò senza tacco (da chiedere), ok di
 entrambi.
+
+## 6. Format "Due atleti, una scelta" (18/11, dopo il 30% di salti di "Tacco o senza")
+
+Formula del reel che ha funzionato (A: 30% di salti, 1.600 views; B con "Due miei atleti" senza numero: 38%):
+1. 0-2,5 s: split screen delle due alzate vere, una parola grande per lato. Voce: "[Atleta 1] fa [kg] [scelta A].
+   [Atleta 2], [scelta B]." Numero + nome + contrasto nella stessa frase.
+2. 2,5-5 s: Manuel in camera, titolo in alto con la risposta. "Li alleno tutti e due. Decide [fattore]."
+3. 5-12 s: perché per il primo (sul suo video), perché per il secondo (sul suo video), una linea sottile al massimo.
+4. 12-14 s: Manuel in camera, CTA binaria: "Tu? Scrivimi [A] o [B]."
+5. 14-15 s: frase-ponte "Ecco perché..." e stacco sullo split iniziale (loop).
+Durata 14-16 s. Stessa musica bassa. Copertina riconoscibile per tutta la serie: riga nera "[A] O [B]?", riga arancio
+"DECIDE [FATTORE]". Caption: alla fine la promessa della serie (ancora 0 follow a 1.600 views):
+"Ogni settimana una scelta vera che faccio con i miei atleti, e il perché. Se ti interessa, seguimi."
+
+Puntata 2 proposta: lo sguardo nel dip (dal documento idee: "nelle ultime può aiutare, ma il consiglio è punto fisso
+avanti in basso"). DA CONFERMARE CON MANUEL prima di registrare: quali due atleti, che kg, chi guarda dove, il perché
+in una frase. Bozza con Nicolò (dip 92,5 kg) e Giacomo (dip 70 kg), solo se è vero:
+| s | Cosa si vede | Voce |
+|---|---|---|
+| 0-2,5 | split: dip di Nicolò, sguardo avanti / dip di Giacomo, testa in alto; "92,5 KG" e "IN ALTO" | Nicolò fa dip con 92,5 kg guardando avanti. Giacomo, in alto. |
+| 2,5-5 | Manuel in camera, titolo "DECIDE LA RIPETIZIONE" | Li alleno tutti e due. Decide la ripetizione. |
+| 5-9 | Nicolò, linea dello sguardo | Per tutta la serie: punto fisso avanti e in basso, [perché di Manuel]. |
+| 9-12 | Giacomo, ultima ripetizione | Sulle ultime, quando la spinta rallenta, guardare in alto aiuta a chiudere. |
+| 12-14 | Manuel in camera | Tu dove guardi? Scrivimi avanti o in alto. |
+| 14-15 | stacco sullo split iniziale | Ecco perché... |
+Gancio B per il test: stessa frase con un altro atleta/numero (non "due miei atleti": ha perso).
+Girato: dip di entrambi di lato (si deve vedere la testa), Manuel in camera (gancio 2-3 take, risposta, CTA), ok degli atleti.

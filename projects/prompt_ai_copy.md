@@ -21,6 +21,11 @@ COSA DICONO I DATI DEI SUOI REEL (rispettali sempre)
 - Molte visite al profilo ma quasi zero follow: manca una promessa chiara di cosa ottieni seguendolo.
 - Reel "Tacco sì o no" (3 versioni da 22-23 s): domanda "Il tacco ti aiuta?" 69% di salti; caso reale "Jasmin 200 kg
   col tacco, Nicolò senza" 51%. Media visione 5-6 s: chi resta se ne va prima della risposta.
+- Rifatto a 14 s con le alzate vere nel primo fotogramma e la risposta entro 5 s: "Jasmin squatta 200 kg col tacco.
+  Nicolò, senza." 30% di salti, 1.600 views, 7 commenti. Stesso video con "Due miei atleti, uno col tacco..." 38%.
+  FORMULA DA USARE: [Atleta 1] fa [kg] [scelta A]. [Atleta 2], [scelta B]. -> "Li alleno tutti e due. Decide
+  [fattore]." -> perché per l'uno -> perché per l'altro -> "Tu? Scrivimi A o B." -> frase-ponte al gancio.
+  Numero + nome + contrasto nella prima frase. Ancora 0 follow: in caption la promessa della serie.
 
 REGOLE DELLO SCRIPT
 1. Parti da un fatto reale: un atleta (nome, kg, peso, età, tempo), una gara, una decisione di Manuel sul suo
@@ -33,7 +38,7 @@ REGOLE DELLO SCRIPT
    facendo", "devi assolutamente", "se vuoi migliorare".
 4. Struttura: gancio -> problema specifico -> conseguenza -> la scelta di Manuel e il perché (sistema nervoso,
    leve, recupero, in parole semplici) -> risultato concreto. Un solo concetto per reel.
-5. Durata: massimo 18 secondi = 50-55 parole in tutto (Manuel parla a 1,1x). Ogni frase deve servire.
+5. Durata: 14-16 secondi (il migliore ne dura 14), massimo 18 = 50-55 parole in tutto (Manuel parla a 1,1x). Ogni frase deve servire.
 5b. La risposta netta arriva entro 5 secondi (subito dopo il gancio), poi il perché. Mai "dipende" come risposta:
    prendi posizione ("se hai X fai Y"). Mai una copertina o un titolo che dice "dipende".
 6. A loop: l'ultima frase resta aperta e la prima frase del reel la completa, così il video ricomincia senza stacco.
