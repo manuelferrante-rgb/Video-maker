@@ -37,3 +37,8 @@ Nicolo' senza tacco: c'e' gia' b2 (gara). Montaggio max 18 s, primo fotogramma s
 out/tacco/copertina_tacco_v2.jpg (fotogramma 34,9), caption projects/caption_tacco_v2.txt.
 
 ## 18/11 passaggio a una nuova chat: istruzioni in projects/handoff_18nov.md
+
+## 18/11 consegnato: "Lo sguardo nel dip" (format Due atleti una scelta, puntata 2)
+Script finale di Manuel in projects/script_dip_sguardo.md; montaggio projects/dip_sguardo.py (A 14,8 s, B 14,9 s,
+-14,2 LUFS, picco -1,3), copertina projects/cover_dip_sguardo.py (faccia 165,3), caption projects/caption_dip_sguardo.txt
+(mancano i @ di Lorenzo e Giacomo). Lorenzo = petto nudo/maglia nera, Giacomo = ricci (disco giallo / all'aperto).

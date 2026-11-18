@@ -44,3 +44,11 @@ Cartella Drive parlati `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc`, scaricati in `src_gi
 - IMG_9075.MOV (parlato): ganci 10.5-14.1 / 20.7-24.7 / 30.5-33.1, corpo 36.5-183.6; fotogramma 12.6 copertina
 - Tacco v2 (17/11, projects/tacco_v2.py): split b3 0-2.7 | b2 0.6-3.3 (zoom 1.6); b3 0.45-1.40 a 0.85x + fermo in buca;
   b2 0.7-3.5 zoom 1.6; parlato IMG_9108 (src_tacco/parlato2.MOV), fotogramma 34.9 per la copertina.
+
+## Reel "Lo sguardo nel dip" (18/11/2026, `dip_sguardo.py`)
+| File | Durata | Usato |
+|---|---|---|
+| V0928 (Lorenzo, petto nudo, VIDEO-2026-09-28) | 27 s | split 1.5-6.1; discesa 23.6-25.0 + fermo su 25.0; copertina 25.0 |
+| IMG_6375 (Giacomo, disco giallo) | 22 s | split 15.8-20.4; ultima salita 20.6-22.25; copertina 21.75 (setup 0-10 non usato) |
+| telegram_video (Giacomo all'aperto, 20 kg) | 9 s | salita lenta 4.0-5.4 (guarda giu': non usare per "in alto") |
+| V0914 (Lorenzo, maglia nera, di spalle) | 8 s | non usato |
