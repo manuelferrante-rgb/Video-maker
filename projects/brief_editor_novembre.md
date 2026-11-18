@@ -188,13 +188,13 @@ Gancio B per il test: stessa frase con un altro atleta/numero (non "due miei atl
 Girato: dip di entrambi di lato (si deve vedere la testa), Manuel in camera (gancio 2-3 take, risposta, CTA), ok degli atleti.
 
 ### Puntata 2, versione di Manuel rivista (18/11)
-Atleti: Lorenzo (dip 65 kg, sguardo giù) e Giacomo (dip 70 kg, sguardo in alto). Modifiche rispetto alla bozza di Manuel:
+Atleti: Lorenzo (dip 70 kg, sguardo giù) e Giacomo (dip 70 kg, sguardo in alto). Modifiche rispetto alla bozza di Manuel:
 - un solo numero nel gancio (due numeri fanno pensare che "in alto" renda più forte, contro la tesi);
 - "La forza segue lo sguardo" -> "Decide dove cedi" (è il fattore che spiega le due scelte, come "decide la caviglia");
 - gancio B = problema ("Nel dip ti pianti in chiusura?") per testare il problema contro numero + nome.
 | s | Cosa si vede | Voce | Testo |
 |---|---|---|---|
-| 0-2,5 | split Lorenzo / Giacomo | Lorenzo fa dip con 65 kg guardando giù. Giacomo, in alto. | 65 KG / IN ALTO |
+| 0-2,5 | split Lorenzo / Giacomo | Lorenzo fa dip con 70 kg guardando giù. Giacomo, in alto. | 70 KG / IN ALTO |
 | 2,5-5 | Manuel in camera | Li alleno tutti e due. Decide dove cedi. | DECIDE DOVE CEDI |
 | 5-8,5 | Lorenzo, linea dello sguardo | Perdi la posizione in basso? Guarda giù e resti compatto. | COMPATTO |
 | 8,5-12 | Giacomo, ultima ripetizione | Ti pianti in chiusura? Guarda in alto mentre sali. | CHIUDI |
