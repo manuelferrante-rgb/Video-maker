@@ -43,10 +43,10 @@ def panel(path, cx_src, cx_dst, zoom=1.0, dy=0):
 
 
 # sfondo: Jasmin (b3, col tacco, soggetto a x~495) a sinistra, Nicolo' (b2, x~570) a destra
-left = panel(f"{D}/st/bgL.png", 680, 380, 1.1, dy=360)
-right = panel(f"{D}/st/bgG.png", 535, 800, 1.0, dy=0)
+left = panel(f"{D}/st/bgL.png", 680, 440, 1.1, dy=360)
+right = panel(f"{D}/st/bgG.png", 535, 955, 1.0, dy=0)  # corpo (x~510) al centro della meta' destra
 xx = np.arange(W, dtype=np.float32)[None, :, None]
-mix = np.clip((xx - 470) / 90, 0, 1)
+mix = np.clip((xx - 560) / 80, 0, 1)
 bg = (left * (1 - mix) + right * mix) * 0.6
 yb = np.arange(H, dtype=np.float32)[:, None, None]
 bg = bg * np.clip((1880 - yb) / 260, 0.0, 1.0)  # fondo sfumato al buio (niente pavimento ripetuto)

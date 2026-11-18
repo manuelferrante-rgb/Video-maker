@@ -222,6 +222,59 @@ def gaze(track, t_line, t_title, word, word_xy, dash=True):
     return draw
 
 
+def comment_box(t_in, t_a, t_b, y=1240):
+    """campo commento stile Instagram (pillola bianca) sul petto, tra faccia e sottotitoli: compare, poi si scrive
+    "giu'" (t_a) e "in alto" (t_b) a tempo con la voce, cursore arancio, "Pubblica" si accende alla fine"""
+    W0, H0 = 820, 112
+    fm = ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-SemiBold.otf", 46)
+    fp = ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-Medium.otf", 37)
+    fs = ImageFont.truetype("/usr/share/fonts/opentype/inter/Inter-SemiBold.otf", 38)
+
+    def card(txt, typed, pub):
+        im = Image.new("RGBA", (W0 + 20, H0 + 20), (0, 0, 0, 0))
+        d = ImageDraw.Draw(im)
+        d.rounded_rectangle([12, 14, W0 + 12, H0 + 14], 56, fill=(0, 0, 0, 70))          # ombra leggera
+        d.rounded_rectangle([10, 10, W0 + 10, H0 + 10], 56, fill=(255, 255, 255, 255))
+        cx, cy, r = 10 + 60, 10 + H0 // 2, 34                                             # avatar generico
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(205, 205, 210, 255))
+        d.ellipse([cx - 12, cy - 22, cx + 12, cy + 2], fill=(250, 250, 250, 255))
+        d.pieslice([cx - 24, cy + 4, cx + 24, cy + 50], 180, 360, fill=(250, 250, 250, 255))
+        x0 = 10 + 118
+        if typed:
+            d.text((x0, cy), txt, font=fm, fill=(20, 20, 20, 255), anchor="lm")
+            w = d.textlength(txt, font=fm)
+        else:
+            d.text((x0, cy), "Aggiungi un commento...", font=fp, fill=(150, 150, 155, 255), anchor="lm")
+            w = 0
+        col = ORANGE + (255,) if pub else (232, 102, 44, 110)
+        d.text((W0 - 24, cy), "Pubblica", font=fs, fill=col, anchor="rm")
+        return im, x0 + w
+
+    def draw(im, t, dur):
+        x = t - t_in
+        if x < 0:
+            return
+        e = ease(x / 0.25)
+        fade = (1 - ease((t - (dur - 0.15)) / 0.15)) * e
+        if t >= t_b:
+            k = min(int((t - t_b) / 0.03) + 1, 7)
+            txt, typed = "in alto"[:k], True
+        elif t >= t_a:
+            k = min(int((t - t_a) / 0.04) + 1, 3)
+            txt, typed = "giù"[:k], True
+        else:
+            txt, typed = "", False
+        c, xc = card(txt, typed, t >= t_b + 0.22)
+        if typed and int(t * 3.4) % 2 == 0:  # cursore che lampeggia
+            ImageDraw.Draw(c).rectangle([xc + 4, 10 + H0 // 2 - 24, xc + 8, 10 + H0 // 2 + 24], fill=ORANGE + (255,))
+        s = 0.9 + 0.1 * e
+        c = c.resize((int(c.width * s), int(c.height * s)), Image.LANCZOS)
+        if fade < 1:
+            c.putalpha(c.split()[3].point(lambda v: int(v * fade)))
+        im.alpha_composite(c, (int(540 - c.width / 2), int(y + 30 * (1 - e) - c.height / 2)))
+    return draw
+
+
 # occhi (coordinate nel B-roll a 1080x1920, tempo locale del clip a velocita' reale)
 LOR_EYE = [(0.0, (680, 1012), (50, 310))]                      # fermo immagine in basso: guarda giu' e avanti
 GIA_EYE = [(0.6, (615, 565), (230, -170)), (0.7, (565, 485), (230, -170)), (0.8, (535, 465), (230, -170)),
@@ -280,7 +333,8 @@ def make(v):
     overlays = [(start(hook), nxt(hook), hook_text(HOOK_TXT[hook], lambda s: t_of(s) - t_of(PH[hook][0]))),
                 (start("S2"), nxt("S2"), titles([("DECIDE IL TUO", "n", 290), ("PUNTO DEBOLE", "o", 392)])),
                 (start("S3"), nxt("S3"), lor),
-                (g_from, nxt("S4"), gia)]
+                (g_from, nxt("S4"), gia),
+                (start("S5"), nxt("S5"), comment_box(0.12, loc(153.94 + D - 0.08, "S5"), loc(154.42 + D - 0.12, "S5")))]
     sfx = [(start(hook), 0.0, "comparsa", 0.14),
            (ref(HOOK_TXT[hook][1][2]), 0.0, "pop", 0.14),
            (start("S2"), 0.0, "whoosh", 0.12),
@@ -288,7 +342,10 @@ def make(v):
            (ref(111.26 + D), 0.5, "pop", 0.11),
            (start("S4"), 0.0, "whoosh", 0.10),
            (ref(130.85 + D), 0.0, "disegno", 0.14),
-           (ref(130.85 + D), 0.45, "pop", 0.11)]
+           (ref(130.85 + D), 0.45, "pop", 0.11),
+           (start("S5"), 0.1, "comparsa", 0.10),
+           (ref(153.94 + D), 0.0, "pop", 0.07),
+           (ref(154.42 + D), 0.0, "pop", 0.07)]
     def cut(fn):  # le grafiche spariscono mezzo fotogramma prima dello stacco (niente residui sul pezzo dopo)
         return lambda im, t, dur: None if t >= dur - 1 / 60 else fn(im, t, dur)
     overlays = [(a0, a1, cut(fn)) for a0, a1, fn in overlays]
