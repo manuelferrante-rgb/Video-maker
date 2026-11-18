@@ -1,18 +1,18 @@
-# Puntata 2 "Due atleti, una scelta": lo sguardo nel dip (script del 18/11/2026)
+# Puntata 2 "Due atleti, una scelta": lo sguardo nel dip (versione finale di Manuel, 18/11/2026)
 
-Dati di Manuel: Lorenzo dip 65 kg, guarda giu'; Giacomo dip 70 kg, guarda in alto. Fattore: dove ti blocchi
-("il setting"). Tesi: guardare giu' mantiene la compattezza, ma la forza segue lo sguardo: guardare in alto mentre
-sali ti fa chiudere la ripetizione. Nessuna delle due e' migliore: chiusura con un "dipende" velato (condizionale).
-CTA finale nuova (non "Ecco perche'"): ponte che rimanda a guardare le teste nello split. Arianna: puntata a parte.
+Atleti: Lorenzo (dip 70 kg, guarda giu') e Giacomo (dip 70 kg, guarda in alto). Solo loro due (Arianna: altra puntata).
 
 | s | Cosa si vede | Voce A | Testo |
 |---|---|---|---|
-| 0-2,5 | split: Lorenzo / Giacomo | Lorenzo fa dip con 65 kg guardando giu'. Giacomo, 70, guarda in alto. | GIU' / IN ALTO |
-| 2,5-5 | Manuel in camera | Li alleno tutti e due. La forza segue lo sguardo. | LA FORZA / SEGUE LO SGUARDO |
-| 5-8,5 | Lorenzo, linea dello sguardo | Perdi la posizione? Guarda giu' e resti compatto. | COMPATTO |
+| 0-2,5 | split: Lorenzo sx, Giacomo dx, dal primo fotogramma | Lorenzo fa dip con 70 kg guardando giu'. Giacomo, in alto. | 70 KG / IN ALTO |
+| 2,5-5 | Manuel in camera | Li alleno tutti e due. Decide il tuo punto debole. | titolo: DECIDE IL TUO PUNTO DEBOLE |
+| 5-8,5 | Lorenzo, linea sottile dello sguardo (bianca, accento arancio, solo da 5 s) | Perdi la posizione in basso? Guarda giu' e resti compatto. | COMPATTO |
 | 8,5-12 | Giacomo, ultima ripetizione | Ti pianti in chiusura? Guarda in alto mentre sali. | CHIUDI |
 | 12-14 | Manuel in camera | Tu dove guardi? Scrivimi giu' o in alto. | |
-| 14-15 | stacco sullo split | Prima pero', guarda le loro teste. | |
+| 14-15 | stacco netto sullo split | Prima pero', guarda le loro teste. | |
 
-Gancio B (cambia solo la prima frase): "Giacomo chiude i dip con 70 kg guardando il soffitto. Lorenzo, 65, guarda giu'."
-Copertina: riga nera "GIU' O IN ALTO?", riga arancio "LA FORZA SEGUE LO SGUARDO".
+Gancio B (stesso video, cambia solo la prima frase): "Nel dip ti pianti in chiusura? Giacomo guarda in alto. Lorenzo, giu'."
+Testo B: IN ALTO (su Giacomo) / GIU' (su Lorenzo).
+Copertina: riga nera "GIU' O IN ALTO?", riga arancio "IL TUO PUNTO DEBOLE".
+Caption: testo di Manuel (prima riga "Nel dip guardare in alto è un errore? Non sempre."), tag @ di Lorenzo e Giacomo da avere.
+Musica: nessuna nel montaggio (Manuel mette la traccia del tacco su Instagram).
