@@ -322,3 +322,8 @@ FORMULA VINCENTE (format "Due atleti, una scelta"): [Atleta 1] fa [kg] [scelta A
 alleno tutti e due. Decide [fattore]." -> perche' per l'uno -> perche' per l'altro -> "Tu? Scrivimi A o B." -> ponte.
 Problema rimasto: 0 follow anche a 1.600 views -> serve una promessa di serie (caption e copertina riconoscibile).
 Nuovo contenuto con questa formula: `projects/brief_editor_novembre.md`, sezione 6.
+Aggiornamento 18/11: A ~2.000 views, B ~580. Due persone che hanno commentato "tacco/senza" hanno poi scritto in DM,
+una forse interessata al coaching: PRIMI DM DA UN REEL ORGANICO. La CTA binaria nei commenti apre la conversazione;
+rispondere a ogni commento con una domanda personale che porta in DM (es. chiedere il loro video di squat).
+Decisione: A condiviso nel feed ("Share to everyone"), B resta trial. Regola: un trial che scende sotto il 35% di salti
+e porta commenti/DM va nel feed; gli altri restano trial.
