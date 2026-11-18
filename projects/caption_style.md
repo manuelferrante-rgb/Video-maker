@@ -136,16 +136,18 @@ Regole aggiunte:
 Struttura per il format "Due atleti, una scelta" (18/11/2026, approvata da Manuel): prima riga forte (max 120 caratteri,
 diversa dal reel) -> approfondimento che nel video non c'è -> la stessa domanda a due risposte del reel -> ultima riga
 "Ogni settimana una scelta vera che faccio con i miei atleti, e il perché. Seguimi per non perdere le prossime."
-Esempio (Tacco o senza):
+Esempio approvato (Tacco o senza, base scritta da Manuel e sintetizzata):
 
-    Il tacco nello squat non è una questione di livello. È una questione di caviglia.
+    Metti il tacco nello squat perché ce l'hanno tutti o perché ti serve davvero?
 
-    Jasmin ha la caviglia rigida: il tacco le porta il ginocchio avanti e le permette di scendere restando dritta sotto il bilanciere.
+    A decidere è la caviglia.
 
-    Nicolò la caviglia ce l'ha mobile. Col tacco il ginocchio andrebbe ancora più avanti e, con la stessa discesa, il busto si piegherebbe di più: si sbilancerebbe.
+    @jasmincalisti ce l'ha più rigida: senza tacco in buca finiva sul tallone. Con il tacco il ginocchio va avanti, il peso resta in spinta, e ci ha squattato 200 kg.
 
-    Se decidi di metterlo, non basta cambiare scarpa: rivedi la discesa e gli angoli, e allarga un po' i piedi.
+    @nikmarzo ce l'ha più mobile e con le sue leve scende già verticale: il tacco non gli serve. Con lui lavoriamo sulla catena posteriore.
 
-    Tu lo usi? Scrivimi tacco o senza nei commenti 👇
+    Il tacco è uno strumento, non la soluzione: caviglia e dinamica dello squat si allenano comunque.
+
+    Tu lo usi? Scrivimi "tacco" o "senza" 👇
 
     Ogni settimana una scelta vera che faccio con i miei atleti, e il perché. Seguimi per non perdere le prossime.
