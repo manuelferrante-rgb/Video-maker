@@ -132,3 +132,20 @@ Ottavo esempio, rivisto da Manuel (reel "fermi lunghi in panca", copertina v2, n
 Regole aggiunte:
 - Prima riga = il concetto chiave in una frase secca (il "perché"), POI la domanda del lettore e la spiegazione.
 - Negli input preferisce azioni semplici e concrete ("prendi aria") a termini tecnici ("scapole ferme").
+
+Struttura per il format "Due atleti, una scelta" (18/11/2026, approvata da Manuel): prima riga forte (max 120 caratteri,
+diversa dal reel) -> approfondimento che nel video non c'è -> la stessa domanda a due risposte del reel -> ultima riga
+"Ogni settimana una scelta vera che faccio con i miei atleti, e il perché. Seguimi per non perdere le prossime."
+Esempio (Tacco o senza):
+
+    Il tacco nello squat non è una questione di livello. È una questione di caviglia.
+
+    Jasmin ha la caviglia rigida: il tacco le porta il ginocchio avanti e le permette di scendere restando dritta sotto il bilanciere.
+
+    Nicolò la caviglia ce l'ha mobile. Col tacco il ginocchio andrebbe ancora più avanti e, con la stessa discesa, il busto si piegherebbe di più: si sbilancerebbe.
+
+    Se decidi di metterlo, non basta cambiare scarpa: rivedi la discesa e gli angoli, e allarga un po' i piedi.
+
+    Tu lo usi? Scrivimi tacco o senza nei commenti 👇
+
+    Ogni settimana una scelta vera che faccio con i miei atleti, e il perché. Seguimi per non perdere le prossime.

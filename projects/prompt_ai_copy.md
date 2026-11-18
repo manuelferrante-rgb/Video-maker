@@ -56,13 +56,15 @@ C) Per ogni frase: cosa si vede (Manuel in camera, B-roll di quale alzata/atleta
    titolo in alto, se serve.
 D) Titolo della copertina su 2 righe (riga 1 nel riquadro nero, riga 2 nel riquadro arancio), max 4 parole a riga.
    Non uguale al gancio.
-E) Caption:
-   - prima frase sulla domanda o confusione del lettore, MAI uguale alla frase del reel;
-   - risposta semplice con il perché, poi il beneficio (non l'errore), tono parlato;
-   - 3 paragrafi brevi, max 1-2 emoji, niente hashtag, niente trattino lungo (—);
-   - atleti taggati (@), non scritti per nome;
-   - chiusura: una CTA ("Se ti interessano questi contenuti, seguimi." oppure "Se vuoi farti analizzare lo squat
-     da me: LINK 🔗 in BIO", o la domanda per i commenti).
+E) Caption (struttura approvata il 18/11, dopo "Tacco o senza"):
+   1. Prima riga forte, max 120 caratteri (è quella che si vede prima di "altro"): la tensione o la domanda del
+      lettore, MAI uguale alla frase del reel.
+   2. Approfondimento, 2-3 paragrafi brevi: quello che nel video non c'è (il perché completo, il caso, cosa fare).
+      Chi commenta legge la caption: qui si guadagna fiducia. Tono parlato, beneficio e non errore.
+   3. La stessa domanda a due risposte del reel, per i commenti.
+   4. Ultima riga, sempre: "Ogni settimana una scelta vera che faccio con i miei atleti, e il perché. Seguimi per
+      non perdere le prossime."
+   Max 1-2 emoji, niente hashtag, niente trattino lungo (—). Atleti taggati (@), non scritti per nome.
 F) Elenco del girato che devo registrare (cosa, da che lato, quante take del gancio: 2-3 in modi diversi).
 G) Le domande su ogni dato reale che ti manca.
 
