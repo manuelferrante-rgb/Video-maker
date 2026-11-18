@@ -190,12 +190,12 @@ Girato: dip di entrambi di lato (si deve vedere la testa), Manuel in camera (gan
 ### Puntata 2, versione di Manuel rivista (18/11)
 Atleti: Lorenzo (dip 70 kg, sguardo giù) e Giacomo (dip 70 kg, sguardo in alto). Modifiche rispetto alla bozza di Manuel:
 - un solo numero nel gancio (due numeri fanno pensare che "in alto" renda più forte, contro la tesi);
-- "La forza segue lo sguardo" -> "Decide il punto debole" (Manuel ha scartato "Decide dove cedi") (è il fattore che spiega le due scelte, come "decide la caviglia");
+- "La forza segue lo sguardo" -> "Decide il tuo punto debole" (scelta di Manuel; Manuel ha scartato "Decide dove cedi") (è il fattore che spiega le due scelte, come "decide la caviglia");
 - gancio B = problema ("Nel dip ti pianti in chiusura?") per testare il problema contro numero + nome.
 | s | Cosa si vede | Voce | Testo |
 |---|---|---|---|
 | 0-2,5 | split Lorenzo / Giacomo | Lorenzo fa dip con 70 kg guardando giù. Giacomo, in alto. | 70 KG / IN ALTO |
-| 2,5-5 | Manuel in camera | Li alleno tutti e due. Decide il punto debole. | DECIDE IL PUNTO DEBOLE |
+| 2,5-5 | Manuel in camera | Li alleno tutti e due. Decide il tuo punto debole. | DECIDE IL TUO PUNTO DEBOLE |
 | 5-8,5 | Lorenzo, linea dello sguardo | Perdi la posizione in basso? Guarda giù e resti compatto. | COMPATTO |
 | 8,5-12 | Giacomo, ultima ripetizione | Ti pianti in chiusura? Guarda in alto mentre sali. | CHIUDI |
 | 12-14 | Manuel in camera | Tu dove guardi? Scrivimi giù o in alto. | |
