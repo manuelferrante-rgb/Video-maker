@@ -43,10 +43,10 @@ def panel(path, cx_src, cx_dst, zoom=1.0, dy=0):
 
 
 # sfondo: Jasmin (b3, col tacco, soggetto a x~495) a sinistra, Nicolo' (b2, x~570) a destra
-left = panel(f"{D}/st/bgL.png", 680, 470, 1.1, dy=360)
-right = panel(f"{D}/st/bgG.png", 535, 880, 1.0, dy=0)
+left = panel(f"{D}/st/bgL.png", 680, 380, 1.1, dy=360)
+right = panel(f"{D}/st/bgG.png", 535, 800, 1.0, dy=0)
 xx = np.arange(W, dtype=np.float32)[None, :, None]
-mix = np.clip((xx - 600) / 110, 0, 1)
+mix = np.clip((xx - 470) / 90, 0, 1)
 bg = (left * (1 - mix) + right * mix) * 0.6
 yb = np.arange(H, dtype=np.float32)[:, None, None]
 bg = bg * np.clip((1880 - yb) / 260, 0.0, 1.0)  # fondo sfumato al buio (niente pavimento ripetuto)
@@ -85,6 +85,22 @@ f2 = hard2.copy(); cv2.floodFill(f2, np.zeros((H + 2, W + 2), np.uint8), (0, 0),
 hard2 = np.maximum(hard2, 1 - f2)                             # nessun buco dentro il viso
 n, lbl, st, _ = cv2.connectedComponentsWithStats(hard2)
 hard2 = (lbl == 1 + np.argmax(st[1:, cv2.CC_STAT_AREA])).astype(np.uint8)   # via i pezzetti staccati
+# capelli: i pixel chiari (muro beige tra i ricci) vicino al bordo diventano trasparenti, la pelle no
+L = lab[..., 0]
+d2 = cv2.distanceTransform(hard2, cv2.DIST_L2, 5)
+light = (L > 115) & (d2 < 120) & (dskin > 22) & (np.arange(H)[:, None] < 930)
+# solo il chiaro collegato al fondo esterno (la fronte, racchiusa dai capelli, resta)
+reach = (light | (hard2 == 0)).astype(np.uint8)
+nl, ll = cv2.connectedComponents(reach)
+outside = ll == ll[0, 0]
+hard2 = hard2 * (1 - (light & (outside | (d2 < 45))).astype(np.uint8))  # + chiaro tra i ricci vicino al bordo
+hard2 = cv2.morphologyEx(hard2, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+n, lbl, st, _ = cv2.connectedComponentsWithStats(hard2)
+hard2 = (lbl == 1 + np.argmax(st[1:, cv2.CC_STAT_AREA])).astype(np.uint8)
+# il bordo che resta (mezzi toni chiari) prende il colore scuro dei capelli vicini
+hairband = ((cv2.distanceTransform(hard2, cv2.DIST_L2, 5) < 6) & (d2 < 120) & (L > 85) & (dskin > 22)
+            & (np.arange(H)[:, None] < 930))[..., None]
+fg = np.where(hairband, interior * 0.85, fg)
 alpha = cv2.GaussianBlur(cv2.erode(hard2, np.ones((3, 3), np.uint8)).astype(np.float32), (0, 0), 1.4)
 yy = np.arange(H, dtype=np.float32)[:, None]
 alpha = alpha * np.clip((1560 - yy) / 240, 0, 1)                # niente scrivania: sfumo il busto
