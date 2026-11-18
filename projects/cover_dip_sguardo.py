@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Copertina "Lo sguardo nel dip" (18/11, serie Due atleti una scelta): impianto di cover_tacco_v2.py.
 Sfondo diviso: Lorenzo in basso con la testa giu' a sinistra (V0928 25,0 s), Giacomo che sale guardando in alto a
-destra (IMG_6375 21,75 s); davanti io scontornato al centro, fotogramma 165,3 del parlato (dito alzato).
+destra (IMG_6375 21,75 s, abbassato di 170 px: in griglia Manuel lo alza); davanti io scontornato al centro, fotogramma 165,3 del parlato (dito alzato).
 Titolo: GIU' O IN ALTO? / IL TUO PUNTO DEBOLE + anteprima del ritaglio 3:4."""
 import sys
 import cv2
@@ -37,6 +37,8 @@ def panel(path, cx_src, cx_dst, zoom=1.0, dy=0):
     xs, xe = max(x0, 0), min(x0 + W, im.shape[1])
     ys, ye = max(y0, 0), min(y0 + H, im.shape[0])
     out[ys - y0:ye - y0, xs - x0:xe - x0] = im[ys:ye, xs:xe]
+    if ys - y0 > 0:  # sopra l'immagine: ripeto la prima riga (poi scurita)
+        out[:ys - y0] = out[ys - y0]
     if ye - y0 < H:  # sotto l'immagine: ripeto l'ultima riga (pavimento)
         out[ye - y0:] = out[ye - y0 - 1]
     return out
@@ -44,12 +46,12 @@ def panel(path, cx_src, cx_dst, zoom=1.0, dy=0):
 
 # sfondo: Jasmin (b3, col tacco, soggetto a x~495) a sinistra, Nicolo' (b2, x~570) a destra
 left = panel(f"{D}/st/bgL.png", 680, 440, 1.1, dy=360)
-right = panel(f"{D}/st/bgG.png", 535, 955, 1.0, dy=0)  # corpo (x~510) al centro della meta' destra
+right = panel(f"{D}/st/bgG.png", 535, 955, 1.0, dy=-170)  # corpo (x~510) al centro della meta' destra
 xx = np.arange(W, dtype=np.float32)[None, :, None]
 mix = np.clip((xx - 560) / 80, 0, 1)
 bg = (left * (1 - mix) + right * mix) * 0.6
 yb = np.arange(H, dtype=np.float32)[:, None, None]
-bg = bg * np.clip((1880 - yb) / 260, 0.0, 1.0)  # fondo sfumato al buio (niente pavimento ripetuto)
+bg = bg * np.clip((1880 - yb) / 260, 0.0, 1.0) * np.clip((yb + 40) / 300, 0.0, 1.0)  # fondo sfumato al buio (niente pavimento ripetuto)
 
 fr = cv2.resize(cv2.imread(f"{D}/st/f_165.3.png"), (W, H))
 mt = Matter(f"{R}/models/u2net_human_seg.onnx")
