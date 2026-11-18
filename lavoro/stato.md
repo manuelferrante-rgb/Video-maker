@@ -35,3 +35,5 @@ chiesto a Manuel), conferma delle frasi su Jasmin "busto dritto" e Nicolo' "col 
 Nicolo' senza tacco: c'e' gia' b2 (gara). Montaggio max 18 s, primo fotogramma split screen con la voce sopra.
 17/11 consegnato rifacimento: out/tacco_v2/tacco_v2_A.mp4 e _B.mp4 (14,3 s, -14,4 LUFS, picco -1,4), copertina
 out/tacco/copertina_tacco_v2.jpg (fotogramma 34,9), caption projects/caption_tacco_v2.txt.
+
+## 18/11 passaggio a una nuova chat: istruzioni in projects/handoff_18nov.md
