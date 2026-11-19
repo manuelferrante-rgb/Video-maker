@@ -222,3 +222,31 @@ promesse di risultati, Elisabetta messa in cattiva luce, schede scure all'inizio
 Caption: prima riga "Vuoi sapere ogni numero della tua scheda? Ti capisco, ma non è lì che si migliora." -> come lavora
 Manuel (tu l'obiettivo, io il percorso, correzione dei video) -> domanda "controllo" o "mi fido" -> ultima riga
 "Come lavoro con i miei atleti lo trovi nel profilo." Risposte ai commenti: "Che obiettivo hai in kg?" e poi in DM.
+
+### 7b. Versione scelta da Manuel (19/11): una sola atleta, format "Tu l'obiettivo, io il percorso"
+Il confronto tra due atleti sminuiva Elisabetta: si racconta solo lei, in positivo (un percorso, non un errore). Niente
+"li alleno tutti e due". Restano gli elementi provati dagli insight: alzata vera + numero + nome nel primo fotogramma
+(30% e 27% di salti), risposta entro 5 s, 14-16 s, domanda a due risposte (7 commenti col tacco), loop.
+Da confermare con Manuel: 10 kg di trazione (video sul sito), che all'inizio volesse sapere ogni numero, cosa è
+cambiato e in quanto tempo, ok di Elisabetta, video vecchi/di allenamento.
+| s | Cosa si vede | Voce | Testo |
+|---|---|---|---|
+| 0-2,5 | Elisabetta, trazione con 10 kg | Elisabetta fa trazioni con 10 kg. All'inizio voleva sapere ogni numero della scheda. | 10 KG |
+| 2,5-5 | Manuel in camera | Le ho detto: tu scegli l'obiettivo, il percorso lo decido io. | TU L'OBIETTIVO, IO IL PERCORSO |
+| 5-9 | Elisabetta in allenamento | Così smetti di aspettarti un record a ogni seduta e pensi solo a farla bene. | |
+| 9-12 | Elisabetta, ripetizione chiusa con 10 kg | Il resto lo seguo io: carichi, video, quando spingere. | |
+| 12-14 | Manuel in camera | E tu? Scrivimi "controllo" o "mi fido". | |
+| 14-15 | stacco sulla trazione iniziale | Ed è così che... (-> "Elisabetta fa trazioni con 10 kg") | |
+Gancio B (test metodo contro atleta+numero): Manuel in camera, "Ai miei atleti chiedo una cosa sola: l'obiettivo." poi
+stesso video.
+Copertina: TU L'OBIETTIVO (nero) / IO IL PERCORSO (arancio), fondo con Elisabetta alla sbarra.
+Caption:
+    Vuoi sapere ogni numero della tua scheda? È normale: ci tieni. Ma non è lì che si migliora.
+
+    @[elisabetta] all'inizio era così. Le ho chiesto solo il suo obiettivo e il percorso l'ho costruito io: lei pensava a fare bene la seduta, io a carichi, video e momenti in cui spingere.
+
+    Oggi tira 10 kg di trazione.
+
+    E tu? Scrivimi "controllo" o "mi fido" 👇
+
+    Come lavoro con i miei atleti lo trovi nel profilo.
