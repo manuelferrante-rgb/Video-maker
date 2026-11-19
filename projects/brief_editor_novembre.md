@@ -275,3 +275,31 @@ La trasformazione resta come prova nella caption ("All'inizio non riusciva a far
 Da confermare: che oggi Elisabetta non conosca in anticipo la scheda della settimana dopo.
 Copertina (Manuel: il tema è "ti fidi della scheda"): TI FIDI DELLA SCHEDA? (nero) / TU L'OBIETTIVO, IO IL PERCORSO (arancio).
 CTA finale: "E tu, ti fidi della tua scheda? Scrivimi controllo o mi fido."
+
+### 7d. VERSIONE DEFINITIVA (19/11, idea di Manuel): "Ti fidi della tua scheda?"
+Focus: fidarsi del percorso del coach. Elisabetta la scheda la conosce (sostituisce 7b/7c). Corpo identico per A e B.
+- A: Elisabetta che fa trazioni con 10 kg. Voce: "Ti fidi della tua scheda? Elisabetta all'inizio no."
+  Testo: TI FIDI DELLA TUA SCHEDA? (poi da ~1,2 s piccolo "+10 KG" sul bilanciere/cintura)
+  Rischio: è una domanda (le domande sono andate peggio, 69% nel tacco V1), ma sopra un'alzata forte e con il nome
+  subito dopo. B fa da controllo.
+- B: split PRIMA | OGGI. Voce: "Elisabetta non riusciva a fare una trazione. Oggi la fa con 10 kg." Testo: 0 / +10 KG
+| s | Cosa si vede | Voce | Testo |
+|---|---|---|---|
+| 2,5-5 | Manuel in camera | Le ho detto: tu scegli l'obiettivo, il percorso lo decido io. | TU L'OBIETTIVO, IO IL PERCORSO |
+| 5-8 | Elisabetta in allenamento | Voleva sapere ogni numero e si aspettava un record a ogni seduta. | |
+| 8-12 | Elisabetta + Manuel che guarda un suo video (se c'è) | Io decido carichi, quando spingere e quando scaricare, e correggo i suoi video. Lei pensa solo alla seduta di oggi. | |
+| 12-14 | Elisabetta, ripetizione chiusa | Da quando si è affidata, ha smesso di bloccarsi. | |
+| 14-16 | Manuel in camera | E tu? Scrivimi "controllo" o "mi fido". | |
+| 16-17 | stacco sul primo fotogramma | A: "Perché la domanda è una sola..." / B: "Per questo Elisabetta..." | |
+Durata 16-17 s (massimo 18). Copertina: TI FIDI DELLA SCHEDA? / TU L'OBIETTIVO, IO IL PERCORSO.
+Caption:
+    Ti fidi della tua scheda o controlli ogni numero? È normale volerlo sapere: ci tieni.
+
+    @[elisabetta] all'inizio era così e si aspettava un record a ogni seduta. Le ho chiesto solo il suo obiettivo: il percorso, i carichi, quando spingere e quando scaricare li decido io, e i suoi video li correggo io.
+
+    Da quando si è affidata ha smesso di bloccarsi. All'inizio non riusciva a fare una trazione, oggi la fa con 10 kg.
+
+    E tu? Scrivimi "controllo" o "mi fido" 👇
+
+    Come lavoro con i miei atleti lo trovi nel profilo.
+Da confermare: che "quando scaricare" e la correzione dei video siano cose che fa davvero con lei; ok di Elisabetta.
