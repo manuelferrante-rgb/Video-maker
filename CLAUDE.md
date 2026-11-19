@@ -339,3 +339,10 @@ Lezioni: il format regge (2 puntate su 2 sotto il 30%). Numero + nome batte il p
 pubblico (adulti, quasi zero 13-17). Commenti calati (1 contro 7 del tacco): "giù o in alto" divide meno di "tacco o
 senza". Visite profilo ~0,25% e follow 0: il format porta views, non ancora clienti -> prossimo reel con focus coaching.
 A nel feed. Prossimo: `projects/brief_editor_novembre.md`, sezione 7.
+
+## Idea in coda (19/11): trial "solo testo" sul tempo in palestra
+Riferimento mandato da Manuel (reel inglese di un powerlifter, 12 s, solo testo sopra uno squat): "Il powerlifting non
+ti ruba tempo, lo gestisci male" -> "30 minuti di riscaldamento, chiacchiere tra le serie, telefono: per questo ci metti
+3 ore" -> "timer, riscaldamento mirato, recuperi solo quanto serve: 60-90 minuti". Manuel: farlo per gli atleti in
+generale (non solo PL), come trial semplice. Testo in italiano, gancio provocatorio sul problema, 10-12 s, alzata vera
+sotto. I numeri (60-90 minuti) vanno confermati da Manuel. Da fare dopo il reel "Ti fidi della tua scheda?".
