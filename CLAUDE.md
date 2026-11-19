@@ -327,3 +327,15 @@ una forse interessata al coaching: PRIMI DM DA UN REEL ORGANICO. La CTA binaria 
 rispondere a ogni commento con una domanda personale che porta in DM (es. chiedere il loro video di squat).
 Decisione: A condiviso nel feed ("Share to everyone"), B resta trial. Regola: un trial che scende sotto il 35% di salti
 e porta commenti/DM va nel feed; gli altri restano trial.
+
+## Puntata 2 "Giù o in alto" (dip, pubblicata 18/11 alle 21, insight il 19/11 pomeriggio)
+14 s, split Lorenzo | Giacomo, "Decide il tuo punto debole", musica GTA bassa.
+- A numero+nome "Lorenzo fa dip con 70 kg guardando giù. Giacomo, in alto.": 1.974 views, salti 27,3% (record), media
+  10 s su 14, 10 like, 1 commento, 2 repost, 4 salvataggi, 5 visite profilo, 0 follow; 13-17 solo 1,2%, 18-24 39%,
+  25-34 47%, 35-44 7,5%.
+- B problema "Nel dip ti pianti in chiusura?": 1.920 views, salti 29,9%, media 9 s, 21 like, 1 commento, 2 salvataggi,
+  4 visite profilo, 0 follow; 13-17 18,4%.
+Lezioni: il format regge (2 puntate su 2 sotto il 30%). Numero + nome batte il problema sui salti e soprattutto sul
+pubblico (adulti, quasi zero 13-17). Commenti calati (1 contro 7 del tacco): "giù o in alto" divide meno di "tacco o
+senza". Visite profilo ~0,25% e follow 0: il format porta views, non ancora clienti -> prossimo reel con focus coaching.
+A nel feed. Prossimo: `projects/brief_editor_novembre.md`, sezione 7.

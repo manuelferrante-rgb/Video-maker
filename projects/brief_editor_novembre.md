@@ -201,3 +201,24 @@ Atleti: Lorenzo (dip 70 kg, sguardo giù) e Giacomo (dip 70 kg, sguardo in alto)
 | 12-14 | Manuel in camera | Tu dove guardi? Scrivimi giù o in alto. | |
 | 14-15 | split iniziale | Prima però, guarda le loro teste. | |
 Gancio B (resto identico): "Nel dip ti pianti in chiusura? Giacomo guarda in alto. Lorenzo, giù."
+
+## 7. Puntata 3 con focus coaching: "Ti fidi della scheda?" (19/11, DA CONFERMARE CON MANUEL)
+Dall'elenco idee: "Conoscere tutto della scheda è davvero importante? Vedi Elisabetta... meglio godersi il percorso
+avendo qualcuno che ti guida e fidarti al 100%" + "tu decidi gli obiettivi, io il percorso". Coaching velato: si fa
+vedere come lavora Manuel, senza vendere.
+Servono da Manuel: che la storia di Elisabetta sia vera e lei d'accordo; un secondo atleta che "si fida" (nome, kg,
+alzata); il risultato di Elisabetta quando ha smesso di controllare tutto (se c'è).
+| s | Cosa si vede | Voce | Testo |
+|---|---|---|---|
+| 0-2,5 | split: [Atleta 2] alla sbarra / Elisabetta che guarda la scheda sul telefono | [Atleta 2] fa trazioni con [kg] e la scheda la apre solo in palestra. Elisabetta vuole sapere ogni numero. | [KG] / OGNI NUMERO |
+| 2,5-5 | Manuel in camera | Li alleno tutti e due. Tu scegli l'obiettivo, il percorso lo decido io. | TU L'OBIETTIVO, IO IL PERCORSO |
+| 5-9 | Elisabetta | Se controlli ogni numero, aspetti un miglioramento a ogni seduta. Quando non arriva, ti blocchi. | |
+| 9-12 | [Atleta 2] | Chi si fida pensa solo a fare bene la seduta di oggi. Il resto è il mio lavoro. | |
+| 12-14 | Manuel in camera | Tu? Scrivimi "controllo" o "mi fido". | |
+| 14-15 | split iniziale | Ecco perché... | |
+Gancio B: lo stesso con il numero su Elisabetta (se ha un risultato), per vedere quale lato ferma di più.
+Non fare: elenco dei servizi ("anamnesi, correzione video... cosa aspetti?"), "scrivimi per il coaching" nel parlato,
+promesse di risultati, Elisabetta messa in cattiva luce, schede scure all'inizio, gancio a domanda generica.
+Caption: prima riga "Vuoi sapere ogni numero della tua scheda? Ti capisco, ma non è lì che si migliora." -> come lavora
+Manuel (tu l'obiettivo, io il percorso, correzione dei video) -> domanda "controllo" o "mi fido" -> ultima riga
+"Come lavoro con i miei atleti lo trovi nel profilo." Risposte ai commenti: "Che obiettivo hai in kg?" e poi in DM.
