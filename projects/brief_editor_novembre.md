@@ -303,3 +303,37 @@ Caption:
 
     Come lavoro con i miei atleti lo trovi nel profilo.
 Da confermare: che "quando scaricare" e la correzione dei video siano cose che fa davvero con lei; ok di Elisabetta.
+
+## 8. Reel per il 20/11 (due ganci per ognuno, corpo identico dentro ogni test)
+
+### 8a. Panca: dove appoggiare il bilanciere sul palmo (dal documento idee)
+Nota di Manuel: linea da metà tra pollice e indice fino al punto in cui si incrociano le due linee della mano; il
+bilanciere ci va sopra; si scarica meglio il peso e si mantiene una linea efficiente. Girato: Manuel che si sistema
+prima della panca (c'è), primo piano della mano con la linea disegnata a pennarello, una serie di panca.
+Da confermare: kg di panca di Manuel; l'errore che vede più spesso (bilanciere verso le dita?).
+- A (numero): primo piano della mano con la linea, il bilanciere che ci si appoggia. "Spingo [kg] di panca. Il bilanciere
+  lo appoggio qui." Testo: [KG] / QUI
+- B (gesto): Manuel che disegna la linea sul palmo. "Prima di ogni panca disegno questa linea." Testo: QUESTA LINEA
+| s | Cosa si vede | Voce | Testo |
+|---|---|---|---|
+| 2,5-5 | Manuel in camera, mostra il palmo | Dal punto tra pollice e indice fino a dove si incrociano le linee della mano. | QUI IL BILANCIERE |
+| 5-9 | primo piano: bilanciere sulla linea, presa che si chiude | Il bilanciere ci sta sopra: scarichi meglio il peso e il polso resta in linea. | IN LINEA |
+| 9-12 | Manuel che si sistema e parte la serie | [Errore: troppo verso le dita, il polso si piega e la spinta si disperde.] | |
+| 12-14 | Manuel in camera | Tu dove lo appoggi? Scrivimi "dita" o "palmo". | |
+| 14-15 | stacco sul primo fotogramma | Per questo, prima di ogni panca... | |
+Copertina: DOVE LO APPOGGI? / LA LINEA DELLA PANCA. Caption: struttura del format (prima riga forte, approfondimento,
+"dita" o "palmo", riga della serie).
+
+### 8b. Reel leggero "solo testo": il tempo in palestra (riferimento inglese mandato da Manuel)
+Niente voce, testo in italiano sopra il girato di Manuel che si sistema e fa panca. 12-14 s, un blocco di testo alla
+volta, centrato un po' sopra il centro (y ~760), bianco con bordo nero, fermo e leggibile (~3,5 s a blocco). Musica la
+mette Manuel. È un test: i muti finora sono andati male, ma questo ha una frase-problema in italiano dal primo fotogramma.
+Da confermare: 60-90 minuti per una seduta di forza.
+- A: "Allenarti non ti ruba tempo. Lo perdi tu."
+- B: "3 ore in palestra non sono dedizione."
+Blocchi successivi (uguali per A e B):
+2. "30 minuti di riscaldamento, chiacchiere tra le serie, telefono in mano. Per questo ci metti 3 ore."
+3. "Timer, riscaldamento mirato, recuperi quanto serve. Una seduta di forza si chiude in 60-90 minuti."
+4. "E la tua? Sopra o sotto i 90 minuti?"
+Caption: prima riga diversa dal testo del video, il perché (concentrazione, qualità delle serie), domanda "sopra o
+sotto i 90 minuti", riga della serie.
