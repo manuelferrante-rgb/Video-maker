@@ -107,7 +107,7 @@ alpha = cv2.GaussianBlur(cv2.erode(hard2, np.ones((3, 3), np.uint8)).astype(np.f
 yy = np.arange(H, dtype=np.float32)[:, None]
 alpha = alpha * np.clip((1560 - yy) / 240, 0, 1)                # niente scrivania: sfumo il busto
 
-SC, TX, TY = 0.85, 430 - 402 * 0.85, 1050 - 887 * 0.85         # viso (402, 887) -> (430, 1050)
+SC, TX, TY = 0.85, 430 - 402 * 0.85, 900 - 887 * 0.85         # viso (402, 887) -> (430, 900)
 M = np.float32([[SC, 0, TX], [0, SC, TY]])
 fgw = cv2.warpAffine(fg, M, (W, H), flags=cv2.INTER_CUBIC)
 al = cv2.warpAffine(alpha, M, (W, H), flags=cv2.INTER_LINEAR, borderValue=0)
@@ -115,7 +115,7 @@ sh = cv2.GaussianBlur(al, (0, 0), 30)[..., None]
 img = bg * (1 - 0.5 * sh)
 img = img * (1 - al[..., None]) + fgw * al[..., None]
 im = Image.fromarray(cv2.cvtColor(np.clip(img, 0, 255).astype(np.uint8), cv2.COLOR_BGR2RGB)).convert("RGBA")
-y = label(im, "TI FIDI DELLA SCHEDA?", W / 2, 1385, 76)
+y = label(im, "TI FIDI DELLA SCHEDA?", W / 2, 1235, 76)
 label(im, "TU L'OBIETTIVO, IO IL PERCORSO", W / 2, y + 10, 58, box=ORANGE)
 im.convert("RGB").save(f"{D}/copertina_scheda_elisabetta.jpg", quality=95)
 im.convert("RGB").crop((0, 240, 1080, 1680)).resize((540, 720)).save(f"{D}/_check_griglia_eli.jpg", quality=85)
