@@ -273,3 +273,5 @@ Corpo uguale per A e B:
 Lettura del test: se B ha meno salti ma A più visite al profilo/commenti/DM, vince A (l'obiettivo è il coaching).
 La trasformazione resta come prova nella caption ("All'inizio non riusciva a fare una trazione. Oggi la fa con 10 kg.").
 Da confermare: che oggi Elisabetta non conosca in anticipo la scheda della settimana dopo.
+Copertina (Manuel: il tema è "ti fidi della scheda"): TI FIDI DELLA SCHEDA? (nero) / TU L'OBIETTIVO, IO IL PERCORSO (arancio).
+CTA finale: "E tu, ti fidi della tua scheda? Scrivimi controllo o mi fido."
