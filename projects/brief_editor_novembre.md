@@ -231,21 +231,25 @@ Da confermare con Manuel: 10 kg di trazione (video sul sito), che all'inizio vol
 cambiato e in quanto tempo, ok di Elisabetta, video vecchi/di allenamento.
 | s | Cosa si vede | Voce | Testo |
 |---|---|---|---|
-| 0-2,5 | Elisabetta, trazione con 10 kg | Elisabetta fa trazioni con 10 kg. All'inizio voleva sapere ogni numero della scheda. | 10 KG |
+| 0-2,5 | split PRIMA (non chiude la trazione / elastico) / OGGI (trazione con 10 kg) | Elisabetta non riusciva a fare una trazione. Oggi la fa con 10 kg. | 0 / +10 KG |
+| 2,5-3,5 | Elisabetta oggi | E all'inizio voleva sapere ogni numero della scheda. | |
 | 2,5-5 | Manuel in camera | Le ho detto: tu scegli l'obiettivo, il percorso lo decido io. | TU L'OBIETTIVO, IO IL PERCORSO |
 | 5-9 | Elisabetta in allenamento | Così smetti di aspettarti un record a ogni seduta e pensi solo a farla bene. | |
 | 9-12 | Elisabetta, ripetizione chiusa con 10 kg | Il resto lo seguo io: carichi, video, quando spingere. | |
 | 12-14 | Manuel in camera | E tu? Scrivimi "controllo" o "mi fido". | |
 | 14-15 | stacco sulla trazione iniziale | Ed è così che... (-> "Elisabetta fa trazioni con 10 kg") | |
-Gancio B (test metodo contro atleta+numero): Manuel in camera, "Ai miei atleti chiedo una cosa sola: l'obiettivo." poi
-stesso video.
+Gancio B (test numero contro niente numero, dubbio di Manuel "10 kg è poco?"): "Elisabetta non riusciva a fare una
+trazione. Oggi le fa zavorrate." Testo: 0 / ZAVORRATE. Resto identico.
+Perché il prima/dopo: 10 kg da soli rischiano di sembrare pochi a un pubblico al 94% maschile; il salto da 0 a +10 kg è
+la prova (come "da 3 trazioni a 75 kg", ~3K organiche, e "Abbandonare", 32% di salti). Da confermare: che davvero non
+ne facesse una, e in quanto tempo (se c'è, va nel gancio: "in N mesi").
 Copertina: TU L'OBIETTIVO (nero) / IO IL PERCORSO (arancio), fondo con Elisabetta alla sbarra.
 Caption:
     Vuoi sapere ogni numero della tua scheda? È normale: ci tieni. Ma non è lì che si migliora.
 
     @[elisabetta] all'inizio era così. Le ho chiesto solo il suo obiettivo e il percorso l'ho costruito io: lei pensava a fare bene la seduta, io a carichi, video e momenti in cui spingere.
 
-    Oggi tira 10 kg di trazione.
+    All'inizio non riusciva a fare una trazione. Oggi la fa con 10 kg.
 
     E tu? Scrivimi "controllo" o "mi fido" 👇
 
