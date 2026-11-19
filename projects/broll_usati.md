@@ -52,3 +52,14 @@ Cartella Drive parlati `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc`, scaricati in `src_gi
 | IMG_6375 (Giacomo, disco giallo) | 22 s | split 15.8-20.4; ultima salita 20.6-22.25; copertina 21.75 (setup 0-10 non usato) |
 | telegram_video (Giacomo all'aperto, 20 kg) | 9 s | salita lenta 4.0-5.4 (guarda giu': non usare per "in alto") |
 | V0914 (Lorenzo, maglia nera, di spalle) | 8 s | non usato |
+
+## Reel "Ti fidi della tua scheda?" (19/11/2026, `scheda_elisabetta.py`) - Elisabetta, ok confermato da Manuel
+| File | Durata | Usato |
+|---|---|---|
+| IMG_5416b (trazione 10 kg, HLG) | 4,7 s | gancio A e ponte 0.5-2.6; split B lato OGGI 0.5-3.2; copertina 2.4 |
+| tg_3mb (primi tempi, all'aperto, senza zavorra) | 27 s | split B lato PRIMA 14.7-17.2 + fermo (mento sotto la sbarra) |
+| tg_9mb (palestra arancio) | 47 s | 21.0-23.4 ("voleva ogni numero") |
+| IMG_9172 (Manuel al computer) | 4 s | 0.2-2.7 ("correggo i video") |
+| IMG_5418 (trazione 10 kg con Manuel sullo sfondo) | 11 s | 5.0-6.8 ("lei pensa solo alla seduta di oggi") |
+| IMG_5415 (trazione 10 kg) | 6,7 s | 2.7-4.9 ripetizione chiusa |
+| IMG_5416 | 9,5 s | non usato |

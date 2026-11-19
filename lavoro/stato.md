@@ -42,3 +42,9 @@ out/tacco/copertina_tacco_v2.jpg (fotogramma 34,9), caption projects/caption_tac
 Script finale di Manuel in projects/script_dip_sguardo.md; montaggio projects/dip_sguardo.py (A 14,8 s, B 14,9 s,
 -14,2 LUFS, picco -1,3), copertina projects/cover_dip_sguardo.py (faccia 165,3), caption projects/caption_dip_sguardo.txt
 (mancano i @ di Lorenzo e Giacomo). Lorenzo = petto nudo/maglia nera, Giacomo = ricci (disco giallo / all'aperto).
+
+## 19/11 consegnato: "Ti fidi della tua scheda?" (Elisabetta, brief sez. 7d)
+projects/scheda_elisabetta.py (A 17,0 s, B 17,2 s, -14,2/-14,1 LUFS, picco -1,9), copertina projects/cover_scheda_elisabetta.py
+(faccia 164,0), caption projects/caption_scheda_elisabetta.txt (manca il @ di Elisabetta). Nel parlato Manuel ha cambiato
+due frasi: "La programmazione la decido io e io correggo i video" e "E tu controlli o ti fidi? Scrivilo nei commenti".
+Gancio B montato da due take (38,14-39,88 + 44,35-45,59). Limiter a 0,79: l'AAC superava -1 dBTP.
