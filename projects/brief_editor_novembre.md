@@ -254,3 +254,22 @@ Caption:
     E tu? Scrivimi "controllo" o "mi fido" 👇
 
     Come lavoro con i miei atleti lo trovi nel profilo.
+
+### 7c. Decisione (19/11): il concetto è la SCHEDA/METODO, la trasformazione è la prova
+Un reel = un concetto. Il prima/dopo lo fanno tutti i coach; "tu scegli l'obiettivo, io il percorso" è il modo di
+lavorare di Manuel ed è quello che il coaching vende. Il corpo parla solo della scheda; il test A/B è sull'ingresso:
+- A (concetto): Elisabetta alla sbarra. "Elisabetta non sa cosa c'è nella sua scheda della prossima settimana. E va
+  bene così." Testo: NON LO SA
+- B (trasformazione): split PRIMA | OGGI. "Elisabetta non riusciva a fare una trazione. Oggi la fa con 10 kg."
+  Testo: 0 / +10 KG
+Corpo uguale per A e B:
+| s | Cosa si vede | Voce | Testo |
+|---|---|---|---|
+| 2,5-5 | Manuel in camera | Lei sceglie l'obiettivo, il percorso lo decido io. | TU L'OBIETTIVO, IO IL PERCORSO |
+| 5-9 | Elisabetta in allenamento | Se conosci ogni numero, ti aspetti un record a ogni seduta. E quando non arriva, ti blocchi. | |
+| 9-12 | Elisabetta, ripetizione con 10 kg | Lei pensa solo a fare bene la seduta di oggi. Il resto lo seguo io. | |
+| 12-14 | Manuel in camera | E tu? Scrivimi "controllo" o "mi fido". | |
+| 14-15 | stacco sul primo fotogramma | Per questo Elisabetta... (-> riparte dal gancio) | |
+Lettura del test: se B ha meno salti ma A più visite al profilo/commenti/DM, vince A (l'obiettivo è il coaching).
+La trasformazione resta come prova nella caption ("All'inizio non riusciva a fare una trazione. Oggi la fa con 10 kg.").
+Da confermare: che oggi Elisabetta non conosca in anticipo la scheda della settimana dopo.
