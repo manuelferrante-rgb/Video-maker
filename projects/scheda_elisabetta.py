@@ -3,7 +3,8 @@
 A: primo fotogramma = Elisabetta alla sbarra con 10 kg (IMG_5416b), un solo testo "TI FIDI DELLA / TUA SCHEDA?" in basso,
 poi sottotitoli e "+10 KG". B: split PRIMA (video dei primi tempi, all'aperto senza zavorra, fermo prima che il mento
 superi la sbarra) | OGGI (10 kg), "0 KG" / "+10 KG". Corpo uguale: Manuel in camera (TU L'OBIETTIVO / IO IL PERCORSO),
-Elisabetta in allenamento (palestra arancio), Manuel al computer che guarda un video, Elisabetta con Manuel sullo sfondo,
+Elisabetta in allenamento (palestra arancio), la sua scheda vera animata (anim_scheda_elisabetta.py, 3 blocchi) su
+"La programmazione la decido io", Manuel al computer che guarda un video, Elisabetta con Manuel sullo sfondo,
 ripetizione chiusa, CTA in camera con il campo commento (controllo / mi fido), ponte sul primo fotogramma (loop).
 Parlato: src_eli/IMG_9169.MOV -> src_eli/p_norm.mov. Clip HLG (IMG_54xx) gia' convertiti in out/eli/br.
 Uso: python3 projects/scheda_elisabetta.py [prep] [A B]"""
@@ -359,7 +360,8 @@ def make(v):
     first = f"{BR}/IMG_5416b.mp4" if v == "A" else f"{BR}/split.mp4"
     br = [(start(hook), nxt(hook), first, 0.5 if v == "A" else 0.0, 1.0, 1.0, None),
           (start("S2"), nxt("S2"), f"{BR}/allen.mp4", 0.0, 1.0, 1.0, None),
-          (start("S3"), nxt("S3"), f"{BR}/IMG_9172.mp4", 0.2, 1.0, 1.0, None),
+          (start("S3"), ref(109.40), f"{OUT}/anim/scheda.mp4", 0.0, 1.0, 1.0, None),   # scheda vera animata
+          (ref(109.40), nxt("S3"), f"{BR}/IMG_9172.mp4", 0.2, 1.0, 1.0, None),        # "e io correggo i video"
           (start("S3b"), nxt("S3b"), f"{BR}/IMG_5418.mp4", 5.0, 1.0, 1.0, None),
           (start("S4"), nxt("S4"), f"{BR}/IMG_5415.mp4", 2.7, 1.0, 1.0, None),
           (start(ponte), "end", first, 0.5 if v == "A" else 0.0, 1.0, 1.0, None)]
@@ -373,7 +375,10 @@ def make(v):
                 (start("S1"), nxt("S1"), titles([("TU L'OBIETTIVO", "n", 290), ("IO IL PERCORSO", "o", 392)])),
                 (start("S5"), nxt("S5"), comment_box(0.12, loc(163.32 + D - 0.08, "S5"), loc(163.88 + D - 0.1, "S5"),
                                                      wa="controllo", wb="mi fido"))]
+    t_an = t_of(109.40) - t_of(107.84)            # durata dell'animazione della scheda (3 blocchi)
     sfx = s_hook + [(start("S1"), 0.0, "whoosh", 0.12),
+                    (start("S3"), t_an / 3, "swoosh", 0.08),
+                    (start("S3"), 2 * t_an / 3, "swoosh", 0.08),
                     (start("S5"), 0.1, "comparsa", 0.10),
                     (ref(163.32 + D), 0.0, "pop", 0.07),
                     (ref(163.88 + D), 0.0, "pop", 0.07)]

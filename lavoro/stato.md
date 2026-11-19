@@ -48,3 +48,7 @@ projects/scheda_elisabetta.py (A 17,0 s, B 17,2 s, -14,2/-14,1 LUFS, picco -1,9)
 (faccia 164,0), caption projects/caption_scheda_elisabetta.txt (manca il @ di Elisabetta). Nel parlato Manuel ha cambiato
 due frasi: "La programmazione la decido io e io correggo i video" e "E tu controlli o ti fidi? Scrivilo nei commenti".
 Gancio B montato da due take (38,14-39,88 + 44,35-45,59). Limiter a 0,79: l'AAC superava -1 dBTP.
+19/11 (sera): aggiunta l'animazione della scheda vera (projects/anim_scheda_elisabetta.py: ultima scheda dal 02/11, PDF
+esportato da Drive col connettore, 3 blocchi CHIN UP / SQUAT LB / TRAZIONI ESPLOSIVE che scorrono, niente colonne
+RPE/FEEDBACK, niente etichetta "SCARICO" per richiesta di Manuel) su "La programmazione la decido io" (1,45 s), poi la clip
+di Manuel che corregge i video. Durate invariate (A 17,0 s, B 17,2 s).
