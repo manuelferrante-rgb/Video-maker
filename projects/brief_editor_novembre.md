@@ -337,3 +337,7 @@ Blocchi successivi (uguali per A e B):
 4. "E la tua? Sopra o sotto i 90 minuti?"
 Caption: prima riga diversa dal testo del video, il perché (concentrazione, qualità delle serie), domanda "sopra o
 sotto i 90 minuti", riga della serie.
+Confermato da Manuel (19/11): con Elisabetta decide anche gli scarichi e corregge i video; ok di Elisabetta.
+Gancio B: niente video in cui non chiude la trazione -> si usa un suo video vecchio (dei primi tempi, senza zavorra) in
+cui fa fatica, tagliato prima che il mento superi la sbarra. Deve essere davvero del periodo iniziale: un video recente
+con zavorra etichettato PRIMA sarebbe falso.
