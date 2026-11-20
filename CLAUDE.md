@@ -346,3 +346,17 @@ ti ruba tempo, lo gestisci male" -> "30 minuti di riscaldamento, chiacchiere tra
 3 ore" -> "timer, riscaldamento mirato, recuperi solo quanto serve: 60-90 minuti". Manuel: farlo per gli atleti in
 generale (non solo PL), come trial semplice. Testo in italiano, gancio provocatorio sul problema, 10-12 s, alzata vera
 sotto. I numeri (60-90 minuti) vanno confermati da Manuel. Da fare dopo il reel "Ti fidi della tua scheda?".
+
+## Puntata coaching "Ti fidi della tua scheda?" (Elisabetta, pubblicata 19/11 ~19:00, insight 20/11 9:30) - BOCCIATA
+4 trial da 17 s:
+- A "Ti fidi della tua scheda? Elisabetta all'inizio no." (sopra la sua trazione): 148 views, salti 72,1%, media 3 s.
+- A + scheda animata ("la programmazione la decido io"): 150 views, salti 67,6%, media 3 s.
+- B split PRIMA/OGGI "0 KG - Elisabetta non riusciva a fare una trazione...": 169 views, salti 54,2%, media 4 s, 2 visite.
+- B + scheda animata: 163 views, salti 53,3%, media 4 s; pubblico 56% donne (gli altri ~70% uomini).
+0 follow ovunque. Tacco e dip a pari ore avevano ~2.000 views.
+Cause: gancio a domanda di nuovo pessimo (68-72%); il tema "fidarsi/metodo" è astratto, non c'è una scelta tecnica
+con un numero forte; "da 0 a 10 kg" non colpisce un pubblico al 70% maschile intermedio; 17 s invece di 14; 4 versioni
+quasi uguali lo stesso giorno (meglio massimo 2).
+Lezione: il coaching NON va messo come tema del reel. Si mette DENTRO il format che funziona (atleta + numero forte +
+scelta tecnica + "li alleno tutti e due"), nella caption e nelle risposte ai commenti (il tacco ha portato i DM cosi').
+Rifacimento: `projects/brief_editor_novembre.md`, sezione 9.

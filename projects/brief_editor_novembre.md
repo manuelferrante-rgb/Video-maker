@@ -341,3 +341,34 @@ Confermato da Manuel (19/11): con Elisabetta decide anche gli scarichi e corregg
 Gancio B: niente video in cui non chiude la trazione -> si usa un suo video vecchio (dei primi tempi, senza zavorra) in
 cui fa fatica, tagliato prima che il mento superi la sbarra. Deve essere davvero del periodo iniziale: un video recente
 con zavorra etichettato PRIMA sarebbe falso.
+
+## 9. Dopo il flop di "Ti fidi della tua scheda?" (20/11): due reel nuovi
+
+### 9a. Rimontaggio SENZA nuove riprese (da pubblicare subito), 12-13 s
+Materiale di ieri. Si tolgono le parti astratte ("Le ho detto...", "voleva sapere ogni numero", "si è affidata").
+| s | Cosa si vede | Voce (già registrata) | Testo |
+|---|---|---|---|
+| 0-2,5 | split PRIMA / OGGI (OGGI = trazione con 10 kg) | Elisabetta non riusciva a fare una trazione. Oggi la fa con 10 kg. | PRIMA / OGGI +10 KG |
+| 2,5-5 | scheda animata (chin up, settimane 1-4) | La programmazione la decido io. | |
+| 5-7,5 | Manuel al computer che guarda i video | E io correggo i video. | |
+| 7,5-10 | Elisabetta che chiude una trazione | Lei pensa solo alla seduta di oggi. | |
+| 10-12,5 | Manuel in camera | E tu? Scrivimi "controllo" o "mi fido". | |
+Niente Manuel in camera prima del secondo 10. Un solo testo per lato nel primo secondo. Caption di ieri.
+
+### 9b. Nuovo reel "Settimana 3: zero zavorra" (serve registrare 3 frasi), 14 s
+Dalla scheda di Elisabetta (chin up): settimana 1 4 serie RPE8 +2,5 kg, settimana 2 3 serie RPE9 +3,75 kg, settimana
+3 5 serie RPE7 0 kg, settimana 4 2 x massimale +6,25 kg. DA CONFERMARE con Manuel che la settimana 3 sia lo scarico e il
+perché. Tema: una scelta di programmazione che sembra controintuitiva (contenuto di ragionamento: mostra il metodo).
+- A: scheda con la riga della settimana 3 evidenziata, poi Elisabetta che tira. "Alla settimana 3 le tolgo tutta la
+  zavorra. Alla 4 fa il suo massimo." Testo: SETTIMANA 3: 0 KG
+- B: Elisabetta che fa il massimale (+6,25 kg). "Prima del suo massimo, Elisabetta ha fatto una settimana senza
+  zavorra." Testo: +6,25 KG
+| s | Cosa si vede | Voce | Testo |
+|---|---|---|---|
+| 2,5-5 | Manuel in camera | Non è una settimana persa: è quella che fa uscire il massimo. | SCARICO |
+| 5-9 | Elisabetta, serie a corpo libero | [perché di Manuel, es. recupero del sistema nervoso, più ripetizioni pulite]. | |
+| 9-12 | Elisabetta, massimale | Settimana 4: due ripetizioni con 6,25 kg. | |
+| 12-14 | Manuel in camera | Tu lo fai lo scarico prima del massimale? Scrivimi sì o no. | |
+| 14-15 | scheda settimana 3 | Ecco perché... | |
+Caption: struttura del format; chiusura "È così che programmo le trazioni dei miei atleti: come lavoro lo trovi nel
+profilo."
