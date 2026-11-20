@@ -401,3 +401,17 @@ Tre reel del 20/11 (metodo in 30 secondi con cronometro, panca linea sul palmo 1
 `projects/brief_20nov_tre_reel.md`. Scarico = settimana di volume qualitativo a bassa intensità (Manuel).
 CTA per reel (Manuel 20/11): ogni reel ha o la domanda a due risposte o la parola chiave nei commenti; Manuel risponde e
 manda i protocolli a mano. Reel 1 = "Commenta TRAZIONI" (protocollo trazioni), reel 2 = dita/palmo, reel 3 = sopra/sotto 90 min.
+
+## Tre reel del 20/11/2026 (brief `projects/brief_20nov_tre_reel.md`)
+Motore a timeline `projects/tl_kit.py` (tempi = secondi del reel, fotogramma composto in Python: clip con punch-in,
+fermo immagine `live`, rallenty `mi`, testi con pop, cronometro rosso a 7 segmenti `timer_img`, puntini/linee/frecce
+antialias `aa`, X rossa, sottotitoli `subs`, voce opzionale a 1,1x e -14 LUFS, sfx). Copertine: `cover_20nov.py`.
+- Reel 3 "tempo in palestra" (`tempo_palestra.py`, 13 s, solo testo sullo squat IMG_9126): Manuel 20/11: NIENTE
+  cronometro in questo reel; tolto "3 ore in palestra non sono dedizione"; "seduta di forza" -> "un allenamento" (piu'
+  generico). A = "Allenarti non ti ruba tempo. Lo perdi tu."; B = "Un allenamento si chiude in 60-90 minuti." (nel B il
+  blocco centrale e' "Riscaldamento mirato, recuperi solo quanto serve"). Domanda finale "E il tuo? Sopra o sotto i 90
+  minuti?". Testi a y ~1420 (a 760 coprivano la faccia). Consegnato.
+- Reel 2 panca (`panca_palmo.py`) e reel 1 trazioni in 30 s (`trazioni_30s.py`): montati come ANTEPRIMA, perche' il
+  parlato non e' ancora registrato (le frasi sono nel brief): sottotitoli sui tempi del piano e segnaposto "MANUEL IN
+  CAMERA: DA REGISTRARE". Quando arriva la voce: riempire VOICE [(t_reel, file, da, a)] e ritarare PAGES/tempi.
+  Puntini sul palmo agganciati al fotogramma 8.25 di IMG_9153 (P_WEB 308,926 / P_CROSS 210,952).

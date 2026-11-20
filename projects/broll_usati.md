@@ -63,3 +63,16 @@ Cartella Drive parlati `1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc`, scaricati in `src_gi
 | IMG_5418 (trazione 10 kg con Manuel sullo sfondo) | 11 s | 5.0-6.8 ("lei pensa solo alla seduta di oggi") |
 | IMG_5415 (trazione 10 kg) | 6,7 s | 2.7-4.9 ripetizione chiusa |
 | IMG_5416 | 9,5 s | non usato |
+
+## Tre reel del 20/11/2026 (`tempo_palestra.py`, `panca_palmo.py`, `trazioni_30s.py`, motore `tl_kit.py`)
+Drive parlati, scaricati in `src_20nov/` (nessun parlato nei file: tutti B-roll muti).
+| File | Durata | Contenuto / usato |
+|---|---|---|
+| IMG_9126 (squat Manuel, palestra con scale) | 28,5 s | 4 ripetizioni: discese 3.0/7.9/12.8/18.3, buca 4.3/9.1/14.0/19.5, rerack da 23. Tempo: 18.2-21.2, 2.8-6.8, 7.7-11.2, 12.75-15.25; copertina 18.35 |
+| IMG_5153 (panca 150 kg, dischi Eleiko rossi, 4K) | 3,1 s | ripetizione 0.9-2.4 (gancio A, ponte B e finale); copertina 1.3 |
+| IMG_9153 (Manuel si sistema, ripreso dai piedi) | 9 s | palmo aperto sul bilanciere 7.35-8.25 + fermo su 8.25 (puntini e linea); presa che si chiude 3.6-5.1 a 0,5x (freccia) |
+| IMG_9189 (panca, maglia bianca, dischi blu) | 16 s | solo sfondo sfocato dell'animazione 3.0 e segnaposto 9.0 |
+| IMG_5415 / IMG_5416 / IMG_5418 (Elisabetta) | | sett.1 5415 1.6-5.6; sett.2 5416 3.2-6.7; gancio B e loop 5418 5.6-8.1; copertina 5418 6.4 |
+| tg_9mb (Elisabetta, palestra arancio, a corpo libero) | 47 s | sett.3 14.0-18.5 |
+| tg42 (nuovo, Elisabetta con disco, palestra con anelli) | 42 s | sett.4 18.5-22.5 |
+| IMG_9172 (Manuel al computer) | 4,1 s | 0.05-4.05 |

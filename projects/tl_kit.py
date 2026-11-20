@@ -59,14 +59,19 @@ def is_hdr(path):
 class Clip:
     """Legge i fotogrammi di un pezzo di clip già a 1080x1920 (riempie e ritaglia)."""
 
-    def __init__(self, path, ss, n, sp=1.0, hdr=None, vf_extra="", fit="cover"):
+    def __init__(self, path, ss, n, sp=1.0, hdr=None, vf_extra="", fit="cover", mi=False):
         hdr = is_hdr(path) if hdr is None else hdr
         pre = (TONEMAP + ",") if hdr else ""
+        if mi:  # rallenty fluido
+            pre += f"setpts=PTS/{sp},minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:vsbmc=1,"
+            sp_ = 1.0
+        else:
+            sp_ = sp
         if fit == "cover":
             sc = f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H}"
         else:
             sc = f"scale={W}:{H}:force_original_aspect_ratio=decrease:flags=lanczos,pad={W}:{H}:-1:-1"
-        vf = f"{pre}setpts=PTS/{sp},fps={FPS},{sc},setsar=1{vf_extra},tpad=stop_mode=clone:stop_duration=2"
+        vf = f"{pre}setpts=PTS/{sp_},fps={FPS},{sc},setsar=1{vf_extra},tpad=stop_mode=clone:stop_duration=6"
         self.p = subprocess.Popen(["ffmpeg", "-v", "error", "-ss", f"{ss}", "-t", f"{n / FPS * sp + 0.5}",
                                    "-i", path, "-vf", vf, "-an", "-frames:v", str(n), "-f", "rawvideo",
                                    "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE,
@@ -82,6 +87,33 @@ class Clip:
     def close(self):
         self.p.stdout.close()
         self.p.wait()
+
+
+def shot_z(sh, t):
+    u = min(max((t - sh["t0"]) / max(sh["t1"] - sh["t0"], 1e-3), 0), 1)
+    return sh.get("z0", 1.0) + (sh.get("z1", 1.0) - sh.get("z0", 1.0)) * (ease(u) if sh.get("ez") else u)
+
+
+def map_pt(p, z, c):
+    """Punto del fotogramma sorgente (1080x1920) -> punto a schermo dopo lo zoom."""
+    cx, cy = c
+    w, h = W / z, H / z
+    x0 = min(max(cx - w / 2, 0), W - w)
+    y0 = min(max(cy - h / 2, 0), H - h)
+    return ((p[0] - x0) * z, (p[1] - y0) * z)
+
+
+def aa(im, box, fn, ss=3):
+    """Disegno antialias: fn(draw, P) su una toppa 3x; P(x, y) converte coordinate schermo -> toppa."""
+    x0, y0, x1, y1 = [int(v) for v in box]
+    x0, y0 = max(x0, 0), max(y0, 0)
+    x1, y1 = min(x1, W), min(y1, H)
+    if x1 <= x0 or y1 <= y0:
+        return
+    patch = Image.new("RGBA", ((x1 - x0) * ss, (y1 - y0) * ss), (0, 0, 0, 0))
+    d = ImageDraw.Draw(patch)
+    fn(d, lambda x, y: ((x - x0) * ss, (y - y0) * ss), ss)
+    im.alpha_composite(patch.resize((x1 - x0, y1 - y0), Image.LANCZOS), (x0, y0))
 
 
 def zoom(im, z, c):
@@ -265,11 +297,12 @@ def build(out, total, shots, layers, sfx=(), voice=(), sfx_target=-20.0, cut_swo
                 clip.close()
             n = round((sh["t1"] - sh["t0"]) * FPS) + 2
             clip = Clip(sh["src"], sh["ss"], n, sh.get("sp", 1.0), sh.get("hdr"), sh.get("vf", ""),
-                        sh.get("fit", "cover"))
+                        sh.get("fit", "cover"), sh.get("mi", False))
             cur = sh
-        fr = clip.read()
+        live = sh.get("live")  # secondi di clip "viva", poi fermo immagine sull'ultimo fotogramma letto
+        fr = clip.last if (live is not None and t - sh["t0"] >= live and clip.last is not None) else clip.read()
         u = (t - sh["t0"]) / max(sh["t1"] - sh["t0"], 1e-3)
-        z = sh.get("z0", 1.0) + (sh.get("z1", 1.0) - sh.get("z0", 1.0)) * (ease(u) if sh.get("ez") else u)
+        z = shot_z(sh, t)
         fr = zoom(fr, z, sh.get("c", (540, 960)))
         if sh.get("pre"):
             fr = sh["pre"](fr, t)
@@ -328,3 +361,68 @@ def sheet(video, out, n=24, cols=8):
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", video, "-vf",
                     f"fps={n}/{d},scale=270:-2,drawtext=fontfile={F_EB}:text='%{{pts\\:flt}}':x=4:y=4:fontsize=18:"
                     f"fontcolor=yellow:box=1:boxcolor=black,tile={cols}x{rows}", "-frames:v", "1", out], check=True)
+
+
+def subs(pages, y=1450, size=76, maxw=960):
+    """Sottotitoli standard: [(t0, t1, testo)], parola chiave tra *asterischi* in arancio, pop d'ingresso."""
+    cache = {}
+
+    def fn(im, t):
+        for i, (a, b, txt) in enumerate(pages):
+            if a <= t < b:
+                src = cache.setdefault(i, text_img(txt, size=size, maxw=maxw))
+                put(im, src, 540, y, pop((t - a) / 0.2) if not txt.startswith("§") else 1)
+    return fn
+
+
+def arrow(d, P, ss, pts, prog, color=WHITE, width=8, head=26, accent=ORANGE):
+    """Freccia che si disegna lungo una polilinea (prog 0..1), punta arancio."""
+    segs = list(zip(pts[:-1], pts[1:]))
+    lens = [math.dist(a, b) for a, b in segs]
+    tot, todo = sum(lens), sum(lens) * prog
+    last, ang = pts[0], 0
+    for (a, b), l in zip(segs, lens):
+        if todo <= 0:
+            break
+        f = min(todo / l, 1)
+        e = (a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f)
+        d.line([P(*a), P(*e)], fill=color + (255,), width=width * ss)
+        d.ellipse([P(a[0] - width / 2, a[1] - width / 2), P(a[0] + width / 2, a[1] + width / 2)], fill=color + (255,))
+        ang = math.atan2(b[1] - a[1], b[0] - a[0])
+        last, todo = e, todo - l
+    if prog > 0.05:
+        x, y = last
+        h = head
+        p1 = (x + h * math.cos(ang), y + h * math.sin(ang))
+        p2 = (x + h * 0.9 * math.cos(ang + 2.5), y + h * 0.9 * math.sin(ang + 2.5))
+        p3 = (x + h * 0.9 * math.cos(ang - 2.5), y + h * 0.9 * math.sin(ang - 2.5))
+        d.polygon([P(*p1), P(*p2), P(*p3)], fill=accent + (255,))
+
+
+def dot(d, P, ss, x, y, r, s=1.0, color=ORANGE):
+    """Puntino arancio con bordo bianco (s = scala del pop)."""
+    if s <= 0:
+        return
+    R_ = (r + 5) * s
+    d.ellipse([P(x - R_, y - R_), P(x + R_, y + R_)], fill=(255, 255, 255, 255))
+    R_ = r * s
+    d.ellipse([P(x - R_, y - R_), P(x + R_, y + R_)], fill=color + (255,))
+
+
+def xmark(d, P, ss, x, y, r, prog, color=(230, 40, 40), width=16):
+    for k_, (a, b) in enumerate((((-1, -1), (1, 1)), ((1, -1), (-1, 1)))):
+        f = min(max(prog * 2 - k_, 0), 1)
+        if f <= 0:
+            continue
+        p0 = (x + a[0] * r, y + a[1] * r)
+        p1 = (p0[0] + (b[0] - a[0]) * r * f, p0[1] + (b[1] - a[1]) * r * f)
+        d.line([P(*p0), P(*p1)], fill=color + (255,), width=width * ss)
+
+
+def placeholder(label):
+    """Fermo d'attesa per le riprese ancora da registrare (solo anteprima)."""
+    img = label_img(label, (60, 60, 60), size=40)
+
+    def fn(im, t):
+        put(im, img, 540, 900)
+    return fn
