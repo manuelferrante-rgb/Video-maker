@@ -16,7 +16,7 @@ S = "/home/user/Video-maker/src_20nov"
 P = "/home/user/Video-maker/src_parlato20/IMG_9209.MOV"
 TRJ = {P: "/home/user/Video-maker/src_parlato20/tr9209.json"}
 OUT = "/home/user/Video-maker/out/trazioni_30s"
-YS = 1200
+YS = 1290
 
 # parlato di Manuel (IMG_9209, 20/11 sera): frasi sue, tagliate di tutte le pause; "Intanto guardo i suoi video e
 # correggo" non e' stata registrata -> tolta. Settimana 1 senza "da qui"; settimana 4 senza "tornando a quello che
@@ -34,8 +34,10 @@ PIECES = [
     (P, 133.12, 134.27, "Poi parte il blocco dopo."),
     (P, 135.98, 139.63, "Vuoi il mio protocollo / per le trazioni? | Scrivimi TRAZIONI / e te lo mando subito."),
 ]
-VOICE, TOTAL = vo.layout(PIECES)
-T = [x[0] for x in VOICE] + [TOTAL]
+SPV = 1.15  # Manuel: "un po' lento" -> 1,15x (e pause/respiri tolti anche dentro le frasi)
+VOICE, TOTAL = vo.layout(PIECES, sp=SPV)
+G = vo.groups(VOICE)
+T = [g[0] for g in G] + [TOTAL]
 T_PRIMO, T_W1, T_W2, T_W3, T_W4, T_POI, T_CTA = T[1], T[2], T[4], T[5], T[6], T[8], T[9]
 WK = [T_W1, T_W2, T_W3, T_W4, T_POI]
 
@@ -44,23 +46,22 @@ def blur_dark(r=16, b=0.5):
     return lambda fr, t: ImageEnhance.Brightness(fr.filter(ImageFilter.GaussianBlur(r))).enhance(b)
 
 
-def cam(t0, t1, ss, z0=1.0, z1=1.06):
-    return dict(t0=t0, t1=t1, src=P, ss=ss, z0=z0, z1=z1, c=(540, 820))
+def cam(i, t1, z0=1.0, z1=1.06):
+    return vo.cam_shots(G[i], t1, sp=SPV, z0=z0, z1=z1, c=(540, 820))
 
 
 def shots(v):
-    h = (cam(0, T_PRIMO, VOICE[0][2]) if v == "A" else
-         dict(t0=0, t1=T_PRIMO, src=f"{S}/IMG_5418.MOV", ss=5.6, z0=1.0, z1=1.06, c=(560, 700)))
+    h = (cam(0, T_PRIMO) if v == "A" else
+         [dict(t0=0, t1=T_PRIMO, src=f"{S}/IMG_5418.MOV", ss=5.6, z0=1.0, z1=1.06, c=(560, 700))])
     w1m = T[3]
-    return [h,
-            cam(T_PRIMO, T_W1, VOICE[1][2], 1.04, 1.12),
+    return h + cam(1, T_W1, 1.04, 1.12) + [
             dict(t0=T_W1, t1=w1m, src=f"{S}/IMG_5415.MOV", ss=1.0, z0=1.0, z1=1.07, c=(600, 800)),
             dict(t0=w1m, t1=T_W2, src=f"{S}/IMG_5416b.mov", ss=1.3, z0=1.08, z1=1.0, c=(600, 800)),
             dict(t0=T_W2, t1=T_W3, src=f"{S}/IMG_5416.MOV", ss=2.6, z0=1.0, z1=1.08, c=(600, 800)),
             dict(t0=T_W3, t1=T_W4, src=f"{S}/tg_9mb.mp4", ss=14.0, z0=1.2, z1=1.28, c=(470, 900)),
             dict(t0=T_W4, t1=T_POI, src=f"{S}/tg42.mp4", ss=18.5, z0=1.25, z1=1.32, c=(400, 760)),
-            dict(t0=T_POI, t1=T_CTA, src=f"{S}/IMG_9172.mov", ss=0.6, z0=1.0, z1=1.05, c=(540, 1200)),
-            cam(T_CTA, TOTAL, VOICE[9][2], 1.0, 1.08)]
+            dict(t0=T_POI, t1=T_CTA, src=f"{S}/IMG_9172.mov", ss=0.6, z0=1.0, z1=1.05, c=(540, 1200))] + \
+        cam(9, TOTAL, 1.0, 1.08)
 
 
 # ------------------------------------------------------------------ cronometro (00:00 -> 00:30)
@@ -68,9 +69,9 @@ def timer(im, t):
     sec = min(int(t), 30) if t < TOTAL - 0.25 else 30
     s = f"00:{sec:02d}"
     if s not in timer.cache:
-        timer.cache[s] = k.timer_img(s, dh=92)
+        timer.cache[s] = k.timer_img(s, dh=86)
     img = timer.cache[s]
-    k.put(im, img, 1045 - img.width / 2, 1525, k.pop(t / 0.25) if t < 0.25 else 1)
+    k.put(im, img, 540, 1505)  # Manuel: centrato, visibile, nella zona sicura (sotto, sopra i pulsanti)
 timer.cache = {}
 
 
@@ -162,14 +163,13 @@ def title_open(v):
 
 
 def layers(v):
-    pages = vo.kara_pages(VOICE, TRJ)
-    pages[0] = [("", 0.0)]  # il gancio e' gia' scritto nel titolo: un solo testo nel primo secondo
-    return [title_open(v), card, num_layer(),
-            k.popped(lambda: k.label_img('COMMENTA "TRAZIONI"', k.ORANGE, size=62), T[9] + 1.6, TOTAL, 540, 1030),
-            vo.kara_layer(pages, y=YS, size=68, end=TOTAL), timer]
+    pages = vo.kara_pages(VOICE, TRJ, sp=SPV)  # sottotitoli sempre, anche nel gancio (al posto del titolo)
+    return [card, num_layer(),
+            k.popped(lambda: k.label_img('COMMENTA "TRAZIONI"', k.ORANGE, size=62), T[9] + 1.6, TOTAL, 540, 1060),
+            vo.kara_layer(pages, y=YS, size=68, end=TOTAL, first_from=0.0), timer]
 
 
-SFX = [(0.0, "tick", 0.3), (TOTAL - 0.25, "tick", 0.35), (WK[0], "comparsa", 0.2),
+SFX = [(WK[0], "comparsa", 0.2),  # niente tick all'inizio e alla fine (Manuel: effetto "horror")
        (WK[0] + 0.45, "pop", 0.3), (WK[1], "pop", 0.3), (WK[1] + 0.45, "pop", 0.3), (WK[2], "pop", 0.3),
        (WK[2] + 0.45, "whoosh", 0.3), (WK[2] - 0.15, "trascina", 0.15), (WK[3], "pop", 0.3),
        (WK[3] + 0.45, "hit", 0.25), (T[9] + 1.6, "pop", 0.3)]
@@ -179,5 +179,5 @@ if __name__ == "__main__":
                                          [T_PRIMO, T_W1, T_W2, T_W3, T_W4, T_POI, T_CTA, TOTAL])})
     for v in sys.argv[1:] or ["A", "B"]:
         out = f"{OUT}/trazioni_30s_{v}.mp4"
-        k.build(out, round(TOTAL, 3), shots(v), layers(v), SFX, [x[:4] for x in VOICE])
+        k.build(out, round(TOTAL, 3), shots(v), layers(v), SFX, [x[:4] for x in VOICE], voice_sp=SPV)
         k.sheet(out, f"{OUT}/sheet_{v}.jpg", n=40, cols=10)

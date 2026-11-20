@@ -266,9 +266,10 @@ def load(path, sr=48000):
     return np.frombuffer(raw, np.float32).reshape(-1, 2)
 
 
-def voice_piece(path, a, b, sr=48000):
+def voice_piece(path, a, b, sr=48000, sp=None):
+    sp = sp or SP
     raw = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{a}", "-t", f"{b - a}", "-i", path, "-map", "0:a:0",
-                          "-af", f"atempo={SP},afade=t=in:d=0.02,areverse,afade=t=in:d=0.04,areverse",
+                          "-af", f"highpass=f=80,atempo={sp},afade=t=in:d=0.012,areverse,afade=t=in:d=0.025,areverse",
                           "-ac", "2", "-ar", str(sr), "-f", "f32le", "-"], capture_output=True, check=True).stdout
     return np.frombuffer(raw, np.float32).reshape(-1, 2)
 
@@ -280,7 +281,7 @@ def lufs(path):
 
 
 # ------------------------------------------------------------------ build
-def build(out, total, shots, layers, sfx=(), voice=(), sfx_target=-20.0, cut_swoosh=0.05):
+def build(out, total, shots, layers, sfx=(), voice=(), sfx_target=-20.0, cut_swoosh=0.05, voice_sp=None):
     os.makedirs(os.path.dirname(out), exist_ok=True)
     N = round(total * FPS)
     tmpv = out.replace(".mp4", "_v.mp4")
@@ -317,12 +318,22 @@ def build(out, total, shots, layers, sfx=(), voice=(), sfx_target=-20.0, cut_swo
     sr = 48000
     L = int((total + 1) * sr)
     vo = np.zeros((L, 2), np.float32)
+    # ogni pezzo portato allo stesso livello (RMS dei tratti di voce), cosi' le frasi da take diverse non saltano
     for t0, path, a, b in voice:
-        x = voice_piece(path, a, b)
+        x = voice_piece(path, a, b, sp=voice_sp).copy()
+        m = np.abs(x).mean(axis=1)
+        hop = sr // 100
+        n = len(m) // hop
+        if n:
+            blk = np.sqrt((m[:n * hop].reshape(n, hop) ** 2).mean(axis=1))
+            act = blk[blk > blk.max() * 0.18]
+            if len(act):
+                g = 0.1 / max(np.sqrt((act ** 2).mean()), 1e-5)
+                x *= min(max(g, 0.35), 3.0)
         i0 = int(t0 * sr); i1 = min(i0 + len(x), L)
         vo[i0:i1] += x[:i1 - i0]
     fx = np.zeros((L, 2), np.float32)
-    allsfx = list(sfx) + [(s["t0"] - 0.05, "swoosh", cut_swoosh) for s in shots[1:] if cut_swoosh]
+    allsfx = list(sfx) + [(s["t0"] - 0.05, "swoosh", cut_swoosh) for s in shots[1:] if cut_swoosh and not s.get("nosw")]
     for t0, nm, vol in allsfx:
         x = load(f"{SFXD}/{nm}.wav")
         i0 = max(int(t0 * sr), 0); i1 = min(i0 + len(x), L)
@@ -350,7 +361,8 @@ def build(out, total, shots, layers, sfx=(), voice=(), sfx_target=-20.0, cut_swo
     target = -14.0 if len(voice) else None
     gain = 0.0
     for it in range(3):
-        af = f"volume={gain:.2f}dB,alimiter=limit=0.89:attack=4:release=60:level=disabled"
+        comp = "acompressor=threshold=0.1:ratio=3:attack=8:release=120:makeup=1," if len(voice) else ""
+        af = f"{comp}volume={gain:.2f}dB,alimiter=limit=0.89:attack=4:release=60:level=disabled"
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmpv, "-f", "f32le", "-ar", str(sr), "-ac", "2",
                         "-i", raw, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-af", af, "-c:a", "aac",
                         "-b:a", "192k", "-shortest", "-movflags", "+faststart", out], check=True)

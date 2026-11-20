@@ -424,3 +424,10 @@ antialias `aa`, X rossa, sottotitoli `subs`, voce opzionale a 1,1x e -14 LUFS, s
   brief). Trazioni 29,8 s (tolti "da qui", "tornando a quello che avevamo deciso", "magari manteniamoci su tre"; la
   frase "intanto guardo i video" non c'e'); panca 14,1-14,5 s con chiusura "E tu dove l'appoggi? Scrivimelo nei
   commenti". tl_kit: loudness ora con limiter + correzione misurata (prima i picchi abbassavano tutto a -19).
+- Correzioni di Manuel (20/11 sera), valgono sempre: niente eco nei ganci (pezzi tagliati nello stesso punto non
+  devono sovrapporsi: `fix_a`/`fix_b`); SOTTOTITOLI SEMPRE, anche nel gancio (chi guarda muto e' chi salta); volume
+  uguale per ogni frase (RMS per pezzo + compressore leggero) e niente respiri/pause neanche dentro le frasi
+  (`vo.split_gaps`, soglia sul rumore di fondo locale; in camera jump cut a tempo con `vo.cam_shots`); niente effetti
+  "da film horror" all'inizio (tolti tick e hit sul primo fotogramma); cronometro centrato (in basso, y ~1505, sopra i
+  pulsanti), ben visibile. Trazioni a 1,15x (era "un po' lento"): 25,3 s. Panca B: la penna scrive dall'inizio alla
+  fine mentre dice "il bilanciere lo appoggio qui" (IMG_9213 8.7-9.9 adattato alla frase), voce di IMG_9210.

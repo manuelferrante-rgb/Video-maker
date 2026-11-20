@@ -20,8 +20,12 @@ OUT = "/home/user/Video-maker/out/panca_palmo"
 NEW = "/home/user/Video-maker/src_parlato20/IMG_9213.MOV"  # linea corretta disegnata sul palmo (8.8-9.9)
 BENCH, HAND, WHITE_B = f"{S}/IMG_5153.MOV", f"{S}/IMG_9153.MOV", f"{S}/IMG_9189.MOV"
 
-HOOK = {"A": [(P, 37.32, 38.88, "Spingo 150 kg di panca,"), (P, 38.88, 40.45, "il bilanciere lo appoggio qui.")],
-        "B": [(P, 42.02, 43.27, "Il bilanciere lo appoggio qui"), (P, 43.27, 44.6, "e spingo 150 kg.")]}
+# i due pezzi del gancio sono tagliati nello stesso punto (fix_b / fix_a): prima si sovrapponevano -> eco
+HOOK = {"A": [(P, 37.32, 38.88, "Spingo 150 kg di panca,", "fix_b"),
+              (P, 38.88, 40.45, "il bilanciere lo appoggio qui.", "fix_a")],
+        "B": [(P, 42.02, 43.27, "Il bilanciere lo appoggio qui", "fix_b"),
+              (P, 43.27, 44.6, "e spingo 150 kg.", "fix_a")]}
+PEN = (8.7, 9.9)  # IMG_9213: la penna tocca il palmo / la linea e' finita
 BODY = [(P, 98.95, 100.75, "Appoggialo tra l'anulare / e il pollice."),
         (P, 196.6, 198.75, "Così scaricherai meglio / il peso sulla mano."),
         (P, 200.05, 203.0, "Di conseguenza l'avambraccio | rimarrà perpendicolare / al terreno."),
@@ -42,22 +46,20 @@ def blur_dark(r=18, b=0.42):
 
 def plan(v):
     voice, total = vo.layout(HOOK[v] + BODY)
-    T = [x[0] for x in voice] + [total]  # inizio di ogni pezzo
+    G = vo.groups(voice)
+    T = [g[0] for g in G] + [total]  # inizio di ogni frase
     h1, h2, anul, cosi, dicons, evit, etu, scriv, end = T
     rep = lambda t0, t1: dict(t0=t0, t1=t1, src=BENCH, ss=0.9, z0=1.85, z1=1.95, c=(450, 1100))
-    if v == "A":
-        opening = [rep(0, h2),
-                   dict(t0=h2, t1=anul, src=NEW, ss=8.65, z0=1.0, z1=1.08, c=(540, 900))]  # disegna la linea
-    else:
-        opening = [dict(t0=0, t1=h2, src=NEW, ss=9.95, live=0.0, z0=1.0, z1=1.08, c=(540, 900)),  # linea gia' fatta
-                   rep(h2, anul)]
+    # la penna scrive dall'inizio alla fine esattamente mentre dice "il bilanciere lo appoggio qui"
+    pen = lambda t0, t1: dict(t0=t0, t1=t1, src=NEW, ss=PEN[0], sp=(PEN[1] - PEN[0]) / (t1 - t0), z0=1.0,
+                              z1=1.08, c=(540, 900))
+    opening = [rep(0, h2), pen(h2, anul)] if v == "A" else [pen(0, h2), rep(h2, anul)]
     shots = opening + [
         dict(t0=anul, t1=cosi, src=HAND, ss=7.95, live=0.25, z0=2.7, z1=3.0, c=HC),          # puntini e linea
         dict(t0=cosi, t1=evit, src=HAND, ss=3.6, sp=0.77, live=dicons - cosi, z0=1.32, z1=1.5, c=(300, 1060)),
         dict(t0=evit, t1=etu, src=WHITE_B, ss=3.0, pre=blur_dark()),                            # animazione
-        dict(t0=etu, t1=scriv, src=P, ss=voice[6][2], z0=1.0, z1=1.04, c=(540, 900)),          # in camera
-        dict(t0=scriv, t1=end, src=P, ss=voice[7][2], z0=1.06, z1=1.1, c=(540, 900)),
-    ]
+    ] + vo.cam_shots(G[6], scriv, z0=1.0, z1=1.04, c=(540, 900)) + \
+        vo.cam_shots(G[7], end, z0=1.06, z1=1.1, c=(540, 900))
     return voice, shots, dict(h2=h2, anul=anul, cosi=cosi, dicons=dicons, evit=evit, etu=etu, end=end)
 
 
@@ -143,9 +145,8 @@ def wrist_anim(t0, t1):
 def build(v):
     voice, shots, m = plan(v)
     pages = vo.kara_pages(voice, TRJ)
-    # pagina del 150 kg: un solo testo grande (150 KG), niente sottotitolo
-    i150 = 0 if v == "A" else 1
-    pages_vis = [p if i != i150 else [("", p[0][1])] for i, p in enumerate(pages)]
+    # Manuel: sottotitoli SEMPRE, anche nel gancio (chi guarda senza volume e' quello che salta)
+    pages_vis = pages
     sh = {s["t0"]: s for s in shots}
     big150 = lambda: k.text_img("*150* *KG*", size=150, stroke=9)
     L = []
@@ -159,12 +160,12 @@ def build(v):
           k.popped(lambda: k.label_img("PERPENDICOLARE", k.ORANGE, size=60), m["dicons"] + 0.5, m["evit"], 540, 330),
           wrist_anim(m["evit"], m["etu"]),
           vo.kara_layer(pages_vis, y=1450, size=74, end=m["end"],
-                        first_from=0.0 if v == "B" else None)]
+                        first_from=0.0)]
     sfx = [(m["anul"] + 0.12, "pop", 0.35), (m["anul"] + 0.27, "pop", 0.35), (m["anul"] + 0.45, "disegno", 0.3),
            (m["anul"] + 0.3, "comparsa", 0.15), (m["dicons"] + 0.1, "disegno", 0.25),
            (m["dicons"] + 0.5, "pop", 0.25), (m["evit"], "disegno", 0.22), (m["evit"] + 0.25, "pop", 0.3),
            (m["evit"] + 0.45, "trascina", 0.18), (m["evit"] + 1.0, "hit", 0.2), (m["evit"] + 2.0, "whoosh", 0.18)]
-    sfx += [(0.0, "hit", 0.18)] if v == "A" else [(m["h2"], "hit", 0.18)]
+    sfx += [] if v == "A" else [(m["h2"], "hit", 0.15)]  # niente effetti sul primo fotogramma
     out = f"{OUT}/panca_palmo_{v}.mp4"
     k.build(out, round(m["end"], 3), shots, L, sfx, [x[:4] for x in voice])
     k.sheet(out, f"{OUT}/sheet_{v}.jpg", n=30, cols=10)
