@@ -410,7 +410,9 @@ antialias `aa`, X rossa, sottotitoli `subs`, voce opzionale a 1,1x e -14 LUFS, s
   cronometro in questo reel; tolto "3 ore in palestra non sono dedizione"; "seduta di forza" -> "un allenamento" (piu'
   generico). A = "Allenarti non ti ruba tempo. Lo perdi tu."; B = "Un allenamento si chiude in 60-90 minuti." (nel B il
   blocco centrale e' "Riscaldamento mirato, recuperi solo quanto serve"). Domanda finale "E il tuo? Sopra o sotto i 90
-  minuti?". Testi a y ~1420 (a 760 coprivano la faccia). Consegnato.
+  minuti?". Consegnato. 2a correzione (20/11): UNA sola versione (A), testi PROPRIO al centro (y 960) anche se in buca
+  passano sulla faccia, nessuna animazione (il testo entra e basta), ogni testo e' un blocco unico (la lista dei 3
+  motivi entra tutta insieme), niente riquadro "60-90 MIN", niente sfx (audio muto).
 - Reel 2 panca (`panca_palmo.py`) e reel 1 trazioni in 30 s (`trazioni_30s.py`): montati come ANTEPRIMA, perche' il
   parlato non e' ancora registrato (le frasi sono nel brief): sottotitoli sui tempi del piano e segnaposto "MANUEL IN
   CAMERA: DA REGISTRARE". Quando arriva la voce: riempire VOICE [(t_reel, file, da, a)] e ritarare PAGES/tempi.

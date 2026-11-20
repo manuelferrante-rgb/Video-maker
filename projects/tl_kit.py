@@ -338,6 +338,8 @@ def build(out, total, shots, layers, sfx=(), voice=(), sfx_target=-20.0, cut_swo
         g = -14 - lufs(base + "_vo.wav")
         vo *= 10 ** (g / 20)
         mixa = vo + fx
+    elif not np.any(fx):  # reel muto senza effetti: traccia silenziosa (la musica la mette Manuel)
+        mixa = fx
     else:  # reel muto: solo sfx leggeri, livello basso (la musica la mette Manuel)
         wav(base + "_fx.wav", fx)
         g = sfx_target - lufs(base + "_fx.wav")
@@ -351,7 +353,7 @@ def build(out, total, shots, layers, sfx=(), voice=(), sfx_target=-20.0, cut_swo
     for f_ in (tmpv, base + "_vo.wav", base + "_fx.wav", base + "_mix.wav"):
         if os.path.exists(f_):
             os.remove(f_)
-    print(out, "durata", total, "LUFS", round(lufs(out), 1))
+    print(out, "durata", total, "LUFS", lufs(out) if np.any(mixa) else "silenzio")
 
 
 def sheet(video, out, n=24, cols=8):
