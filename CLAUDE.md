@@ -366,3 +366,10 @@ Rimontaggio Elisabetta (9 s, brief 9c, insight dopo ~5 ore, 20/11 15:50): A prim
 media 4 s su 9, 0 follow. B metodo prima ("Tu l'obiettivo, io il percorso"): 180 views, salti 63,4%, media 3 s,
 3 commenti (uno di Elisabetta), 0 follow. Montaggio migliore non basta: il limite e' l'argomento (fiducia/metodo,
 0->10 kg). Chiuso il tema: si passa a "Settimana 3: zero zavorra", panca linea sul palmo, reel solo testo sul tempo.
+
+## Riferimento "in meno di 60 secondi" (mandato da Manuel 20/11, creator di marketing, 60 s)
+Una sola ripresa in camera, sfondo neutro; in alto per 2 s il titolo-promessa ("COME ACQUISIRE CLIENTI SU INSTAGRAM IN
+MENO DI 60 SECONDI"); in basso un grande cronometro rosso a cifre digitali che conta i secondi per tutto il video;
+sottotitoli piccoli di 2-3 parole; nessun B-roll; finisce a 59 s. La tensione la crea il timer ("ce la fa?") e la
+promessa precisa. Uso per Manuel: format "Il metodo in 30 secondi" (brief sez. 10): il coaching mostrato come
+procedimento concreto, non come tema astratto. Da testare in trial contro il format "Due atleti, una scelta".

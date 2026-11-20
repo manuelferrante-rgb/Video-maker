@@ -401,3 +401,22 @@ riusciva a fare una trazione. Oggi la fa con 10 kg." con il riquadro PRIMA; dal 
 ripetere la frase dell'obiettivo).
 Solo 2 versioni. Copertina: DA 0 A +10 KG / IL PERCORSO LO DECIDO IO. Caption di ieri, ma prima riga: "Da zero
 trazioni a +10 kg. Non è stata la scheda perfetta: è stato smettere di controllarla."
+
+## 10. Format nuovo da testare: "Il metodo in 30 secondi" (dal riferimento col cronometro, 20/11)
+Perché: il coaching come tema astratto è fallito (Elisabetta 53-72%); qui il coaching diventa un procedimento concreto
+con numeri veri, e il cronometro dà un motivo per restare fino alla fine. Rischio: Manuel in camera come primo
+fotogramma ha già fatto male (tacco 51-69%): per questo il test A/B è proprio sul primo fotogramma.
+Titolo: "UN MESE DI TRAZIONI ZAVORRATE IN 30 SECONDI". Cronometro rosso digitale grande in basso (sopra la zona dei
+pulsanti, dentro la zona sicura), che parte da 00:00 al primo fotogramma e finisce a 00:30 sull'ultima parola.
+Dati veri dalla scheda di Elisabetta (chin up): sett.1 4 serie RPE8 +2,5 kg; sett.2 3 serie RPE9 +3,75 kg; sett.3
+5 serie RPE7 0 kg; sett.4 2 x massimale +6,25 kg. DA CONFERMARE con Manuel: lettura della scheda, perché lo scarico.
+Script (~85 parole a 1,1x, una sola ripresa o tagli a vista senza pause):
+"Un mese di trazioni zavorrate. In 30 secondi. / Primo: l'obiettivo in kg lo scegli tu. / Settimana 1: quattro serie a
+RPE 8, pesante ma con due ripetizioni in tasca. / Settimana 2: meno serie, più carico, RPE 9. / Settimana 3: tolgo la
+zavorra. Cinque serie leggere: [perché di Manuel]. / Settimana 4: massimale. E il numero esce. / Poi riguardo i video
+e parte il blocco dopo. / Tu come programmi le trazioni? Scrivimelo."
+Durante le settimane: la riga della scheda che si evidenzia in un riquadro piccolo in alto (non a tutto schermo).
+- A: Manuel in camera dal primo fotogramma, come il riferimento (titolo + cronometro).
+- B: primo fotogramma Elisabetta che chiude una trazione col disco, titolo + cronometro; Manuel in camera da 2,5 s.
+Caption: prima riga "Quattro settimane, un solo obiettivo in kg." -> le 4 settimane spiegate -> domanda -> "Ogni
+settimana un pezzo del mio metodo. Seguimi per non perdere le prossime."
