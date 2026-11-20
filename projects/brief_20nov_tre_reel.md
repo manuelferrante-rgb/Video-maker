@@ -69,7 +69,7 @@ primo piano della mano col bilanciere (se manca, la mano si ricava dal video in 
 | 1,5-3 | stacco secco sul primo piano della mano sul bilanciere | E il bilanciere lo appoggio qui. | due puntini arancio che poppano (pop pop) sul palmo |
 | 3-5,5 | stessa mano, ingrandita | Dal punto tra pollice e indice fino a dove si incrociano le linee della mano. | linea arancio che si disegna tra i due puntini (suono "disegno"); titolo QUI IL BILANCIERE |
 | 5,5-8,5 | Manuel che si sistema, presa che si chiude | Così il peso scende dritto sull'avambraccio e il polso resta in linea. | freccia sottile verticale bilanciere -> polso -> avambraccio; scritta IN LINEA |
-| 8,5-11,5 | animazione semplice (tua): mano stilizzata col bilanciere verso le dita, polso che si piega, X rossa | Verso le dita il polso si piega e la spinta si disperde. | X con suono leggero; (frase DA CONFERMARE con Manuel) |
+| 8,5-11,5 | animazione semplice (tua): mano stilizzata col bilanciere verso le dita, polso che si piega, X rossa | Verso le dita il polso si piega e la spinta si disperde. | X con suono leggero (confermato da Manuel) |
 | 11,5-13,5 | Manuel in camera | Tu dove lo appoggi? Scrivimi dita o palmo. | |
 | 13,5-14,5 | stacco sulla ripetizione da 150 kg | Per questo... (-> riparte "Spingo 150 kg") | |
 B (stesso resto): primo fotogramma = primo piano della mano con i puntini già accesi. "Il bilanciere lo appoggio qui.
@@ -81,12 +81,11 @@ Caption:
     Traccia una linea dal punto tra pollice e indice fino a dove si incrociano le linee della mano: il bilanciere va lì.
     Il peso scende dritto sull'avambraccio e il polso resta in linea.
 
-    È la prima cosa che sistemo nella panca dei miei atleti, prima ancora dei gomiti.
+    È una delle cose che sistemo nella panca dei miei atleti.
 
     Tu dove lo appoggi? Scrivimi "dita" o "palmo" 👇
 
     Ogni settimana una scelta tecnica dei miei atleti, e il perché. Seguimi per non perdere le prossime.
-(La frase "prima ancora dei gomiti" va confermata da Manuel.)
 
 ====================================================================================================
 ## REEL 3 - IL TEMPO IN PALESTRA (12-14 s, testo + squat di Manuel)

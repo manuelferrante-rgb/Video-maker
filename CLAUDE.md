@@ -373,5 +373,13 @@ MENO DI 60 SECONDI"); in basso un grande cronometro rosso a cifre digitali che c
 sottotitoli piccoli di 2-3 parole; nessun B-roll; finisce a 59 s. La tensione la crea il timer ("ce la fa?") e la
 promessa precisa. Uso per Manuel: format "Il metodo in 30 secondi" (brief sez. 10): il coaching mostrato come
 procedimento concreto, non come tema astratto. Da testare in trial contro il format "Due atleti, una scelta".
+CONTENUTO del riferimento (quello che Manuel voleva far studiare, 20/11): non inseguire views e follower ma diventare
+un riferimento per il potenziale cliente prima della vendita; i contenuti da soli non bastano: servono FLUSSI DI
+ACQUISIZIONE che aprono chat ogni settimana con persone in target; farsi ricordare e riconoscere (dettagli); relazione
+di fiducia, il motore e' l'allineamento sui valori; non fare il supereroe; cucire la comunicazione sul potenziale
+cliente; ignorare i consigli decontestualizzati. Applicazione per Manuel: commenti a due risposte -> risposta con
+domanda personale -> DM (gia' visto col tacco); parola chiave nei commenti per ricevere un protocollo (il protocollo
+trazioni dato a 3 persone ha portato 1 cliente da 290 EUR); obiettivo di N conversazioni in target a settimana;
+format, copertina, musica e frase ricorrenti ("Li alleno tutti e due") per essere riconoscibile.
 Tre reel del 20/11 (metodo in 30 secondi con cronometro, panca linea sul palmo 150 kg, tempo in palestra):
 `projects/brief_20nov_tre_reel.md`. Scarico = settimana di volume qualitativo a bassa intensità (Manuel).
