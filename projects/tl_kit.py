@@ -344,13 +344,23 @@ def build(out, total, shots, layers, sfx=(), voice=(), sfx_target=-20.0, cut_swo
         wav(base + "_fx.wav", fx)
         g = sfx_target - lufs(base + "_fx.wav")
         mixa = fx * 10 ** (g / 20)
-    peak = np.abs(mixa).max()
-    if peak > 0.89:
-        mixa *= 0.89 / peak
-    wav(base + "_mix.wav", mixa)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmpv, "-i", base + "_mix.wav", "-c:v", "copy", "-c:a", "aac",
-                    "-b:a", "192k", "-shortest", "-movflags", "+faststart", out], check=True)
-    for f_ in (tmpv, base + "_vo.wav", base + "_fx.wav", base + "_mix.wav"):
+    # niente riduzione sul picco (abbassava tutto): limiter in uscita e correzione misurata fino a -14 LUFS
+    raw = base + "_mix.f32"
+    mixa[:int(total * sr)].astype(np.float32).tofile(raw)
+    target = -14.0 if len(voice) else None
+    gain = 0.0
+    for it in range(3):
+        af = f"volume={gain:.2f}dB,alimiter=limit=0.89:attack=4:release=60:level=disabled"
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmpv, "-f", "f32le", "-ar", str(sr), "-ac", "2",
+                        "-i", raw, "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-af", af, "-c:a", "aac",
+                        "-b:a", "192k", "-shortest", "-movflags", "+faststart", out], check=True)
+        if target is None or not np.any(mixa):
+            break
+        li = lufs(out)
+        if abs(li - target) < 0.3:
+            break
+        gain += target - li
+    for f_ in (tmpv, base + "_vo.wav", base + "_fx.wav", base + "_mix.wav", base + "_mix.f32"):
         if os.path.exists(f_):
             os.remove(f_)
     print(out, "durata", total, "LUFS", lufs(out) if np.any(mixa) else "silenzio")

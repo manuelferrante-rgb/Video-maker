@@ -76,3 +76,7 @@ Drive parlati, scaricati in `src_20nov/` (nessun parlato nei file: tutti B-roll 
 | tg_9mb (Elisabetta, palestra arancio, a corpo libero) | 47 s | sett.3 14.0-18.5 |
 | tg42 (nuovo, Elisabetta con disco, palestra con anelli) | 42 s | sett.4 18.5-22.5 |
 | IMG_9172 (Manuel al computer) | 4,1 s | 0.05-4.05 |
+- Parlati 20/11 sera (`src_parlato20/`): IMG_9209 (trazioni: gancio 6.78-9.6, primo 26.3, sett. 40.4-49, 55.7-61,
+  80.3-84.3, 94.5-95.3 + 96.9-100.5, poi 133.1, CTA 136-139.6); IMG_9210 (panca: ganci 37.3-40.4 / 42.0-44.6, anulare
+  99-100.8, cosi' 196.6, di conseguenza 200, eviterai 217.8, e tu 222.5, scrivimelo 230.5); IMG_9213 (linea sul palmo
+  8.65-10.0, fermo 9.95). Nel reel trazioni 5416b 1.3-4.2 per la seconda meta' della settimana 1.

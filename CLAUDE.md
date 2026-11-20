@@ -417,3 +417,10 @@ antialias `aa`, X rossa, sottotitoli `subs`, voce opzionale a 1,1x e -14 LUFS, s
   parlato non e' ancora registrato (le frasi sono nel brief): sottotitoli sui tempi del piano e segnaposto "MANUEL IN
   CAMERA: DA REGISTRARE". Quando arriva la voce: riempire VOICE [(t_reel, file, da, a)] e ritarare PAGES/tempi.
   Puntini sul palmo agganciati al fotogramma 8.25 di IMG_9153 (P_WEB 308,926 / P_CROSS 210,952).
+- 20/11 sera: arrivati i parlati (Drive parlati, in `src_parlato20/`): IMG_9209 trazioni, IMG_9210 panca, IMG_9213 la
+  linea corretta disegnata sul palmo (Manuel: "ho sbagliato linea, questa e' quella corretta", audio e testo uguali).
+  Trascrizione a blocchi: `projects/trascrivi_blocchi.py`; voce, tagli e karaoke: `projects/vo.py` (pezzi rifilati
+  sull'energia, `fix_a` per scegliere l'inizio a mano). Manuel ha detto le frasi a modo suo: si usano le sue (non il
+  brief). Trazioni 29,8 s (tolti "da qui", "tornando a quello che avevamo deciso", "magari manteniamoci su tre"; la
+  frase "intanto guardo i video" non c'e'); panca 14,1-14,5 s con chiusura "E tu dove l'appoggi? Scrivimelo nei
+  commenti". tl_kit: loudness ora con limiter + correzione misurata (prima i picchi abbassavano tutto a -19).
