@@ -383,3 +383,5 @@ trazioni dato a 3 persone ha portato 1 cliente da 290 EUR); obiettivo di N conve
 format, copertina, musica e frase ricorrenti ("Li alleno tutti e due") per essere riconoscibile.
 Tre reel del 20/11 (metodo in 30 secondi con cronometro, panca linea sul palmo 150 kg, tempo in palestra):
 `projects/brief_20nov_tre_reel.md`. Scarico = settimana di volume qualitativo a bassa intensità (Manuel).
+CTA per reel (Manuel 20/11): ogni reel ha o la domanda a due risposte o la parola chiave nei commenti; Manuel risponde e
+manda i protocolli a mano. Reel 1 = "Commenta TRAZIONI" (protocollo trazioni), reel 2 = dita/palmo, reel 3 = sopra/sotto 90 min.

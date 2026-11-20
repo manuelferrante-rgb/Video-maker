@@ -40,7 +40,7 @@ IMG_9172 (Manuel al computer che corregge un video).
 | 12,5-17 | ripetizioni senza disco (telegram 47 s se a corpo libero, altrimenti IMG_5415 tagliata senza disco visibile) | Settimana 3: tolgo la zavorra. Più volume, ma leggero e pulito: è lo scarico. | riga SETT. 3 in arancio; "0 KG" che scende con whoosh |
 | 17-21 | telegram 42 s nuovo (spinge forte) | Settimana 4: massimale. Ed è lì che il numero esce. | riga SETT. 4 (hit leggero); scritta MASSIMALE (niente kg: non è il video del massimale) |
 | 21-25 | IMG_9172 (Manuel al computer) | Intanto guardo i suoi video e correggo quello che non va. | |
-| 25-28,5 | Manuel in camera | E poi parte il blocco dopo. Tu come programmi le trazioni? Scrivimelo. | |
+| 25-28,5 | Manuel in camera | E poi parte il blocco dopo. Vuoi il mio protocollo trazioni? Commenta TRAZIONI e te lo mando. | scritta COMMENTA "TRAZIONI" |
 | 28,5-30 | stacco sul primo fotogramma | (cronometro si ferma a 00:30, tick finale) | |
 A e B: stessa durata, cambia solo 0-2,5 s.
 Copertina: UN MESE DI TRAZIONI / IN 30 SECONDI, fondo Elisabetta col disco.
@@ -52,7 +52,7 @@ Caption:
 
     È la programmazione di @[elisabetta], e cambia per ogni atleta in base all'obiettivo e a come risponde.
 
-    Tu come programmi le trazioni? Scrivimelo 👇
+    Vuoi il mio protocollo trazioni? Commenta "TRAZIONI" e te lo mando in privato 👇
 
     Ogni settimana un pezzo del mio metodo. Seguimi per non perdere le prossime.
 
@@ -114,8 +114,8 @@ Caption:
 Reel 1: "Un mese di trazioni zavorrate. In 30 secondi." / "Primo: l'obiettivo in kg lo scegli tu." / "Settimana 1:
 quattro serie a RPE 8. Pesante, ma con due ripetizioni in tasca." / "Settimana 2: meno serie, più carico. RPE 9." /
 "Settimana 3: tolgo la zavorra. Più volume, ma leggero e pulito: è lo scarico." / "Settimana 4: massimale. Ed è lì che
-il numero esce." / "Intanto guardo i suoi video e correggo quello che non va." / "E poi parte il blocco dopo. Tu come
-programmi le trazioni? Scrivimelo."
+il numero esce." / "Intanto guardo i suoi video e correggo quello che non va." / "E poi parte il blocco dopo. Vuoi il mio
+protocollo trazioni? Commenta TRAZIONI e te lo mando."
 Reel 2: "Spingo 150 kg di panca. E il bilanciere lo appoggio qui." / "Il bilanciere lo appoggio qui. E spingo 150 kg." /
 "Dal punto tra pollice e indice fino a dove si incrociano le linee della mano." / "Così il peso scende dritto
 sull'avambraccio e il polso resta in linea." / "Verso le dita il polso si piega e la spinta si disperde." / "Tu dove
