@@ -373,3 +373,5 @@ MENO DI 60 SECONDI"); in basso un grande cronometro rosso a cifre digitali che c
 sottotitoli piccoli di 2-3 parole; nessun B-roll; finisce a 59 s. La tensione la crea il timer ("ce la fa?") e la
 promessa precisa. Uso per Manuel: format "Il metodo in 30 secondi" (brief sez. 10): il coaching mostrato come
 procedimento concreto, non come tema astratto. Da testare in trial contro il format "Due atleti, una scelta".
+Tre reel del 20/11 (metodo in 30 secondi con cronometro, panca linea sul palmo 150 kg, tempo in palestra):
+`projects/brief_20nov_tre_reel.md`. Scarico = settimana di volume qualitativo a bassa intensità (Manuel).
