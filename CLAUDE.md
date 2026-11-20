@@ -360,3 +360,5 @@ quasi uguali lo stesso giorno (meglio massimo 2).
 Lezione: il coaching NON va messo come tema del reel. Si mette DENTRO il format che funziona (atleta + numero forte +
 scelta tecnica + "li alleno tutti e due"), nella caption e nelle risposte ai commenti (il tacco ha portato i DM cosi').
 Rifacimento: `projects/brief_editor_novembre.md`, sezione 9.
+Stato 20/11: le 4 versioni di Elisabetta sono ARCHIVIATE da Manuel (non cancellate). Nel pomeriggio: nuovo script per
+Elisabetta (es. "Settimana 3: zero zavorra", brief 9b) + panca linea sul palmo (8a) + reel solo testo sul tempo (8b).
