@@ -372,3 +372,32 @@ perché. Tema: una scelta di programmazione che sembra controintuitiva (contenut
 | 14-15 | scheda settimana 3 | Ecco perché... | |
 Caption: struttura del format; chiusura "È così che programmo le trazioni dei miei atleti: come lavoro lo trovi nel
 profilo."
+
+### 9c. Rimontaggio definitivo di Elisabetta con il solo materiale già caricato (20/11)
+Cartella Drive parlati 1QHzJwYsUyXiTqqHcIZhj9Rsb44N-_rtc:
+- IMG_9169.MOV (176 s): parlato di Manuel. Frasi utili: "Elisabetta non riusciva a fare una trazione. Oggi la fa con
+  10 kg." / "Tu scegli l'obiettivo. Il percorso lo decido io." / "La programmazione la decido io." / "E io correggo i
+  video." / "Lei pensa solo alla seduta di oggi." / "Controlli o ti fidi? Scrivilo nei commenti."
+  DA NON USARE: "Ti fidi della tua scheda?" (72%), "all'inizio no", "voleva sapere ogni numero", "si è affidata".
+- IMG_5415, IMG_5416, IMG_5416 (.mov, 4,7 s), IMG_5418: Elisabetta, trazioni zavorrate con disco (ripetizioni piene).
+- IMG_9172.mov (4 s): Manuel al computer che corregge un video.
+- telegram_video 47 s (id 1SzaTT...): Elisabetta in palestra arancione (vecchio). telegram_video 27 s (id 1EQNhe...):
+  Elisabetta al parco al tramonto, fa fatica (= PRIMA).
+- Scheda animata del montaggio di ieri (chin up, settimane 1-4).
+Versione A (prima/dopo), 12-13 s:
+| s | Cosa si vede | Voce | Testo |
+|---|---|---|---|
+| 0-1 | Elisabetta a tutto schermo, trazione con il disco (IMG_5416 .mov) | Elisabetta non riusciva | 10 KG (contatore 0 -> 10) |
+| 1-2 | entra in alto a sinistra il riquadro PRIMA (parco, fatica) | a fare una trazione. | PRIMA |
+| 2-3,5 | riquadro esce, trazione piena | Oggi la fa con 10 kg. | |
+| 3,5-6 | scheda animata, riga che si evidenzia | Tu scegli l'obiettivo, il percorso lo decido io. | TU L'OBIETTIVO / IO IL PERCORSO |
+| 6-8 | Manuel al computer (IMG_9172) | E io correggo i video. | |
+| 8-10 | altra trazione zavorrata (IMG_5418) | Lei pensa solo alla seduta di oggi. | |
+| 10-12,5 | Manuel in camera | Controlli o ti fidi? Scrivilo nei commenti. | |
+| 12,5 | stacco netto sul primo fotogramma (loop) | | |
+Versione B (metodo prima), stessa durata, cambia solo l'apertura: 0-2,5 s trazione zavorrata a tutto schermo + "Tu
+scegli l'obiettivo, il percorso lo decido io." (testo TU L'OBIETTIVO / IO IL PERCORSO), poi 2,5-5,5 s "Elisabetta non
+riusciva a fare una trazione. Oggi la fa con 10 kg." con il riquadro PRIMA; dal secondo 5,5 identica ad A (senza
+ripetere la frase dell'obiettivo).
+Solo 2 versioni. Copertina: DA 0 A +10 KG / IL PERCORSO LO DECIDO IO. Caption di ieri, ma prima riga: "Da zero
+trazioni a +10 kg. Non è stata la scheda perfetta: è stato smettere di controllarla."
