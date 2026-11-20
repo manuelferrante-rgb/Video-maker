@@ -324,3 +324,80 @@ La parola che Manuel sta dicendo diventa arancio, in concomitanza con la voce (s
 stessa pagina, pop solo sulla prima parola (`§` all'inizio del testo in reel_kit = niente pop). Esempio: `KARA` e
 `kara_pages()` in `projects/tacco_v2.py` (tempi parola = parakeet +0,2 s nel blocco). Sottotitoli anche nel gancio,
 dal primo fotogramma (molti guardano senza volume).
+
+## Rifacimento "Tacco o senza" (17/11/2026, insight dopo ~1 giorno) - PRIMO TRIAL SOTTO IL 35%
+Stesso corpo, 14 s, split screen Jasmin col tacco | Nicolo' senza, musica GTA bassa. Cambia solo il gancio:
+- A "Jasmin squatta 200 kg col tacco. Nicolo', senza." (etichette 200 KG | SENZA): 1.592 views, salti 30,1%, media 9 s
+  su 14, 18 like, 7 commenti, 2 salvataggi, 0 follow; 90% dalla tab Reels; 13-17 18%, 18-24 31%, 25-34 36%; Italia 97%.
+- B "Due miei atleti. Uno squatta col tacco..." (etichetta COL TACCO): 341 views, salti 38,0%, media 6 s, 0 follow.
+Rispetto alle 3 versioni del 16/11 (51-69% di salti, 22-23 s): alzate vere nel primo fotogramma, 14 s, risposta entro
+5 s ("decide la caviglia"), CTA binaria nei commenti (7 commenti).
+A batte B solo per il gancio: numero + nome dell'atleta + contrasto in una frase, scritti con 1 parola per lato.
+"Due miei atleti" senza numero = generico.
+FORMULA VINCENTE (format "Due atleti, una scelta"): [Atleta 1] fa [kg] [scelta A]. [Atleta 2], [scelta B]. -> "Li
+alleno tutti e due. Decide [fattore]." -> perche' per l'uno -> perche' per l'altro -> "Tu? Scrivimi A o B." -> ponte.
+Problema rimasto: 0 follow anche a 1.600 views -> serve una promessa di serie (caption e copertina riconoscibile).
+Nuovo contenuto con questa formula: `projects/brief_editor_novembre.md`, sezione 6.
+Aggiornamento 18/11: A ~2.000 views, B ~580. Due persone che hanno commentato "tacco/senza" hanno poi scritto in DM,
+una forse interessata al coaching: PRIMI DM DA UN REEL ORGANICO. La CTA binaria nei commenti apre la conversazione;
+rispondere a ogni commento con una domanda personale che porta in DM (es. chiedere il loro video di squat).
+Decisione: A condiviso nel feed ("Share to everyone"), B resta trial. Regola: un trial che scende sotto il 35% di salti
+e porta commenti/DM va nel feed; gli altri restano trial.
+
+## Puntata 2 "Giù o in alto" (dip, pubblicata 18/11 alle 21, insight il 19/11 pomeriggio)
+14 s, split Lorenzo | Giacomo, "Decide il tuo punto debole", musica GTA bassa.
+- A numero+nome "Lorenzo fa dip con 70 kg guardando giù. Giacomo, in alto.": 1.974 views, salti 27,3% (record), media
+  10 s su 14, 10 like, 1 commento, 2 repost, 4 salvataggi, 5 visite profilo, 0 follow; 13-17 solo 1,2%, 18-24 39%,
+  25-34 47%, 35-44 7,5%.
+- B problema "Nel dip ti pianti in chiusura?": 1.920 views, salti 29,9%, media 9 s, 21 like, 1 commento, 2 salvataggi,
+  4 visite profilo, 0 follow; 13-17 18,4%.
+Lezioni: il format regge (2 puntate su 2 sotto il 30%). Numero + nome batte il problema sui salti e soprattutto sul
+pubblico (adulti, quasi zero 13-17). Commenti calati (1 contro 7 del tacco): "giù o in alto" divide meno di "tacco o
+senza". Visite profilo ~0,25% e follow 0: il format porta views, non ancora clienti -> prossimo reel con focus coaching.
+A nel feed. Prossimo: `projects/brief_editor_novembre.md`, sezione 7.
+
+## Idea in coda (19/11): trial "solo testo" sul tempo in palestra
+Riferimento mandato da Manuel (reel inglese di un powerlifter, 12 s, solo testo sopra uno squat): "Il powerlifting non
+ti ruba tempo, lo gestisci male" -> "30 minuti di riscaldamento, chiacchiere tra le serie, telefono: per questo ci metti
+3 ore" -> "timer, riscaldamento mirato, recuperi solo quanto serve: 60-90 minuti". Manuel: farlo per gli atleti in
+generale (non solo PL), come trial semplice. Testo in italiano, gancio provocatorio sul problema, 10-12 s, alzata vera
+sotto. I numeri (60-90 minuti) vanno confermati da Manuel. Da fare dopo il reel "Ti fidi della tua scheda?".
+
+## Puntata coaching "Ti fidi della tua scheda?" (Elisabetta, pubblicata 19/11 ~19:00, insight 20/11 9:30) - BOCCIATA
+4 trial da 17 s:
+- A "Ti fidi della tua scheda? Elisabetta all'inizio no." (sopra la sua trazione): 148 views, salti 72,1%, media 3 s.
+- A + scheda animata ("la programmazione la decido io"): 150 views, salti 67,6%, media 3 s.
+- B split PRIMA/OGGI "0 KG - Elisabetta non riusciva a fare una trazione...": 169 views, salti 54,2%, media 4 s, 2 visite.
+- B + scheda animata: 163 views, salti 53,3%, media 4 s; pubblico 56% donne (gli altri ~70% uomini).
+0 follow ovunque. Tacco e dip a pari ore avevano ~2.000 views.
+Cause: gancio a domanda di nuovo pessimo (68-72%); il tema "fidarsi/metodo" è astratto, non c'è una scelta tecnica
+con un numero forte; "da 0 a 10 kg" non colpisce un pubblico al 70% maschile intermedio; 17 s invece di 14; 4 versioni
+quasi uguali lo stesso giorno (meglio massimo 2).
+Lezione: il coaching NON va messo come tema del reel. Si mette DENTRO il format che funziona (atleta + numero forte +
+scelta tecnica + "li alleno tutti e due"), nella caption e nelle risposte ai commenti (il tacco ha portato i DM cosi').
+Rifacimento: `projects/brief_editor_novembre.md`, sezione 9.
+Stato 20/11: le 4 versioni di Elisabetta sono ARCHIVIATE da Manuel (non cancellate). Nel pomeriggio: nuovo script per
+Elisabetta (es. "Settimana 3: zero zavorra", brief 9b) + panca linea sul palmo (8a) + reel solo testo sul tempo (8b).
+Rimontaggio Elisabetta (9 s, brief 9c, insight dopo ~5 ore, 20/11 15:50): A prima/dopo con contatore +10 KG: 143 views, salti 53% (dato da Manuel),
+media 4 s su 9, 0 follow. B metodo prima ("Tu l'obiettivo, io il percorso"): 180 views, salti 63,4%, media 3 s,
+3 commenti (uno di Elisabetta), 0 follow. Montaggio migliore non basta: il limite e' l'argomento (fiducia/metodo,
+0->10 kg). Chiuso il tema: si passa a "Settimana 3: zero zavorra", panca linea sul palmo, reel solo testo sul tempo.
+
+## Riferimento "in meno di 60 secondi" (mandato da Manuel 20/11, creator di marketing, 60 s)
+Una sola ripresa in camera, sfondo neutro; in alto per 2 s il titolo-promessa ("COME ACQUISIRE CLIENTI SU INSTAGRAM IN
+MENO DI 60 SECONDI"); in basso un grande cronometro rosso a cifre digitali che conta i secondi per tutto il video;
+sottotitoli piccoli di 2-3 parole; nessun B-roll; finisce a 59 s. La tensione la crea il timer ("ce la fa?") e la
+promessa precisa. Uso per Manuel: format "Il metodo in 30 secondi" (brief sez. 10): il coaching mostrato come
+procedimento concreto, non come tema astratto. Da testare in trial contro il format "Due atleti, una scelta".
+CONTENUTO del riferimento (quello che Manuel voleva far studiare, 20/11): non inseguire views e follower ma diventare
+un riferimento per il potenziale cliente prima della vendita; i contenuti da soli non bastano: servono FLUSSI DI
+ACQUISIZIONE che aprono chat ogni settimana con persone in target; farsi ricordare e riconoscere (dettagli); relazione
+di fiducia, il motore e' l'allineamento sui valori; non fare il supereroe; cucire la comunicazione sul potenziale
+cliente; ignorare i consigli decontestualizzati. Applicazione per Manuel: commenti a due risposte -> risposta con
+domanda personale -> DM (gia' visto col tacco); parola chiave nei commenti per ricevere un protocollo (il protocollo
+trazioni dato a 3 persone ha portato 1 cliente da 290 EUR); obiettivo di N conversazioni in target a settimana;
+format, copertina, musica e frase ricorrenti ("Li alleno tutti e due") per essere riconoscibile.
+Tre reel del 20/11 (metodo in 30 secondi con cronometro, panca linea sul palmo 150 kg, tempo in palestra):
+`projects/brief_20nov_tre_reel.md`. Scarico = settimana di volume qualitativo a bassa intensità (Manuel).
+CTA per reel (Manuel 20/11): ogni reel ha o la domanda a due risposte o la parola chiave nei commenti; Manuel risponde e
+manda i protocolli a mano. Reel 1 = "Commenta TRAZIONI" (protocollo trazioni), reel 2 = dita/palmo, reel 3 = sopra/sotto 90 min.

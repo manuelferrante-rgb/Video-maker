@@ -146,3 +146,22 @@ Dipende da dove sei debole. @jasmincalisti ha la caviglia più rigida: senza tac
 @nikmarzo ha la caviglia più mobile e con le sue leve rimane più verticale: a lui il tacco non serve. Con lui lavoriamo sulla catena posteriore.
 
 Non sai se ti serve? Mandami il tuo squat ripreso di lato e lo guardiamo insieme. 🏋️
+
+Struttura per il format "Due atleti, una scelta" (18/11/2026, approvata da Manuel): prima riga forte (max 120 caratteri,
+diversa dal reel) -> approfondimento che nel video non c'è -> la stessa domanda a due risposte del reel -> ultima riga
+"Ogni settimana una scelta vera che faccio con i miei atleti, e il perché. Seguimi per non perdere le prossime."
+Esempio approvato (Tacco o senza, base scritta da Manuel e sintetizzata):
+
+    Metti il tacco nello squat perché ce l'hanno tutti o perché ti serve davvero?
+
+    A decidere è la caviglia.
+
+    @jasmincalisti ce l'ha più rigida: senza tacco in buca finiva sul tallone. Con il tacco il ginocchio va avanti, il peso resta in spinta, e ci ha squattato 200 kg.
+
+    @nikmarzo ce l'ha più mobile e con le sue leve scende già verticale: il tacco non gli serve. Con lui lavoriamo sulla catena posteriore.
+
+    Il tacco è uno strumento, non la soluzione: caviglia e dinamica dello squat si allenano comunque.
+
+    Tu lo usi? Scrivimi "tacco" o "senza" 👇
+
+    Ogni settimana una scelta vera che faccio con i miei atleti, e il perché. Seguimi per non perdere le prossime.
