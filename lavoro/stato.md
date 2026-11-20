@@ -52,3 +52,8 @@ Gancio B montato da due take (38,14-39,88 + 44,35-45,59). Limiter a 0,79: l'AAC 
 esportato da Drive col connettore, 3 blocchi CHIN UP / SQUAT LB / TRAZIONI ESPLOSIVE che scorrono, niente colonne
 RPE/FEEDBACK, niente etichetta "SCARICO" per richiesta di Manuel) su "La programmazione la decido io" (1,45 s), poi la clip
 di Manuel che corregge i video. Durate invariate (A 17,0 s, B 17,2 s).
+
+## 20/11 rimontaggio Elisabetta (brief sez. 9c): ieri 148-169 views, 53-72% di salti
+projects/scheda_eli_v2.py (A prima/dopo e B metodo prima, 9,7 s: con le sole 5 frasi e pause tagliate la voce dura
+questo), contatore 0 -> +10 KG, riquadro PRIMA (tg_3mb 16,2-17,2), scheda animata solo in A. Copertina
+projects/cover_elisabetta_v2.py (DA 0 A +10 KG / IL PERCORSO LO DECIDO IO), caption projects/caption_elisabetta_v2.txt.
