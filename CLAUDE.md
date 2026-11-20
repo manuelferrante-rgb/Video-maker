@@ -362,3 +362,7 @@ scelta tecnica + "li alleno tutti e due"), nella caption e nelle risposte ai com
 Rifacimento: `projects/brief_editor_novembre.md`, sezione 9.
 Stato 20/11: le 4 versioni di Elisabetta sono ARCHIVIATE da Manuel (non cancellate). Nel pomeriggio: nuovo script per
 Elisabetta (es. "Settimana 3: zero zavorra", brief 9b) + panca linea sul palmo (8a) + reel solo testo sul tempo (8b).
+Rimontaggio Elisabetta (9 s, brief 9c, insight dopo ~5 ore, 20/11 15:50): A prima/dopo con contatore +10 KG: 143 views,
+media 4 s su 9, 0 follow. B metodo prima ("Tu l'obiettivo, io il percorso"): 180 views, salti 63,4%, media 3 s,
+3 commenti (uno di Elisabetta), 0 follow. Montaggio migliore non basta: il limite e' l'argomento (fiducia/metodo,
+0->10 kg). Chiuso il tema: si passa a "Settimana 3: zero zavorra", panca linea sul palmo, reel solo testo sul tempo.
