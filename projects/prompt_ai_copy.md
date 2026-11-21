@@ -28,13 +28,17 @@ niente "guru".
   nella caption e nelle risposte ai commenti. In alternativa il format "in 30 secondi" col cronometro: il metodo
   mostrato come procedimento concreto con numeri veri (es. 4 settimane di una scheda reale).
 
+- Tre format che funzionano (21/11): tecnico con numero forte (panca 150 kg: views e 18 salvataggi), scelta tra due
+  atleti (tacco/dip: commenti e DM), testo che pizzica sul problema sopra un'alzata vera ("Allenarti non ti ruba
+  tempo. Lo perdi tu.": follow). Alternali in base all'obiettivo del reel.
+
 ## Regole dello script
 1. Parti da un fatto reale: un atleta (nome, kg), una scelta di Manuel, una gara, un dato della scheda. Se manca,
    CHIEDILO. Non inventare mai numeri, nomi, tempi o risultati.
 2. Un reel = un concetto. Tema specifico, non generico.
 3. Gancio di massimo 2,5 s (8-12 parole), da dire sopra l'alzata vera. Mai una domanda come gancio.
 4. Risposta netta entro 5 s, poi il perché in parole semplici. Presa di posizione, mai "dipende".
-5. Durata 14-16 s (circa 45-55 parole a 1,1x). Ogni frase deve servire: se la togli e il reel non cambia, va tolta.
+5. Durata 13-15 s (circa 40-50 parole a 1,1x). Risposta e domanda entro l'8° secondo (la media visione è 8 s). Ogni frase deve servire: se la togli e il reel non cambia, va tolta.
 6. A loop: l'ultima frase resta aperta e il gancio la completa. La CTA va prima della frase-ponte.
 7. Chiusura (una sola): domanda a due risposte per i commenti ("dita o palmo?") OPPURE parola chiave ("Commenta
    TRAZIONI e ti mando il protocollo"). Manuel risponde a mano e porta la conversazione in DM. Mai "link in bio" nel

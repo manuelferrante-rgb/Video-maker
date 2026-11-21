@@ -20,6 +20,10 @@ Decide tutto la percentuale di salti nei primi secondi. Obiettivo: sotto il 35%.
 - Edit muti con musica e testo in inglese: 64% e pubblico estero.
 - L'80-90% delle views arriva dalla tab Reels: la copertina lì non si vede, conta il primo fotogramma.
 
+- 21/11: "Spingo 150 kg di panca" (alzata + 150 KG, 13 s): 31% di salti, 2.791 views, 18 salvataggi. Testo che pizzica
+  sul problema sopra lo squat di Manuel ("Allenarti non ti ruba tempo. Lo perdi tu.", 13 s): 32%, 1.676 views, 2 follow.
+- La media visione dei reel buoni è 8 s su 13: tutto quello che conta sta prima dell'8° secondo.
+
 ## 2. I primi 3 secondi
 - Primo fotogramma: l'alzata vera col numero (o lo split delle due alzate), oppure un dettaglio forte che si muove
   (la mano col bilanciere, la linea che si disegna). Mai Manuel fermo in una stanza, mai schede scure, loghi o testi
@@ -33,7 +37,8 @@ Decide tutto la percentuale di salti nei primi secondi. Obiettivo: sotto il 35%.
 - Ogni 1,5-2,5 s cambia qualcosa: stacco, punch-in leggero (105-110%), titolo, animazione. Mai un momento fermo,
   ma niente animazioni a raffica: testi leggibili e fermi.
 - Voce 1,1x, tagliate TUTTE le pause (anche 0,2-0,5 s), gli "ehm" e le ripetizioni (si tiene la take migliore).
-- Durata: 14-16 s per i reel tecnici (il formato che funziona). Più lungo solo se c'è un motivo per restare
+- Durata: 13-15 s per i reel tecnici (i tre migliori durano 13-14 s). Risposta, consiglio e domanda per i commenti
+  entro l'8° secondo; la domanda anche come scritta a schermo. Più lungo solo se c'è un motivo per restare
   dichiarato all'inizio (es. il cronometro del format "in 30 secondi", con il tempo che scorre a schermo).
 - La risposta netta arriva entro 5 s. Mai "dipende".
 - B-roll sempre coerente con la frase (se parla di squat si vede uno squat). Non ripetere lo stesso atleta, salvo
@@ -69,7 +74,8 @@ come atleta e coach vero, non come supereroe.
 
 ## 7. Test A/B
 Massimo 2 versioni per reel. Cambia SOLO il gancio (primi 2,5 s): stessa durata, stesso montaggio dopo, stessa
-copertina e caption.
+copertina e caption. Manuel le pubblica a distanza (non insieme): due video quasi uguali alla stessa ora fanno
+spingere da Instagram solo uno dei due.
 
 ## 8. Copertina
 Riga nera + riga arancio (Inter Black Italic), fondo con l'alzata, Manuel scontornato se serve. Titolo diverso dal

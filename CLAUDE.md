@@ -431,3 +431,14 @@ antialias `aa`, X rossa, sottotitoli `subs`, voce opzionale a 1,1x e -14 LUFS, s
   "da film horror" all'inizio (tolti tick e hit sul primo fotogramma); cronometro centrato (in basso, y ~1505, sopra i
   pulsanti), ben visibile. Trazioni a 1,15x (era "un po' lento"): 25,3 s. Panca B: la penna scrive dall'inizio alla
   fine mentre dice "il bilanciere lo appoggio qui" (IMG_9213 8.7-9.9 adattato alla frase), voce di IMG_9210.
+## Insight 21/11/2026 (report completo: `projects/report_21nov.md`)
+Panca A "Spingo 150 kg di panca" (alzata + 150 KG): 2.791 views, salti 31,3%, 8 s su 13, 33 like, 18 SALVATAGGI,
+4 visite, 1 follow. Panca B (apre sulla mano): 137 views ma salti 26,3% (Instagram non l'ha distribuito: due video
+quasi uguali pubblicati insieme, non e' un giudizio sul gancio). Tempo in palestra (solo testo "Allenarti non ti ruba
+tempo. Lo perdi tu." sul suo squat): 1.676 views, 32,1%, 8 s su 13, 24 like, 3 commenti, 2 FOLLOW. Elisabetta
+rimontata: 149-190 views, 53-65% (tema chiuso).
+Lezioni: tre format che funzionano: tecnico con numero forte (views + salvataggi), scelta tra due atleti (commenti +
+DM), testo che pizzica sul problema sopra un'alzata vera (follow). Media visione 8 s: risposta, consiglio e domanda
+entro l'8° secondo; domanda anche come scritta a schermo, in caption e nel commento fissato. 13 s la durata buona.
+Due versioni non insieme alla stessa ora. Messaggio di benvenuto personalizzato a ogni nuovo follower: ha portato una
+candidatura (21/11). Pubblico 96-97% uomini, 25-34 al 40%.
