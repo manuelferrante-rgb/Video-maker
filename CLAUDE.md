@@ -402,3 +402,8 @@ salti 35,3% (salito allargandosi a pubblico piu' vasto), 8 s su 13, 47 like, 1 c
 7 visite profilo, 3 follow; 35-54 anni ~22%. Il tecnico pratico con numero forte e animazioni = il format che
 diffonde di piu'. Commenti fermi a 1: la domanda finale non arriva (media 8 s) -> domanda prima dell'8° s + commento
 fissato. Prossimo: serie "panca" con lo stesso schema (altro dettaglio tecnico, stesso 150 kg in apertura).
+
+## Piano settimana 24-29/11 (`projects/piano_settimana_24nov.md`)
+Manuel (22/11): tre format fissi, 2 reel ciascuno a settimana: 1) tecnico con i suoi kg + input che resta impresso
+(come la linea sul palmo), su piu' esercizi; 2) confronto tra suoi atleti; 3) testo fisso a schermo con lui che si allena.
+Pubblicazione: A come trial; sotto 35% -> feed, altrimenti B il giorno dopo.
