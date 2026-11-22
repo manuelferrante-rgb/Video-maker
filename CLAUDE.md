@@ -397,3 +397,8 @@ DM), testo che pizzica sul problema sopra un'alzata vera (follow). Media visione
 entro l'8° secondo; domanda anche come scritta a schermo, in caption e nel commento fissato. 13 s la durata buona.
 Due versioni non insieme alla stessa ora. Messaggio di benvenuto personalizzato a ogni nuovo follower: ha portato una
 candidatura (21/11). Pubblico 96-97% uomini, 25-34 al 40%.
+Aggiornamento 22/11 (panca A dopo ~1,5 giorni): 4.398 views (record organico, sopra Abbandonare 3.540), 3.461 persone,
+salti 35,3% (salito allargandosi a pubblico piu' vasto), 8 s su 13, 47 like, 1 commento, 38 SALVATAGGI (1,1%),
+7 visite profilo, 3 follow; 35-54 anni ~22%. Il tecnico pratico con numero forte e animazioni = il format che
+diffonde di piu'. Commenti fermi a 1: la domanda finale non arriva (media 8 s) -> domanda prima dell'8° s + commento
+fissato. Prossimo: serie "panca" con lo stesso schema (altro dettaglio tecnico, stesso 150 kg in apertura).
