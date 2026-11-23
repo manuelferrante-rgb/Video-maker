@@ -23,6 +23,11 @@ Decide tutto la percentuale di salti nei primi secondi. Obiettivo: sotto il 35%.
 - 21/11: "Spingo 150 kg di panca" (alzata + 150 KG, 13 s): 31% di salti, 2.791 views, 18 salvataggi. Testo che pizzica
   sul problema sopra lo squat di Manuel ("Allenarti non ti ruba tempo. Lo perdi tu.", 13 s): 32%, 1.676 views, 2 follow.
 - La media visione dei reel buoni è 8 s su 13: tutto quello che conta sta prima dell'8° secondo.
+- 23/11: "Un mese di trazioni zavorrate in 30 secondi" (titolo + cronometro, 25 s): 46-48% di salti, 8 s su 25. Il
+  cronometro non trattiene: niente format lunghi come trial.
+- Secondo punto di rottura (2,5-5 s): lo stacco su Manuel fermo che parla prima che il concetto sia chiaro. Dopo il
+  gancio resta su immagini che si muovono (dettaglio, animazione, altra alzata); Manuel in camera solo per risposta o
+  domanda, mai fermo più di 2 s senza un cambio.
 
 ## 2. I primi 3 secondi
 - Primo fotogramma: l'alzata vera col numero (o lo split delle due alzate), oppure un dettaglio forte che si muove
@@ -39,7 +44,7 @@ Decide tutto la percentuale di salti nei primi secondi. Obiettivo: sotto il 35%.
 - Voce 1,1x, tagliate TUTTE le pause (anche 0,2-0,5 s), gli "ehm" e le ripetizioni (si tiene la take migliore).
 - Durata: 13-15 s per i reel tecnici (i tre migliori durano 13-14 s). Risposta, consiglio e domanda per i commenti
   entro l'8° secondo; la domanda anche come scritta a schermo. Più lungo solo se c'è un motivo per restare
-  dichiarato all'inizio (es. il cronometro del format "in 30 secondi", con il tempo che scorre a schermo).
+  dichiarato all'inizio (il format col cronometro da 25-30 s ha fatto 46-48%: solo per feed/storie).
 - La risposta netta arriva entro 5 s. Mai "dipende".
 - B-roll sempre coerente con la frase (se parla di squat si vede uno squat). Non ripetere lo stesso atleta, salvo
   quando il reel parla di lui.

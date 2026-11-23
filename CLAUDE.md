@@ -407,3 +407,13 @@ fissato. Prossimo: serie "panca" con lo stesso schema (altro dettaglio tecnico, 
 Manuel (22/11): tre format fissi, 2 reel ciascuno a settimana: 1) tecnico con i suoi kg + input che resta impresso
 (come la linea sul palmo), su piu' esercizi; 2) confronto tra suoi atleti; 3) testo fisso a schermo con lui che si allena.
 Pubblicazione: A come trial; sotto 35% -> feed, altrimenti B il giorno dopo.
+
+## Insight 23/11 e report completo (`projects/report_completo_23nov.md`)
+IMPORTANTE: in ogni reel Manuel mette 1 like, 1 commento, 1 condivisione e 1 salvataggio: vanno SEMPRE tolti dai numeri
+(commenti netti: tacco 6, tutti gli altri 0-2; salvataggi netti panca 37).
+Trazioni "in 30 secondi" col cronometro (25 s): 636 views, salti 46,4%, 8 s su 25, 5 salvataggi netti, 0 follow;
+l'altra versione 148 views, 47,8%, 5 s. Il cronometro non trattiene: gancio a titolo-promessa + Manuel fermo + 25 s.
+Format col cronometro bocciato come trial (si puo' usare solo per feed/storie).
+Punti di rottura: 0-2 s (primo fotogramma), 2,5-5 s (stacco su Manuel fermo prima che il concetto sia chiaro),
+8 s (media visione), fine (la domanda finale non la sente nessuno).
+Gancio sempre = chi + kg + azione sopra l'alzata; risposta entro 5 s; domanda che divide davvero, a schermo entro l'8° s.
