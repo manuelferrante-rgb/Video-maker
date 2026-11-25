@@ -17,7 +17,7 @@ w, h = W / Z, H / Z
 x0, y0 = min(max(CX - w / 2, 0), W - w), min(max(CY - h / 2, 0), H - h)
 fr = fr.resize((W, H), Image.LANCZOS, box=(x0, y0, x0 + w, y0 + h))
 fr = fr.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2)).convert("RGBA")
-fr.alpha_composite(st.sticker(dict(st.CFG["V1"], cx=540, y=760, stroke=6)))  # grande e centrato, sotto la faccia
+fr.alpha_composite(st.sticker(dict(st.CFG["V1"], cx=540, y=765, stroke=6, fl=35, fv=81, gap=152, dv=67)))  # grande e centrato, sotto la faccia
 out = fr.convert("RGB")
 out.save(f"{R}/out/cover_strava.jpg", quality=95)
 out.crop((0, 240, W, 1680)).save(f"{R}/out/cover_strava_griglia34.jpg", quality=90)
