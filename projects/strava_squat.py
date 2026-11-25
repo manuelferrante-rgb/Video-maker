@@ -18,9 +18,12 @@ ROWS = [("Distanza", "0 km", 300), ("Passo", "00:00 /km", 410), ("Tempo", "2h 50
 im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
 d = ImageDraw.Draw(im)
 for lab, val, y in ROWS:
-    d.text((CX, y), lab, font=FL, fill=(255, 255, 255, 255), anchor="mm")
-    d.text((CX, y + 48), val, font=FV, fill=(255, 255, 255, 255), anchor="mm")
+    # bordo nero: sul muro bianco il testo bianco altrimenti non si legge (Manuel 25/11)
+    d.text((CX, y), lab, font=FL, fill=(255, 255, 255, 255), anchor="mm", stroke_width=3, stroke_fill=(0, 0, 0, 255))
+    d.text((CX, y + 48), val, font=FV, fill=(255, 255, 255, 255), anchor="mm", stroke_width=5,
+           stroke_fill=(0, 0, 0, 255))
 r = 14
+d.ellipse([CX - r - 3, 660 - r - 3, CX + r + 3, 660 + r + 3], fill=(0, 0, 0, 255))
 d.ellipse([CX - r, 660 - r, CX + r, 660 + r], fill=(252, 76, 2, 255))   # arancio Strava
 sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
 sh.putalpha(im.split()[3].point(lambda v: int(v * 0.35)))
