@@ -18,6 +18,9 @@ COVERS = {
               "NE BASTANO 90 MINUTI", 1150),
     "trazioni": (f"{R}/src_20nov/IMG_5418.MOV", 6.4, True, 1.0, (540, 960), "UN MESE DI TRAZIONI",
                  "IN 30 SECONDI", 1150),
+    # 25/11: squat con lo sticker di Strava (dal video V2 gia' montato, sticker compreso)
+    "strava": (f"{R}/out/strava_squat/strava_squat_V2.mp4", 0.35, False, 1.0, (540, 960), "IL MIO CARDIO",
+               "0 KM IN 2H 50M", 1180),
     "panca": (f"{R}/src_20nov/IMG_5153.MOV", 1.3, False, 1.6, (470, 1250), "DITA O PALMO?",
               "LA LINEA DELLA PANCA", 1150),
 }
