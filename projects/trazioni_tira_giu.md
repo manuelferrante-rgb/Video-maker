@@ -1,9 +1,9 @@
 # Reel "Tira giù la sbarra" (trazioni 75 kg) - copy approvato e messaggio per la chat editor (27/11/2026)
 
 ## Copy
-- Gancio B (si pubblica per primo, trial): primo piano delle mani che stringono -> "Non faccio le trazioni tirandomi
+- Gancio B (trial 1): primo piano delle mani che stringono -> "Non faccio le trazioni tirandomi
   su. Tiro giù la sbarra." -> trazione intera con +75 KG: "E faccio 75 kg."
-- Gancio A (il giorno dopo solo se B sopra il 35%): trazione con +75 KG: "Faccio trazioni con 75 kg. E penso solo a
+- Gancio A (trial 2, pubblicato a distanza di almeno qualche ora, mai insieme): trazione con +75 KG: "Faccio trazioni con 75 kg. E penso solo a
   una cosa: tirare giù la sbarra."
 - Corpo: "Come se volessi spezzarla." -> "Presa salda. Traiettoria il più verticale possibile. E tira giù." ->
   "Alla prossima serie, prova." (loop sul gancio)
@@ -35,7 +35,7 @@ che la frase del gancio sia finita; cambio visivo ogni 1,5-2,5 s; domanda a sche
 1,1x senza pause, -14 LUFS; sottotitoli standard (bianchi, Inter ExtraBold, bordo nero, parola chiave arancio);
 sfx leggeri; finale a loop; niente musica (la metto io).
 
-VERSIONE B (si consegna e pubblica per prima)
+VERSIONE B (trial 1)
 | s | Immagine | Voce | Testo / animazione |
 |---|---|---|---|
 | 0-2,5 | Primo piano delle mani che stringono la sbarra (si muove: la trazione parte) | "Non faccio le trazioni tirandomi su. Tiro giù la sbarra." | sottotitolo, "GIÙ" in arancio |
@@ -44,7 +44,7 @@ VERSIONE B (si consegna e pubblica per prima)
 | 5,5-8,5 | Mani (puntino pop "PRESA SALDA") -> linea verticale arancio accanto al corpo che si disegna ("VERTICALE") -> freccia giù sulla sbarra ("TIRA GIÙ") | "Presa salda. Traiettoria il più verticale possibile. E tira giù." | dal 7° s in alto: "TU TIRI GIÙ LA SBARRA O PENSI DI ANDARE SU?" |
 | 8,5-11 | Trazione pesante, salita completa fino al mento sopra la sbarra | "Alla prossima serie, prova." | la domanda resta; finale che riparte dal primo fotogramma |
 
-VERSIONE A (cambia solo l'inizio, da 0 a 3,5 s; dal "Come se volessi spezzarla" è identica)
+VERSIONE A (trial 2: cambia solo l'inizio, da 0 a 3,5 s; dal "Come se volessi spezzarla" è identica)
 | 0-3,5 | Trazione con 75 kg di lato | "Faccio trazioni con 75 kg. E penso solo a una cosa: tirare giù la sbarra." | "+75 KG" grande, poi sottotitolo |
 
 Animazioni: allineate al girato (la curva sta sulla sbarra vera, il puntino sulle mani vere), sottili, bianco con
