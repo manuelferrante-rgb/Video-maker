@@ -417,3 +417,8 @@ Format col cronometro bocciato come trial (si puo' usare solo per feed/storie).
 Punti di rottura: 0-2 s (primo fotogramma), 2,5-5 s (stacco su Manuel fermo prima che il concetto sia chiaro),
 8 s (media visione), fine (la domanda finale non la sente nessuno).
 Gancio sempre = chi + kg + azione sopra l'alzata; risposta entro 5 s; domanda che divide davvero, a schermo entro l'8° s.
+
+## Insight 27/11: reel "Strava mentre squat" (ironico, trial poi feed)
+Netti: 1.921 views, salti 47,5%, media 5 s, 41 like (like rate sopra la media), 0 commenti, 4 repost, 1 salvataggio,
+7 visite, 1 follow; 13-17 15,8%, Italia 81%. Piace ma non trattiene e non porta clienti: ok per feed, non come trial
+per crescere. Prossimo educativo sul modello panca: trazioni "spingi giù la sbarra" (`projects/idee_educativo_27nov.md`).
