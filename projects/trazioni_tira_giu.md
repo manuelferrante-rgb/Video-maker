@@ -5,9 +5,13 @@
   su. Tiro giù la sbarra." -> trazione intera con +75 KG: "E faccio 75 kg."
 - Gancio A (trial 2, pubblicato a distanza di almeno qualche ora, mai insieme): trazione con +75 KG: "Faccio trazioni con 75 kg. E penso solo a
   una cosa: tirare giù la sbarra."
-- Corpo: "Come se volessi spezzarla." -> "Presa salda. Traiettoria il più verticale possibile. E tira giù." ->
-  "Alla prossima serie, prova." (loop sul gancio)
-- Domanda a schermo e commento fissato: "Tu tiri giù la sbarra o pensi di andare su?"
+- Corpo: "Come se volessi spezzarla." -> "Presa salda. Traiettoria il più verticale possibile. E tira giù." (i 3
+  punti restano a schermo come scheda numerata: 1 PRESA SALDA / 2 VERTICALE / 3 TIRA GIÙ) -> "Salvalo e provalo alla
+  prossima serie." (loop sul gancio)
+- Interazione (aggiornata): salvataggio = la scheda dei 3 punti + "Salvalo e provalo alla prossima serie";
+  commento = una parola: "GIÙ o SU? Scrivilo nei commenti" (a schermo dal 7° s). Commento fissato di Manuel:
+  "Io GIÙ. Tu? Se ti va dimmi anche quanti kg tiri alla sbarra." Risposta a ogni commento con una domanda
+  personale ("Quanti kg tiri ora? Mandami un video della tua trazione") per portare in DM.
 - Copertina: "TIRA GIÙ / LA SBARRA"
 
 ## Caption
@@ -18,7 +22,9 @@ sbarra. Non è il corpo che sale: è la sbarra che scende.
 
 Alla prossima serie prova così e dimmi com'è andata.
 
-Tu tiri giù la sbarra o pensi di andare su? 👇
+Salvalo e provalo alla prossima serie di trazioni.
+
+E tu? Scrivimi GIÙ o SU nei commenti. Se ti va, dimmi anche quanti kg tiri alla sbarra 👇
 
 Ogni settimana un dettaglio che correggo ai miei atleti, e il perché. Seguimi per non perdere i prossimi.
 
@@ -41,8 +47,8 @@ VERSIONE B (trial 1)
 | 0-2,5 | Primo piano delle mani che stringono la sbarra (si muove: la trazione parte) | "Non faccio le trazioni tirandomi su. Tiro giù la sbarra." | sottotitolo, "GIÙ" in arancio |
 | 2,5-3,5 | Trazione intera con 75 kg, di lato | "E faccio 75 kg." | "+75 KG" grande in riquadro arancio, pop |
 | 3,5-5,5 | Stessa trazione, zoom leggero sulla sbarra | "Come se volessi spezzarla." | la sbarra si piega verso il basso (linea arancio curva) + crack leggero |
-| 5,5-8,5 | Mani (puntino pop "PRESA SALDA") -> linea verticale arancio accanto al corpo che si disegna ("VERTICALE") -> freccia giù sulla sbarra ("TIRA GIÙ") | "Presa salda. Traiettoria il più verticale possibile. E tira giù." | dal 7° s in alto: "TU TIRI GIÙ LA SBARRA O PENSI DI ANDARE SU?" |
-| 8,5-11 | Trazione pesante, salita completa fino al mento sopra la sbarra | "Alla prossima serie, prova." | la domanda resta; finale che riparte dal primo fotogramma |
+| 5,5-8,5 | Mani (puntino pop) -> linea verticale arancio accanto al corpo che si disegna -> freccia giù sulla sbarra | "Presa salda. Traiettoria il più verticale possibile. E tira giù." | a ogni frase si aggiunge una riga di una piccola scheda numerata a lato (1 PRESA SALDA / 2 VERTICALE / 3 TIRA GIÙ, riquadri neri con numero arancio), che RESTA fino alla fine: è la "tip" da salvare. Dal 7° s in alto: "GIÙ o SU? SCRIVILO 👇" |
+| 8,5-11,5 | Trazione pesante, salita completa fino al mento sopra la sbarra | "Salvalo e provalo alla prossima serie." | scheda e domanda restano; icona salva leggera con pop; finale che riparte dal primo fotogramma |
 
 VERSIONE A (trial 2: cambia solo l'inizio, da 0 a 3,5 s; dal "Come se volessi spezzarla" è identica)
 | 0-3,5 | Trazione con 75 kg di lato | "Faccio trazioni con 75 kg. E penso solo a una cosa: tirare giù la sbarra." | "+75 KG" grande, poi sottotitolo |
@@ -50,8 +56,8 @@ VERSIONE A (trial 2: cambia solo l'inizio, da 0 a 3,5 s; dal "Come se volessi sp
 Animazioni: allineate al girato (la curva sta sulla sbarra vera, il puntino sulle mani vere), sottili, bianco con
 accento #E8662C, ognuna con il suo sfx leggero (pop, disegno, crack). Mai sopra la faccia.
 Copertina: fondo con la trazione, io scontornato, riga nera "TIRA GIÙ" + riga arancio "LA SBARRA", dentro il ritaglio 3:4.
-Consegna: versione B, versione A, copertina, caption (sotto) e commento fissato "Tu tiri giù la sbarra o pensi di
-andare su?". Prima di consegnare fai la checklist completa e dimmi l'esito di ogni punto.
+Consegna: versione B, versione A, copertina, caption (sotto) e commento fissato "Io GIÙ. Tu? Se ti va dimmi anche
+quanti kg tiri alla sbarra.". Prima di consegnare fai la checklist completa e dimmi l'esito di ogni punto.
 
 Girato: trazione con 75 kg di lato (intera, dalla partenza a braccia tese al mento sopra la sbarra), primo piano delle
 mani che stringono la sbarra, voce delle frasi (2-3 take). Se manca il primo piano delle mani, ritaglia e ingrandisci
