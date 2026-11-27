@@ -80,3 +80,12 @@ Drive parlati, scaricati in `src_20nov/` (nessun parlato nei file: tutti B-roll 
   80.3-84.3, 94.5-95.3 + 96.9-100.5, poi 133.1, CTA 136-139.6); IMG_9210 (panca: ganci 37.3-40.4 / 42.0-44.6, anulare
   99-100.8, cosi' 196.6, di conseguenza 200, eviterai 217.8, e tu 222.5, scrivimelo 230.5); IMG_9213 (linea sul palmo
   8.65-10.0, fermo 9.95). Nel reel trazioni 5416b 1.3-4.2 per la seconda meta' della settimana 1.
+
+## Reel "Tira giù la sbarra" (27/11/2026, `tira_giu.py`, copertina `cover_tira_giu.py`) - Drive parlati, `src_27nov/`
+| File | Contenuto / usato |
+|---|---|
+| IMG_9358 (4K, 158 s) | parlato in camera: ganci B 26.1-31.0 / A 145.0-149.1, mattarello vero 66.5-69 (in camera da 67.86), scapole 75.9, presa 88.1, traiettoria 95.0, tira giu' 101.8, salvalo 109.3-111.25, ponte A 111.25 "e' cosi' che", ponte B 132.8; faccia copertina 30.0 |
+| IMG_6935 (dorso nudo all'aperto, 4,3 s) | rep 2,55 (braccia tese) -> 3,28 (mento sopra) per il gancio; rep 0,3-0,75 + fermo per le scapole; loop B 1,84-2,55 |
+| IMG_7089 (trazione normale, maglia nera, 17,6 s) | 6,5-7,1 traiettoria, 7,1-7,9 tirata (rimpicciolita su fondo sfocato) |
+| gara.mov (75 kg in gara, 16 s) | parte 12,85-12,9, mento sopra 14,05; salita 12,5-14,05; loop A fino a 12,85; copertina 14,0 |
+| mattarello.mov (presa sulla sbarra, 3,3 s) | 0,1-1,3 "come se volessi spezzarla"; 2,3-3,1 "presa salda" (puntini sulle mani) |

@@ -185,7 +185,7 @@ def kara_layer(pages, y=1450, size=76, end=1e9, maxw=1000, first_from=None):
                         out.append(f"*{w}*" if j == cur else w); j += 1
                 txt = " ".join(out).replace(" \n ", "\n")
                 cache[key] = k.text_img(txt, size=size, maxw=maxw)
-            k.put(im, cache[key], 540, y, k.pop((t - starts[i]) / 0.2) if starts[i] > 0.05 else 1)
+            k.put(im, cache[key], 540, y(t) if callable(y) else y, k.pop((t - starts[i]) / 0.2) if starts[i] > 0.05 else 1)
             return
     return fn
 
