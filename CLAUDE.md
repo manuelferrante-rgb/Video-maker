@@ -442,3 +442,28 @@ DM), testo che pizzica sul problema sopra un'alzata vera (follow). Media visione
 entro l'8° secondo; domanda anche come scritta a schermo, in caption e nel commento fissato. 13 s la durata buona.
 Due versioni non insieme alla stessa ora. Messaggio di benvenuto personalizzato a ogni nuovo follower: ha portato una
 candidatura (21/11). Pubblico 96-97% uomini, 25-34 al 40%.
+Aggiornamento 22/11 (panca A dopo ~1,5 giorni): 4.398 views (record organico, sopra Abbandonare 3.540), 3.461 persone,
+salti 35,3% (salito allargandosi a pubblico piu' vasto), 8 s su 13, 47 like, 1 commento, 38 SALVATAGGI (1,1%),
+7 visite profilo, 3 follow; 35-54 anni ~22%. Il tecnico pratico con numero forte e animazioni = il format che
+diffonde di piu'. Commenti fermi a 1: la domanda finale non arriva (media 8 s) -> domanda prima dell'8° s + commento
+fissato. Prossimo: serie "panca" con lo stesso schema (altro dettaglio tecnico, stesso 150 kg in apertura).
+
+## Piano settimana 24-29/11 (`projects/piano_settimana_24nov.md`)
+Manuel (22/11): tre format fissi, 2 reel ciascuno a settimana: 1) tecnico con i suoi kg + input che resta impresso
+(come la linea sul palmo), su piu' esercizi; 2) confronto tra suoi atleti; 3) testo fisso a schermo con lui che si allena.
+Pubblicazione: A come trial; sotto 35% -> feed, altrimenti B il giorno dopo.
+
+## Insight 23/11 e report completo (`projects/report_completo_23nov.md`)
+IMPORTANTE: in ogni reel Manuel mette 1 like, 1 commento, 1 condivisione e 1 salvataggio: vanno SEMPRE tolti dai numeri
+(commenti netti: tacco 6, tutti gli altri 0-2; salvataggi netti panca 37).
+Trazioni "in 30 secondi" col cronometro (25 s): 636 views, salti 46,4%, 8 s su 25, 5 salvataggi netti, 0 follow;
+l'altra versione 148 views, 47,8%, 5 s. Il cronometro non trattiene: gancio a titolo-promessa + Manuel fermo + 25 s.
+Format col cronometro bocciato come trial (si puo' usare solo per feed/storie).
+Punti di rottura: 0-2 s (primo fotogramma), 2,5-5 s (stacco su Manuel fermo prima che il concetto sia chiaro),
+8 s (media visione), fine (la domanda finale non la sente nessuno).
+Gancio sempre = chi + kg + azione sopra l'alzata; risposta entro 5 s; domanda che divide davvero, a schermo entro l'8° s.
+
+## Insight 27/11: reel "Strava mentre squat" (ironico, trial poi feed)
+Netti: 1.921 views, salti 47,5%, media 5 s, 41 like (like rate sopra la media), 0 commenti, 4 repost, 1 salvataggio,
+7 visite, 1 follow; 13-17 15,8%, Italia 81%. Piace ma non trattiene e non porta clienti: ok per feed, non come trial
+per crescere. Prossimo educativo sul modello panca: trazioni "spingi giù la sbarra" (`projects/idee_educativo_27nov.md`).

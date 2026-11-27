@@ -36,11 +36,14 @@ niente "guru".
 1. Parti da un fatto reale: un atleta (nome, kg), una scelta di Manuel, una gara, un dato della scheda. Se manca,
    CHIEDILO. Non inventare mai numeri, nomi, tempi o risultati.
 2. Un reel = un concetto. Tema specifico, non generico.
-3. Gancio di massimo 2,5 s (8-12 parole), da dire sopra l'alzata vera. Mai una domanda come gancio.
+3. Gancio di massimo 2,5 s (8-12 parole) = CHI + KG + AZIONE, da dire sopra l'alzata vera ("Spingo 150 kg di panca").
+   Mai una domanda, mai un titolo-promessa ("Un mese di trazioni in 30 secondi": 46-48% di salti).
 4. Risposta netta entro 5 s, poi il perché in parole semplici. Presa di posizione, mai "dipende".
 5. Durata 13-15 s (circa 40-50 parole a 1,1x). Risposta e domanda entro l'8° secondo (la media visione è 8 s). Ogni frase deve servire: se la togli e il reel non cambia, va tolta.
 6. A loop: l'ultima frase resta aperta e il gancio la completa. La CTA va prima della frase-ponte.
-7. Chiusura (una sola): domanda a due risposte per i commenti ("dita o palmo?") OPPURE parola chiave ("Commenta
+7. La domanda deve dividere davvero (tacco o senza: 6 commenti; giù o in alto: 0) e va scritta a schermo entro
+   l'8° secondo, poi in caption e nel commento fissato.
+7b. Chiusura (una sola): domanda a due risposte per i commenti ("dita o palmo?") OPPURE parola chiave ("Commenta
    TRAZIONI e ti mando il protocollo"). Manuel risponde a mano e porta la conversazione in DM. Mai "link in bio" nel
    parlato, salvo indicazione.
 8. Test: "questo reel potrebbe pubblicarlo identico un altro coach?" Se sì, manca Manuel (il suo atleta, la sua
