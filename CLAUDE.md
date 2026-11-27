@@ -467,3 +467,11 @@ Gancio sempre = chi + kg + azione sopra l'alzata; risposta entro 5 s; domanda ch
 Netti: 1.921 views, salti 47,5%, media 5 s, 41 like (like rate sopra la media), 0 commenti, 4 repost, 1 salvataggio,
 7 visite, 1 follow; 13-17 15,8%, Italia 81%. Piace ma non trattiene e non porta clienti: ok per feed, non come trial
 per crescere. Prossimo educativo sul modello panca: trazioni "spingi giù la sbarra" (`projects/idee_educativo_27nov.md`).
+
+## Reel "Tira giù la sbarra" (27/11/2026, `projects/tira_giu.py`, copy `projects/trazioni_tira_giu.md`)
+Girato in `src_27nov/`: IMG_9358 = parlato (non una trazione), IMG_6935 = dorso nudo, IMG_7089 = trazione normale,
+gara.mov = 75 kg, mattarello.mov = la presa sulla sbarra. Correzioni di Manuel (valgono SEMPRE):
+- Le alzate NON si rallentano e NON si zoomano (dorso nudo bocciato a 0,3x e 1,9x): tempo reale, inquadratura intera;
+  solo la ripresa in camera va a 1,1x insieme alla voce.
+- Copertine: scontorno SENZA bordo/alone bianco intorno a capelli e corpo, e si vede anche il BUSTO (non solo la
+  testa). Se il frame e' incerto, mandare la striscia dei candidati con i secondi e far scegliere a Manuel.

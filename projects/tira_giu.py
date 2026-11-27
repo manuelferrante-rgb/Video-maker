@@ -32,7 +32,8 @@ PONTE = {"B": [(P, 132.77, 134.35, "Perché io, / alla sbarra,")],
          "A": [(P, 111.25, 112.27, "È così che", "fix_a")]}
 
 # coordinate nel fotogramma sorgente 1080x1920
-DZ, DC = 1.9, (530, 720)          # dorso nudo, gancio e loop
+# Manuel 27/11: il dorso nudo NON va ne' rallentato ne' zoomato (e niente rallenty in generale): velocita' reale
+DREP0, DTOP = 1.4, 3.45           # IMG_6935: braccia tese da 1,4 s, mento sopra la sbarra a 3,45 s
 GZ, GC = 1.6, (680, 1060)         # gara
 PZ, PC = 1.5, (470, 760)          # presa sulla sbarra
 SH = 0.86                         # trazione normale rimpicciolita sopra il suo sfondo sfocato (mani sotto la domanda)
@@ -59,16 +60,16 @@ def plan(v):
         h0, h1, spz, scap, presa, traj, tira, salva, ponte, end = T
     # "come con questo mattarello": da qui Manuel in camera col mattarello vero
     t_come = vo.src_to_reel(voice, P, 67.86)
-    dorso_rep = lambda t0, t1: dict(t0=t0, t1=t1, src=DORSO, ss=2.55, sp=(3.28 - 2.55) / (t1 - t0), mi=True,
-                                    z0=DZ, z1=DZ + 0.08, c=DC)
-    gara_up = lambda t0, t1, a=12.88: dict(t0=t0, t1=t1, src=GARA, ss=a, sp=(14.05 - a) / (t1 - t0), z0=GZ,
-                                           z1=GZ + 0.06, c=GC)
+    dorso_rep = lambda t0, t1: dict(t0=t0, t1=t1, src=DORSO, ss=DREP0)          # dalle braccia tese, tempo reale
+    gara_up = lambda t0, t1, top=14.05: dict(t0=t0, t1=t1, src=GARA, ss=max(top - (t1 - t0), 12.3), z0=GZ,
+                                             z1=GZ + 0.06, c=GC)                 # finisce col mento sopra
     if v == "B":
         opening = [dorso_rep(0, h1), gara_up(h1, spz)]
-        loop = dict(t0=ponte, t1=end, src=DORSO, ss=2.55 - (end - ponte) * 0.6, sp=0.6, z0=DZ + 0.03, z1=DZ, c=DC)
+        loop = dict(t0=ponte, t1=end, src=DORSO, ss=DREP0 - (end - ponte))        # finisce sul primo fotogramma
     else:
-        opening = [gara_up(0, h1, 12.85), dorso_rep(h1, spz)]
-        loop = dict(t0=ponte, t1=end, src=GARA, ss=12.85 - (end - ponte) * 0.6, sp=0.6, z0=GZ + 0.03, z1=GZ, c=GC)
+        g0 = 12.45                                                               # braccia tese, tempo reale
+        opening = [dict(t0=0, t1=h1, src=GARA, ss=g0, z0=GZ, z1=GZ + 0.06, c=GC), dorso_rep(h1, spz)]
+        loop = dict(t0=ponte, t1=end, src=GARA, ss=g0 - (end - ponte), z0=GZ + 0.06, z1=GZ, c=GC)
     cam = [s for s in vo.cam_shots(G[2], scap, z0=1.0, z1=1.05, c=(540, 960)) if s["t1"] > t_come]
     for s in cam:  # la parte in camera parte da "come con questo mattarello"
         if s["t0"] < t_come:
@@ -76,11 +77,11 @@ def plan(v):
             s["t0"] = t_come
     cam[0]["nosw"] = False
     shots = opening + [dict(t0=spz, t1=t_come, src=PRESA, ss=0.1, z0=PZ, z1=PZ + 0.06, c=PC)] + cam + [
-        dict(t0=scap, t1=presa, src=DORSO, ss=0.3, sp=0.45, mi=True, live=1.0, z0=1.3, z1=1.36, c=(480, 800)),
+        dict(t0=scap, t1=presa, src=DORSO, ss=0.0, live=0.75),     # prima ripetizione a tempo reale, fermo in alto
         dict(t0=presa, t1=traj, src=PRESA, ss=2.3, z0=PZ + 0.1, z1=PZ + 0.16, c=PC),
-        dict(t0=traj, t1=tira, src=NORM, ss=6.5, sp=0.6 / (tira - traj), pre=shrink),
-        dict(t0=tira, t1=salva, src=NORM, ss=7.1, sp=0.8 / (salva - tira), pre=shrink),
-        gara_up(salva, ponte, 12.5), loop]
+        dict(t0=traj, t1=tira, src=NORM, ss=7.1 - (tira - traj), pre=shrink),
+        dict(t0=tira, t1=salva, src=NORM, ss=7.1, pre=shrink),
+        gara_up(salva, ponte), loop]
     m = dict(h1=h1, spz=spz, come=t_come, scap=scap, presa=presa, traj=traj, tira=tira, salva=salva, ponte=ponte,
              end=end)
     return voice, shots, m
@@ -93,9 +94,9 @@ def arrows_scap(t_on, t_off, sh):
             return
         z = k.shot_z(sh, t)
         pr = k.ease_out((t - t_on) / 0.5)
-        a1 = [k.map_pt(p, z, sh["c"]) for p in ((352, 690), (352, 830))]
-        a2 = [k.map_pt(p, z, sh["c"]) for p in ((410, 700), (410, 840))]
-        lat = [k.map_pt(p, z, sh["c"]) for p in ((402, 770), (430, 860), (470, 960))]
+        a1 = [k.map_pt(p, z, sh.get("c", (540, 960))) for p in ((352, 690), (352, 830))]
+        a2 = [k.map_pt(p, z, sh.get("c", (540, 960))) for p in ((410, 700), (410, 840))]
+        lat = [k.map_pt(p, z, sh.get("c", (540, 960))) for p in ((410, 805), (420, 880), (432, 965))]
         pl = k.ease_out((t - t_on - 0.35) / 0.5)
 
         def draw(d, P_, ss):
@@ -119,7 +120,7 @@ def dots_hands(t_on, t_off, sh):
         if not (t_on <= t < t_off):
             return
         z = k.shot_z(sh, t)
-        pts = [k.map_pt(p, z, sh["c"]) for p in HANDS]
+        pts = [k.map_pt(p, z, sh.get("c", (540, 960))) for p in HANDS]
 
         def draw(d, P_, ss):
             for i, (x, y) in enumerate(pts):
@@ -227,7 +228,7 @@ def build(v):
     t75 = (m["h1"], m["spz"]) if v == "B" else (0.0, m["h1"])
     cam_on = lambda t: m["come"] <= t < m["scap"]
     L = [k.popped(big75, t75[0], t75[1], 250, 820, still=(v == "A")),
-         arrows_scap(m["scap"] + 0.95, m["presa"], sh[m["scap"]]),
+         arrows_scap(m["scap"] + 0.78, m["presa"], sh[m["scap"]]),
          dots_hands(m["presa"] + 0.05, m["traj"], sh[m["presa"]]),
          line_vert(m["traj"] + 0.1, m["tira"]),
          arrow_down(m["tira"] + 0.02, m["salva"]),
@@ -235,7 +236,7 @@ def build(v):
          domanda(7.0, m["end"]),
          salva_icon(m["salva"] + 0.1, m["ponte"]),
          vo.kara_layer(pages, y=lambda t: 330 if cam_on(t) else 1480, size=68, end=m["end"], first_from=0.0)]
-    sfx = [(m["scap"] + 0.95, "disegno", 0.22), (m["presa"] + 0.05, "pop", 0.3), (m["presa"] + 0.17, "pop", 0.3),
+    sfx = [(m["scap"] + 0.78, "disegno", 0.22), (m["presa"] + 0.05, "pop", 0.3), (m["presa"] + 0.17, "pop", 0.3),
            (m["traj"] + 0.1, "disegno", 0.25), (m["tira"] + 0.02, "whoosh", 0.22), (7.0, "pop", 0.25),
            (m["salva"] + 0.1, "pop", 0.25)]
     sfx += [(m["h1"], "hit", 0.15)] if v == "B" else []
