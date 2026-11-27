@@ -42,12 +42,17 @@ yy = np.linspace(0, 1, H)[:, None, None]
 bg = bg * (0.62 + 0.25 * np.exp(-((yy - 0.25) / 0.22) ** 2))
 
 # io in primo piano (107,5 s, un po' perplesso). Scontorno: u2net per la sagoma + colore del muro per i ricci
-fr = grab(f"{R}/src_27nov/IMG_9358.MOV", 30.0)
+fr = grab(f"{R}/src_27nov/IMG_9358.MOV", 22.5)   # scelto da Manuel
 mt = Matter(f"{R}/models/u2net_human_seg.onnx")
 a0 = mt.run([fr])[0]
 person = (a0 > 0.3).astype(np.uint8)
 band = cv2.dilate(person, np.ones((61, 61), np.uint8))
-core = cv2.erode((a0 > 0.6).astype(np.uint8), np.ones((9, 9), np.uint8))  # pelle = colore del muro: interno pieno
+# pelle = colore del muro: l'interno della sagoma va riempito tutto (niente buchi sulla guancia)
+m0 = (a0 > 0.5).astype(np.uint8)
+cnts, _ = cv2.findContours(m0, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+filled = np.zeros_like(m0)
+cv2.drawContours(filled, [max(cnts, key=cv2.contourArea)], -1, 1, thickness=-1)
+core = cv2.erode(filled, np.ones((9, 9), np.uint8))
 small = cv2.resize(fr, (W // 4, H // 4))
 msk = cv2.resize(band * 255, (W // 4, H // 4), interpolation=cv2.INTER_NEAREST)
 wall = cv2.resize(cv2.inpaint(small, msk, 15, cv2.INPAINT_TELEA), (W, H), interpolation=cv2.INTER_CUBIC)
@@ -62,22 +67,29 @@ am = np.clip(alpha, 0.05, 1)[..., None]
 fgc = np.clip((f32 - (1 - am) * wall) / am, 0, 255)
 fgc = np.where(alpha[..., None] > 0.98, f32, fgc)
 alpha = np.clip((alpha - 0.2) / 0.8, 0, 1)
-hair = (np.arange(H) < 760)[:, None] & (core == 0)      # solo il bordo dei ricci: via il filo chiaro del muro
-alpha = np.where(hair, np.clip((alpha - 0.25) / 0.75, 0, 1) ** 1.3, alpha)      # via la nebbia chiara attorno ai capelli
+# niente bordo bianco (Manuel): bordo ristretto di 2 px su tutta la sagoma + bordo dei ricci piu' duro
+alpha = cv2.erode(alpha.astype(np.float32), np.ones((5, 5), np.uint8))
+edge = (core == 0)
+alpha = np.where(edge, np.clip((alpha - 0.3) / 0.7, 0, 1) ** 1.4, alpha)
+# fuori dall'interno pieno: i pixel col colore del muro (il bianco tra i ricci) vanno via del tutto
+wallish = np.clip((diff - 45) / 35.0, 0, 1)
+ring = (filled > 0) & (cv2.erode(filled, np.ones((91, 91), np.uint8)) == 0) & (np.arange(H) < 1250)[:, None]
+alpha = np.where(edge | ring, np.minimum(alpha, wallish), alpha)   # anche il bianco tra i ricci dentro la sagoma
+alpha = cv2.GaussianBlur(alpha, (0, 0), 0.7)      # via la nebbia chiara attorno ai capelli
 x = np.arange(W)
 alpha = alpha * np.clip(np.minimum(x, W - 1 - x) / 120.0, 0, 1)[None, :]
-alpha = alpha * np.clip((H - 1 - np.arange(H)) / 140.0, 0, 1)[:, None]   # il busto sfuma in basso, niente taglio dritto
-SC, DX, DY = 0.56, -190, -540
+alpha = alpha * np.clip((H - 1 - np.arange(H)) / 60.0, 0, 1)[:, None]   # il busto sfuma in basso, niente taglio dritto
+SC, DX, DY = 0.74, -150, -170   # piu' busto (Manuel): mezzo busto grande, titolo sul petto
 M = np.float32([[SC, 0, W / 2 * (1 - SC) + DX], [0, SC, H * (1 - SC) + DY]])
 fg = cv2.warpAffine(fgc, M, (W, H), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
 al = cv2.warpAffine(alpha, M, (W, H), flags=cv2.INTER_LINEAR, borderValue=0)
 sh = cv2.GaussianBlur(al, (0, 0), 30)[..., None]
 img = bg * (1 - 0.55 * sh)
 img = img * (1 - al[..., None]) + fg * al[..., None]
-g = np.clip((np.arange(H) - 1380) / 220.0, 0, 1)[:, None, None]   # il busto si chiude nel buio in basso
+g = np.clip((np.arange(H) - 1560) / 260.0, 0, 1)[:, None, None]   # il busto si chiude nel buio in basso
 img = img * (1 - 0.92 * g)
 im = Image.fromarray(cv2.cvtColor(np.clip(img, 0, 255).astype(np.uint8), cv2.COLOR_BGR2RGB)).convert("RGBA")
-y = label(im, "TIRA GIÙ", W / 2, 1130, 104)
+y = label(im, "TIRA GIÙ", W / 2, 1170, 104)
 label(im, "LA SBARRA", W / 2, y + 10, 104, box=ORANGE)
 im.convert("RGB").save(f"{D}/copertina_tira_giu.jpg", quality=95)
 im.convert("RGB").crop((0, 240, 1080, 1680)).resize((540, 720)).save(f"{D}/_check_griglia.jpg", quality=85)
