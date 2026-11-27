@@ -5,7 +5,7 @@
   su. Tiro giù la sbarra." -> trazione intera con +75 KG: "E faccio 75 kg."
 - Gancio A (trial 2, pubblicato a distanza di almeno qualche ora, mai insieme): trazione con +75 KG: "Faccio trazioni con 75 kg. E penso solo a
   una cosa: tirare giù la sbarra."
-- Corpo: "Come se volessi spezzarla." -> "Così le scapole scendono e lavora il dorsale." -> "Presa salda. Traiettoria il più verticale possibile. E tira giù." (i 3
+- Corpo: "Come se volessi spezzarla, come con questo mattarello." -> "Così le scapole scendono e lavora il dorsale." -> "Presa salda. Traiettoria il più verticale possibile. E tira giù." (i 3
   punti restano a schermo come scheda numerata: 1 PRESA SALDA / 2 VERTICALE / 3 TIRA GIÙ) -> "Salvalo e provalo alla
   prossima serie." -> frase-ponte DIVERSA per versione, che il gancio completa (loop):
   B: "...Perché io, alla sbarra," -> riparte "Non faccio le trazioni tirandomi su. Tiro giù la sbarra."
@@ -19,7 +19,8 @@
 - Copertina: "TIRA GIÙ / LA SBARRA"
 
 ## Caption
-Alla sbarra quasi tutti pensano a salire. Io penso a tirarla giù, come se volessi spezzarla.
+Alla sbarra quasi tutti pensano a salire. Io penso a tirarla giù, come se volessi spezzarla. Proprio come il mattarello
+del video.
 
 Pensarla così ti tiene in traiettoria e ti fa attivare il dorsale: le scapole scendono e la tirata parte già nel
 modo giusto.
@@ -57,17 +58,18 @@ GIRATO (idea di Manuel, 27/11): 4 clip + voce.
 - C2 trazione con 75 kg in gara (scritta +75 KG solo su questa clip: il numero deve coincidere con quello che si vede).
   Niente loghi/scritte di altri in primo piano; se ci sono giudici o pubblico, ok, ma Manuel deve essere il soggetto.
 - C3 trazione "normale" (per i 3 punti: si vedono mani e traiettoria; le mani in primo piano si ottengono ritagliando).
-- C4 Manuel che SPEZZA un mattarello/bastone tenuto come una sbarra (presa prona, mani all'altezza della fronte), tirandolo
-  verso il basso: dura al massimo 1-1,5 s, stacco subito dopo il crack (sfx crack leggero sul punto esatto).
+- C4 Manuel in camera che dice "Come se volessi spezzarla, come con questo mattarello" e lo SPEZZA proprio su
+  "mattarello" (tenuto come una sbarra: presa prona, mani all'altezza della fronte, tirando verso il basso). Circa 2 s,
+  stacco subito dopo il crack.
 
 VERSIONE B (trial 1)
 | s | Immagine | Voce | Testo / animazione |
 |---|---|---|---|
 | 0-2,5 | C1 dorso nudo: una ripetizione dall'inizio, stacco quando arriva su | "Non faccio le trazioni tirandomi su. Tiro giù la sbarra." | sottotitolo, "GIÙ" in arancio |
 | 2,5-3,5 | C2 gara 75 kg | "E faccio 75 kg." | "+75 KG" grande in riquadro arancio, pop |
-| 3,5-5 | C4 mattarello che si spezza | "Come se volessi spezzarla." | crack leggero sul punto esatto, nessun'altra grafica |
-| 5-6,5 | C1 dorso nudo (si vede la schiena) o C3: inizio della tirata | "Così le scapole scendono e lavora il dorsale." | due piccole frecce arancio sulle scapole verso il basso + dorsale evidenziato da una linea sottile; parola "DORSALE" in arancio nel sottotitolo |
-| 6,5-9,5 | C3 trazione normale: mani (ritaglio, puntino pop) -> linea verticale arancio accanto al corpo -> freccia giù sulla sbarra | "Presa salda. Traiettoria il più verticale possibile. E tira giù." | scheda numerata a lato che si riempie e RESTA: 1 PRESA SALDA / 2 VERTICALE / 3 TIRA GIÙ. Dal 7° s in alto: "TU COME LE FAI? CI AVEVI MAI PENSATO? 👇" |
+| 3,5-5,5 | C4 Manuel in camera col mattarello in mano (presa da sbarra): dice la frase e lo spezza | "Come se volessi spezzarla, come con questo mattarello." | il crack cade su "mattarello" (audio in presa diretta se è pulito, altrimenti voce + sfx crack leggero sincronizzato); nessun'altra grafica |
+| 5,5-6,8 | C1 dorso nudo (si vede la schiena) o C3: inizio della tirata | "Così le scapole scendono e lavora il dorsale." | due piccole frecce arancio sulle scapole verso il basso + dorsale evidenziato da una linea sottile; parola "DORSALE" in arancio nel sottotitolo |
+| 6,8-9,5 | C3 trazione normale: mani (ritaglio, puntino pop) -> linea verticale arancio accanto al corpo -> freccia giù sulla sbarra | "Presa salda. Traiettoria il più verticale possibile. E tira giù." | scheda numerata a lato che si riempie e RESTA: 1 PRESA SALDA / 2 VERTICALE / 3 TIRA GIÙ. Dal 7° s in alto: "TU COME LE FAI? CI AVEVI MAI PENSATO? 👇" |
 | 9,5-11,5 | C2 gara 75 kg, salita completa | "Salvalo e provalo alla prossima serie." | scheda e domanda restano; icona salva con pop |
 | 11,5-13 | C1 dorso nudo, stesso fotogramma iniziale (braccia tese) | ponte: "Perché io, alla sbarra," | grafiche fuori; il video finisce a metà frase, il gancio la completa |
 
