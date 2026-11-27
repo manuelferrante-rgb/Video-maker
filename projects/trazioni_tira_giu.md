@@ -48,19 +48,30 @@ che la frase del gancio sia finita; cambio visivo ogni 1,5-2,5 s; domanda a sche
 1,1x senza pause, -14 LUFS; sottotitoli standard (bianchi, Inter ExtraBold, bordo nero, parola chiave arancio);
 sfx leggeri; finale a loop; niente musica (la metto io).
 
+GIRATO (idea di Manuel, 27/11): 4 clip + voce.
+- C1 trazioni a dorso nudo (file con più ripetizioni): si usa UNA ripetizione dal suo inizio esatto (braccia tese)
+  fino a quando il mento arriva sopra la sbarra, poi stacco.
+- C2 trazione con 75 kg in gara (scritta +75 KG solo su questa clip: il numero deve coincidere con quello che si vede).
+  Niente loghi/scritte di altri in primo piano; se ci sono giudici o pubblico, ok, ma Manuel deve essere il soggetto.
+- C3 trazione "normale" (per i 3 punti: si vedono mani e traiettoria; le mani in primo piano si ottengono ritagliando).
+- C4 Manuel che SPEZZA un mattarello/bastone tenuto come una sbarra (presa prona, mani all'altezza della fronte), tirandolo
+  verso il basso: dura al massimo 1-1,5 s, stacco subito dopo il crack (sfx crack leggero sul punto esatto).
+
 VERSIONE B (trial 1)
 | s | Immagine | Voce | Testo / animazione |
 |---|---|---|---|
-| 0-2,5 | Primo piano delle mani che stringono la sbarra (si muove: la trazione parte) | "Non faccio le trazioni tirandomi su. Tiro giù la sbarra." | sottotitolo, "GIÙ" in arancio |
-| 2,5-3,5 | Trazione intera con 75 kg, di lato | "E faccio 75 kg." | "+75 KG" grande in riquadro arancio, pop |
-| 3,5-5,5 | Stessa trazione, zoom leggero sulla sbarra | "Come se volessi spezzarla." | la sbarra si piega verso il basso (linea arancio curva) + crack leggero |
-| 5,5-8,5 | Mani (puntino pop) -> linea verticale arancio accanto al corpo che si disegna -> freccia giù sulla sbarra | "Presa salda. Traiettoria il più verticale possibile. E tira giù." | a ogni frase si aggiunge una riga di una piccola scheda numerata a lato (1 PRESA SALDA / 2 VERTICALE / 3 TIRA GIÙ, riquadri neri con numero arancio), che RESTA fino alla fine: è la "tip" da salvare. Dal 7° s in alto: "TU COME LE FAI? CI AVEVI MAI PENSATO? 👇" |
-| 8,5-10,5 | Trazione pesante, salita completa fino al mento sopra la sbarra | "Salvalo e provalo alla prossima serie." | scheda e domanda restano; icona salva leggera con pop |
-| 10,5-12 | Ritorno sul PRIMO fotogramma della versione (B: primo piano delle mani che stringono la sbarra) | ponte B: "Perché io, alla sbarra," (A: "Ed è così che") | scheda e domanda escono; nessuna pausa, nessuna dissolvenza: il video finisce a metà frase e il gancio la completa ("...non faccio le trazioni tirandomi su" / "...faccio trazioni con 75 kg") |
+| 0-2,5 | C1 dorso nudo: una ripetizione dall'inizio, stacco quando arriva su | "Non faccio le trazioni tirandomi su. Tiro giù la sbarra." | sottotitolo, "GIÙ" in arancio |
+| 2,5-3,5 | C2 gara 75 kg | "E faccio 75 kg." | "+75 KG" grande in riquadro arancio, pop |
+| 3,5-5 | C4 mattarello che si spezza | "Come se volessi spezzarla." | crack leggero sul punto esatto, nessun'altra grafica |
+| 5-8,5 | C3 trazione normale: mani (ritaglio, puntino pop) -> linea verticale arancio accanto al corpo -> freccia giù sulla sbarra | "Presa salda. Traiettoria il più verticale possibile. E tira giù." | scheda numerata a lato che si riempie e RESTA: 1 PRESA SALDA / 2 VERTICALE / 3 TIRA GIÙ. Dal 7° s in alto: "TU COME LE FAI? CI AVEVI MAI PENSATO? 👇" |
+| 8,5-10,5 | C2 gara 75 kg, salita completa | "Salvalo e provalo alla prossima serie." | scheda e domanda restano; icona salva con pop |
+| 10,5-12 | C1 dorso nudo, stesso fotogramma iniziale (braccia tese) | ponte: "Perché io, alla sbarra," | grafiche fuori; il video finisce a metà frase, il gancio la completa |
 
-VERSIONE A (trial 2: cambia solo l'inizio, da 0 a 3,5 s; dal "Come se volessi spezzarla" è identica)
-| 0-3,5 | Trazione con 75 kg di lato | "Faccio trazioni con 75 kg. E penso solo a una cosa: tirare giù la sbarra." | "+75 KG" grande, poi sottotitolo |
-| finale A | Ultimi 1,5 s sulla stessa trazione a braccia tese in basso del primo fotogramma | ponte A: "Ed è così che" | il gancio lo completa: "...faccio trazioni con 75 kg" |
+VERSIONE A (trial 2): stesse clip, cambia l'apertura e il finale
+| 0-1,5 | C2 gara 75 kg | "Faccio trazioni con 75 kg." | "+75 KG" grande |
+| 1,5-3,5 | C1 dorso nudo, una ripetizione dall'inizio | "E penso solo a una cosa: tirare giù la sbarra." | sottotitolo |
+| 3,5-10,5 | come B | come B | come B |
+| 10,5-12 | C2 gara, stesso fotogramma iniziale (braccia tese in basso) | ponte: "Ed è così che" | il gancio completa: "...faccio trazioni con 75 kg" |
 
 Animazioni: allineate al girato (la curva sta sulla sbarra vera, il puntino sulle mani vere), sottili, bianco con
 accento #E8662C, ognuna con il suo sfx leggero (pop, disegno, crack). Mai sopra la faccia.
@@ -68,8 +79,6 @@ Copertina: fondo con la trazione, io scontornato, riga nera "TIRA GIÙ" + riga a
 Consegna: versione B, versione A, copertina, caption (sotto) e commento fissato "Scrivimi come fai le tue trazioni e ti dico
 cosa cambierei.". Prima di consegnare fai la checklist completa e dimmi l'esito di ogni punto.
 
-Girato: trazione con 75 kg di lato (intera, dalla partenza a braccia tese al mento sopra la sbarra), primo piano delle
-mani che stringono la sbarra, voce delle frasi (2-3 take). Se manca il primo piano delle mani, ritaglia e ingrandisci
-le mani dalla ripresa di lato.
+Voce: registrata a parte, 2-3 take per frase; prendi la migliore, taglia tutte le pause.
 
 Caption: (copia la caption sopra)
