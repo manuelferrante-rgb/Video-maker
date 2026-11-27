@@ -165,3 +165,9 @@ Esempio approvato (Tacco o senza, base scritta da Manuel e sintetizzata):
     Tu lo usi? Scrivimi "tacco" o "senza" 👇
 
     Ogni settimana una scelta vera che faccio con i miei atleti, e il perché. Seguimi per non perdere le prossime.
+
+## Caption scritta da Manuel (reel "Tira giù la sbarra", 27/11/2026)
+Note: apertura "Nelle trazioni quasi tutti pensano a salire" (il pubblico) contro "Io penso a tirare giù la sbarra";
+il "come la faccio io" aggiunge dettagli che nel video non ci sono (addome e glutei attivi, gambe sotto la sbarra);
+tolta la riga doppia "Alla prossima serie prova così e dimmi com'è andata" (bastava "Salvalo e provalo").
+Testo completo: `projects/caption_tira_giu.txt`.
