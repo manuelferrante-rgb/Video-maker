@@ -77,10 +77,10 @@ Farsi ricordare conta quanto la singola views: stesso format per la serie ("Due 
 di copertina (riga nera + riga arancio), stessa musica, frase ricorrente ("Li alleno tutti e due"). Mostrare Manuel
 come atleta e coach vero, non come supereroe.
 
-## 7. Test A/B
-Massimo 2 versioni per reel. Cambia SOLO il gancio (primi 2,5 s): stessa durata, stesso montaggio dopo, stessa
-copertina e caption. Manuel le pubblica a distanza (non insieme): due video quasi uguali alla stessa ora fanno
-spingere da Instagram solo uno dei due.
+## 7. Una sola versione
+Dal 28/11 si consegna UNA sola versione per reel, con il gancio migliore secondo i dati (chi + kg + azione o frase che
+incuriosisce sopra un'alzata vera). Due versioni quasi uguali: Instagram ne spinge una sola (tira giù la sbarra 5.350
+contro 2 views). Se un reel non va, si analizzano i punti di rottura e si migliora il successivo.
 
 ## 8. Copertina
 Riga nera + riga arancio (Inter Black Italic), fondo con l'alzata, Manuel scontornato se serve. Titolo diverso dal

@@ -422,3 +422,14 @@ Gancio sempre = chi + kg + azione sopra l'alzata; risposta entro 5 s; domanda ch
 Netti: 1.921 views, salti 47,5%, media 5 s, 41 like (like rate sopra la media), 0 commenti, 4 repost, 1 salvataggio,
 7 visite, 1 follow; 13-17 15,8%, Italia 81%. Piace ma non trattiene e non porta clienti: ok per feed, non come trial
 per crescere. Prossimo educativo sul modello panca: trazioni "spingi giù la sbarra" (`projects/idee_educativo_27nov.md`).
+
+## Insight 28/11: "Tira giù la sbarra" (trazioni 75 kg, 14 s) - RECORD ORGANICO
+Pubblicate le due versioni insieme: Instagram ha spinto solo la B (apre sulla trazione a dorso nudo, "Non faccio le
+trazioni tirandomi su, ma tiro giù la sbarra", poi gara +75 KG); la A ha 2 views. B (numeri netti): 5.350 views, 4.082
+persone, salti 30,5%, media 8 s su 14, 34 like, 0 commenti, 2 repost, 14 salvataggi, 6 visite, 3 follow; 99,9% non
+follower; 13-17 11,7%, 25-34 38,6%, 35-54 18,5%; uomini 96,6%; 84% dalla tab Reels. Curva di visione che scende
+regolare, senza crolli. Lezioni: il format tecnico (alzata vera + frase che incuriosisce + kg + segno visivo da
+ricordare) si conferma il migliore; la domanda riflessiva "Tu come le fai? Ci avevi mai pensato?" non porta commenti
+(solo le scelte binarie tipo "tacco o senza" li portano).
+REGOLA NUOVA (Manuel 28/11): niente piu' due versioni per reel. Una sola versione con il gancio che riteniamo migliore in
+base ai dati; se un reel non va, si analizza (punti di rottura) e si migliora il successivo.

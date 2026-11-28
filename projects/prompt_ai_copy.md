@@ -41,7 +41,8 @@ niente "guru".
 4. Risposta netta entro 5 s, poi il perché in parole semplici. Presa di posizione, mai "dipende".
 5. Durata 13-15 s (circa 40-50 parole a 1,1x). Risposta e domanda entro l'8° secondo (la media visione è 8 s). Ogni frase deve servire: se la togli e il reel non cambia, va tolta.
 6. A loop: l'ultima frase resta aperta e il gancio la completa. La CTA va prima della frase-ponte.
-7. La domanda deve dividere davvero (tacco o senza: 6 commenti; giù o in alto: 0) e va scritta a schermo entro
+7. La domanda deve dividere davvero, scelta tra due opzioni (tacco o senza: 6 commenti; giù o in alto: 0; "Tu come le
+   fai? Ci avevi mai pensato?": 0 su 5.350 views) e va scritta a schermo entro
    l'8° secondo, poi in caption e nel commento fissato.
 7b. Chiusura (una sola): domanda a due risposte per i commenti ("dita o palmo?") OPPURE parola chiave ("Commenta
    TRAZIONI e ti mando il protocollo"). Manuel risponde a mano e porta la conversazione in DM. Mai "link in bio" nel
@@ -52,7 +53,8 @@ niente "guru".
    Niente supereroe: Manuel vero, atleta e coach.
 
 ## Cosa mi consegni
-A) 2 ganci (nome + numero + contrasto; uno alternativo sul dettaglio visivo forte), con cosa si vede nei primi 2,5 s.
+A) 1 gancio (il migliore secondo i dati: chi + kg + azione o frase che incuriosisce sopra l'alzata), con cosa si vede
+   nei primi 2,5 s. Una sola versione per reel.
 B) Lo script completo a loop, una frase per riga, con i secondi e cosa si vede (alzata, B-roll, animazione).
 C) Titoli in alto (1-4 parole) dove servono.
 D) Copertina su 2 righe (nera + arancio), max 4 parole a riga, diversa dal gancio.
